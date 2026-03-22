@@ -7,33 +7,16 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
-
-        .hero {
-            background: linear-gradient(180deg, #87CEEB 0%, #b8e0f7 100%);
-            text-align: center; padding: 30px 20px 20px;
-        }
+        .hero { background: linear-gradient(180deg, #87CEEB 0%, #b8e0f7 100%); text-align: center; padding: 30px 20px 20px; }
         .hero img { max-width: 220px; width: 60%; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.15); }
-
-        nav {
-            background: #1a3a6b; display: flex; justify-content: center;
-            gap: 24px; padding: 14px 20px; flex-wrap: wrap;
-        }
-        nav a { color: #fff; text-decoration: none; font-family: Arial, sans-serif;
-            font-size: 0.92rem; font-weight: bold; letter-spacing: 0.04em; transition: color 0.2s; }
+        nav { background: #1a3a6b; display: flex; justify-content: center; gap: 24px; padding: 14px 20px; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; font-family: Arial, sans-serif; font-size: 0.92rem; font-weight: bold; letter-spacing: 0.04em; transition: color 0.2s; }
         nav a:hover { color: #87CEEB; }
-
         .container { max-width: 820px; margin: 0 auto; padding: 40px 24px 60px; }
-
         h1 { font-size: 1.75rem; color: #1a3a6b; text-align: center; margin-bottom: 6px; line-height: 1.3; }
         .discipline { text-align: center; font-style: italic; color: #555; font-family: Arial, sans-serif; font-size: 0.95rem; margin-bottom: 30px; }
-
-        .resume-box {
-            background: #1a3a6b; color: #e8f4fd; border-radius: 12px;
-            padding: 24px 28px; margin-bottom: 36px; line-height: 1.8; font-size: 1rem;
-        }
+        .resume-box { background: #1a3a6b; color: #e8f4fd; border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; line-height: 1.8; font-size: 1rem; }
         .resume-box h2 { color: #87CEEB; font-size: 1.1rem; margin-bottom: 12px; font-family: Arial, sans-serif; }
-
-        /* TABLE DES MATIÈRES */
         .toc { background: #fff; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); padding: 28px 32px; margin-bottom: 40px; }
         .toc h2 { color: #1a3a6b; font-size: 1.2rem; margin-bottom: 18px; border-left: 5px solid #87CEEB; padding-left: 12px; }
         .toc ol { padding-left: 20px; }
@@ -41,403 +24,556 @@
         .toc a { color: #1a3a6b; text-decoration: none; border-bottom: 1px dotted #87CEEB; }
         .toc a:hover { color: #87CEEB; }
         .toc .part-title { font-weight: bold; color: #555; margin: 14px 0 6px; font-style: italic; list-style: none; margin-left: -20px; }
-
-        /* PARTIES & CHAPITRES */
-        .part-header {
-            background: linear-gradient(90deg, #1a3a6b, #2a5298);
-            color: #fff; border-radius: 10px; padding: 14px 22px; margin: 40px 0 20px;
-            font-family: Arial, sans-serif; font-size: 1.05rem; font-weight: bold;
-        }
-
+        .part-header { background: linear-gradient(90deg, #1a3a6b, #2a5298); color: #fff; border-radius: 10px; padding: 14px 22px; margin: 40px 0 20px; font-family: Arial, sans-serif; font-size: 1.05rem; font-weight: bold; }
         .chapter { margin-bottom: 36px; }
         .chapter h3 { font-size: 1.2rem; color: #1a3a6b; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #87CEEB; }
         .chapter p { font-size: 1rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 12px; }
         .chapter ul, .chapter ol { padding-left: 24px; margin: 10px 0 14px; }
         .chapter li { font-size: 0.98rem; line-height: 1.75; color: #2c2c2c; margin-bottom: 6px; }
         .chapter li strong { color: #1a3a6b; }
-
-        /* INTRODUCTION */
         .intro-section { margin-bottom: 36px; }
         .intro-section h2 { font-size: 1.3rem; color: #1a3a6b; margin-bottom: 6px; }
         .intro-section h3 { font-size: 1.1rem; color: #2a5298; margin: 16px 0 8px; font-style: italic; }
         .intro-section p { font-size: 1rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 12px; }
-
-        /* CONCLUSION */
-        .conclusion-box {
-            background: linear-gradient(135deg, #e8f4fd, #d0eaff);
-            border-left: 5px solid #1a3a6b; border-radius: 8px;
-            padding: 24px 28px; margin: 20px 0;
-        }
+        .conclusion-box { background: linear-gradient(135deg, #e8f4fd, #d0eaff); border-left: 5px solid #1a3a6b; border-radius: 8px; padding: 24px 28px; margin: 20px 0; }
         .conclusion-box h3 { color: #1a3a6b; margin-bottom: 10px; }
         .conclusion-box p { font-size: 1rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 10px; }
-
         .dedicace { text-align: center; font-style: italic; color: #555; margin-top: 20px; font-size: 1rem; padding: 16px; }
-
-        /* BIBLIOGRAPHIE */
         #bibliographie { margin-top: 50px; }
         #bibliographie h2 { font-size: 1.4rem; color: #1a3a6b; margin-bottom: 24px; border-left: 5px solid #87CEEB; padding-left: 12px; }
         .bib-section { margin-bottom: 30px; }
         .bib-section h3 { font-size: 1rem; color: #2a5298; font-family: Arial, sans-serif; margin-bottom: 12px; font-style: italic; }
         .bib-item { font-size: 0.93rem; line-height: 1.7; color: #333; margin-bottom: 10px; padding-left: 20px; text-indent: -20px; font-family: Arial, sans-serif; }
         .bib-item a { color: #1a3a6b; word-break: break-all; }
-        .bib-item a:hover { color: #87CEEB; }
-
         footer { background: #1a3a6b; color: #cce4f7; text-align: center; padding: 22px 20px; font-family: Arial, sans-serif; font-size: 0.88rem; }
         footer span { color: #87CEEB; font-weight: bold; }
-
         hr { border: none; border-top: 1px solid #c8dff0; margin: 30px 0; }
+
+        /* ===== LANGUE TOGGLE ===== */
+        .fr { display: block; } .en { display: none; }
+        html.english .fr { display: none; } html.english .en { display: block; }
+        span.fr { display: inline; } span.en { display: none; }
+        html.english span.fr { display: none; } html.english span.en { display: inline; }
+        li.fr { display: list-item; } li.en { display: none; }
+        html.english li.fr { display: none; } html.english li.en { display: list-item; }
+        #langBtn {
+            position: fixed; top: 12px; right: 16px; z-index: 9999;
+            background: #1a3a6b; color: #fff; border: 2px solid #87CEEB;
+            padding: 7px 18px; border-radius: 20px; font-family: Arial, sans-serif;
+            font-size: 0.85rem; font-weight: bold; cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.25); transition: background 0.2s;
+        }
+        #langBtn:hover { background: #2a5298; }
     </style>
 </head>
 <body>
+
+<button id="langBtn" onclick="toggleLang()">🌐 English</button>
 
 <div class="hero">
     <a href="index.html"><img src="logo_universel.jpeg.JPG" alt="Logo Universel"></a>
 </div>
 
 <nav>
-    <a href="index.html">🏠 Accueil</a>
-    <a href="index.html#vision">La Vision</a>
+    <a href="index.html">🏠 <span class="fr">Accueil</span><span class="en">Home</span></a>
+    <a href="index.html#vision"><span class="fr">La Vision</span><span class="en">The Vision</span></a>
     <a href="index.html#discussion">Discussion</a>
-    <a href="these.html">📖 Un peu plus…</a>
+    <a href="these.html">📖 <span class="fr">Un peu plus…</span><span class="en">Learn more…</span></a>
     <a href="index.html#contact">Contact</a>
 </nav>
 
 <div class="container">
 
-    <h1>De l'Urgence de Remplacer le Capitalisme par l'Universalité</h1>
-    <h1 style="font-size:1.2rem; margin-top:8px;">Vers un Nouveau Paradigme de Gouvernance Humaine</h1>
-    <p class="discipline">Thèse de sociologie politique et économique</p>
+    <h1 class="fr">De l'Urgence de Remplacer le Capitalisme par l'Universalité</h1>
+    <h1 class="en">On the Urgency of Replacing Capitalism with Universality</h1>
+    <h1 class="fr" style="font-size:1.2rem; margin-top:8px;">Vers un Nouveau Paradigme de Gouvernance Humaine</h1>
+    <h1 class="en" style="font-size:1.2rem; margin-top:8px;">Toward a New Paradigm of Human Governance</h1>
+    <p class="discipline">
+        <span class="fr">Thèse de sociologie politique et économique</span>
+        <span class="en">Political and Economic Sociology Thesis</span>
+    </p>
 
     <!-- RÉSUMÉ -->
     <div class="resume-box">
-        <h2>RÉSUMÉ</h2>
-        Face à la convergence historique sans précédent de crises structurelles — inégalités systémiques, effondrement écologique, délégitimation des institutions démocratiques et rupture du lien social — cette thèse défend que le capitalisme contemporain n'est plus seulement inéquitable, mais fondamentalement incompatible avec le maintien des conditions nécessaires à la vie et à l'équilibre humain. À travers une analyse sociologique critique, nous proposons l'Universalité comme paradigme de remplacement — non pas comme utopie abstraite, mais comme impératif pratique, mesurable et historiquement fondé.
+        <h2 class="fr">RÉSUMÉ</h2>
+        <h2 class="en">ABSTRACT</h2>
+        <p class="fr">Face à la convergence historique sans précédent de crises structurelles — inégalités systémiques, effondrement écologique, délégitimation des institutions démocratiques et rupture du lien social — cette thèse défend que le capitalisme contemporain n'est plus seulement inéquitable, mais fondamentalement incompatible avec le maintien des conditions nécessaires à la vie et à l'équilibre humain. À travers une analyse sociologique critique, nous proposons l'Universalité comme paradigme de remplacement — non pas comme utopie abstraite, mais comme impératif pratique, mesurable et historiquement fondé.</p>
+        <p class="en">In the face of an unprecedented historical convergence of structural crises — systemic inequalities, ecological collapse, delegitimization of democratic institutions, and rupture of social bonds — this thesis argues that contemporary capitalism is no longer merely inequitable, but fundamentally incompatible with maintaining the conditions necessary for life and human equilibrium. Through critical sociological analysis, we propose Universality as a replacement paradigm — not as an abstract utopia, but as a practical, measurable, and historically grounded imperative.</p>
     </div>
 
     <!-- TABLE DES MATIÈRES -->
     <div class="toc">
-        <h2>📋 Table des matières</h2>
+        <h2 class="fr">📋 Table des matières</h2>
+        <h2 class="en">📋 Table of Contents</h2>
         <ol>
-            <li class="part-title">— Introduction générale —</li>
-            <li><a href="#introduction">Introduction : Le Moment Historique</a></li>
-            <li class="part-title">— Partie I : Le capitalisme : autopsie d'un système en fin de cycle —</li>
-            <li><a href="#ch1">Chapitre 1 : Les Fondements Idéologiques et Leurs Limites</a></li>
-            <li><a href="#ch2">Chapitre 2 : Les Cinq Crises Systémiques du Capitalisme</a></li>
-            <li><a href="#ch3">Chapitre 3 : Pourquoi les Réformes Internes Sont Insuffisantes</a></li>
-            <li class="part-title">— Partie II : L'Universalité : fondements d'un nouveau paradigme —</li>
-            <li><a href="#ch4">Chapitre 4 : Définition et Principes Fondateurs</a></li>
-            <li><a href="#ch5">Chapitre 5 : Les 30 Droits Fondamentaux comme Socle</a></li>
-            <li><a href="#ch6">Chapitre 6 : L'Universalité n'est Pas une Utopie — Les Preuves Empiriques</a></li>
-            <li class="part-title">— Partie III : La transition —</li>
-            <li><a href="#ch7">Chapitre 7 : Les Obstacles Réels à la Transition</a></li>
-            <li><a href="#ch8">Chapitre 8 : La Timeline Réaliste — 15 à 25 Ans</a></li>
-            <li><a href="#ch9">Chapitre 9 : Les Leviers du Changement</a></li>
-            <li class="part-title">— Partie IV : L'Universalité et les besoins fondamentaux —</li>
-            <li><a href="#ch10">Chapitre 10 : Au-delà de l'Économie — La Dimension Anthropologique</a></li>
-            <li><a href="#ch11">Chapitre 11 : L'Universalité et la Santé Collective</a></li>
-            <li class="part-title">— Partie V : Technologie et blockchain —</li>
-            <li><a href="#ch12">Chapitre 12 : L'Infrastructure Numérique comme Fondation de la Transparence</a></li>
-            <li><a href="#ch13">Chapitre 13 : Outils Numériques pour la Gouvernance Démocratique</a></li>
-            <li><a href="#ch14">Chapitre 14 : Risques et Garde-Fous Critiques</a></li>
-            <li class="part-title">— Partie VI : Les deux piliers opérationnels —</li>
-            <li><a href="#ch15">Chapitre 15 : L'Autosuffisance Collective</a></li>
-            <li><a href="#ch16">Chapitre 16 : La Curation Sociale</a></li>
-            <li class="part-title">— Conclusion et Bibliographie —</li>
-            <li><a href="#conclusion">Conclusion Générale</a></li>
-            <li><a href="#bibliographie">Bibliographie</a></li>
+            <li class="part-title fr">— Introduction générale —</li>
+            <li class="part-title en">— General Introduction —</li>
+            <li class="fr"><a href="#introduction">Introduction : Le Moment Historique</a></li>
+            <li class="en"><a href="#introduction">Introduction: The Historical Moment</a></li>
+            <li class="part-title fr">— Partie I : Le capitalisme : autopsie d'un système en fin de cycle —</li>
+            <li class="part-title en">— Part I: Capitalism: autopsy of a system in terminal decline —</li>
+            <li class="fr"><a href="#ch1">Chapitre 1 : Les Fondements Idéologiques et Leurs Limites</a></li>
+            <li class="en"><a href="#ch1">Chapter 1: Ideological Foundations and Their Limits</a></li>
+            <li class="fr"><a href="#ch2">Chapitre 2 : Les Cinq Crises Systémiques du Capitalisme</a></li>
+            <li class="en"><a href="#ch2">Chapter 2: The Five Systemic Crises of Capitalism</a></li>
+            <li class="fr"><a href="#ch3">Chapitre 3 : Pourquoi les Réformes Internes Sont Insuffisantes</a></li>
+            <li class="en"><a href="#ch3">Chapter 3: Why Internal Reforms Are Insufficient</a></li>
+            <li class="part-title fr">— Partie II : L'Universalité : fondements d'un nouveau paradigme —</li>
+            <li class="part-title en">— Part II: Universality: foundations of a new paradigm —</li>
+            <li class="fr"><a href="#ch4">Chapitre 4 : Définition et Principes Fondateurs</a></li>
+            <li class="en"><a href="#ch4">Chapter 4: Definition and Founding Principles</a></li>
+            <li class="fr"><a href="#ch5">Chapitre 5 : Les 30 Droits Fondamentaux comme Socle</a></li>
+            <li class="en"><a href="#ch5">Chapter 5: The 30 Fundamental Rights as Foundation</a></li>
+            <li class="fr"><a href="#ch6">Chapitre 6 : L'Universalité — Les Preuves Empiriques</a></li>
+            <li class="en"><a href="#ch6">Chapter 6: Universality — The Empirical Evidence</a></li>
+            <li class="part-title fr">— Partie III : La transition —</li>
+            <li class="part-title en">— Part III: The Transition —</li>
+            <li class="fr"><a href="#ch7">Chapitre 7 : Les Obstacles Réels à la Transition</a></li>
+            <li class="en"><a href="#ch7">Chapter 7: The Real Obstacles to Transition</a></li>
+            <li class="fr"><a href="#ch8">Chapitre 8 : La Timeline Réaliste — 15 à 25 Ans</a></li>
+            <li class="en"><a href="#ch8">Chapter 8: A Realistic Timeline — 15 to 25 Years</a></li>
+            <li class="fr"><a href="#ch9">Chapitre 9 : Les Leviers du Changement</a></li>
+            <li class="en"><a href="#ch9">Chapter 9: The Levers of Change</a></li>
+            <li class="part-title fr">— Partie IV : L'Universalité et les besoins fondamentaux —</li>
+            <li class="part-title en">— Part IV: Universality and Fundamental Needs —</li>
+            <li class="fr"><a href="#ch10">Chapitre 10 : La Dimension Anthropologique</a></li>
+            <li class="en"><a href="#ch10">Chapter 10: The Anthropological Dimension</a></li>
+            <li class="fr"><a href="#ch11">Chapitre 11 : L'Universalité et la Santé Collective</a></li>
+            <li class="en"><a href="#ch11">Chapter 11: Universality and Collective Health</a></li>
+            <li class="part-title fr">— Partie V : Technologie et blockchain —</li>
+            <li class="part-title en">— Part V: Technology and Blockchain —</li>
+            <li class="fr"><a href="#ch12">Chapitre 12 : L'Infrastructure Numérique</a></li>
+            <li class="en"><a href="#ch12">Chapter 12: Digital Infrastructure</a></li>
+            <li class="fr"><a href="#ch13">Chapitre 13 : Outils Numériques pour la Gouvernance</a></li>
+            <li class="en"><a href="#ch13">Chapter 13: Digital Tools for Governance</a></li>
+            <li class="fr"><a href="#ch14">Chapitre 14 : Risques et Garde-Fous Critiques</a></li>
+            <li class="en"><a href="#ch14">Chapter 14: Risks and Critical Safeguards</a></li>
+            <li class="part-title fr">— Partie VI : Les deux piliers opérationnels —</li>
+            <li class="part-title en">— Part VI: The Two Operational Pillars —</li>
+            <li class="fr"><a href="#ch15">Chapitre 15 : L'Autosuffisance Collective</a></li>
+            <li class="en"><a href="#ch15">Chapter 15: Collective Self-Sufficiency</a></li>
+            <li class="fr"><a href="#ch16">Chapitre 16 : La Curation Sociale</a></li>
+            <li class="en"><a href="#ch16">Chapter 16: Social Curation</a></li>
+            <li class="part-title fr">— Conclusion et Bibliographie —</li>
+            <li class="part-title en">— Conclusion and Bibliography —</li>
+            <li class="fr"><a href="#conclusion">Conclusion Générale</a></li>
+            <li class="en"><a href="#conclusion">General Conclusion</a></li>
+            <li class="fr"><a href="#bibliographie">Bibliographie</a></li>
+            <li class="en"><a href="#bibliographie">Bibliography</a></li>
         </ol>
     </div>
 
     <!-- INTRODUCTION -->
     <div class="intro-section" id="introduction">
-        <h2>Introduction Générale</h2>
-        <h3>Le Moment Historique</h3>
-        <p>L'humanité se trouve à un carrefour d'une gravité inédite. Le XXIe siècle a hérité des promesses non tenues du capitalisme industriel et financier : la croissance devait libérer, l'innovation devait égaliser, la mondialisation devait unir. Au lieu de cela, 1% de la population mondiale contrôle plus de richesses que les 99% restants. La crise climatique menace les fondements mêmes de la vie sur Terre. Et le tissu social — la confiance, la solidarité, le sentiment d'appartenance — se désintègre à une vitesse alarmante.</p>
-        <p>Ce n'est pas un accident de parcours. C'est le résultat logique et prévisible d'un système dont la mécanique fondamentale repose sur l'accumulation privée, la compétition et l'externalisation des coûts humains et écologiques.</p>
-        <h3>La Question Centrale</h3>
-        <p>Cette thèse pose une question simple mais radicale : Peut-on concevoir un système de gouvernance socioéconomique dont la finalité première est le bien-être universel, l'équité, l'équilibre écologique et la dignité humaine — et si oui, à quoi ressemble-t-il concrètement ?</p>
-        <p style="text-align:center; font-weight:bold; color:#1a3a6b; font-size:1.1rem; margin-top:10px;">Notre réponse s'appelle l'Universalité.</p>
+        <h2 class="fr">Introduction Générale</h2>
+        <h2 class="en">General Introduction</h2>
+        <h3 class="fr">Le Moment Historique</h3>
+        <h3 class="en">The Historical Moment</h3>
+        <p class="fr">L'humanité se trouve à un carrefour d'une gravité inédite. Le XXIe siècle a hérité des promesses non tenues du capitalisme industriel et financier : la croissance devait libérer, l'innovation devait égaliser, la mondialisation devait unir. Au lieu de cela, 1% de la population mondiale contrôle plus de richesses que les 99% restants. La crise climatique menace les fondements mêmes de la vie sur Terre. Et le tissu social — la confiance, la solidarité, le sentiment d'appartenance — se désintègre à une vitesse alarmante.</p>
+        <p class="en">Humanity stands at a crossroads of unprecedented gravity. The 21st century inherited the unfulfilled promises of industrial and financial capitalism: growth was supposed to liberate, innovation to equalize, globalization to unite. Instead, 1% of the world's population controls more wealth than the remaining 99%. The climate crisis threatens the very foundations of life on Earth. And the social fabric — trust, solidarity, the sense of belonging — is unraveling at an alarming rate.</p>
+        <p class="fr">Ce n'est pas un accident de parcours. C'est le résultat logique et prévisible d'un système dont la mécanique fondamentale repose sur l'accumulation privée, la compétition et l'externalisation des coûts humains et écologiques.</p>
+        <p class="en">This is not an accidental detour. It is the logical and predictable result of a system whose fundamental mechanics rest on private accumulation, competition, and the externalization of human and ecological costs.</p>
+        <h3 class="fr">La Question Centrale</h3>
+        <h3 class="en">The Central Question</h3>
+        <p class="fr">Cette thèse pose une question simple mais radicale : Peut-on concevoir un système de gouvernance socioéconomique dont la finalité première est le bien-être universel, l'équité, l'équilibre écologique et la dignité humaine — et si oui, à quoi ressemble-t-il concrètement ?</p>
+        <p class="en">This thesis poses a simple but radical question: Can we conceive of a socioeconomic governance system whose primary purpose is universal well-being, equity, ecological balance, and human dignity — and if so, what does it look like concretely?</p>
+        <p style="text-align:center; font-weight:bold; color:#1a3a6b; font-size:1.1rem; margin-top:10px;">
+            <span class="fr">Notre réponse s'appelle l'Universalité.</span>
+            <span class="en">Our answer is called Universality.</span>
+        </p>
     </div>
 
     <!-- PARTIE I -->
-    <div class="part-header">PARTIE I — LE CAPITALISME : AUTOPSIE D'UN SYSTÈME EN FIN DE CYCLE</div>
+    <div class="part-header">
+        <span class="fr">PARTIE I — LE CAPITALISME : AUTOPSIE D'UN SYSTÈME EN FIN DE CYCLE</span>
+        <span class="en">PART I — CAPITALISM: AUTOPSY OF A SYSTEM IN TERMINAL DECLINE</span>
+    </div>
 
     <div class="chapter" id="ch1">
-        <h3>Chapitre 1 : Les Fondements Idéologiques et Leurs Limites</h3>
-        <p>Le capitalisme repose sur quatre piliers idéologiques : la propriété privée des moyens de production, la liberté de marché, la primauté du profit et la concurrence comme moteur d'efficacité. Ces piliers ont produit des avancées réelles — croissance économique, innovation technologique, réduction de certaines formes de pauvreté absolue. Nier ces acquis serait intellectuellement malhonnête.</p>
-        <p>Cependant, une analyse sociologique rigoureuse révèle que ces avancées ont été inégalement distribuées, souvent au prix d'une exploitation systématique des travailleurs, des ressources naturelles et des communautés marginalisées. La richesse créée s'est concentrée, non redistribuée. La liberté proclamée a profité aux détenteurs de capital, non à la majorité.</p>
+        <h3 class="fr">Chapitre 1 : Les Fondements Idéologiques et Leurs Limites</h3>
+        <h3 class="en">Chapter 1: Ideological Foundations and Their Limits</h3>
+        <p class="fr">Le capitalisme repose sur quatre piliers idéologiques : la propriété privée des moyens de production, la liberté de marché, la primauté du profit et la concurrence comme moteur d'efficacité. Ces piliers ont produit des avancées réelles — croissance économique, innovation technologique, réduction de certaines formes de pauvreté absolue. Nier ces acquis serait intellectuellement malhonnête.</p>
+        <p class="en">Capitalism rests on four ideological pillars: private ownership of the means of production, market freedom, the primacy of profit, and competition as the engine of efficiency. These pillars have produced real advances — economic growth, technological innovation, reduction of some forms of absolute poverty. Denying these achievements would be intellectually dishonest.</p>
+        <p class="fr">Cependant, une analyse sociologique rigoureuse révèle que ces avancées ont été inégalement distribuées, souvent au prix d'une exploitation systématique des travailleurs, des ressources naturelles et des communautés marginalisées. La richesse créée s'est concentrée, non redistribuée. La liberté proclamée a profité aux détenteurs de capital, non à la majorité.</p>
+        <p class="en">However, rigorous sociological analysis reveals that these advances have been unequally distributed, often at the cost of systematic exploitation of workers, natural resources, and marginalized communities. The wealth created has concentrated, not redistributed. The proclaimed freedom has benefited capital holders, not the majority.</p>
     </div>
 
     <div class="chapter" id="ch2">
-        <h3>Chapitre 2 : Les Cinq Crises Systémiques du Capitalisme</h3>
+        <h3 class="fr">Chapitre 2 : Les Cinq Crises Systémiques du Capitalisme</h3>
+        <h3 class="en">Chapter 2: The Five Systemic Crises of Capitalism</h3>
         <ol>
-            <li><strong>La Crise des Inégalités :</strong> Les inégalités de revenus et de patrimoine ont atteint des niveaux comparables à ceux d'avant la Première Guerre mondiale. Le coefficient de Gini s'est aggravé dans la majorité des pays industrialisés depuis les années 1980. Ce n'est pas une anomalie — c'est la tendance structurelle d'un système qui récompense le capital plus que le travail.</li>
-            <li><strong>La Crise Écologique :</strong> Le capitalisme externalise systématiquement les coûts environnementaux. La logique du profit à court terme est structurellement incompatible avec la préservation des écosystèmes sur le long terme. Le changement climatique, l'effondrement de la biodiversité et la pollution systémique sont les produits directs de cette externalisation.</li>
-            <li><strong>La Crise Démocratique :</strong> Quand le capital influence directement les décisions politiques — par le lobbying, le financement des partis, la capture réglementaire — la démocratie devient formelle plutôt que substantielle. Les citoyens votent, mais les politiques économiques restent largement imperméables à leur volonté.</li>
-            <li><strong>La Crise du Lien Social :</strong> La compétition comme valeur centrale dissout la solidarité. L'individualisme consommateur remplace l'appartenance communautaire. Les taux de solitude, d'anxiété, de dépression et de désaffiliation sociale n'ont jamais été aussi élevés dans les sociétés les plus "développées".</li>
-            <li><strong>La Crise de Sens :</strong> Le capitalisme ne peut offrir de finalité collective au-delà de la croissance économique. Quand cette croissance bénéficie à une minorité, la majorité se retrouve sans récit partagé, sans projet commun, sans raison d'être collective. C'est un vide existentiel qui alimente les extrémismes politiques et le nihilisme social.</li>
+            <li class="fr"><strong>La Crise des Inégalités :</strong> Les inégalités de revenus et de patrimoine ont atteint des niveaux comparables à ceux d'avant la Première Guerre mondiale. Le coefficient de Gini s'est aggravé dans la majorité des pays industrialisés depuis les années 1980. Ce n'est pas une anomalie — c'est la tendance structurelle d'un système qui récompense le capital plus que le travail.</li>
+            <li class="en"><strong>The Inequality Crisis:</strong> Income and wealth inequalities have reached levels comparable to those before World War I. The Gini coefficient has worsened in most industrialized countries since the 1980s. This is not an anomaly — it is the structural tendency of a system that rewards capital over labor.</li>
+            <li class="fr"><strong>La Crise Écologique :</strong> Le capitalisme externalise systématiquement les coûts environnementaux. La logique du profit à court terme est structurellement incompatible avec la préservation des écosystèmes sur le long terme. Le changement climatique, l'effondrement de la biodiversité et la pollution systémique sont les produits directs de cette externalisation.</li>
+            <li class="en"><strong>The Ecological Crisis:</strong> Capitalism systematically externalizes environmental costs. The short-term profit logic is structurally incompatible with long-term ecosystem preservation. Climate change, biodiversity collapse, and systemic pollution are direct products of this externalization.</li>
+            <li class="fr"><strong>La Crise Démocratique :</strong> Quand le capital influence directement les décisions politiques — par le lobbying, le financement des partis, la capture réglementaire — la démocratie devient formelle plutôt que substantielle. Les citoyens votent, mais les politiques économiques restent largement imperméables à leur volonté.</li>
+            <li class="en"><strong>The Democratic Crisis:</strong> When capital directly influences political decisions — through lobbying, party financing, regulatory capture — democracy becomes formal rather than substantive. Citizens vote, but economic policies remain largely impervious to their will.</li>
+            <li class="fr"><strong>La Crise du Lien Social :</strong> La compétition comme valeur centrale dissout la solidarité. L'individualisme consommateur remplace l'appartenance communautaire. Les taux de solitude, d'anxiété, de dépression et de désaffiliation sociale n'ont jamais été aussi élevés dans les sociétés les plus « développées ».</li>
+            <li class="en"><strong>The Social Bond Crisis:</strong> Competition as a core value dissolves solidarity. Consumer individualism replaces community belonging. Rates of loneliness, anxiety, depression, and social disaffiliation have never been higher in the most "developed" societies.</li>
+            <li class="fr"><strong>La Crise de Sens :</strong> Le capitalisme ne peut offrir de finalité collective au-delà de la croissance économique. Quand cette croissance bénéficie à une minorité, la majorité se retrouve sans récit partagé, sans projet commun, sans raison d'être collective. C'est un vide existentiel qui alimente les extrémismes politiques et le nihilisme social.</li>
+            <li class="en"><strong>The Crisis of Meaning:</strong> Capitalism cannot offer a collective purpose beyond economic growth. When that growth benefits a minority, the majority is left without a shared narrative, without a common project, without a collective reason for being. This is an existential void that fuels political extremism and social nihilism.</li>
         </ol>
     </div>
 
     <div class="chapter" id="ch3">
-        <h3>Chapitre 3 : Pourquoi les Réformes Internes Sont Insuffisantes</h3>
-        <p>La tentation réformiste — encadrer le capitalisme plutôt que le remplacer — est compréhensible politiquement. Mais elle se heurte à une limite fondamentale : on ne peut pas corriger structurellement un système en gardant intacte sa mécanique fondamentale.</p>
-        <p>Les régulations s'érodent. Les États-providence reculent sous la pression des marchés financiers. Les accords climatiques sont systématiquement sapés par les intérêts industriels. Tant que le profit reste la finalité du système, toute régulation sera vécue comme un obstacle à contourner, non comme une contrainte à intégrer.</p>
+        <h3 class="fr">Chapitre 3 : Pourquoi les Réformes Internes Sont Insuffisantes</h3>
+        <h3 class="en">Chapter 3: Why Internal Reforms Are Insufficient</h3>
+        <p class="fr">La tentation réformiste — encadrer le capitalisme plutôt que le remplacer — est compréhensible politiquement. Mais elle se heurte à une limite fondamentale : on ne peut pas corriger structurellement un système en gardant intacte sa mécanique fondamentale.</p>
+        <p class="en">The reformist temptation — regulating capitalism rather than replacing it — is politically understandable. But it runs into a fundamental limit: you cannot structurally correct a system while keeping its fundamental mechanics intact.</p>
+        <p class="fr">Les régulations s'érodent. Les États-providence reculent sous la pression des marchés financiers. Les accords climatiques sont systématiquement sapés par les intérêts industriels. Tant que le profit reste la finalité du système, toute régulation sera vécue comme un obstacle à contourner, non comme une contrainte à intégrer.</p>
+        <p class="en">Regulations erode. Welfare states retreat under financial market pressure. Climate agreements are systematically undermined by industrial interests. As long as profit remains the system's purpose, every regulation will be experienced as an obstacle to circumvent, not a constraint to integrate.</p>
     </div>
 
     <!-- PARTIE II -->
-    <div class="part-header">PARTIE II — L'UNIVERSALITÉ : FONDEMENTS D'UN NOUVEAU PARADIGME</div>
+    <div class="part-header">
+        <span class="fr">PARTIE II — L'UNIVERSALITÉ : FONDEMENTS D'UN NOUVEAU PARADIGME</span>
+        <span class="en">PART II — UNIVERSALITY: FOUNDATIONS OF A NEW PARADIGM</span>
+    </div>
 
     <div class="chapter" id="ch4">
-        <h3>Chapitre 4 : Définition et Principes Fondateurs</h3>
-        <p>L'Universalité est un système de gouvernance socioéconomique dont la finalité première est la garantie universelle des conditions nécessaires à la vie, à la dignité et à l'épanouissement de chaque être humain, sans distinction d'origine, de statut, de capacité ou de contribution économique.</p>
-        <p>Elle repose sur sept principes fondateurs :</p>
+        <h3 class="fr">Chapitre 4 : Définition et Principes Fondateurs</h3>
+        <h3 class="en">Chapter 4: Definition and Founding Principles</h3>
+        <p class="fr">L'Universalité est un système de gouvernance socioéconomique dont la finalité première est la garantie universelle des conditions nécessaires à la vie, à la dignité et à l'épanouissement de chaque être humain, sans distinction d'origine, de statut, de capacité ou de contribution économique.</p>
+        <p class="en">Universality is a socioeconomic governance system whose primary purpose is the universal guarantee of the conditions necessary for the life, dignity, and flourishing of every human being, without distinction of origin, status, capacity, or economic contribution.</p>
+        <p class="fr">Elle repose sur sept principes fondateurs :</p>
+        <p class="en">It rests on seven founding principles:</p>
         <ol>
-            <li>L'universalité des droits — chaque droit fondamental est garanti à tous, sans condition</li>
-            <li>La primauté du bien-être collectif sur l'accumulation privée</li>
-            <li>La réciprocité — chaque membre contribue selon ses capacités et reçoit selon ses besoins</li>
-            <li>La durabilité — aucune décision économique ne peut hypothéquer les générations futures</li>
-            <li>La subsidiarité — les décisions se prennent au niveau le plus proche des personnes concernées</li>
-            <li>La transparence — les mécanismes de gouvernance sont ouverts, vérifiables et participatifs</li>
-            <li>L'équilibre — entre liberté individuelle et responsabilité collective, entre innovation et stabilité</li>
+            <li class="fr">L'universalité des droits — chaque droit fondamental est garanti à tous, sans condition</li>
+            <li class="en">Universality of rights — every fundamental right is guaranteed to all, unconditionally</li>
+            <li class="fr">La primauté du bien-être collectif sur l'accumulation privée</li>
+            <li class="en">Primacy of collective well-being over private accumulation</li>
+            <li class="fr">La réciprocité — chaque membre contribue selon ses capacités et reçoit selon ses besoins</li>
+            <li class="en">Reciprocity — each member contributes according to their capacity and receives according to their needs</li>
+            <li class="fr">La durabilité — aucune décision économique ne peut hypothéquer les générations futures</li>
+            <li class="en">Sustainability — no economic decision may mortgage future generations</li>
+            <li class="fr">La subsidiarité — les décisions se prennent au niveau le plus proche des personnes concernées</li>
+            <li class="en">Subsidiarity — decisions are made at the level closest to the people concerned</li>
+            <li class="fr">La transparence — les mécanismes de gouvernance sont ouverts, vérifiables et participatifs</li>
+            <li class="en">Transparency — governance mechanisms are open, verifiable, and participatory</li>
+            <li class="fr">L'équilibre — entre liberté individuelle et responsabilité collective, entre innovation et stabilité</li>
+            <li class="en">Balance — between individual freedom and collective responsibility, between innovation and stability</li>
         </ol>
     </div>
 
     <div class="chapter" id="ch5">
-        <h3>Chapitre 5 : Les 30 Droits Fondamentaux comme Socle de l'Universalité</h3>
-        <p>L'Universalité s'appuie sur les 30 droits proclamés par la Déclaration Universelle des Droits de l'Homme de 1948 — non pas comme déclaration symbolique, mais comme obligations contraignantes de gouvernance. Ce qui distingue l'Universalité des systèmes actuels n'est pas la liste des droits proclamés, mais le mécanisme qui en garantit l'effectivité réelle.</p>
+        <h3 class="fr">Chapitre 5 : Les 30 Droits Fondamentaux comme Socle de l'Universalité</h3>
+        <h3 class="en">Chapter 5: The 30 Fundamental Rights as the Foundation of Universality</h3>
+        <p class="fr">L'Universalité s'appuie sur les 30 droits proclamés par la Déclaration Universelle des Droits de l'Homme de 1948 — non pas comme déclaration symbolique, mais comme obligations contraignantes de gouvernance. Ce qui distingue l'Universalité des systèmes actuels n'est pas la liste des droits proclamés, mais le mécanisme qui en garantit l'effectivité réelle.</p>
+        <p class="en">Universality builds on the 30 rights proclaimed by the Universal Declaration of Human Rights of 1948 — not as a symbolic declaration, but as binding governance obligations. What distinguishes Universality from current systems is not the list of proclaimed rights, but the mechanism that guarantees their real effectiveness.</p>
         <ul>
-            <li><strong>Droits civils et politiques :</strong> liberté, égalité, participation démocratique, protection juridique</li>
-            <li><strong>Droits économiques et sociaux :</strong> travail, logement, alimentation, santé, éducation, revenu de base</li>
-            <li><strong>Droits culturels et identitaires :</strong> identité, appartenance, expression, épanouissement personnel</li>
-            <li><strong>Droits écologiques :</strong> environnement sain, accès à l'eau, sécurité climatique</li>
+            <li class="fr"><strong>Droits civils et politiques :</strong> liberté, égalité, participation démocratique, protection juridique</li>
+            <li class="en"><strong>Civil and political rights:</strong> freedom, equality, democratic participation, legal protection</li>
+            <li class="fr"><strong>Droits économiques et sociaux :</strong> travail, logement, alimentation, santé, éducation, revenu de base</li>
+            <li class="en"><strong>Economic and social rights:</strong> work, housing, food, health, education, basic income</li>
+            <li class="fr"><strong>Droits culturels et identitaires :</strong> identité, appartenance, expression, épanouissement personnel</li>
+            <li class="en"><strong>Cultural and identity rights:</strong> identity, belonging, expression, personal fulfillment</li>
+            <li class="fr"><strong>Droits écologiques :</strong> environnement sain, accès à l'eau, sécurité climatique</li>
+            <li class="en"><strong>Ecological rights:</strong> healthy environment, access to water, climate security</li>
         </ul>
     </div>
 
     <div class="chapter" id="ch6">
-        <h3>Chapitre 6 : L'Universalité n'est Pas une Utopie — Les Preuves Empiriques</h3>
-        <p>L'Universalité n'est pas une abstraction philosophique. Des sociétés réelles ont intégré ses principes à des degrés significatifs, avec des résultats mesurables et probants.</p>
-        <p>Les pays nordiques (Suède, Norvège, Danemark, Finlande, Islande) offrent le modèle le plus abouti : santé universelle, éducation gratuite, protection sociale complète, participation démocratique élevée, fiscalité progressive efficace. Résultat : les indices de bonheur, de mobilité sociale, de santé publique et de confiance institutionnelle les plus élevés au monde.</p>
-        <p>La Nouvelle-Zélande a adopté un "budget du bien-être" mesurant le succès non par le PIB mais par des indicateurs de qualité de vie. Le Costa Rica a aboli son armée pour investir massivement dans l'éducation et la santé — et affiche un indice de développement humain comparable à des pays bien plus riches.</p>
+        <h3 class="fr">Chapitre 6 : L'Universalité n'est Pas une Utopie — Les Preuves Empiriques</h3>
+        <h3 class="en">Chapter 6: Universality Is Not a Utopia — The Empirical Evidence</h3>
+        <p class="fr">L'Universalité n'est pas une abstraction philosophique. Des sociétés réelles ont intégré ses principes à des degrés significatifs, avec des résultats mesurables et probants.</p>
+        <p class="en">Universality is not a philosophical abstraction. Real societies have integrated its principles to significant degrees, with measurable and compelling results.</p>
+        <p class="fr">Les pays nordiques (Suède, Norvège, Danemark, Finlande, Islande) offrent le modèle le plus abouti : santé universelle, éducation gratuite, protection sociale complète, participation démocratique élevée, fiscalité progressive efficace. Résultat : les indices de bonheur, de mobilité sociale, de santé publique et de confiance institutionnelle les plus élevés au monde.</p>
+        <p class="en">The Nordic countries (Sweden, Norway, Denmark, Finland, Iceland) offer the most developed model: universal healthcare, free education, comprehensive social protection, high democratic participation, effective progressive taxation. Result: the world's highest indices of happiness, social mobility, public health, and institutional trust.</p>
+        <p class="fr">La Nouvelle-Zélande a adopté un « budget du bien-être » mesurant le succès non par le PIB mais par des indicateurs de qualité de vie. Le Costa Rica a aboli son armée pour investir massivement dans l'éducation et la santé — et affiche un indice de développement humain comparable à des pays bien plus riches.</p>
+        <p class="en">New Zealand adopted a "wellbeing budget" measuring success not by GDP but by quality of life indicators. Costa Rica abolished its army to invest massively in education and health — and displays a human development index comparable to much wealthier countries.</p>
     </div>
 
     <!-- PARTIE III -->
-    <div class="part-header">PARTIE III — LA TRANSITION : COMMENT PASSER DU CAPITALISME À L'UNIVERSALITÉ</div>
+    <div class="part-header">
+        <span class="fr">PARTIE III — LA TRANSITION : COMMENT PASSER DU CAPITALISME À L'UNIVERSALITÉ</span>
+        <span class="en">PART III — THE TRANSITION: HOW TO MOVE FROM CAPITALISM TO UNIVERSALITY</span>
+    </div>
 
     <div class="chapter" id="ch7">
-        <h3>Chapitre 7 : Les Obstacles Réels à la Transition</h3>
+        <h3 class="fr">Chapitre 7 : Les Obstacles Réels à la Transition</h3>
+        <h3 class="en">Chapter 7: The Real Obstacles to Transition</h3>
         <ol>
-            <li><strong>Les intérêts économiques dominants</strong> — leur influence sur les médias, les partis politiques et les institutions internationales est massive</li>
-            <li><strong>L'inertie institutionnelle</strong> — les structures juridiques, fiscales et administratives sont profondément imbriquées avec la logique capitaliste</li>
-            <li><strong>Les idéologies intériorisées</strong> — des générations ont été socialisées dans la croyance que le capitalisme est naturel, inévitable, voire vertueux</li>
-            <li><strong>La dépendance des États</strong> — de nombreux gouvernements dépendent des marchés financiers pour se financer</li>
-            <li><strong>La fragmentation des alternatives</strong> — les mouvements progressistes sont souvent divisés, sans vision commune ni stratégie coordonnée</li>
-            <li><strong>La peur de la transition elle-même</strong> — même les personnes favorables au changement craignent les perturbations économiques d'une transformation majeure</li>
+            <li class="fr"><strong>Les intérêts économiques dominants :</strong> les détenteurs de capital s'opposeront à toute remise en cause structurelle de leurs privilèges</li>
+            <li class="en"><strong>Dominant economic interests:</strong> capital holders will oppose any structural challenge to their privileges</li>
+            <li class="fr"><strong>La capture institutionnelle :</strong> les institutions politiques sont partiellement contrôlées par ceux que la transition vise à contraindre</li>
+            <li class="en"><strong>Institutional capture:</strong> political institutions are partially controlled by those the transition aims to constrain</li>
+            <li class="fr"><strong>L'hégémonie culturelle :</strong> le capitalisme a normalisé ses valeurs — compétition, individualisme, croissance — jusqu'à les faire passer pour de la nature humaine</li>
+            <li class="en"><strong>Cultural hegemony:</strong> capitalism has normalized its values — competition, individualism, growth — to the point of presenting them as human nature</li>
+            <li class="fr"><strong>La fragmentation des mouvements sociaux :</strong> l'absence de projet alternatif cohérent empêche la convergence des forces de changement</li>
+            <li class="en"><strong>Social movement fragmentation:</strong> the absence of a coherent alternative project prevents the convergence of forces for change</li>
         </ol>
     </div>
 
     <div class="chapter" id="ch8">
-        <h3>Chapitre 8 : La Timeline Réaliste — 15 à 25 Ans</h3>
-        <p>L'analyse historique des transitions réussies — construction des États-providence européens après 1945, réformes nordiques des années 1960-1990 — suggère un horizon réaliste de 15 à 25 ans pour une transition profonde et stable.</p>
-        <p><strong>Phase 1 — Les Fondations (Années 1 à 7) :</strong> Réforme fiscale progressive, revenu universel de base expérimental, universalisation de la santé et l'éducation, réforme constitutionnelle pour intégrer les droits économiques et écologiques.</p>
-        <p><strong>Phase 2 — La Consolidation (Années 8 à 15) :</strong> Démocratisation de la propriété des moyens de production (coopératives), transition énergétique massive, réforme du système financier, déploiement d'indicateurs de bien-être en remplacement du PIB.</p>
-        <p><strong>Phase 3 — L'Approfondissement (Années 16 à 25) :</strong> Universalisation complète des droits fondamentaux, gouvernance participative renforcée, intégration internationale des standards universalistes, cultures organisationnelles transformées.</p>
+        <h3 class="fr">Chapitre 8 : La Timeline Réaliste — 15 à 25 Ans</h3>
+        <h3 class="en">Chapter 8: A Realistic Timeline — 15 to 25 Years</h3>
+        <p class="fr">L'analyse historique des transitions réussies — construction des États-providence européens après 1945, réformes nordiques des années 1960-1990 — suggère un horizon réaliste de 15 à 25 ans pour une transition profonde et stable.</p>
+        <p class="en">Historical analysis of successful transitions — construction of European welfare states after 1945, Nordic reforms of the 1960s–1990s — suggests a realistic horizon of 15 to 25 years for a deep and stable transition.</p>
+        <ul>
+            <li class="fr"><strong>Phase 1 — Les Fondations (Années 1 à 7) :</strong> Réforme fiscale progressive, revenu universel de base expérimental, universalisation de la santé et de l'éducation, réforme constitutionnelle pour intégrer les droits économiques et écologiques.</li>
+            <li class="en"><strong>Phase 1 — The Foundations (Years 1 to 7):</strong> Progressive fiscal reform, experimental universal basic income, universalization of healthcare and education, constitutional reform to integrate economic and ecological rights.</li>
+            <li class="fr"><strong>Phase 2 — La Consolidation (Années 8 à 15) :</strong> Démocratisation de la propriété des moyens de production (coopératives), transition énergétique massive, réforme du système financier, déploiement d'indicateurs de bien-être en remplacement du PIB.</li>
+            <li class="en"><strong>Phase 2 — Consolidation (Years 8 to 15):</strong> Democratization of ownership of the means of production (cooperatives), massive energy transition, financial system reform, deployment of well-being indicators to replace GDP.</li>
+            <li class="fr"><strong>Phase 3 — L'Approfondissement (Années 16 à 25) :</strong> Universalisation complète des droits fondamentaux, gouvernance participative renforcée, intégration internationale des standards universalistes, cultures organisationnelles transformées.</li>
+            <li class="en"><strong>Phase 3 — Deepening (Years 16 to 25):</strong> Complete universalization of fundamental rights, strengthened participatory governance, international integration of universalist standards, transformed organizational cultures.</li>
+        </ul>
     </div>
 
     <div class="chapter" id="ch9">
-        <h3>Chapitre 9 : Les Leviers du Changement</h3>
-        <p>La transition ne viendra pas des élites en place — elle viendra de la convergence de plusieurs forces sociales :</p>
+        <h3 class="fr">Chapitre 9 : Les Leviers du Changement</h3>
+        <h3 class="en">Chapter 9: The Levers of Change</h3>
+        <p class="fr">La transition ne viendra pas des élites en place — elle viendra de la convergence de plusieurs forces sociales :</p>
+        <p class="en">The transition will not come from existing elites — it will come from the convergence of several social forces:</p>
         <ul>
-            <li><strong>La pression citoyenne :</strong> les mouvements sociaux convergent vers une critique commune du système</li>
-            <li><strong>L'innovation institutionnelle locale :</strong> villes et municipalités expérimentent déjà des formes de gouvernance universaliste</li>
-            <li><strong>La crise elle-même :</strong> chaque crise est une fenêtre d'opportunité pour des alternatives crédibles</li>
-            <li><strong>Les acteurs économiques transformateurs :</strong> coopératives, entreprises à mission sociale, économie circulaire, finance éthique</li>
+            <li class="fr"><strong>La pression citoyenne :</strong> les mouvements sociaux convergent vers une critique commune du système</li>
+            <li class="en"><strong>Citizen pressure:</strong> social movements converge toward a common critique of the system</li>
+            <li class="fr"><strong>L'innovation institutionnelle locale :</strong> villes et municipalités expérimentent déjà des formes de gouvernance universaliste</li>
+            <li class="en"><strong>Local institutional innovation:</strong> cities and municipalities are already experimenting with forms of universalist governance</li>
+            <li class="fr"><strong>La crise elle-même :</strong> chaque crise est une fenêtre d'opportunité pour des alternatives crédibles</li>
+            <li class="en"><strong>The crisis itself:</strong> every crisis is a window of opportunity for credible alternatives</li>
+            <li class="fr"><strong>Les acteurs économiques transformateurs :</strong> coopératives, entreprises à mission sociale, économie circulaire, finance éthique</li>
+            <li class="en"><strong>Transformative economic actors:</strong> cooperatives, social mission companies, circular economy, ethical finance</li>
         </ul>
     </div>
 
     <!-- PARTIE IV -->
-    <div class="part-header">PARTIE IV — L'UNIVERSALITÉ COMME RÉPONSE AUX BESOINS FONDAMENTAUX</div>
+    <div class="part-header">
+        <span class="fr">PARTIE IV — L'UNIVERSALITÉ COMME RÉPONSE AUX BESOINS FONDAMENTAUX</span>
+        <span class="en">PART IV — UNIVERSALITY AS A RESPONSE TO FUNDAMENTAL NEEDS</span>
+    </div>
 
     <div class="chapter" id="ch10">
-        <h3>Chapitre 10 : Au-delà de l'Économie — La Dimension Anthropologique</h3>
-        <p>L'Universalité n'est pas seulement un projet économique. C'est un projet anthropologique — une réponse à ce que l'être humain est fondamentalement.</p>
-        <p>Les recherches en psychologie positive, en neurosciences sociales et en anthropologie convergent vers un constat : l'être humain est une espèce profondément sociale, coopérative et empathique. Notre survie évolutive a reposé sur la solidarité, le partage et la réciprocité — pas sur la compétition pure. Le capitalisme a cultivé une dimension de notre nature au détriment de toutes les autres.</p>
-        <p>L'Universalité, en garantissant sécurité, dignité et appartenance à chacun, crée les conditions dans lesquelles la nature profondément sociale de l'humain peut s'exprimer pleinement.</p>
+        <h3 class="fr">Chapitre 10 : Au-delà de l'Économie — La Dimension Anthropologique</h3>
+        <h3 class="en">Chapter 10: Beyond Economics — The Anthropological Dimension</h3>
+        <p class="fr">L'Universalité n'est pas seulement un projet économique. C'est un projet anthropologique — une réponse à ce que l'être humain est fondamentalement.</p>
+        <p class="en">Universality is not merely an economic project. It is an anthropological project — a response to what human beings fundamentally are.</p>
+        <p class="fr">Les recherches en psychologie positive, en neurosciences sociales et en anthropologie convergent vers un constat : l'être humain est une espèce profondément sociale, coopérative et empathique. Notre survie évolutive a reposé sur la solidarité, le partage et la réciprocité — pas sur la compétition pure. Le capitalisme a cultivé une dimension de notre nature au détriment de toutes les autres.</p>
+        <p class="en">Research in positive psychology, social neuroscience, and anthropology converges on a finding: human beings are a deeply social, cooperative, and empathetic species. Our evolutionary survival rested on solidarity, sharing, and reciprocity — not on pure competition. Capitalism has cultivated one dimension of our nature at the expense of all others.</p>
+        <p class="fr">L'Universalité, en garantissant sécurité, dignité et appartenance à chacun, crée les conditions dans lesquelles la nature profondément sociale de l'humain peut s'exprimer pleinement.</p>
+        <p class="en">Universality, by guaranteeing security, dignity, and belonging to everyone, creates the conditions in which the deeply social nature of human beings can fully express itself.</p>
     </div>
 
     <div class="chapter" id="ch11">
-        <h3>Chapitre 11 : L'Universalité et la Santé Collective</h3>
-        <p>Les données épidémiologiques sont sans appel : les sociétés les plus universalistes sont les plus saines. Non seulement physiquement, mais mentalement et socialement.</p>
-        <p>Les pays nordiques affichent les taux les plus bas de maladies mentales non diagnostiquées, les plus hauts niveaux de confiance sociale, les taux de criminalité les plus bas parmi les pays industrialisés. Ce n'est pas une coïncidence culturelle — c'est le résultat direct de systèmes qui garantissent la sécurité de base et réduisent l'anxiété chronique liée à la précarité.</p>
-        <p>L'inégalité elle-même est pathogène. Les travaux de Richard Wilkinson et Kate Pickett dans <em>The Spirit Level</em> démontrent que plus une société est inégale, plus elle souffre — sur tous les indicateurs de santé et de bien-être, indépendamment du niveau de richesse moyen.</p>
+        <h3 class="fr">Chapitre 11 : L'Universalité et la Santé Collective</h3>
+        <h3 class="en">Chapter 11: Universality and Collective Health</h3>
+        <p class="fr">Les données épidémiologiques sont sans appel : les sociétés les plus universalistes sont les plus saines. Non seulement physiquement, mais mentalement et socialement.</p>
+        <p class="en">Epidemiological data is unequivocal: the most universalist societies are the healthiest. Not only physically, but mentally and socially.</p>
+        <p class="fr">Les pays nordiques affichent les taux les plus bas de maladies mentales non diagnostiquées, les plus hauts niveaux de confiance sociale, les taux de criminalité les plus bas parmi les pays industrialisés. Ce n'est pas une coïncidence culturelle — c'est le résultat direct de systèmes qui garantissent la sécurité de base et réduisent l'anxiété chronique liée à la précarité.</p>
+        <p class="en">Nordic countries display the lowest rates of undiagnosed mental illness, the highest levels of social trust, and the lowest crime rates among industrialized nations. This is not a cultural coincidence — it is the direct result of systems that guarantee basic security and reduce chronic anxiety linked to precarity.</p>
+        <p class="fr">L'inégalité elle-même est pathogène. Les travaux de Richard Wilkinson et Kate Pickett dans <em>The Spirit Level</em> démontrent que plus une société est inégale, plus elle souffre — sur tous les indicateurs de santé et de bien-être, indépendamment du niveau de richesse moyen.</p>
+        <p class="en">Inequality itself is pathogenic. The work of Richard Wilkinson and Kate Pickett in <em>The Spirit Level</em> demonstrates that the more unequal a society, the more it suffers — across all health and well-being indicators, regardless of average wealth levels.</p>
     </div>
 
     <!-- PARTIE V -->
-    <div class="part-header">PARTIE V — TECHNOLOGIE ET BLOCKCHAIN : ACCÉLÉRATEURS DE LA TRANSITION</div>
+    <div class="part-header">
+        <span class="fr">PARTIE V — TECHNOLOGIE ET BLOCKCHAIN : ACCÉLÉRATEURS DE LA TRANSITION</span>
+        <span class="en">PART V — TECHNOLOGY AND BLOCKCHAIN: ACCELERATORS OF TRANSITION</span>
+    </div>
 
     <div class="chapter" id="ch12">
-        <h3>Chapitre 12 : L'Infrastructure Numérique comme Fondation de la Transparence</h3>
-        <p>Les systèmes numériques créent des possibilités inédites de transparence radicale — un principe central de l'Universalité. La technologie blockchain offre une vérification décentralisée sans autorité centrale, ouvrant des possibilités pour :</p>
+        <h3 class="fr">Chapitre 12 : L'Infrastructure Numérique comme Fondation de la Transparence</h3>
+        <h3 class="en">Chapter 12: Digital Infrastructure as a Foundation for Transparency</h3>
+        <p class="fr">Les systèmes numériques créent des possibilités inédites de transparence radicale — un principe central de l'Universalité. La technologie blockchain offre une vérification décentralisée sans autorité centrale, ouvrant des possibilités pour :</p>
+        <p class="en">Digital systems create unprecedented possibilities for radical transparency — a central principle of Universality. Blockchain technology offers decentralized verification without central authority, opening possibilities for:</p>
         <ul>
-            <li>Le revenu universel de base sans bureaucratie : contrats intelligents auto-exécutables</li>
-            <li>Les budgets participatifs à grande échelle : votes en temps réel sur l'allocation des ressources</li>
-            <li>Les structures de propriété coopérative basées sur des tokens</li>
-            <li>La redistribution internationale des ressources sans intermédiaires corruptibles</li>
+            <li class="fr">Le revenu universel de base sans bureaucratie : contrats intelligents auto-exécutables</li>
+            <li class="en">Universal basic income without bureaucracy: self-executing smart contracts</li>
+            <li class="fr">Les budgets participatifs à grande échelle : votes en temps réel sur l'allocation des ressources</li>
+            <li class="en">Large-scale participatory budgets: real-time votes on resource allocation</li>
+            <li class="fr">Les structures de propriété coopérative basées sur des tokens</li>
+            <li class="en">Token-based cooperative ownership structures</li>
+            <li class="fr">La redistribution internationale des ressources sans intermédiaires corruptibles</li>
+            <li class="en">International resource redistribution without corruptible intermediaries</li>
         </ul>
     </div>
 
     <div class="chapter" id="ch13">
-        <h3>Chapitre 13 : Outils Numériques pour la Gouvernance Démocratique</h3>
-        <p>Les plateformes numériques modernes peuvent transformer la participation démocratique de votes périodiques en délibération continue :</p>
+        <h3 class="fr">Chapitre 13 : Outils Numériques pour la Gouvernance Démocratique</h3>
+        <h3 class="en">Chapter 13: Digital Tools for Democratic Governance</h3>
+        <p class="fr">Les plateformes numériques modernes peuvent transformer la participation démocratique de votes périodiques en délibération continue :</p>
+        <p class="en">Modern digital platforms can transform democratic participation from periodic votes to continuous deliberation:</p>
         <ul>
-            <li><strong>Tirage au sort et rotation :</strong> systèmes sélectionnant aléatoirement des citoyens pour des rôles de gouvernance</li>
-            <li><strong>Démocratie liquide :</strong> individus choisissant de voter directement ou de déléguer selon chaque enjeu</li>
-            <li><strong>Gouvernance imbriquée :</strong> prise de décision en cascade du quartier au niveau national</li>
-            <li><strong>Référendums instantanés :</strong> populations votant rapidement sur des enjeux émergents</li>
+            <li class="fr"><strong>Tirage au sort et rotation :</strong> systèmes sélectionnant aléatoirement des citoyens pour des rôles de gouvernance</li>
+            <li class="en"><strong>Sortition and rotation:</strong> systems randomly selecting citizens for governance roles</li>
+            <li class="fr"><strong>Démocratie liquide :</strong> individus choisissant de voter directement ou de déléguer selon chaque enjeu</li>
+            <li class="en"><strong>Liquid democracy:</strong> individuals choosing to vote directly or delegate on each issue</li>
+            <li class="fr"><strong>Gouvernance imbriquée :</strong> prise de décision en cascade du quartier au niveau national</li>
+            <li class="en"><strong>Nested governance:</strong> cascading decision-making from neighbourhood to national level</li>
+            <li class="fr"><strong>Référendums instantanés :</strong> populations votant rapidement sur des enjeux émergents</li>
+            <li class="en"><strong>Instant referendums:</strong> populations voting quickly on emerging issues</li>
         </ul>
     </div>
 
     <div class="chapter" id="ch14">
-        <h3>Chapitre 14 : Risques et Garde-Fous Critiques</h3>
-        <p>Les systèmes numériques et la blockchain créent aussi des risques profonds : capitalisme de surveillance, discrimination algorithmique, concentration du pouvoir computationnel. L'Universalité exige que l'infrastructure numérique soit :</p>
+        <h3 class="fr">Chapitre 14 : Risques et Garde-Fous Critiques</h3>
+        <h3 class="en">Chapter 14: Risks and Critical Safeguards</h3>
+        <p class="fr">Les systèmes numériques et la blockchain créent aussi des risques profonds : capitalisme de surveillance, discrimination algorithmique, concentration du pouvoir computationnel. L'Universalité exige que l'infrastructure numérique soit :</p>
+        <p class="en">Digital systems and blockchain also create profound risks: surveillance capitalism, algorithmic discrimination, concentration of computational power. Universality requires that digital infrastructure be:</p>
         <ul>
-            <li><strong>Publique et coopérative</strong>, non détenue ou contrôlée de façon privée</li>
-            <li><strong>Conçue avec participation démocratique</strong> plutôt qu'imposée par des ingénieurs et corporations</li>
-            <li><strong>Interopérable</strong> afin qu'aucune plateforme ne puisse verrouiller les utilisateurs</li>
-            <li><strong>Réversible</strong> pour que les populations puissent changer de cap si nécessaire</li>
-            <li><strong>Centrée sur les relations humaines</strong> plutôt que sur leur remplacement</li>
+            <li class="fr"><strong>Publique et coopérative</strong>, non détenue ou contrôlée de façon privée</li>
+            <li class="en"><strong>Public and cooperative</strong>, not privately owned or controlled</li>
+            <li class="fr"><strong>Conçue avec participation démocratique</strong> plutôt qu'imposée par des ingénieurs et corporations</li>
+            <li class="en"><strong>Designed with democratic participation</strong> rather than imposed by engineers and corporations</li>
+            <li class="fr"><strong>Interopérable</strong> afin qu'aucune plateforme ne puisse verrouiller les utilisateurs</li>
+            <li class="en"><strong>Interoperable</strong> so that no platform can lock in users</li>
+            <li class="fr"><strong>Réversible</strong> pour que les populations puissent changer de cap si nécessaire</li>
+            <li class="en"><strong>Reversible</strong> so that populations can change course if necessary</li>
+            <li class="fr"><strong>Centrée sur les relations humaines</strong> plutôt que sur leur remplacement</li>
+            <li class="en"><strong>Centered on human relationships</strong> rather than their replacement</li>
         </ul>
-        <p>La technologie doit être servante des valeurs universalistes, jamais maîtresse.</p>
+        <p class="fr">La technologie doit être servante des valeurs universalistes, jamais maîtresse.</p>
+        <p class="en">Technology must serve universalist values, never master them.</p>
     </div>
 
     <!-- PARTIE VI -->
-    <div class="part-header">PARTIE VI — DEUX PILIERS OPÉRATIONNELS : AUTOSUFFISANCE ET CURATION SOCIALE</div>
+    <div class="part-header">
+        <span class="fr">PARTIE VI — DEUX PILIERS OPÉRATIONNELS : AUTOSUFFISANCE ET CURATION SOCIALE</span>
+        <span class="en">PART VI — TWO OPERATIONAL PILLARS: SELF-SUFFICIENCY AND SOCIAL CURATION</span>
+    </div>
 
     <div class="chapter" id="ch15">
-        <h3>Chapitre 15 : L'Autosuffisance Collective comme Libération du Temps Humain</h3>
-        <p>Le capitalisme a transformé les besoins fondamentaux de la vie — se nourrir, se loger, se soigner — en marchandises dont l'accès exige une participation permanente et épuisante au marché du travail. Ce faisant, il a confisqué la ressource la plus précieuse de l'être humain : son temps.</p>
-        <p>L'Universalité propose une rupture radicale à travers le principe d'autosuffisance collective : produire ce dont on a besoin, réduire la surproduction, éliminer le gaspillage systémique, et garantir l'accès à la nourriture, au logement et aux soins non pas par le mérite marchand mais par le simple fait d'exister.</p>
-        <p>Les données sont éloquentes : aujourd'hui, un tiers de la nourriture mondiale est gaspillée pendant que 800 millions de personnes souffrent de la faim. Keynes anticipait dès 1930 que le progrès technologique nous permettrait de travailler 15 heures par semaine — il avait raison sur le potentiel, mais avait sous-estimé la résistance structurelle d'un système dont la survie dépend précisément du maintien de cette contrainte.</p>
-        <p>Quand les besoins fondamentaux sont garantis collectivement, le temps libéré devient coopération, création, soin mutuel et amélioration des conditions de vie communes. La force d'une masse organisée et libérée de l'anxiété de survie est une force d'une puissance proprement transformatrice. L'Universalité en fait son carburant premier.</p>
+        <h3 class="fr">Chapitre 15 : L'Autosuffisance Collective comme Libération du Temps Humain</h3>
+        <h3 class="en">Chapter 15: Collective Self-Sufficiency as Liberation of Human Time</h3>
+        <p class="fr">Le capitalisme a transformé les besoins fondamentaux de la vie — se nourrir, se loger, se soigner — en marchandises dont l'accès exige une participation permanente et épuisante au marché du travail. Ce faisant, il a confisqué la ressource la plus précieuse de l'être humain : son temps.</p>
+        <p class="en">Capitalism has transformed the fundamental needs of life — eating, housing, healing — into commodities whose access requires permanent and exhausting participation in the labor market. In doing so, it has confiscated the most precious resource of human beings: their time.</p>
+        <p class="fr">L'Universalité propose une rupture radicale à travers le principe d'autosuffisance collective : produire ce dont on a besoin, réduire la surproduction, éliminer le gaspillage systémique, et garantir l'accès à la nourriture, au logement et aux soins non pas par le mérite marchand mais par le simple fait d'exister.</p>
+        <p class="en">Universality proposes a radical break through the principle of collective self-sufficiency: producing what is needed, reducing overproduction, eliminating systemic waste, and guaranteeing access to food, housing, and care not through market merit but through the simple fact of existing.</p>
+        <p class="fr">Les données sont éloquentes : aujourd'hui, un tiers de la nourriture mondiale est gaspillée pendant que 800 millions de personnes souffrent de la faim. Keynes anticipait dès 1930 que le progrès technologique nous permettrait de travailler 15 heures par semaine — il avait raison sur le potentiel, mais avait sous-estimé la résistance structurelle d'un système dont la survie dépend précisément du maintien de cette contrainte.</p>
+        <p class="en">The data speaks clearly: today, one third of the world's food is wasted while 800 million people suffer from hunger. Keynes anticipated as early as 1930 that technological progress would allow us to work 15 hours per week — he was right about the potential, but underestimated the structural resistance of a system whose survival depends precisely on maintaining that constraint.</p>
+        <p class="fr">Quand les besoins fondamentaux sont garantis collectivement, le temps libéré devient coopération, création, soin mutuel et amélioration des conditions de vie communes. La force d'une masse organisée et libérée de l'anxiété de survie est une force d'une puissance proprement transformatrice. L'Universalité en fait son carburant premier.</p>
+        <p class="en">When fundamental needs are collectively guaranteed, liberated time becomes cooperation, creation, mutual care, and improvement of shared living conditions. The strength of a mass organized and freed from survival anxiety is a force of truly transformative power. Universality makes this its primary fuel.</p>
     </div>
 
     <div class="chapter" id="ch16">
-        <h3>Chapitre 16 : La Curation Sociale — Un Nouveau Rapport au Pouvoir</h3>
-        <p>L'Universalité répond à la tension fondamentale de tout projet de transformation sociale par le concept de <strong>curation sociale</strong> — une forme d'exercice du pouvoir radicalement différente de celle que le capitalisme a normalisée.</p>
-        <p>Là où le capitalisme produit des <em>dirigeants</em> qui concentrent le pouvoir, l'Universalité appelle des <em>curateurs</em> : des individus qui organisent les conditions permettant à la masse de s'autogouverner, qui distribuent le pouvoir plutôt que de l'accumuler, et dont la légitimité repose non sur la richesse ou la force, mais sur la cohérence visible entre leurs valeurs et leurs actes.</p>
-        <p>Cette distinction implique :</p>
+        <h3 class="fr">Chapitre 16 : La Curation Sociale — Un Nouveau Rapport au Pouvoir</h3>
+        <h3 class="en">Chapter 16: Social Curation — A New Relationship with Power</h3>
+        <p class="fr">L'Universalité répond à la tension fondamentale de tout projet de transformation sociale par le concept de <strong>curation sociale</strong> — une forme d'exercice du pouvoir radicalement différente de celle que le capitalisme a normalisée.</p>
+        <p class="en">Universality addresses the fundamental tension in any social transformation project through the concept of <strong>social curation</strong> — a form of exercising power radically different from what capitalism has normalized.</p>
+        <p class="fr">Là où le capitalisme produit des <em>dirigeants</em> qui concentrent le pouvoir, l'Universalité appelle des <em>curateurs</em> : des individus qui organisent les conditions permettant à la masse de s'autogouverner, qui distribuent le pouvoir plutôt que de l'accumuler, et dont la légitimité repose non sur la richesse ou la force, mais sur la cohérence visible entre leurs valeurs et leurs actes.</p>
+        <p class="en">Where capitalism produces <em>leaders</em> who concentrate power, Universality calls for <em>curators</em>: individuals who organize the conditions enabling the many to self-govern, who distribute power rather than accumulate it, and whose legitimacy rests not on wealth or force, but on the visible coherence between their values and their actions.</p>
+        <p class="fr">Cette distinction implique :</p>
+        <p class="en">This distinction implies:</p>
         <ul>
-            <li>Des mécanismes institutionnels de rotation et de révocabilité des responsabilités</li>
-            <li>Une culture organisationnelle où partager l'information et les ressources est une norme</li>
-            <li>Une éthique du pouvoir fondée sur la redevabilité vers le bas — envers les plus vulnérables</li>
-            <li>La capacité du curateur à réduire sa propre centralité à mesure que la masse gagne en autonomie</li>
+            <li class="fr">Des mécanismes institutionnels de rotation et de révocabilité des responsabilités</li>
+            <li class="en">Institutional mechanisms for rotation and revocability of responsibilities</li>
+            <li class="fr">Une culture organisationnelle où partager l'information et les ressources est une norme</li>
+            <li class="en">An organizational culture where sharing information and resources is the norm</li>
+            <li class="fr">Une éthique du pouvoir fondée sur la redevabilité vers le bas — envers les plus vulnérables</li>
+            <li class="en">An ethics of power based on downward accountability — toward the most vulnerable</li>
+            <li class="fr">La capacité du curateur à réduire sa propre centralité à mesure que la masse gagne en autonomie</li>
+            <li class="en">The curator's capacity to reduce their own centrality as the mass gains in autonomy</li>
         </ul>
-        <p>Le sociologue Antonio Gramsci parlait d'<em>intellectuel organique</em> — celui qui émerge du peuple, pense avec lui et pour lui. Le curateur social de l'Universalité est cet intellectuel organique — ancré dans la réalité vécue, animé par une vision claire, et suffisamment humble pour savoir que son plus grand succès est de se rendre progressivement inutile.</p>
-        <p>Dans l'Universalité, le pouvoir diffus dans la masse n'est pas une faiblesse organisationnelle — c'est sa plus grande force.</p>
+        <p class="fr">Le sociologue Antonio Gramsci parlait d'<em>intellectuel organique</em> — celui qui émerge du peuple, pense avec lui et pour lui. Le curateur social de l'Universalité est cet intellectuel organique — ancré dans la réalité vécue, animé par une vision claire, et suffisamment humble pour savoir que son plus grand succès est de se rendre progressivement inutile.</p>
+        <p class="en">The sociologist Antonio Gramsci spoke of the <em>organic intellectual</em> — one who emerges from the people, thinks with them and for them. The social curator of Universality is this organic intellectual — grounded in lived reality, driven by a clear vision, and humble enough to know that their greatest success is to gradually make themselves unnecessary.</p>
+        <p class="fr">Dans l'Universalité, le pouvoir diffus dans la masse n'est pas une faiblesse organisationnelle — c'est sa plus grande force.</p>
+        <p class="en">In Universality, power diffused throughout the many is not an organizational weakness — it is its greatest strength.</p>
     </div>
 
     <!-- CONCLUSION -->
     <div id="conclusion">
-        <div class="part-header">CONCLUSION GÉNÉRALE</div>
+        <div class="part-header">
+            <span class="fr">CONCLUSION GÉNÉRALE</span>
+            <span class="en">GENERAL CONCLUSION</span>
+        </div>
         <div class="conclusion-box">
-            <h3>L'Urgence comme Impératif Moral et Pratique</h3>
-            <p>Cette thèse ne plaide pas pour un changement désirable — elle argumente pour un changement nécessaire. La fenêtre temporelle pour éviter un effondrement climatique, social et démocratique se rétrécit. Chaque décennie de maintien du statu quo capitaliste aggrave les crises et rend la transition plus coûteuse et conflictuelle.</p>
-            <p>L'Universalité n'est plus une utopie. C'est la seule réponse à la hauteur des défis que nous affrontons — une réponse qui a des précédents historiques, des preuves empiriques et une cohérence interne robuste.</p>
+            <h3 class="fr">L'Urgence comme Impératif Moral et Pratique</h3>
+            <h3 class="en">Urgency as a Moral and Practical Imperative</h3>
+            <p class="fr">Cette thèse ne plaide pas pour un changement désirable — elle argumente pour un changement nécessaire. La fenêtre temporelle pour éviter un effondrement climatique, social et démocratique se rétrécit. Chaque décennie de maintien du statu quo capitaliste aggrave les crises et rend la transition plus coûteuse et conflictuelle.</p>
+            <p class="en">This thesis does not argue for a desirable change — it argues for a necessary one. The time window to avoid climate, social, and democratic collapse is narrowing. Every decade of maintaining the capitalist status quo worsens the crises and makes the transition more costly and conflict-ridden.</p>
+            <p class="fr">L'Universalité n'est plus une utopie. C'est la seule réponse à la hauteur des défis que nous affrontons — une réponse qui a des précédents historiques, des preuves empiriques et une cohérence interne robuste.</p>
+            <p class="en">Universality is no longer a utopia. It is the only response equal to the challenges we face — a response that has historical precedents, empirical evidence, and robust internal coherence.</p>
+            <p class="fr">La sociologie, par ses outils d'analyse et sa vocation critique, a la responsabilité d'éclairer cette transition — d'identifier les mécanismes qui la facilitent ou l'entravent, de nommer les intérêts qui s'y opposent, de documenter les expériences qui la rendent possible.</p>
+            <p class="en">Sociology, through its analytical tools and critical vocation, has the responsibility to illuminate this transition — to identify the mechanisms that facilitate or hinder it, to name the interests that oppose it, to document the experiences that make it possible.</p>
+            <p class="fr">Mais au-delà de l'académie, c'est chaque citoyen, chaque communauté, chaque institution qui est appelé à prendre part à cette transformation.</p>
+            <p class="en">But beyond academia, it is every citizen, every community, every institution that is called to take part in this transformation.</p>
+            <p class="fr">L'Universalité n'est pas ce que nous rêvons pour demain. C'est ce que nous devons construire aujourd'hui. 🌍</p>
+            <p class="en">Universality is not what we dream of for tomorrow. It is what we must build today. 🌍</p>
         </div>
-        <div class="conclusion-box" style="margin-top:16px;">
-            <h3>Un Appel à la Responsabilité Collective</h3>
-            <p>La sociologie, par ses outils d'analyse et sa vocation critique, a la responsabilité d'éclairer cette transition — d'identifier les mécanismes qui la facilitent ou l'entravent, de nommer les intérêts qui s'y opposent, de documenter les expériences qui la rendent possible.</p>
-            <p>Mais au-delà de l'académie, c'est chaque citoyen, chaque communauté, chaque institution qui est appelé à prendre part à cette transformation.</p>
-            <p style="font-weight:bold; color:#1a3a6b; text-align:center; font-size:1.1rem; margin-top:10px;">L'Universalité n'est pas ce que nous rêvons pour demain. C'est ce que nous devons construire aujourd'hui. 🌍</p>
-        </div>
-        <p class="dedicace">Cette thèse est dédiée à tous ceux qui ont cru, parfois seuls, que le monde pouvait être organisé autrement — et qui ont continué à le croire malgré tout.</p>
+        <p class="dedicace">
+            <span class="fr">Cette thèse est dédiée à tous ceux qui ont cru, parfois seuls, que le monde pouvait être organisé autrement — et qui ont continué à le croire malgré tout.</span>
+            <span class="en">This thesis is dedicated to all those who believed, sometimes alone, that the world could be organized differently — and who continued to believe it in spite of everything.</span>
+        </p>
     </div>
 
     <hr>
 
     <!-- BIBLIOGRAPHIE -->
     <div id="bibliographie">
-        <h2>📚 Bibliographie</h2>
+        <h2 class="fr">Bibliographie</h2>
+        <h2 class="en">Bibliography</h2>
 
         <div class="bib-section">
-            <h3>Droits fondamentaux et cadre normatif international</h3>
-            <p class="bib-item">Nations Unies (1948). <em>Déclaration universelle des droits de l'homme.</em> <a href="https://www.un.org/fr/about-us/universal-declaration-of-human-rights" target="_blank">https://www.un.org/fr/about-us/universal-declaration-of-human-rights</a></p>
-            <p class="bib-item">Nations Unies (1966). <em>Pacte international relatif aux droits économiques, sociaux et culturels (PIDESC).</em> <a href="https://www.ohchr.org/fr/instruments-mechanisms/instruments/international-covenant-economic-social-and-cultural-rights" target="_blank">https://www.ohchr.org/fr/...</a></p>
-            <p class="bib-item">Nations Unies (1966). <em>Pacte international relatif aux droits civils et politiques (PIDCP).</em> <a href="https://www.ohchr.org/fr/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights" target="_blank">https://www.ohchr.org/fr/...</a></p>
+            <h3>Droits internationaux / International Law</h3>
+            <p class="bib-item">Nations Unies (1948). <em>Déclaration universelle des droits de l'homme.</em> <a href="https://www.un.org/fr/about-us/universal-declaration-of-human-rights">https://www.un.org/fr/...</a></p>
+            <p class="bib-item">Nations Unies (1966). <em>Pacte international relatif aux droits économiques, sociaux et culturels (PIDESC).</em></p>
+            <p class="bib-item">Nations Unies (1966). <em>Pacte international relatif aux droits civils et politiques (PIDCP).</em></p>
         </div>
 
         <div class="bib-section">
-            <h3>Critique du capitalisme et économie politique</h3>
-            <p class="bib-item">Polanyi, K. (1944). <em>La Grande Transformation : aux origines politiques et économiques de notre temps.</em> Gallimard (traduction française, 1983).</p>
-            <p class="bib-item">Marx, K. (1867). <em>Le Capital : critique de l'économie politique.</em> Éditions sociales.</p>
-            <p class="bib-item">Piketty, T. (2013). <em>Le Capital au XXIe siècle.</em> Éditions du Seuil. <a href="https://www.seuil.com" target="_blank">https://www.seuil.com</a></p>
-            <p class="bib-item">Stiglitz, J. E. (2012). <em>The Price of Inequality.</em> W. W. Norton & Company.</p>
-            <p class="bib-item">Graeber, D. (2018). <em>Bullshit Jobs: A Theory.</em> Simon & Schuster.</p>
+            <h3>Théorie politique et économique / Political &amp; Economic Theory</h3>
+            <p class="bib-item">Polanyi, K. (1944). <em>La Grande Transformation.</em> Gallimard.</p>
+            <p class="bib-item">Marx, K. (1867). <em>Le Capital.</em> Éditions sociales.</p>
+            <p class="bib-item">Piketty, T. (2013). <em>Le Capital au XXIe siècle.</em> Éditions du Seuil.</p>
+            <p class="bib-item">Stiglitz, J. E. (2012). <em>The Price of Inequality.</em> W. W. Norton &amp; Company.</p>
+            <p class="bib-item">Graeber, D. (2018). <em>Bullshit Jobs: A Theory.</em> Simon &amp; Schuster.</p>
             <p class="bib-item">Harvey, D. (2005). <em>A Brief History of Neoliberalism.</em> Oxford University Press.</p>
-        </div>
-
-        <div class="bib-section">
-            <h3>Justice sociale, capabilités et bien-être</h3>
             <p class="bib-item">Rawls, J. (1971). <em>A Theory of Justice.</em> Harvard University Press.</p>
             <p class="bib-item">Sen, A. (1999). <em>Development as Freedom.</em> Oxford University Press.</p>
-            <p class="bib-item">Nussbaum, M. (2011). <em>Creating Capabilities: The Human Development Approach.</em> Harvard University Press.</p>
+            <p class="bib-item">Nussbaum, M. (2011). <em>Creating Capabilities.</em> Harvard University Press.</p>
         </div>
 
         <div class="bib-section">
-            <h3>Inégalités, santé et cohésion sociale</h3>
-            <p class="bib-item">Wilkinson, R., & Pickett, K. (2009). <em>The Spirit Level: Why More Equal Societies Almost Always Do Better.</em> Allen Lane / Penguin Books.</p>
-            <p class="bib-item">OMS (2008). <em>Combler le fossé en une génération : instaurer l'équité en santé.</em> <a href="https://www.who.int/fr/publications/i/item/WHO-IER-CSDH-08.1" target="_blank">https://www.who.int/fr/...</a></p>
-        </div>
-
-        <div class="bib-section">
-            <h3>Universalisme et modèles comparés</h3>
+            <h3>Santé et inégalités / Health &amp; Inequality</h3>
+            <p class="bib-item">Wilkinson, R., &amp; Pickett, K. (2009). <em>The Spirit Level.</em> Allen Lane / Penguin Books.</p>
+            <p class="bib-item">OMS (2008). <em>Combler le fossé en une génération.</em></p>
             <p class="bib-item">Esping-Andersen, G. (1990). <em>The Three Worlds of Welfare Capitalism.</em> Princeton University Press.</p>
-            <p class="bib-item">Mkandawire, T. (2005). <em>Targeting and Universalism in Poverty Reduction.</em> UNRISD. <a href="https://www.unrisd.org" target="_blank">https://www.unrisd.org</a></p>
-            <p class="bib-item">PNUD. <em>Rapports sur le développement humain</em> (annuels). <a href="https://hdr.undp.org/fr" target="_blank">https://hdr.undp.org/fr</a></p>
+            <p class="bib-item">PNUD. <em>Rapports sur le développement humain</em> (annuels). <a href="https://hdr.undp.org/fr">https://hdr.undp.org/fr</a></p>
         </div>
 
         <div class="bib-section">
-            <h3>Crise écologique et limites biophysiques</h3>
-            <p class="bib-item">GIEC / IPCC (2022). <em>Sixième rapport d'évaluation (AR6).</em> <a href="https://www.ipcc.ch/report/ar6" target="_blank">https://www.ipcc.ch/report/ar6</a></p>
-            <p class="bib-item">Rockström, J., et al. (2009). A safe operating space for humanity. <em>Nature, 461</em>, 472–475. <a href="https://doi.org/10.1038/461472a" target="_blank">https://doi.org/10.1038/461472a</a></p>
+            <h3>Écologie / Ecology</h3>
+            <p class="bib-item">GIEC / IPCC (2022). <em>Sixième rapport d'évaluation (AR6).</em> <a href="https://www.ipcc.ch/report/ar6">https://www.ipcc.ch/report/ar6</a></p>
+            <p class="bib-item">Rockström, J., et al. (2009). A safe operating space for humanity. <em>Nature, 461</em>, 472–475.</p>
+            <p class="bib-item">Ostrom, E. (1990). <em>Governing the Commons.</em> Cambridge University Press.</p>
         </div>
 
         <div class="bib-section">
-            <h3>Gouvernance des communs et institutions</h3>
-            <p class="bib-item">Ostrom, E. (1990). <em>Governing the Commons: The Evolution of Institutions for Collective Action.</em> Cambridge University Press.</p>
-            <p class="bib-item">Acemoglu, D., & Robinson, J. A. (2012). <em>Why Nations Fail.</em> Crown Publishers.</p>
-        </div>
-
-        <div class="bib-section">
-            <h3>Transitions historiques et réformes progressives</h3>
-            <p class="bib-item">Esping-Andersen, G. (1985). <em>Politics Against Markets: The Social Democratic Road to Power.</em> Princeton University Press.</p>
-            <p class="bib-item">Lindert, P. H. (2004). <em>Growing Public</em> (2 vol.). Cambridge University Press.</p>
-        </div>
-
-        <div class="bib-section">
-            <h3>Technologie, démocratie numérique et blockchain</h3>
-            <p class="bib-item">Tapscott, D., & Tapscott, A. (2016). <em>Blockchain Revolution.</em> Portfolio/Penguin.</p>
+            <h3>Technologie et démocratie / Technology &amp; Democracy</h3>
+            <p class="bib-item">Tapscott, D., &amp; Tapscott, A. (2016). <em>Blockchain Revolution.</em> Portfolio/Penguin.</p>
             <p class="bib-item">Zuboff, S. (2019). <em>The Age of Surveillance Capitalism.</em> PublicAffairs.</p>
-            <p class="bib-item">Bouricius, T. G. (2013). Democracy Through Multi-Body Sortition. <em>Journal of Public Deliberation, 9(1).</em> <a href="https://publicdeliberation.net" target="_blank">https://publicdeliberation.net</a></p>
+            <p class="bib-item">Bouricius, T. G. (2013). Democracy Through Multi-Body Sortition. <em>Journal of Public Deliberation, 9(1).</em></p>
+            <p class="bib-item">Acemoglu, D., &amp; Robinson, J. A. (2012). <em>Why Nations Fail.</em> Crown Publishers.</p>
         </div>
 
         <div class="bib-section">
-            <h3>Psychologie humaine et nature sociale</h3>
+            <h3>Psychologie et anthropologie / Psychology &amp; Anthropology</h3>
             <p class="bib-item">Maslow, A. H. (1943). A Theory of Human Motivation. <em>Psychological Review, 50(4)</em>, 370–396.</p>
-            <p class="bib-item">Seligman, M. E. P. (2011). <em>Flourish: A Visionary New Understanding of Happiness and Well-being.</em> Free Press.</p>
-            <p class="bib-item">de Waal, F. (2009). <em>The Age of Empathy: Nature's Lessons for a Kinder Society.</em> Harmony Books.</p>
+            <p class="bib-item">Seligman, M. E. P. (2011). <em>Flourish.</em> Free Press.</p>
+            <p class="bib-item">de Waal, F. (2009). <em>The Age of Empathy.</em> Harmony Books.</p>
         </div>
-    </div>
-
-    <div style="text-align:center; margin-top:40px;">
-        <a href="index.html" style="background:#1a3a6b; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-family:Arial,sans-serif; font-weight:bold;">← Retour à l'accueil</a>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 <span>Universel</span> — Parce que personne ne devrait être laissé derrière 🌈</p>
+    <p>© 2026 <span>Universel</span> —
+        <span class="fr">Parce que personne ne devrait être laissé derrière 🌈</span>
+        <span class="en">Because no one should be left behind 🌈</span>
+    </p>
 </footer>
 
+<script>
+function toggleLang() {
+    var html = document.documentElement;
+    var btn = document.getElementById('langBtn');
+    if (html.classList.contains('english')) {
+        html.classList.remove('english');
+        btn.innerHTML = '🌐 English';
+    } else {
+        html.classList.add('english');
+        btn.innerHTML = '🌐 Français';
+    }
+}
+</script>
 </body>
 </html>

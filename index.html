@@ -6,183 +6,96 @@
     <title>Universel — Parce que personne ne devrait être laissé derrière</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f0f7ff;
-            color: #1a1a2e;
-        }
-
-        /* HERO */
-        .hero {
-            background: linear-gradient(180deg, #87CEEB 0%, #b8e0f7 100%);
-            text-align: center;
-            padding: 40px 20px 30px;
-        }
-
-        .hero img {
-            max-width: 380px;
-            width: 90%;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-        }
-
-        /* NAV */
-        nav {
-            background-color: #1a3a6b;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 14px 20px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.95rem;
-            font-weight: bold;
-            letter-spacing: 0.05em;
-            transition: color 0.2s;
-        }
-
+        body { font-family: 'Georgia', serif; background-color: #f0f7ff; color: #1a1a2e; }
+        .hero { background: linear-gradient(180deg, #87CEEB 0%, #b8e0f7 100%); text-align: center; padding: 40px 20px 30px; }
+        .hero img { max-width: 380px; width: 90%; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+        nav { background-color: #1a3a6b; display: flex; justify-content: center; gap: 30px; padding: 14px 20px; flex-wrap: wrap; }
+        nav a { color: #ffffff; text-decoration: none; font-family: Arial, sans-serif; font-size: 0.95rem; font-weight: bold; letter-spacing: 0.05em; transition: color 0.2s; }
         nav a:hover { color: #87CEEB; }
-
-        /* SECTIONS */
-        section {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 50px 24px;
-        }
-
-        section h2 {
-            font-size: 1.9rem;
-            color: #1a3a6b;
-            margin-bottom: 28px;
-            border-left: 5px solid #87CEEB;
-            padding-left: 14px;
-        }
-
-        .vision-block {
-            margin-bottom: 28px;
-        }
-
-        .vision-block h3 {
-            font-size: 1.1rem;
-            color: #1a3a6b;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-
-        .vision-block p {
-            font-size: 1.05rem;
-            line-height: 1.85;
-            color: #2c2c2c;
-            text-align: justify;
-        }
-
-        .vision-block.cta p {
-            font-size: 1.15rem;
-            font-weight: bold;
-            color: #1a3a6b;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        /* DIVIDER */
-        hr {
-            border: none;
-            border-top: 2px solid #87CEEB;
-            max-width: 780px;
-            margin: 0 auto;
-        }
-
-        /* DISCUSSION */
-        #discussion {
-            background-color: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            max-width: 780px;
-            margin: 0 auto 60px;
-            padding: 40px 24px;
-        }
-
-        #discussion h2 {
-            font-size: 1.9rem;
-            color: #1a3a6b;
-            margin-bottom: 10px;
-            border-left: 5px solid #87CEEB;
-            padding-left: 14px;
-        }
-
-        #discussion p.intro {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 28px;
-            font-family: Arial, sans-serif;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #1a3a6b;
-            color: #cce4f7;
-            text-align: center;
-            padding: 24px 20px;
-            font-family: Arial, sans-serif;
-            font-size: 0.88rem;
-        }
-
+        section { max-width: 780px; margin: 0 auto; padding: 50px 24px; }
+        section h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 28px; border-left: 5px solid #87CEEB; padding-left: 14px; }
+        .vision-block { margin-bottom: 28px; }
+        .vision-block h3 { font-size: 1.1rem; color: #1a3a6b; margin-bottom: 10px; font-style: italic; }
+        .vision-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; }
+        .vision-block.cta p { font-size: 1.15rem; font-weight: bold; color: #1a3a6b; text-align: center; margin-top: 10px; }
+        hr { border: none; border-top: 2px solid #87CEEB; max-width: 780px; margin: 0 auto; }
+        #discussion { background-color: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 780px; margin: 0 auto 60px; padding: 40px 24px; }
+        #discussion h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 10px; border-left: 5px solid #87CEEB; padding-left: 14px; }
+        #discussion p.intro { font-size: 1rem; color: #555; margin-bottom: 28px; font-family: Arial, sans-serif; }
+        footer { background-color: #1a3a6b; color: #cce4f7; text-align: center; padding: 24px 20px; font-family: Arial, sans-serif; font-size: 0.88rem; }
         footer span { color: #87CEEB; font-weight: bold; }
+
+        /* ===== LANGUE TOGGLE ===== */
+        .fr { display: block; } .en { display: none; }
+        html.english .fr { display: none; } html.english .en { display: block; }
+        span.fr { display: inline; } span.en { display: none; }
+        html.english span.fr { display: none; } html.english span.en { display: inline; }
+        #langBtn {
+            position: fixed; top: 12px; right: 16px; z-index: 9999;
+            background: #1a3a6b; color: #fff; border: 2px solid #87CEEB;
+            padding: 7px 18px; border-radius: 20px; font-family: Arial, sans-serif;
+            font-size: 0.85rem; font-weight: bold; cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.25); transition: background 0.2s;
+        }
+        #langBtn:hover { background: #2a5298; }
     </style>
 </head>
 <body>
 
-<!-- HERO -->
+<button id="langBtn" onclick="toggleLang()">🌐 English</button>
+
 <div class="hero">
-    <img src="logo_universel.jpeg.JPG" alt="Logo Universel — arc-en-ciel sur ciel bleu">
+    <img src="logo_universel.jpeg.JPG" alt="Logo Universel">
 </div>
 
-<!-- NAV -->
 <nav>
-    <a href="#vision">La Vision</a>
+    <a href="#vision">
+        <span class="fr">La Vision</span><span class="en">The Vision</span>
+    </a>
     <a href="#discussion">Discussion</a>
-    <a href="these.html">📖 Un peu plus…</a>
+    <a href="these.html">📖 <span class="fr">Un peu plus…</span><span class="en">Learn more…</span></a>
     <a href="#contact">Contact</a>
 </nav>
 
-<!-- VISION -->
 <section id="vision">
-    <h2>Notre Vision</h2>
+    <h2 class="fr">Notre Vision</h2>
+    <h2 class="en">Our Vision</h2>
 
     <div class="vision-block">
-        <h3>Le monde que nous avons construit est à bout de souffle.</h3>
-        <p>Les inégalités n'ont jamais été aussi criantes. Des millions de personnes travaillent à s'épuiser sans jamais réussir à couvrir leurs besoins de base. Les services communautaires, les travailleurs de l'ombre, ceux qui tiennent le filet social à bout de bras — on les abandonne. Pendant ce temps, la richesse se concentre dans les mains d'un nombre toujours plus petit, pendant que la majorité survit. Ce n'est pas une fatalité. C'est un choix systémique. Et ce choix-là nous coûte collectivement bien plus que ce qu'il rapporte à quelques-uns.</p>
+        <h3 class="fr">Le monde que nous avons construit est à bout de souffle.</h3>
+        <h3 class="en">The world we built is running out of breath.</h3>
+        <p class="fr">Les inégalités n'ont jamais été aussi criantes. Des millions de personnes travaillent à s'épuiser sans jamais réussir à couvrir leurs besoins de base. Les services communautaires, les travailleurs de l'ombre, ceux qui tiennent le filet social à bout de bras — on les abandonne. Pendant ce temps, la richesse se concentre dans les mains d'un nombre toujours plus petit, pendant que la majorité survit. Ce n'est pas une fatalité. C'est un choix systémique. Et ce choix-là nous coûte collectivement bien plus que ce qu'il rapporte à quelques-uns.</p>
+        <p class="en">Inequalities have never been so glaring. Millions of people work themselves to exhaustion without ever managing to meet their basic needs. Community services, invisible workers, those holding the social safety net together — they are being abandoned. Meanwhile, wealth concentrates in the hands of an ever-shrinking few, while the majority merely survives. This is not inevitable. It is a systemic choice. And that choice costs us collectively far more than it benefits the few.</p>
     </div>
 
     <div class="vision-block">
-        <h3>Nous sommes à la croisée des chemins.</h3>
-        <p>Les crises se multiplient — économiques, climatiques, sociales — parce qu'elles ont toutes la même racine : un système conçu pour produire et accumuler, pas pour prendre soin. Chaque fois qu'on rafistole un bout, trois autres lâchent. Ce n'est plus un problème de gestion. C'est un problème de fondation.</p>
+        <h3 class="fr">Nous sommes à la croisée des chemins.</h3>
+        <h3 class="en">We are at a crossroads.</h3>
+        <p class="fr">Les crises se multiplient — économiques, climatiques, sociales — parce qu'elles ont toutes la même racine : un système conçu pour produire et accumuler, pas pour prendre soin. Chaque fois qu'on rafistole un bout, trois autres lâchent. Ce n'est plus un problème de gestion. C'est un problème de fondation.</p>
+        <p class="en">Crises are multiplying — economic, climate, social — because they all share the same root: a system designed to produce and accumulate, not to care. Every time we patch one part, three others break. This is no longer a management problem. It is a foundational one.</p>
     </div>
 
     <div class="vision-block">
-        <h3>Mais l'humanité a toujours su se relever — quand elle choisit de se retrouver.</h3>
-        <p>Il existe une autre façon. Une façon où les besoins essentiels ne sont plus des privilèges, mais des droits réels. Où le pouvoir est diffusé dans la masse plutôt que concentré au sommet. Où coopérer devient plus rationnel qu'accumuler. Ce n'est pas une utopie — c'est une architecture sociale à construire ensemble, une décision collective que des millions de personnes ordinaires, partout, sont déjà prêtes à prendre.</p>
+        <h3 class="fr">Mais l'humanité a toujours su se relever — quand elle choisit de se retrouver.</h3>
+        <h3 class="en">But humanity has always found a way to rise — when it chooses to come together.</h3>
+        <p class="fr">Il existe une autre façon. Une façon où les besoins essentiels ne sont plus des privilèges, mais des droits réels. Où le pouvoir est diffusé dans la masse plutôt que concentré au sommet. Où coopérer devient plus rationnel qu'accumuler. Ce n'est pas une utopie — c'est une architecture sociale à construire ensemble, une décision collective que des millions de personnes ordinaires, partout, sont déjà prêtes à prendre.</p>
+        <p class="en">There is another way. A way where essential needs are no longer privileges, but real rights. Where power flows through the many rather than concentrating at the top. Where cooperating becomes more rational than accumulating. This is not a utopia — it is a social architecture to build together, a collective decision that millions of ordinary people, everywhere, are already ready to make.</p>
     </div>
 
     <div class="vision-block cta">
-        <p>✊ Universel, c'est ce mouvement-là. Et il commence maintenant.</p>
+        <p class="fr">✊ Universel, c'est ce mouvement-là. Et il commence maintenant.</p>
+        <p class="en">✊ Universal — this is that movement. And it starts now.</p>
     </div>
 </section>
 
 <hr>
 
-<!-- DISCUSSION -->
 <section id="discussion" style="background:none; box-shadow:none; padding-top:50px;">
     <div id="discussion" style="background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.08); padding:40px 24px;">
-        <h2>💬 Espace de discussion</h2>
-        <p class="intro">Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.</p>
-        <!-- DISQUS — remplace "VOTRE-SHORTNAME" par ton shortname Disqus après inscription -->
+        <h2 class="fr">💬 Espace de discussion</h2>
+        <h2 class="en">💬 Discussion Space</h2>
+        <p class="intro fr">Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.</p>
+        <p class="intro en">Share your perspective, ask your questions, join the movement. All constructive viewpoints are welcome.</p>
         <div id="disqus_thread"></div>
         <script>
             var disqus_config = function () {
@@ -196,25 +109,43 @@
                 (d.head || d.body).appendChild(s);
             })();
         </script>
-        <noscript>Active JavaScript pour voir les commentaires.</noscript>
+        <noscript>
+            <span class="fr">Active JavaScript pour voir les commentaires.</span>
+            <span class="en">Please enable JavaScript to view the comments.</span>
+        </noscript>
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" style="text-align:center; padding-top:20px;">
     <h2 style="border-left:5px solid #87CEEB; padding-left:14px; display:inline-block; text-align:left;">Contact</h2>
     <p style="margin-top:16px; font-family:Arial,sans-serif; font-size:1rem; color:#444;">
-        Tu veux en savoir plus ou contribuer au mouvement?<br><br>
+        <span class="fr">Tu veux en savoir plus ou contribuer au mouvement ?</span>
+        <span class="en">Want to learn more or contribute to the movement?</span><br><br>
         <a href="mailto:society2heal@gmail.com" style="color:#1a3a6b; font-weight:bold; font-size:1.1rem;">
             📩 society2heal@gmail.com
         </a>
     </p>
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2026 <span>Universel</span> — Parce que personne ne devrait être laissé derrière 🌈</p>
+    <p>© 2026 <span>Universel</span> —
+        <span class="fr">Parce que personne ne devrait être laissé derrière 🌈</span>
+        <span class="en">Because no one should be left behind 🌈</span>
+    </p>
 </footer>
 
+<script>
+function toggleLang() {
+    var html = document.documentElement;
+    var btn = document.getElementById('langBtn');
+    if (html.classList.contains('english')) {
+        html.classList.remove('english');
+        btn.innerHTML = '🌐 English';
+    } else {
+        html.classList.add('english');
+        btn.innerHTML = '🌐 Français';
+    }
+}
+</script>
 </body>
 </html>
