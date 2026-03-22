@@ -19,13 +19,40 @@
         .vision-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; }
         .vision-block.cta p { font-size: 1.15rem; font-weight: bold; color: #1a3a6b; text-align: center; margin-top: 10px; }
         hr { border: none; border-top: 2px solid #87CEEB; max-width: 780px; margin: 0 auto; }
-        #discussion { background-color: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 780px; margin: 0 auto 60px; padding: 40px 24px; }
-        #discussion h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 10px; border-left: 5px solid #87CEEB; padding-left: 14px; }
-        #discussion p.intro { font-size: 1rem; color: #555; margin-bottom: 28px; font-family: Arial, sans-serif; }
+
+        /* DISCUSSION */
+        .discussion-box {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 780px;
+            margin: 50px auto 20px;
+            padding: 40px 28px;
+            text-align: center;
+        }
+        .discussion-box h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 12px; border-left: 5px solid #87CEEB; padding-left: 14px; text-align: left; }
+        .discussion-box p { font-size: 1rem; color: #555; margin-bottom: 28px; font-family: Arial, sans-serif; text-align: left; line-height: 1.7; }
+        .btn-discuss {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a3a6b, #2a5298);
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+            box-shadow: 0 4px 16px rgba(26,58,107,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-discuss:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,58,107,0.4); }
+        .btn-note { font-size: 0.85rem; color: #888; margin-top: 16px; font-family: Arial, sans-serif; font-style: italic; }
+
         footer { background-color: #1a3a6b; color: #cce4f7; text-align: center; padding: 24px 20px; font-family: Arial, sans-serif; font-size: 0.88rem; }
         footer span { color: #87CEEB; font-weight: bold; }
 
-        /* ===== LANGUE TOGGLE ===== */
+        /* TOGGLE LANGUE */
         .fr { display: block; } .en { display: none; }
         html.english .fr { display: none; } html.english .en { display: block; }
         span.fr { display: inline; } span.en { display: none; }
@@ -49,9 +76,7 @@
 </div>
 
 <nav>
-    <a href="#vision">
-        <span class="fr">La Vision</span><span class="en">The Vision</span>
-    </a>
+    <a href="#vision"><span class="fr">La Vision</span><span class="en">The Vision</span></a>
     <a href="#discussion">Discussion</a>
     <a href="these.html">📖 <span class="fr">Un peu plus…</span><span class="en">Learn more…</span></a>
     <a href="#contact">Contact</a>
@@ -90,32 +115,23 @@
 
 <hr>
 
-<section id="discussion" style="background:none; box-shadow:none; padding-top:50px;">
-    <div id="discussion" style="background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.08); padding:40px 24px;">
-        <h2 class="fr">💬 Espace de discussion</h2>
-        <h2 class="en">💬 Discussion Space</h2>
-        <p class="intro fr">Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.</p>
-        <p class="intro en">Share your perspective, ask your questions, join the movement. All constructive viewpoints are welcome.</p>
-        <div id="disqus_thread"></div>
-        <script>
-            var disqus_config = function () {
-                this.page.url = window.location.href;
-                this.page.identifier = 'universel-discussion';
-            };
-            (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://VOTRE-SHORTNAME.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>
-            <span class="fr">Active JavaScript pour voir les commentaires.</span>
-            <span class="en">Please enable JavaScript to view the comments.</span>
-        </noscript>
-    </div>
-</section>
+<!-- DISCUSSION -->
+<div class="discussion-box" id="discussion">
+    <h2 class="fr">💬 Espace de discussion</h2>
+    <h2 class="en">💬 Discussion Space</h2>
+    <p class="fr">Tu as une question, une réflexion, une idée à partager ? Tu veux rejoindre le mouvement ou simplement échanger ? Tous les points de vue constructifs sont les bienvenus — écris-nous directement.</p>
+    <p class="en">Do you have a question, a thought, an idea to share? Do you want to join the movement or simply connect? All constructive viewpoints are welcome — write to us directly.</p>
+    <a class="btn-discuss fr" href="mailto:society2heal@gmail.com?subject=Discussion — Universel&body=Bonjour,%0D%0A%0D%0AJe vous contacte au sujet du mouvement Universel.%0D%0A%0D%0A">
+        ✉️ Rejoindre la discussion
+    </a>
+    <a class="btn-discuss en" href="mailto:society2heal@gmail.com?subject=Discussion — Universal&body=Hello,%0D%0A%0D%0AI am reaching out regarding the Universal movement.%0D%0A%0D%0A">
+        ✉️ Join the discussion
+    </a>
+    <p class="btn-note fr">Ouvre ton application courriel — répond dans ta langue, on s'adapte.</p>
+    <p class="btn-note en">Opens your email app — write in your language, we'll adapt.</p>
+</div>
 
+<!-- CONTACT -->
 <section id="contact" style="text-align:center; padding-top:20px;">
     <h2 style="border-left:5px solid #87CEEB; padding-left:14px; display:inline-block; text-align:left;">Contact</h2>
     <p style="margin-top:16px; font-family:Arial,sans-serif; font-size:1rem; color:#444;">
