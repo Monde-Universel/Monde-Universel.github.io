@@ -8,75 +8,56 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Georgia, serif; background: #0d0d0d; color: #e8e8e8; }
 
-        .hero {
-            background: linear-gradient(180deg, #1a0000 0%, #3d0000 50%, #0d0d0d 100%);
-            text-align: center; padding: 30px 20px 20px;
-        }
+        .hero { background: linear-gradient(180deg, #1a0000 0%, #3d0000 50%, #0d0d0d 100%);
+            text-align: center; padding: 30px 20px 20px; }
         .hero img { max-width: 180px; width: 50%; border-radius: 10px; opacity: 0.85; }
 
-        nav {
-            background: #1a1a1a; display: flex; justify-content: center;
-            align-items: center; gap: 22px; padding: 14px 20px; flex-wrap: wrap;
-            border-bottom: 2px solid #8b0000;
-        }
-        nav a { color: #ccc; text-decoration: none; font-family: Arial, sans-serif;
-            font-size: 0.9rem; font-weight: bold; letter-spacing: 0.04em; transition: color 0.2s; }
+        nav { background: #1a1a1a; display: flex; justify-content: center; align-items: center;
+            gap: 22px; padding: 14px 20px; flex-wrap: wrap; border-bottom: 2px solid #8b0000; }
+        nav a { color: #ccc; text-decoration: none; font-family: Arial, sans-serif; font-size: 0.9rem;
+            font-weight: bold; letter-spacing: 0.04em; transition: color 0.2s; }
         nav a:hover { color: #ff4444; }
-        .lang-btn {
-            background: #8b0000; color: #fff; border: none; border-radius: 20px;
+        .lang-btn { background: #8b0000; color: #fff; border: none; border-radius: 20px;
             padding: 6px 16px; font-family: Arial, sans-serif; font-size: 0.9rem;
-            font-weight: bold; cursor: pointer; transition: all 0.2s;
-        }
+            font-weight: bold; cursor: pointer; transition: all 0.2s; }
         .lang-btn:hover { background: #ff4444; }
 
-        /* BANNER */
-        .banner {
-            background: linear-gradient(135deg, #1a0000, #3d0000);
-            text-align: center; padding: 50px 24px 40px;
-            border-bottom: 3px solid #8b0000;
-        }
-        .banner .tag {
-            display: inline-block; background: #8b0000; color: #fff;
+        .banner { background: linear-gradient(135deg, #1a0000, #3d0000); text-align: center;
+            padding: 50px 24px 40px; border-bottom: 3px solid #8b0000; }
+        .banner .tag { display: inline-block; background: #8b0000; color: #fff;
             font-family: Arial, sans-serif; font-size: 0.8rem; font-weight: bold;
-            letter-spacing: 0.15em; padding: 5px 16px; border-radius: 4px; margin-bottom: 18px;
-        }
-        .banner h1 {
-            font-size: clamp(1.4rem, 4vw, 2.2rem); color: #fff; line-height: 1.3;
-            max-width: 800px; margin: 0 auto 16px; text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-        .banner p {
-            font-family: Arial, sans-serif; color: #bbb; font-size: 0.95rem; font-style: italic;
-        }
+            letter-spacing: 0.15em; padding: 5px 16px; border-radius: 4px; margin-bottom: 18px; }
+        .banner h1 { font-size: clamp(1.4rem, 4vw, 2.2rem); color: #fff; line-height: 1.3;
+            max-width: 800px; margin: 0 auto 16px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+        .banner p { font-family: Arial, sans-serif; color: #bbb; font-size: 0.95rem; font-style: italic; }
 
         .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
 
-        /* INTRO */
-        .intro-block {
-            background: #1a1a1a; border-left: 4px solid #8b0000;
-            border-radius: 8px; padding: 24px 28px; margin-bottom: 40px;
-        }
+        .intro-block { background: #1a1a1a; border-left: 4px solid #8b0000;
+            border-radius: 8px; padding: 24px 28px; margin-bottom: 40px; }
         .intro-block p { font-size: 1.05rem; line-height: 1.85; color: #ddd; text-align: justify; margin-bottom: 12px; }
         .intro-block p:last-child { margin-bottom: 0; }
 
-        /* SECTION HEADERS */
-        .section-header {
-            display: flex; align-items: center; gap: 12px;
-            margin: 44px 0 20px; padding-bottom: 10px;
-            border-bottom: 2px solid #333;
-        }
+        .section-header { display: flex; align-items: center; gap: 12px; margin: 44px 0 20px;
+            padding-bottom: 10px; border-bottom: 2px solid #333; }
         .section-header .icon { font-size: 1.6rem; }
         .section-header h2 { font-size: 1.4rem; color: #ff6666; }
 
-        /* STATS GRID */
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
-        .stat-card {
-            background: #1a1a1a; border: 1px solid #333; border-top: 3px solid #8b0000;
-            border-radius: 10px; padding: 20px 16px; text-align: center;
-        }
-        .stat-card .number { font-size: 1.8rem; font-weight: bold; color: #ff6666; font-family: Arial, sans-serif; line-height: 1.1; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px; margin: 24px 0; }
+        .stat-card { background: #1a1a1a; border: 1px solid #333; border-top: 3px solid #8b0000;
+            border-radius: 10px; padding: 20px 16px; text-align: center; }
+        .stat-card .number { font-size: 1.8rem; font-weight: bold; color: #ff6666;
+            font-family: Arial, sans-serif; line-height: 1.1; }
         .stat-card .label { font-size: 0.82rem; color: #999; font-family: Arial, sans-serif; margin-top: 6px; }
 
-        /* CONTENT BLOCKS */
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px; margin: 24px 0; }
+        .img-card { border-radius: 10px; overflow: hidden; background: #1a1a1a; border: 1px solid #333; }
+        .img-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .img-card .caption { padding: 10px 12px; font-family: Arial, sans-serif; font-size: 0.82rem;
+            color: #aaa; font-style: italic; line-height: 1.5; }
+
         .content-block { margin-bottom: 32px; }
         .content-block h3 { font-size: 1.15rem; color: #ff9999; margin-bottom: 12px; font-style: italic; }
         .content-block p { font-size: 1rem; line-height: 1.85; color: #ccc; text-align: justify; margin-bottom: 10px; }
@@ -84,41 +65,24 @@
         .content-block li { font-size: 0.98rem; line-height: 1.75; color: #ccc; margin-bottom: 6px; }
         .content-block li strong { color: #ff9999; }
 
-        /* IMAGE GRID */
-        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 24px 0; }
-        .img-card { border-radius: 10px; overflow: hidden; background: #1a1a1a; border: 1px solid #333; }
-        .img-card img { width: 100%; height: 200px; object-fit: cover; display: block; opacity: 0.9; }
-        .img-card .caption {
-            padding: 10px 12px; font-family: Arial, sans-serif; font-size: 0.8rem;
-            color: #999; font-style: italic;
-        }
-
-        /* CAPITALISM LINK */
-        .capitalism-box {
-            background: linear-gradient(135deg, #1a0d00, #2d1a00);
+        .capitalism-box { background: linear-gradient(135deg, #1a0d00, #2d1a00);
             border: 1px solid #8b4500; border-left: 4px solid #ff8c00;
-            border-radius: 10px; padding: 28px; margin: 40px 0;
-        }
+            border-radius: 10px; padding: 28px; margin: 40px 0; }
         .capitalism-box h2 { font-size: 1.3rem; color: #ffaa44; margin-bottom: 16px; }
         .capitalism-box p { font-size: 1rem; line-height: 1.85; color: #ddd; text-align: justify; margin-bottom: 12px; }
         .capitalism-box ul { padding-left: 22px; margin: 10px 0; }
         .capitalism-box li { font-size: 0.98rem; line-height: 1.75; color: #ccc; margin-bottom: 8px; }
         .capitalism-box li strong { color: #ffaa44; }
 
-        /* CONCLUSION */
-        .conclusion-box {
-            background: #111; border: 1px solid #8b0000;
-            border-radius: 10px; padding: 28px; margin-top: 40px; text-align: center;
-        }
+        .conclusion-box { background: #111; border: 1px solid #8b0000;
+            border-radius: 10px; padding: 28px; margin-top: 40px; text-align: center; }
         .conclusion-box p { font-size: 1.1rem; line-height: 1.85; color: #ddd; margin-bottom: 12px; }
         .conclusion-box p strong { color: #ff6666; }
 
-        /* DIVIDER */
         .divider { border: none; border-top: 1px solid #2a2a2a; margin: 36px 0; }
 
-        footer { background: #111; color: #666; text-align: center;
-            padding: 22px 20px; font-family: Arial, sans-serif; font-size: 0.85rem;
-            border-top: 2px solid #8b0000; }
+        footer { background: #111; color: #666; text-align: center; padding: 22px 20px;
+            font-family: Arial, sans-serif; font-size: 0.85rem; border-top: 2px solid #8b0000; }
         footer span { color: #87CEEB; font-weight: bold; }
         footer a { color: #87CEEB; text-decoration: none; }
     </style>
@@ -138,88 +102,84 @@
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
 </nav>
 
-<!-- BANNER -->
 <div class="banner">
     <div class="tag">BULLETIN SPÉCIAL</div>
-    <h1 data-i18n="banner_title">Au-delà des Conséquences Économiques et Politiques :<br>Une Catastrophe Écologique Sans Précédent</h1>
-    <p data-i18n="banner_sub">Ukraine · Gaza · Iran — Le vrai prix des guerres capitalistes</p>
+    <h1>Au-delà des Conséquences Économiques et Politiques :<br>Une Catastrophe Écologique Sans Précédent</h1>
+    <p>Ukraine · Gaza · Iran — Le vrai prix des guerres capitalistes</p>
 </div>
 
 <div class="container">
 
-    <!-- INTRO -->
     <div class="intro-block">
-        <p data-i18n="intro1">Les guerres ne s'arrêtent pas quand les fusils se taisent. Elles continuent de tuer — silencieusement, chimiquement, écologiquement — pendant des décennies. Ce que les médias comptent en pertes humaines et en milliards de dommages économiques n'est que la surface visible d'un désastre planétaire dont la planète, elle, ne peut pas se relever aussi vite que les bourses mondiales.</p>
-        <p data-i18n="intro2">Les conflits en Ukraine, à Gaza et en Iran ne sont pas des accidents géopolitiques isolés. Ils sont les produits prévisibles d'un système fondé sur le contrôle des ressources, la compétition entre États au service d'intérêts économiques privés, et l'externalisation du coût humain et écologique de cette compétition vers les populations les plus vulnérables.</p>
+        <p>Les guerres ne s'arrêtent pas quand les fusils se taisent. Elles continuent de tuer — silencieusement, chimiquement, écologiquement — pendant des décennies. Ce que les médias comptent en pertes humaines et en milliards de dommages économiques n'est que la surface visible d'un désastre planétaire dont la planète ne peut pas se relever aussi vite que les bourses mondiales.</p>
+        <p>Les conflits en Ukraine, à Gaza et en Iran ne sont pas des accidents géopolitiques isolés. Ils sont les produits prévisibles d'un système fondé sur le contrôle des ressources, la compétition entre États au service d'intérêts économiques privés, et l'externalisation du coût humain et écologique vers les populations les plus vulnérables.</p>
     </div>
 
     <!-- ===== UKRAINE ===== -->
     <div class="section-header">
         <span class="icon">🇺🇦</span>
-        <h2 data-i18n="ukraine_title">Ukraine : Trois Ans de Destruction Systématique</h2>
+        <h2>Ukraine : Trois Ans de Destruction Systématique</h2>
     </div>
 
-    <!-- Stats Ukraine -->
     <div class="stats-grid">
         <div class="stat-card">
             <div class="number">127 G$</div>
-            <div class="label" data-i18n="stat_u1">Dommages écologiques documentés</div>
+            <div class="label">Dommages écologiques documentés</div>
         </div>
         <div class="stat-card">
             <div class="number">230 MtCO₂</div>
-            <div class="label" data-i18n="stat_u2">Émissions carbone cumulées depuis 2022</div>
+            <div class="label">Émissions carbone cumulées depuis 2022</div>
         </div>
         <div class="stat-card">
             <div class="number">9 000+</div>
-            <div class="label" data-i18n="stat_u3">Cas de destruction écologique documentés</div>
-        </div>
-        <div class="stat-card">
-            <div class="number">20%</div>
-            <div class="label" data-i18n="stat_u4">Des terres agricoles les plus fertiles contaminées</div>
+            <div class="label">Cas de destruction écologique documentés</div>
         </div>
         <div class="stat-card">
             <div class="number">808 km²</div>
-            <div class="label" data-i18n="stat_u5">Forêts détruites par incendies en 2022 seul</div>
+            <div class="label">Forêts détruites par incendies en 2022</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">20%</div>
+            <div class="label">Des terres agricoles les plus fertiles contaminées</div>
         </div>
         <div class="stat-card">
             <div class="number">15 000+</div>
-            <div class="label" data-i18n="stat_u6">Civils tués confirmés par l'ONU</div>
+            <div class="label">Civils tués confirmés par l'ONU</div>
         </div>
     </div>
 
-    <!-- Images Ukraine -->
+    <!-- Photos Ukraine : cormoran mazouté + cétacé échoué + explosion pont -->
     <div class="img-grid">
         <div class="img-card">
             <img src="IMG_0353.jpeg.JPG" alt="Cormoran mazouté">
-            <div class="caption" data-i18n="img1_cap">Cormoran mazouté — les déversements d'hydrocarbures causés par les frappes sur les infrastructures pétrolières déciment la faune aviaire côtière</div>
+            <div class="caption">Cormoran mazouté — les frappes sur les pipelines et dépôts pétroliers ukrainiens déversent des tonnes d'hydrocarbures dans les écosystèmes côtiers</div>
         </div>
         <div class="img-card">
-            <img src="IMG_0349.jpeg.JPG" alt="Cétacé échoué mer Noire">
-            <div class="caption" data-i18n="img2_cap">Cétacé échoué sur la côte de la mer Noire — la pollution sous-marine et les mines flottantes tuent en silence depuis 2022</div>
+            <img src="IMG_0349.jpeg.JPG" alt="Cétacé échoué côte de la mer Noire">
+            <div class="caption">Cétacé échoué sur la côte de la mer Noire — la pollution chimique et les mines sous-marines perturbent et tuent la faune marine en silence depuis 2022</div>
         </div>
         <div class="img-card">
-            <img src="IMG_0356.jpeg.JPG" alt="Explosion infrastructure pétrolière">
-            <div class="caption" data-i18n="img3_cap">Frappe sur infrastructure énergétique — chaque explosion libère des tonnes d'hydrocarbures directement dans les écosystèmes aquatiques</div>
+            <img src="IMG_0356.jpeg.JPG" alt="Explosion infrastructure portuaire">
+            <div class="caption">Explosion d'une infrastructure portuaire — chaque frappe sur un dépôt de carburant ou un port libère des nuages toxiques et contamine les nappes phréatiques environnantes</div>
         </div>
     </div>
 
     <div class="content-block">
-        <h3 data-i18n="u_eco_title">🌿 Destruction Écologique</h3>
-        <p data-i18n="u_eco1">La guerre en Ukraine constitue aujourd'hui la plus grande source individuelle d'émissions carbone du pays — dépassant toute l'industrie nationale combinée. Les 230 millions de tonnes de CO₂ équivalent émises depuis février 2022 représentent l'équivalent des émissions annuelles complètes de l'Autriche. Les incendies de forêts provoqués par les combats ont ravagé 808 km² en 2022 et 772 km² en 2023, soit 21% des émissions totales de gaz à effet de serre ukrainiennes sur ces années.</p>
-        <p data-i18n="u_eco2">La contamination des sols est catastrophique. Les obus d'artillerie, missiles et véhicules blindés libèrent du plomb, du mercure et de l'arsenic directement dans les terres agricoles. Quelque 40% du sol ukrainien est aujourd'hui affecté par l'érosion liée au conflit. Plus de 200 000 acres de terres ont été contaminées — un pays dont l'agriculture nourrissait une bonne partie du monde.</p>
+        <h3>🌿 Destruction Écologique</h3>
+        <p>La guerre en Ukraine est aujourd'hui la plus grande source individuelle d'émissions carbone du pays — dépassant toute l'industrie nationale combinée. Les 230 millions de tonnes de CO₂ équivalent émises depuis février 2022 représentent l'équivalent des émissions annuelles complètes de l'Autriche. Les incendies de forêts provoqués par les combats ont ravagé 808 km² en 2022 et 772 km² en 2023.</p>
+        <p>La contamination des sols est catastrophique. Les obus d'artillerie, missiles et véhicules blindés libèrent du plomb, du mercure et de l'arsenic directement dans les terres agricoles. Plus de 200 000 acres de sol sont aujourd'hui contaminés — un pays dont l'agriculture nourrissait une bonne partie du monde.</p>
         <ul>
             <li><strong>Mer Noire et mer d'Azov :</strong> pollution chimique massive, mines flottantes menaçant la faune marine, contamination des écosystèmes côtiers pour des décennies</li>
             <li><strong>Eaux souterraines :</strong> infiltration de métaux lourds et de contaminants d'explosifs dans les nappes phréatiques</li>
-            <li><strong>Biodiversité :</strong> perturbation des corridors migratoires, destruction d'habitats naturels, contamination de la chaîne alimentaire</li>
+            <li><strong>Biodiversité :</strong> perturbation des corridors migratoires, destruction d'habitats naturels</li>
         </ul>
     </div>
 
     <div class="content-block">
-        <h3 data-i18n="u_hum_title">💔 Conséquences Humaines et Économiques</h3>
+        <h3>💔 Conséquences Humaines et Économiques</h3>
         <ul>
             <li><strong>2 514 civils tués</strong> en 2025 — année la plus meurtrière depuis 2022, hausse de 31% par rapport à 2024</li>
-            <li><strong>12 142 civils blessés</strong> en 2025 selon le suivi de l'ONU</li>
-            <li><strong>524 milliards $</strong> nécessaires pour la reconstruction du pays sur 10 ans (ONU 2025)</li>
+            <li><strong>524 milliards $</strong> nécessaires pour la reconstruction sur 10 ans (ONU 2025)</li>
             <li><strong>80 milliards $</strong> de pertes dans le seul secteur agricole</li>
             <li><strong>8 millions de réfugiés</strong> déplacés à travers l'Europe</li>
         </ul>
@@ -230,57 +190,61 @@
     <!-- ===== GAZA / IRAN ===== -->
     <div class="section-header">
         <span class="icon">🔥</span>
-        <h2 data-i18n="iran_title">Gaza et Iran : Le Golfe Persique au Bord du Gouffre</h2>
+        <h2>Gaza et Iran : Le Golfe Persique au Bord du Gouffre</h2>
     </div>
 
-    <!-- Stats Gaza/Iran -->
     <div class="stats-grid">
         <div class="stat-card">
             <div class="number">39 Mt</div>
-            <div class="label" data-i18n="stat_g1">Débris d'engins explosifs à Gaza (PNUE)</div>
+            <div class="label">Débris d'engins explosifs à Gaza (PNUE)</div>
         </div>
         <div class="stat-card">
             <div class="number">107 kg</div>
-            <div class="label" data-i18n="stat_g2">Déchets par m² sur tout le territoire de Gaza</div>
+            <div class="label">Déchets explosifs par m² à Gaza</div>
         </div>
         <div class="stat-card">
             <div class="number">500 000 t</div>
-            <div class="label" data-i18n="stat_g3">CO₂ émis dans les 120 premiers jours à Gaza</div>
+            <div class="label">CO₂ émis dans les 120 premiers jours à Gaza</div>
         </div>
         <div class="stat-card">
             <div class="number">85+</div>
-            <div class="label" data-i18n="stat_g4">Pétroliers bloqués dans le détroit d'Ormuz lors des frappes sur l'Iran</div>
+            <div class="label">Pétroliers bloqués au détroit d'Ormuz lors des frappes</div>
         </div>
     </div>
 
-    <!-- Images Gaza/Iran -->
+    <!-- Photos Gaza/Iran : explosion pétrolier + incendie navires + récifs (x2) + dugong -->
     <div class="img-grid">
         <div class="img-card">
-            <img src="IMG_0352.jpeg.jpg" alt="Explosion pétrolier">
-            <div class="caption" data-i18n="img4_cap">Explosion d'un pétrolier dans le détroit d'Ormuz — 20% du transit pétrolier mondial emprunté par ce couloir; un déversement majeur contaminerait l'ensemble du Golfe</div>
+            <img src="IMG_0352.jpeg.jpg" alt="Explosion pétrolier en mer">
+            <div class="caption">Explosion d'un pétrolier en mer — un seul déversement dans le détroit d'Ormuz, où transitent 20% du pétrole mondial, contaminerait l'ensemble du Golfe Persique</div>
         </div>
         <div class="img-card">
-            <img src="IMG_0350.jpeg.JPG" alt="Récif corallien">
-            <div class="caption" data-i18n="img5_cap">Récif corallien du Golfe Persique — un écosystème parmi les plus fragiles au monde, directement menacé par les risques de déversements</div>
+            <img src="IMG_0354.jpeg.JPG" alt="Incendie navires pétroliers">
+            <div class="caption">Incendie de navires pétroliers dans un port — les frappes sur les infrastructures fossiles déclenchent des catastrophes environnementales immédiates dont les effets durent des décennies</div>
         </div>
         <div class="img-card">
-            <img src="IMG_0354.jpeg.JPG" alt="Incendie pétrolier">
-            <div class="caption" data-i18n="img6_cap">Incendie de navire pétrolier — les frappes sur les infrastructures fossiles génèrent des catastrophes environnementales immédiates</div>
+            <img src="IMG_0350.jpeg.JPG" alt="Récif corallien Golfe Persique">
+            <div class="caption">Récif corallien du Golfe Persique — l'un des écosystèmes marins les plus fragiles et les plus riches en biodiversité au monde, directement menacé par les risques de déversements massifs</div>
         </div>
         <div class="img-card">
-            <img src="IMG_0355.jpeg.JPG" alt="Dugong Golfe Persique">
-            <div class="caption" data-i18n="img7_cap">Dugong du Golfe Persique — espèce en danger critique dont l'habitat est directement menacé par la pollution aux hydrocarbures</div>
+            <img src="IMG_0351.jpeg.JPG" alt="Biodiversité marine menacée">
+            <div class="caption">Biodiversité marine du Golfe — des centaines d'espèces de poissons, coraux et invertébrés marins dont la survie dépend d'un équilibre chimique que la guerre détruit en quelques heures</div>
+        </div>
+
+        <div class="img-card">
+            <img src="IMG_0355.jpeg.JPG" alt="Dugong du Golfe Persique">
+            <div class="caption">Dugong du Golfe Persique — espèce en danger critique dont les herbiers marins sont directement détruits par la pollution aux hydrocarbures et les perturbations causées par les conflits</div>
         </div>
     </div>
 
     <div class="content-block">
-        <h3 data-i18n="iran_eco_title">🌊 Le Golfe Persique : Bombe Écologique en Suspens</h3>
-        <p data-i18n="iran_eco1">Les frappes israélo-américaines sur l'Iran ont immédiatement transformé le Golfe Persique en zone de risque écologique extrême. Plus de 85 grands pétroliers transportant des milliards de litres de pétrole brut se sont retrouvés bloqués dans le détroit d'Ormuz lors des premières frappes. Greenpeace Allemagne a averti qu'un seul déversement majeur dans ce couloir marin pourrait endommager irrémédiablement un habitat marin déjà fragilisé par des décennies d'exploitation pétrolière intensive.</p>
-        <p data-i18n="iran_eco2">À Gaza, le PNUE a documenté une contamination sans précédent des sols, de l'eau et de l'air. Les 39 millions de tonnes de débris d'engins explosifs — soit plus de 107 kilogrammes par mètre carré de territoire — contiennent des métaux lourds et des contaminants chimiques qui s'infiltrent dans les nappes phréatiques et la Méditerranée orientale. Les systèmes de désalinisation et de traitement des eaux usées, reconstruits laborieusement après des conflits précédents, ont été anéantis.</p>
+        <h3>🌊 Le Golfe Persique : Bombe Écologique en Suspens</h3>
+        <p>Les frappes israélo-américaines sur l'Iran ont transformé le Golfe Persique en zone de risque écologique extrême. Plus de 85 grands pétroliers transportant des milliards de litres de pétrole brut se sont retrouvés bloqués dans le détroit d'Ormuz lors des premières frappes. Greenpeace a averti qu'un seul déversement majeur dans ce couloir marin pourrait endommager irrémédiablement un habitat marin déjà fragilisé par des décennies d'exploitation pétrolière intensive.</p>
+        <p>À Gaza, le PNUE a documenté une contamination sans précédent des sols, de l'eau et de l'air. Les 39 millions de tonnes de débris d'engins explosifs — soit plus de 107 kilogrammes par mètre carré — contiennent des métaux lourds et des contaminants chimiques qui s'infiltrent dans les nappes phréatiques et la Méditerranée orientale.</p>
         <ul>
-            <li><strong>Zones de pêche :</strong> destruction des stocks halieutiques, contamination de la chaîne alimentaire marine en Méditerranée orientale</li>
-            <li><strong>Mangroves et zones humides côtières :</strong> destruction des habitats tampons entre mer et terre</li>
-            <li><strong>Infrastructures d'eau douce :</strong> 97% des eaux de Gaza jugées impropres à la consommation par l'OMS</li>
+            <li><strong>Zones de pêche :</strong> destruction des stocks halieutiques, contamination de la chaîne alimentaire marine</li>
+            <li><strong>Dugongs et tortues marines :</strong> perturbation des zones d'alimentation et de reproduction</li>
+            <li><strong>Eau douce :</strong> 97% des eaux de Gaza jugées impropres à la consommation selon l'OMS</li>
             <li><strong>Détroit d'Ormuz :</strong> 20% du transit pétrolier mondial — une fuite majeure contaminerait l'ensemble du Golfe Persique</li>
         </ul>
     </div>
@@ -289,73 +253,40 @@
 
     <!-- LIEN CAPITALISME -->
     <div class="capitalism-box">
-        <h2 data-i18n="cap_title">🔗 Le Capitalisme : Racine Commune de Toutes Ces Guerres</h2>
-        <p data-i18n="cap1">Ces guerres ne sont pas des accidents. Elles sont le produit logique d'un système économique dont la survie dépend du contrôle des ressources naturelles — pétrole, gaz, terres arables, eau, minéraux. Derrière chaque conflit contemporain se trouvent des intérêts économiques privés qui profitent de la déstabilisation, de la reconstruction et du contrôle des flux énergétiques mondiaux.</p>
-        <p data-i18n="cap2">Le lien est direct et documenté :</p>
+        <h2>🔗 Le Capitalisme : Racine Commune de Toutes Ces Guerres</h2>
+        <p>Ces guerres ne sont pas des accidents. Elles sont le produit logique d'un système économique dont la survie dépend du contrôle des ressources naturelles — pétrole, gaz, terres arables, eau, minéraux. Derrière chaque conflit contemporain se trouvent des intérêts économiques privés qui profitent de la déstabilisation, de la reconstruction et du contrôle des flux énergétiques mondiaux.</p>
         <ul>
-            <li><strong>Ukraine :</strong> le conflit s'est intensifié dans les zones détenant 50% des réserves minérales ukrainiennes — lithium, manganèse, fer. Les entreprises d'armement américaines et européennes ont enregistré des profits historiques depuis 2022.</li>
+            <li><strong>Ukraine :</strong> le conflit s'est intensifié dans les zones détenant 50% des réserves minérales — lithium, manganèse, fer. Les entreprises d'armement américaines et européennes ont enregistré des profits historiques depuis 2022.</li>
             <li><strong>Iran :</strong> le Golfe Persique concentre 30% des réserves mondiales de pétrole prouvées. Le contrôle du détroit d'Ormuz représente un levier géopolitique de plusieurs milliers de milliards de dollars.</li>
-            <li><strong>Gaza :</strong> des gisements de gaz naturel offshore évalués à plusieurs milliards de dollars — le Gaza Marine — sont convoités depuis des années par des intérêts régionaux et internationaux.</li>
-            <li><strong>L'écologie comme externalité :</strong> dans le calcul capitaliste de la guerre, la destruction environnementale n'apparaît dans aucun bilan. Elle est externalisée vers les générations futures, les espèces non-humaines et les populations qui n'ont ni le pouvoir ni la tribune pour en réclamer réparation.</li>
+            <li><strong>Gaza :</strong> des gisements de gaz naturel offshore évalués à plusieurs milliards de dollars — le Gaza Marine — sont convoités par des intérêts régionaux et internationaux depuis des années.</li>
+            <li><strong>L'écologie comme externalité :</strong> dans le calcul capitaliste de la guerre, la destruction environnementale n'apparaît dans aucun bilan. Elle est externalisée vers les générations futures, les espèces non-humaines et les populations sans tribune pour en réclamer réparation.</li>
         </ul>
-        <p data-i18n="cap3">Un système de gouvernance fondé sur le bien-être universel — comme l'Universalité — n'a structurellement aucun intérêt à déclencher des guerres pour des ressources. La coopération dans l'accès aux ressources remplace la compétition. La durabilité écologique devient une contrainte non négociable. C'est là la différence fondamentale.</p>
+        <p>Un système de gouvernance fondé sur le bien-être universel — comme l'Universalité — n'a structurellement aucun intérêt à déclencher des guerres pour des ressources. La coopération remplace la compétition. La durabilité écologique devient une contrainte non négociable.</p>
     </div>
 
     <!-- CONCLUSION -->
     <div class="conclusion-box">
-        <p data-i18n="ccl1"><strong>La guerre est le capitalisme à son état le plus pur :</strong> la maximisation du profit privé au prix du sacrifice collectif — humain, social, et maintenant planétaire.</p>
-        <p data-i18n="ccl2">Chaque obus tiré est une décision économique. Chaque infrastructure énergétique frappée est un actif à reconquérir. Chaque réfugié est une externalité non comptabilisée. Et chaque espèce qui disparaît dans un golfe mazouté n'a pas de tribunal pour réclamer justice.</p>
-        <p data-i18n="ccl3" style="color:#87CEEB; font-weight:bold; margin-top:14px;">🌍 L'Universalité ne se construit pas avec des missiles. Elle se construit avec la décision collective que la vie — humaine et non-humaine — vaut plus que le contrôle des ressources.</p>
+        <p><strong>La guerre est le capitalisme à son état le plus pur :</strong> la maximisation du profit privé au prix du sacrifice collectif — humain, social, et maintenant planétaire.</p>
+        <p>Chaque obus tiré est une décision économique. Chaque infrastructure énergétique frappée est un actif à reconquérir. Chaque réfugié est une externalité non comptabilisée. Et chaque espèce qui disparaît dans un golfe mazouté n'a pas de tribunal pour réclamer justice.</p>
+        <p style="color:#87CEEB; font-weight:bold; margin-top:14px;">🌍 L'Universalité ne se construit pas avec des missiles. Elle se construit avec la décision collective que la vie — humaine et non-humaine — vaut plus que le contrôle des ressources.</p>
     </div>
 
     <div style="text-align:center; margin-top:40px;">
-        <a href="index.html" style="background:#8b0000; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-family:Arial,sans-serif; font-weight:bold;" data-i18n="back_home">← Retour à l'accueil</a>
+        <a href="index.html" style="background:#8b0000; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-family:Arial,sans-serif; font-weight:bold;">← Retour à l'accueil</a>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 <span>Universel</span> — <span data-i18n="footer_slogan">Parce que personne ne devrait être laissé derrière</span> 🌈 | <a href="index.html">Accueil</a> | <a href="these.html">Thèse</a></p>
+    <p>© 2026 <span>Universel</span> — <span>Parce que personne ne devrait être laissé derrière</span> 🌈 | <a href="index.html">Accueil</a> | <a href="these.html">Thèse</a></p>
 </footer>
 
 <script>
-const translations = {
-    fr: {
-        banner_title: "Au-delà des Conséquences Économiques et Politiques :<br>Une Catastrophe Écologique Sans Précédent",
-        banner_sub: "Ukraine · Gaza · Iran — Le vrai prix des guerres capitalistes",
-        intro1: "Les guerres ne s'arrêtent pas quand les fusils se taisent. Elles continuent de tuer — silencieusement, chimiquement, écologiquement — pendant des décennies. Ce que les médias comptent en pertes humaines et en milliards de dommages économiques n'est que la surface visible d'un désastre planétaire dont la planète, elle, ne peut pas se relever aussi vite que les bourses mondiales.",
-        intro2: "Les conflits en Ukraine, à Gaza et en Iran ne sont pas des accidents géopolitiques isolés. Ils sont les produits prévisibles d'un système fondé sur le contrôle des ressources, la compétition entre États au service d'intérêts économiques privés, et l'externalisation du coût humain et écologique de cette compétition vers les populations les plus vulnérables.",
-        ukraine_title: "Ukraine : Trois Ans de Destruction Systématique",
-        iran_title: "Gaza et Iran : Le Golfe Persique au Bord du Gouffre",
-        cap_title: "🔗 Le Capitalisme : Racine Commune de Toutes Ces Guerres",
-        back_home: "← Retour à l'accueil",
-        footer_slogan: "Parce que personne ne devrait être laissé derrière"
-    },
-    en: {
-        banner_title: "Beyond Economic and Political Consequences:<br>An Unprecedented Ecological Catastrophe",
-        banner_sub: "Ukraine · Gaza · Iran — The true cost of capitalist wars",
-        intro1: "Wars do not stop when the guns go silent. They continue to kill — silently, chemically, ecologically — for decades. What the media counts in human losses and billions in economic damage is only the visible surface of a planetary disaster from which the Earth cannot recover as quickly as global stock markets.",
-        intro2: "The conflicts in Ukraine, Gaza and Iran are not isolated geopolitical accidents. They are the predictable products of a system built on resource control, competition between states serving private economic interests, and the externalization of human and ecological costs onto the most vulnerable populations.",
-        ukraine_title: "Ukraine: Three Years of Systematic Destruction",
-        iran_title: "Gaza and Iran: The Persian Gulf on the Edge of Collapse",
-        cap_title: "🔗 Capitalism: The Common Root of All These Wars",
-        back_home: "← Back to Home",
-        footer_slogan: "Because no one should be left behind"
-    }
-};
-
-let currentLang = 'fr';
 function toggleLang() {
-    currentLang = currentLang === 'fr' ? 'en' : 'fr';
-    document.getElementById('langBtn').textContent = currentLang === 'fr' ? 'EN' : 'FR';
-    document.documentElement.lang = currentLang;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[currentLang][key]) {
-            if (key === 'banner_title') { el.innerHTML = translations[currentLang][key]; }
-            else { el.textContent = translations[currentLang][key]; }
-        }
-    });
+    const btn = document.getElementById('langBtn');
+    const isFr = btn.textContent === 'EN';
+    btn.textContent = isFr ? 'FR' : 'EN';
+    document.documentElement.lang = isFr ? 'en' : 'fr';
 }
 </script>
 
