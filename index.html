@@ -102,20 +102,15 @@
 <div id="discussion">
     <h2 data-i18n="disc_title">💬 Espace de discussion</h2>
     <p class="intro" data-i18n="disc_intro">Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.</p>
-    <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function () {
-            this.page.url = window.location.href;
-            this.page.identifier = 'universel-discussion';
-        };
-        (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://VOTRE-SHORTNAME.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Active JavaScript pour voir les commentaires.</noscript>
+    <div style="text-align:center; padding:10px 0 10px;">
+        <p style="font-family:Arial,sans-serif; font-size:1rem; color:#555; margin-bottom:24px;" data-i18n="disc_cta_text">Tu veux partager ta réflexion, poser une question ou rejoindre le mouvement?</p>
+        <a href="mailto:fondateuruniversalite@gmail.com?subject=Discussion — Universel"
+           style="display:inline-block; background:#1a3a6b; color:#fff; font-family:Arial,sans-serif;
+                  font-weight:bold; font-size:1rem; padding:14px 36px; border-radius:30px;
+                  text-decoration:none; letter-spacing:0.05em; box-shadow:0 4px 16px rgba(26,58,107,0.25);"
+           onmouseover="this.style.background='#2a5298'" onmouseout="this.style.background='#1a3a6b'"
+           data-i18n="disc_cta_btn">✉️ Écrire au Fondateur</a>
+    </div>
 </div>
 
 <section id="contact" style="text-align:center; padding-top:20px;">
@@ -128,13 +123,14 @@
     </p>
 </section>
 
-
 <hr>
 
-<section id="apropos" style="max-width:780px; margin:0 auto; padding:50px 24px;">
-    <h2 style="font-size:1.9rem; color:#1a3a6b; margin-bottom:28px; border-left:5px solid #87CEEB; padding-left:14px;" data-i18n="about_title">À propos du Fondateur</h2>
+<section id="apropos" style="padding:50px 24px;">
+    <h2 data-i18n="about_title">À propos du Fondateur</h2>
     <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap; margin-bottom:32px;">
-        <img src="IMG_0382.jpeg" alt="Le Fondateur" style="width:150px; height:150px; border-radius:50%; object-fit:cover; box-shadow:0 0 32px rgba(135,206,235,0.6); flex-shrink:0;">
+        <img src="IMG_0382.jpeg.JPG" alt="Le Fondateur"
+             style="width:150px; height:150px; border-radius:50%; object-fit:cover;
+                    box-shadow:0 0 32px rgba(135,206,235,0.6); flex-shrink:0;">
         <div>
             <p style="font-size:1.3rem; font-weight:bold; color:#1a3a6b; margin-bottom:6px; font-family:Arial,sans-serif;" data-i18n="about_name">Le Fondateur</p>
             <p style="font-size:0.95rem; color:#555; font-style:italic; font-family:Arial,sans-serif;" data-i18n="about_tagline">Penseur systémique · Biotechnologiste · Architecte de l'Universalité</p>
@@ -145,7 +141,9 @@
         <p style="font-size:1.02rem; line-height:1.88; color:#2c2c2c; text-align:justify; margin-bottom:14px;" data-i18n="about_p2">Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.</p>
         <p style="font-size:1.02rem; line-height:1.88; color:#2c2c2c; text-align:justify;" data-i18n="about_p3">Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.</p>
     </div>
-    <p style="text-align:center; margin-top:24px; font-size:0.9rem; color:#888; font-family:Arial,sans-serif;">© 2026 Le Fondateur — <span data-i18n="about_rights">Tous droits réservés</span> ⭕</p>
+    <p style="text-align:center; margin-top:24px; font-size:0.9rem; color:#888; font-family:Arial,sans-serif;">
+        © 2026 Le Fondateur — <span data-i18n="about_rights">Tous droits réservés</span> ⭕
+    </p>
 </section>
 
 <footer>
@@ -158,17 +156,10 @@ const translations = {
         nav_vision: "La Vision",
         nav_discussion: "Discussion",
         nav_these: "📖 Un peu plus…",
+        nav_theorie: "🔬 Nouvelle Approche",
+        nav_guerre: "⚔️ Guerre",
+        nav_about: "À propos",
         nav_contact: "Contact",
-        nav_theorie: "🔬 New Approach",
-        nav_guerre: "⚔️ War",
-        nav_about: "About",
-        about_title: "About the Founder",
-        about_name: "The Founder",
-        about_tagline: "Systemic Thinker · Biotechnologiste · Architecte de l'Universalité",
-        about_p1: "Formé en biotechnologies, le Fondateur a développé une approche rare : appliquer la logique des organismes vivants — autorégulation, homéostasie, bifurcation — à la gouvernance des sociétés humaines. Ce n'est pas une métaphore. C'est une méthode.",
-        about_p2: "Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.",
-        about_p3: "Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.",
-        about_rights: "Tous droits réservés",
         vision_title: "Notre Vision",
         v1_title: "Le monde que nous avons construit est à bout de souffle.",
         v1_text: "Les inégalités n'ont jamais été aussi criantes. Des millions de personnes travaillent à s'épuiser sans jamais réussir à couvrir leurs besoins de base. Les services communautaires, les travailleurs de l'ombre, ceux qui tiennent le filet social à bout de bras — on les abandonne. Pendant ce temps, la richesse se concentre dans les mains d'un nombre toujours plus petit, pendant que la majorité survit. Ce n'est pas une fatalité. C'est un choix systémique. Et ce choix-là nous coûte collectivement bien plus que ce qu'il rapporte à quelques-uns.",
@@ -179,25 +170,27 @@ const translations = {
         v4_cta: "✊ Universel, c'est ce mouvement-là. Et il commence maintenant.",
         disc_title: "💬 Espace de discussion",
         disc_intro: "Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.",
+        disc_cta_text: "Tu veux partager ta réflexion, poser une question ou rejoindre le mouvement?",
+        disc_cta_btn: "✉️ Écrire au Fondateur",
         contact_title: "Contact",
         contact_text: "Tu veux en savoir plus ou contribuer au mouvement?",
+        about_title: "À propos du Fondateur",
+        about_name: "Le Fondateur",
+        about_tagline: "Penseur systémique · Biotechnologiste · Architecte de l'Universalité",
+        about_p1: "Formé en biotechnologies, le Fondateur a développé une approche rare : appliquer la logique des organismes vivants — autorégulation, homéostasie, bifurcation — à la gouvernance des sociétés humaines. Ce n'est pas une métaphore. C'est une méthode.",
+        about_p2: "Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.",
+        about_p3: "Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.",
+        about_rights: "Tous droits réservés",
         footer_slogan: "Parce que personne ne devrait être laissé derrière"
     },
     en: {
         nav_vision: "Our Vision",
         nav_discussion: "Discussion",
         nav_these: "📖 Learn More…",
-        nav_contact: "Contact",
         nav_theorie: "🔬 New Approach",
         nav_guerre: "⚔️ War",
         nav_about: "About",
-        about_title: "About the Founder",
-        about_name: "The Founder",
-        about_tagline: "Systemic Thinker · Biotechnologiste · Architecte de l'Universalité",
-        about_p1: "Trained in biotechnology, the Founder developed a rare approach: applying the logic of living organisms — self-regulation, homeostasis, bifurcation — to the governance of human societies. This is not a metaphor. It is a method.",
-        about_p2: "For over a decade, he has been developing the Evolutionary Socio-Trajectory — an original theoretical framework that transforms elite-mass confrontation into a positive-sum game, proposing a self-regulating governance architecture based on leading indicators, quantum computing, and collective prediction.",
-        about_p3: "His identity remains deliberately discreet. Ideas carry a force that precedes and transcends whoever holds them. They are here to be refuted, improved, or adopted — not judged through a face.",
-        about_rights: "All rights reserved",
+        nav_contact: "Contact",
         vision_title: "Our Vision",
         v1_title: "The world we built is running out of breath.",
         v1_text: "Inequality has never been so glaring. Millions of people work themselves to exhaustion without ever managing to cover their basic needs. Community services, shadow workers, those holding the social safety net together — we abandon them. Meanwhile, wealth concentrates in fewer and fewer hands while the majority merely survives. This is not inevitable. It is a systemic choice. And that choice costs us collectively far more than it benefits the few.",
@@ -208,8 +201,17 @@ const translations = {
         v4_cta: "✊ Universel is that movement. And it starts now.",
         disc_title: "💬 Discussion Space",
         disc_intro: "Share your perspective, ask questions, join the movement. All constructive viewpoints are welcome.",
+        disc_cta_text: "Want to share a thought, ask a question or join the movement?",
+        disc_cta_btn: "✉️ Write to the Founder",
         contact_title: "Contact",
         contact_text: "Want to learn more or contribute to the movement?",
+        about_title: "About the Founder",
+        about_name: "The Founder",
+        about_tagline: "Systemic Thinker · Biotechnologist · Architect of Universality",
+        about_p1: "Trained in biotechnology, the Founder developed a rare approach: applying the logic of living organisms — self-regulation, homeostasis, bifurcation — to the governance of human societies. This is not a metaphor. It is a method.",
+        about_p2: "For over a decade, he has been developing the Evolutionary Socio-Trajectory — an original theoretical framework that transforms elite-mass confrontation into a positive-sum game, proposing a self-regulating governance architecture based on leading indicators, quantum computing, and collective prediction.",
+        about_p3: "His identity remains deliberately discreet. Ideas carry a force that precedes and transcends whoever holds them. They are here to be refuted, improved, or adopted — not judged through a face.",
+        about_rights: "All rights reserved",
         footer_slogan: "Because no one should be left behind"
     }
 };
