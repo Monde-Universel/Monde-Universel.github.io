@@ -69,6 +69,7 @@
     <a href="these.html" data-i18n="nav_these">📖 Un peu plus…</a>
     <a href="theorie.html" data-i18n="nav_theorie">🔬 Nouvelle Approche</a>
     <a href="guerre.html" style="color:#ff6666;" data-i18n="nav_guerre">⚔️ Guerre</a>
+    <a href="#apropos" data-i18n="nav_about">À propos</a>
     <a href="#contact" data-i18n="nav_contact">Contact</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
 </nav>
@@ -121,10 +122,30 @@
     <h2 style="border-left:5px solid #87CEEB; padding-left:14px; display:inline-block; text-align:left;" data-i18n="contact_title">Contact</h2>
     <p style="margin-top:16px; font-family:Arial,sans-serif; font-size:1rem; color:#444;">
         <span data-i18n="contact_text">Tu veux en savoir plus ou contribuer au mouvement?</span><br><br>
-        <a href="mailto:society2heal@gmail.com" style="color:#1a3a6b; font-weight:bold; font-size:1.1rem;">
-            📩 society2heal@gmail.com
+        <a href="mailto:fondateuruniversalite@gmail.com" style="color:#1a3a6b; font-weight:bold; font-size:1.1rem;">
+            📩 fondateuruniversalite@gmail.com
         </a>
     </p>
+</section>
+
+
+<hr>
+
+<section id="apropos" style="max-width:780px; margin:0 auto; padding:50px 24px;">
+    <h2 style="font-size:1.9rem; color:#1a3a6b; margin-bottom:28px; border-left:5px solid #87CEEB; padding-left:14px;" data-i18n="about_title">À propos du Fondateur</h2>
+    <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap; margin-bottom:32px;">
+        <img src="IMG_0382.jpeg" alt="Le Fondateur" style="width:150px; height:150px; border-radius:50%; object-fit:cover; box-shadow:0 0 32px rgba(135,206,235,0.6); flex-shrink:0;">
+        <div>
+            <p style="font-size:1.3rem; font-weight:bold; color:#1a3a6b; margin-bottom:6px; font-family:Arial,sans-serif;" data-i18n="about_name">Le Fondateur</p>
+            <p style="font-size:0.95rem; color:#555; font-style:italic; font-family:Arial,sans-serif;" data-i18n="about_tagline">Penseur systémique · Biotechnologiste · Architecte de l'Universalité</p>
+        </div>
+    </div>
+    <div style="background:#fff; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.07); padding:28px 32px; border-left:5px solid #87CEEB;">
+        <p style="font-size:1.02rem; line-height:1.88; color:#2c2c2c; text-align:justify; margin-bottom:14px;" data-i18n="about_p1">Formé en biotechnologies, le Fondateur a développé une approche rare : appliquer la logique des organismes vivants — autorégulation, homéostasie, bifurcation — à la gouvernance des sociétés humaines. Ce n'est pas une métaphore. C'est une méthode.</p>
+        <p style="font-size:1.02rem; line-height:1.88; color:#2c2c2c; text-align:justify; margin-bottom:14px;" data-i18n="about_p2">Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.</p>
+        <p style="font-size:1.02rem; line-height:1.88; color:#2c2c2c; text-align:justify;" data-i18n="about_p3">Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.</p>
+    </div>
+    <p style="text-align:center; margin-top:24px; font-size:0.9rem; color:#888; font-family:Arial,sans-serif;">© 2026 Le Fondateur — <span data-i18n="about_rights">Tous droits réservés</span> ⭕</p>
 </section>
 
 <footer>
@@ -138,8 +159,16 @@ const translations = {
         nav_discussion: "Discussion",
         nav_these: "📖 Un peu plus…",
         nav_contact: "Contact",
-        nav_theorie: "🔬 Nouvelle Approche",
-        nav_guerre: "⚔️ Guerre",
+        nav_theorie: "🔬 New Approach",
+        nav_guerre: "⚔️ War",
+        nav_about: "About",
+        about_title: "About the Founder",
+        about_name: "The Founder",
+        about_tagline: "Systemic Thinker · Biotechnologiste · Architecte de l'Universalité",
+        about_p1: "Formé en biotechnologies, le Fondateur a développé une approche rare : appliquer la logique des organismes vivants — autorégulation, homéostasie, bifurcation — à la gouvernance des sociétés humaines. Ce n'est pas une métaphore. C'est une méthode.",
+        about_p2: "Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.",
+        about_p3: "Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.",
+        about_rights: "Tous droits réservés",
         vision_title: "Notre Vision",
         v1_title: "Le monde que nous avons construit est à bout de souffle.",
         v1_text: "Les inégalités n'ont jamais été aussi criantes. Des millions de personnes travaillent à s'épuiser sans jamais réussir à couvrir leurs besoins de base. Les services communautaires, les travailleurs de l'ombre, ceux qui tiennent le filet social à bout de bras — on les abandonne. Pendant ce temps, la richesse se concentre dans les mains d'un nombre toujours plus petit, pendant que la majorité survit. Ce n'est pas une fatalité. C'est un choix systémique. Et ce choix-là nous coûte collectivement bien plus que ce qu'il rapporte à quelques-uns.",
@@ -161,6 +190,14 @@ const translations = {
         nav_contact: "Contact",
         nav_theorie: "🔬 New Approach",
         nav_guerre: "⚔️ War",
+        nav_about: "About",
+        about_title: "About the Founder",
+        about_name: "The Founder",
+        about_tagline: "Systemic Thinker · Biotechnologiste · Architecte de l'Universalité",
+        about_p1: "Trained in biotechnology, the Founder developed a rare approach: applying the logic of living organisms — self-regulation, homeostasis, bifurcation — to the governance of human societies. This is not a metaphor. It is a method.",
+        about_p2: "For over a decade, he has been developing the Evolutionary Socio-Trajectory — an original theoretical framework that transforms elite-mass confrontation into a positive-sum game, proposing a self-regulating governance architecture based on leading indicators, quantum computing, and collective prediction.",
+        about_p3: "His identity remains deliberately discreet. Ideas carry a force that precedes and transcends whoever holds them. They are here to be refuted, improved, or adopted — not judged through a face.",
+        about_rights: "All rights reserved",
         vision_title: "Our Vision",
         v1_title: "The world we built is running out of breath.",
         v1_text: "Inequality has never been so glaring. Millions of people work themselves to exhaustion without ever managing to cover their basic needs. Community services, shadow workers, those holding the social safety net together — we abandon them. Meanwhile, wealth concentrates in fewer and fewer hands while the majority merely survives. This is not inevitable. It is a systemic choice. And that choice costs us collectively far more than it benefits the few.",

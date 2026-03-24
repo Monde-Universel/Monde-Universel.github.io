@@ -99,6 +99,7 @@
     <a href="these.html" data-i18n="nav_these">📖 Un peu plus…</a>
     <a href="theorie.html" data-i18n="nav_theorie">🔬 Nouvelle Approche</a>
     <a href="guerre.html" style="color:#ff4444;" data-i18n="nav_guerre">⚔️ Guerre</a>
+    <a href="index.html#apropos" data-i18n="nav_about">À propos</a>
     <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
 </nav>
@@ -287,7 +288,6 @@
 <script>
 const translations = {
   fr: {
-    nav_home:"🏠 Accueil", nav_vision:"La Vision", nav_these:"📖 Un peu plus…", nav_theorie:"🔬 Nouvelle Approche", nav_guerre:"⚔️ Guerre", nav_contact:"Contact",
     tag: "BULLETIN SPÉCIAL",
     banner_title: "Au-delà des Conséquences Économiques et Politiques :<br>Une Catastrophe Écologique Sans Précédent",
     banner_sub: "Ukraine · Gaza · Iran — Le vrai prix des guerres capitalistes",
@@ -345,7 +345,6 @@ const translations = {
     footer_txt: "Parce que personne ne devrait être laissé derrière"
   },
   en: {
-    nav_home:"🏠 Home", nav_vision:"Our Vision", nav_these:"📖 Learn More…", nav_theorie:"🔬 New Approach", nav_guerre:"⚔️ War", nav_contact:"Contact",
     tag: "SPECIAL REPORT",
     banner_title: "Beyond Economic and Political Consequences:<br>An Unprecedented Ecological Catastrophe",
     banner_sub: "Ukraine · Gaza · Iran — The true cost of capitalist wars",
@@ -409,8 +408,6 @@ let currentLang = 'fr';
 function toggleLang() {
     currentLang = currentLang === 'fr' ? 'en' : 'fr';
     document.getElementById('langBtn').textContent = currentLang === 'fr' ? 'EN' : 'FR';
-    
-    document.querySelectorAll('[data-i18n]').forEach(el => { const k=el.getAttribute('data-i18n'); if(translations[currentLang][k]) el.innerHTML=translations[currentLang][k]; });
     document.documentElement.lang = currentLang;
     applyTranslations();
 }
