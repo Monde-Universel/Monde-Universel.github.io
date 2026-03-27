@@ -289,6 +289,15 @@
 const translations = {
   fr: {
     tag: "BULLETIN SPÉCIAL",
+    nav_home: "🏠 Accueil",
+    nav_vision: "La Vision",
+    nav_these: "📖 Un peu plus…",
+    nav_theorie: "🔬 Nouvelle Approche",
+    nav_guerre: "⚔️ Guerre",
+    nav_about: "À propos",
+    nav_contact: "Contact",
+    page_title: "Guerre — Catastrophe Écologique | Universel",
+
     banner_title: "Au-delà des Conséquences Économiques et Politiques :<br>Une Catastrophe Écologique Sans Précédent",
     banner_sub: "Ukraine · Gaza · Iran — Le vrai prix des guerres capitalistes",
     intro1: "Les guerres ne s'arrêtent pas quand les fusils se taisent. Elles continuent de tuer — silencieusement, chimiquement, écologiquement — pendant des décennies. Ce que les médias comptent en pertes humaines et en milliards de dommages économiques n'est que la surface visible d'un désastre planétaire dont la planète ne peut pas se relever aussi vite que les bourses mondiales.",
@@ -346,6 +355,15 @@ const translations = {
   },
   en: {
     tag: "SPECIAL REPORT",
+    nav_home: "🏠 Home",
+    nav_vision: "The Vision",
+    nav_these: "📖 A Bit More…",
+    nav_theorie: "🔬 New Approach",
+    nav_guerre: "⚔️ War",
+    nav_about: "About",
+    nav_contact: "Contact",
+    page_title: "War — Ecological Catastrophe | Universel",
+
     banner_title: "Beyond Economic and Political Consequences:<br>An Unprecedented Ecological Catastrophe",
     banner_sub: "Ukraine · Gaza · Iran — The true cost of capitalist wars",
     intro1: "Wars do not stop when the guns go silent. They continue to kill — silently, chemically, ecologically — for decades. What the media counts in human losses and billions in economic damage is only the visible surface of a planetary disaster from which the Earth cannot recover as quickly as global stock markets.",
@@ -414,6 +432,7 @@ function toggleLang() {
 
 function applyTranslations() {
     const t = translations[currentLang];
+    if (t['page_title']) document.title = t['page_title'];
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (t[key] !== undefined) {
