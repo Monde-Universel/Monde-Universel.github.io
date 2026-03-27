@@ -1,235 +1,189 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universel — Parce que personne ne devrait être laissé derrière</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
-
-        .hero {
-            background: linear-gradient(180deg, #87CEEB 0%, #b8e0f7 100%);
-            text-align: center; padding: 40px 20px 30px;
-        }
-        .hero img { max-width: 380px; width: 90%; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
-
-        nav {
-            background: #1a3a6b; display: flex; justify-content: center;
-            align-items: center; gap: 24px; padding: 14px 20px; flex-wrap: wrap;
-        }
-        nav a { color: #fff; text-decoration: none; font-family: Arial, sans-serif;
-            font-size: 0.92rem; font-weight: bold; letter-spacing: 0.04em; transition: color 0.2s; }
-        nav a:hover { color: #87CEEB; }
-
-        .lang-btn {
-            background: #87CEEB; color: #1a3a6b; border: none; border-radius: 20px;
-            padding: 6px 16px; font-family: Arial, sans-serif; font-size: 0.9rem;
-            font-weight: bold; cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em;
-        }
-        .lang-btn:hover { background: #fff; }
-
-        section { max-width: 780px; margin: 0 auto; padding: 50px 24px; }
-        section h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 28px;
-            border-left: 5px solid #87CEEB; padding-left: 14px; }
-
-        .vision-block { margin-bottom: 28px; }
-        .vision-block h3 { font-size: 1.1rem; color: #1a3a6b; margin-bottom: 10px; font-style: italic; }
-        .vision-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; }
-        .vision-block.cta p { font-size: 1.15rem; font-weight: bold; color: #1a3a6b; text-align: center; margin-top: 10px; }
-
-        hr { border: none; border-top: 2px solid #87CEEB; max-width: 780px; margin: 0 auto; }
-
-        #discussion {
-            background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            max-width: 780px; margin: 0 auto 60px; padding: 40px 24px;
-        }
-        #discussion h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 10px;
-            border-left: 5px solid #87CEEB; padding-left: 14px; }
-        #discussion p.intro { font-size: 1rem; color: #555; margin-bottom: 28px; font-family: Arial, sans-serif; }
-
-        footer { background: #1a3a6b; color: #cce4f7; text-align: center;
-            padding: 24px 20px; font-family: Arial, sans-serif; font-size: 0.88rem; }
-        footer span { color: #87CEEB; font-weight: bold; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universel — Parce que personne ne devrait être laissé derrière</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
+    .hero { background: linear-gradient(180deg, #87CEEB 0%, #b8e0f7 100%); text-align: center; padding: 40px 20px 30px; }
+    .hero img { max-width: 380px; width: 90%; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+    nav { background: #1a3a6b; display: flex; justify-content: center; align-items: center; gap: 24px; padding: 14px 20px; flex-wrap: wrap; }
+    nav a { color: #fff; text-decoration: none; font-family: Arial, sans-serif; font-size: 0.92rem; font-weight: bold; letter-spacing: 0.04em; transition: color 0.2s; }
+    nav a:hover { color: #87CEEB; }
+    .lang-btn { background: #87CEEB; color: #1a3a6b; border: none; border-radius: 20px; padding: 6px 16px; font-family: Arial, sans-serif; font-size: 0.9rem; font-weight: bold; cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em; }
+    .lang-btn:hover { background: #fff; }
+    section { max-width: 780px; margin: 0 auto; padding: 50px 24px; }
+    section h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 28px; border-left: 5px solid #87CEEB; padding-left: 14px; }
+    .vision-block { margin-bottom: 28px; }
+    .vision-block h3 { font-size: 1.1rem; color: #1a3a6b; margin-bottom: 10px; font-style: italic; }
+    .vision-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; }
+    .vision-block.cta p { font-size: 1.15rem; font-weight: bold; color: #1a3a6b; text-align: center; margin-top: 10px; }
+    hr { border: none; border-top: 2px solid #87CEEB; max-width: 780px; margin: 0 auto; }
+    .discussion { background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 780px; margin: 0 auto 60px; padding: 40px 24px; }
+    .discussion h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 10px; border-left: 5px solid #87CEEB; padding-left: 14px; }
+    .discussion p.intro { font-size: 1rem; color: #555; margin-bottom: 28px; font-family: Arial, sans-serif; }
+    footer { background: #1a3a6b; color: #cce4f7; text-align: center; padding: 24px 20px; font-family: Arial, sans-serif; font-size: 0.88rem; }
+    footer span { color: #87CEEB; font-weight: bold; }
+  </style>
 </head>
 <body>
 
 <div class="hero">
-    <video autoplay muted loop playsinline
-        style="width:100%; max-width:380px; border-radius:12px; display:block; margin:0 auto;">
-        <source src="universel.mp4.mp4" type="video/mp4">
-        <img src="logo_universel.jpeg.JPG" alt="Logo Universel">
-    </video>
+  <video autoplay muted loop playsinline style="width:100%;max-width:380px;border-radius:12px;display:block;margin:0 auto">
+    <source src="universel.mp4" type="video/mp4">
+    <img src="logouniversel.jpeg.JPG" alt="Logo Universel">
+  </video>
 </div>
 
 <nav>
-    <a href="#vision" data-i18n="nav_vision">La Vision</a>
-    <a href="#discussion" data-i18n="nav_discussion">Discussion</a>
-    <a href="these.html" data-i18n="nav_these">📖 Un peu plus…</a>
-    <a href="theorie.html" data-i18n="nav_theorie">🔬 Nouvelle Approche</a>
-    <a href="guerre.html" style="color:#ff6666;" data-i18n="nav_guerre">⚔️ Guerre</a>
-    <a href="#apropos" data-i18n="nav_about">À propos</a>
-    <a href="#contact" data-i18n="nav_contact">Contact</a>
-    <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+  <a href="#vision" data-i18n="navvision">La Vision</a>
+  <a href="#discussion" data-i18n="navdiscussion">Discussion</a>
+  <a href="these.html" data-i18n="navthese">📖 Un peu plus…</a>
+  <a href="theorie.html" data-i18n="navtheorie">Nouvelle Approche</a>
+  <a href="guerre.html" style="color:#ff6666;" data-i18n="navguerre">⚔️ Guerre</a>
+  <a href="chomage.html" data-i18n="navchomage">📉 Chômage</a>
+  <a href="#apropos" data-i18n="navabout">À propos</a>
+  <a href="#contact" data-i18n="navcontact">Contact</a>
+  <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
 </nav>
 
 <section id="vision">
-    <h2 data-i18n="vision_title">Notre Vision</h2>
-
-    <div class="vision-block">
-        <h3 data-i18n="v1_title">Le monde que nous avons construit est à bout de souffle.</h3>
-        <p data-i18n="v1_text">Les inégalités n'ont jamais été aussi criantes. Des millions de personnes travaillent à s'épuiser sans jamais réussir à couvrir leurs besoins de base. Les services communautaires, les travailleurs de l'ombre, ceux qui tiennent le filet social à bout de bras — on les abandonne. Pendant ce temps, la richesse se concentre dans les mains d'un nombre toujours plus petit, pendant que la majorité survit. Ce n'est pas une fatalité. C'est un choix systémique. Et ce choix-là nous coûte collectivement bien plus que ce qu'il rapporte à quelques-uns.</p>
-    </div>
-
-    <div class="vision-block">
-        <h3 data-i18n="v2_title">Nous sommes à la croisée des chemins.</h3>
-        <p data-i18n="v2_text">Les crises se multiplient — économiques, climatiques, sociales — parce qu'elles ont toutes la même racine : un système conçu pour produire et accumuler, pas pour prendre soin. Chaque fois qu'on rafistole un bout, trois autres lâchent. Ce n'est plus un problème de gestion. C'est un problème de fondation.</p>
-    </div>
-
-    <div class="vision-block">
-        <h3 data-i18n="v3_title">Mais l'humanité a toujours su se relever — quand elle choisit de se retrouver.</h3>
-        <p data-i18n="v3_text">Il existe une autre façon. Une façon où les besoins essentiels ne sont plus des privilèges, mais des droits réels. Où le pouvoir est diffusé dans la masse plutôt que concentré au sommet. Où coopérer devient plus rationnel qu'accumuler. Ce n'est pas une utopie — c'est une architecture sociale à construire ensemble, une décision collective que des millions de personnes ordinaires, partout, sont déjà prêtes à prendre.</p>
-    </div>
-
-    <div class="vision-block cta">
-        <p data-i18n="v4_cta">✊ Universel, c'est ce mouvement-là. Et il commence maintenant.</p>
-    </div>
+  <h2 data-i18n="visiontitle">Notre Vision</h2>
+  <div class="vision-block">
+    <h3 data-i18n="v1title">Le monde que nous avons construit est à bout de souffle.</h3>
+    <p data-i18n="v1text">Les inégalités n'ont jamais été aussi criantes. Des millions de personnes travaillent à s'épuiser sans jamais réussir à couvrir leurs besoins de base. Les services communautaires, les travailleurs de l'ombre, ceux qui tiennent le filet social à bout de bras — on les abandonne. Pendant ce temps, la richesse se concentre dans les mains d'un nombre toujours plus petit, pendant que la majorité survit. Ce n'est pas une fatalité. C'est un choix systémique. Et ce choix-là nous coûte collectivement bien plus que ce qu'il rapporte à quelques-uns.</p>
+  </div>
+  <div class="vision-block">
+    <h3 data-i18n="v2title">Nous sommes à la croisée des chemins.</h3>
+    <p data-i18n="v2text">Les crises se multiplient — économiques, climatiques, sociales — parce qu'elles ont toutes la même racine : un système conçu pour produire et accumuler, pas pour prendre soin. Chaque fois qu'on rafistole un bout, trois autres lâchent. Ce n'est plus un problème de gestion. C'est un problème de fondation.</p>
+  </div>
+  <div class="vision-block">
+    <h3 data-i18n="v3title">Mais l'humanité a toujours su se relever quand elle choisit de se retrouver.</h3>
+    <p data-i18n="v3text">Il existe une autre façon. Une façon où les besoins essentiels ne sont plus des privilèges, mais des droits réels. Où le pouvoir est diffusé dans la masse plutôt que concentré au sommet. Où coopérer devient plus rationnel qu'accumuler. Ce n'est pas une utopie — c'est une architecture sociale à construire ensemble, une décision collective que des millions de personnes ordinaires, partout, sont déjà prêtes à prendre.</p>
+  </div>
+  <div class="vision-block cta">
+    <p data-i18n="v4cta">✊ Universel, c'est ce mouvement-là. Et il commence maintenant.</p>
+  </div>
 </section>
 
 <hr>
 
-<div id="discussion">
-    <h2 data-i18n="disc_title">💬 Espace de discussion</h2>
-    <p class="intro" data-i18n="disc_intro">Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.</p>
-    <div style="text-align:center; padding:10px 0 10px;">
-        <p style="font-family:Arial,sans-serif; font-size:1rem; color:#555; margin-bottom:24px;" data-i18n="disc_cta_text">Tu veux partager ta réflexion, poser une question ou rejoindre le mouvement?</p>
-        <a href="mailto:fondateuruniversalite@gmail.com?subject=Discussion — Universel"
-           style="display:inline-block; background:#1a3a6b; color:#fff; font-family:Arial,sans-serif;
-                  font-weight:bold; font-size:1rem; padding:14px 36px; border-radius:30px;
-                  text-decoration:none; letter-spacing:0.05em; box-shadow:0 4px 16px rgba(26,58,107,0.25);"
-           onmouseover="this.style.background='#2a5298'" onmouseout="this.style.background='#1a3a6b'"
-           data-i18n="disc_cta_btn">✉️ Écrire au Fondateur</a>
-    </div>
+<div id="discussion" class="discussion">
+  <h2 data-i18n="disctitle">Espace de discussion</h2>
+  <p class="intro" data-i18n="discintro">Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.</p>
+  <div style="text-align:center;padding:10px 0 10px">
+    <p style="font-family:Arial,sans-serif;font-size:1rem;color:#555;margin-bottom:24px" data-i18n="discctatext">Tu veux partager ta réflexion, poser une question ou rejoindre le mouvement?</p>
+    <a href="mailto:fondateuruniversalite@gmail.com?subject=Discussion Universel"
+       style="display:inline-block;background:#1a3a6b;color:#fff;font-family:Arial,sans-serif;font-weight:bold;font-size:1rem;padding:14px 36px;border-radius:30px;text-decoration:none;letter-spacing:0.05em;box-shadow:0 4px 16px rgba(26,58,107,0.25)"
+       onmouseover="this.style.background='#2a5298'" onmouseout="this.style.background='#1a3a6b'"
+       data-i18n="discctabtn">✉️ Écrire au Fondateur</a>
+  </div>
 </div>
 
-<section id="contact" style="text-align:center; padding-top:20px;">
-    <h2 style="border-left:5px solid #87CEEB; padding-left:14px; display:inline-block; text-align:left;" data-i18n="contact_title">Contact</h2>
-    <p style="margin-top:16px; font-family:Arial,sans-serif; font-size:1rem; color:#444;">
-        <span data-i18n="contact_text">Tu veux en savoir plus ou contribuer au mouvement?</span><br><br>
-        <a href="mailto:fondateuruniversalite@gmail.com" style="color:#1a3a6b; font-weight:bold; font-size:1.1rem;">
-            📩 fondateuruniversalite@gmail.com
-        </a>
-    </p>
+<section id="contact" style="text-align:center;padding-top:20px">
+  <h2 style="border-left:5px solid #87CEEB;padding-left:14px;display:inline-block;text-align:left" data-i18n="contacttitle">Contact</h2>
+  <p style="margin-top:16px;font-family:Arial,sans-serif;font-size:1rem;color:#444">
+    <span data-i18n="contacttext">Tu veux en savoir plus ou contribuer au mouvement?</span><br><br>
+    <a href="mailto:fondateuruniversalite@gmail.com" style="color:#1a3a6b;font-weight:bold;font-size:1.1rem">fondateuruniversalite@gmail.com</a>
+  </p>
 </section>
 
 <hr>
 
-<section id="apropos" style="padding:50px 24px;">
-    <h2 data-i18n="about_title">À propos du Fondateur</h2>
-    <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap; margin-bottom:32px;">
-        <img src="IMG_0382.jpeg.JPG" alt="Le Fondateur"
-             style="width:150px; height:150px; border-radius:50%; object-fit:cover;
-                    box-shadow:0 0 32px rgba(135,206,235,0.6); flex-shrink:0;">
-        <div>
-            <p style="font-size:1.3rem; font-weight:bold; color:#1a3a6b; margin-bottom:6px; font-family:Arial,sans-serif;" data-i18n="about_name">Le Fondateur</p>
-            <p style="font-size:0.95rem; color:#555; font-style:italic; font-family:Arial,sans-serif;" data-i18n="about_tagline">Penseur systémique · Biotechnologiste · Architecte de l'Universalité</p>
-        </div>
+<section id="apropos" style="padding:50px 24px">
+  <h2 data-i18n="abouttitle">À propos du Fondateur</h2>
+  <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-bottom:32px">
+    <img src="IMG_0382.jpeg.JPG" alt="Le Fondateur" style="width:150px;height:150px;border-radius:50%;object-fit:cover;box-shadow:0 0 32px rgba(135,206,235,0.6);flex-shrink:0">
+    <div>
+      <p style="font-size:1.3rem;font-weight:bold;color:#1a3a6b;margin-bottom:6px;font-family:Arial,sans-serif" data-i18n="aboutname">Le Fondateur</p>
+      <p style="font-size:0.95rem;color:#555;font-style:italic;font-family:Arial,sans-serif" data-i18n="abouttagline">Penseur systémique · Biotechnologiste · Architecte de l'Universalité</p>
     </div>
-    <div style="background:#fff; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.07); padding:28px 32px; border-left:5px solid #87CEEB;">
-        <p style="font-size:1.02rem; line-height:1.88; color:#2c2c2c; text-align:justify; margin-bottom:14px;" data-i18n="about_p1">Formé en biotechnologies, le Fondateur a développé une approche rare : appliquer la logique des organismes vivants — autorégulation, homéostasie, bifurcation — à la gouvernance des sociétés humaines. Ce n'est pas une métaphore. C'est une méthode.</p>
-        <p style="font-size:1.02rem; line-height:1.88; color:#2c2c2c; text-align:justify; margin-bottom:14px;" data-i18n="about_p2">Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.</p>
-        <p style="font-size:1.02rem; line-height:1.88; color:#2c2c2c; text-align:justify;" data-i18n="about_p3">Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.</p>
-    </div>
-    <p style="text-align:center; margin-top:24px; font-size:0.9rem; color:#888; font-family:Arial,sans-serif;">
-        © 2026 Le Fondateur — <span data-i18n="about_rights">Tous droits réservés</span> ⭕
-    </p>
+  </div>
+  <div style="background:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,0.07);padding:28px 32px;border-left:5px solid #87CEEB">
+    <p style="font-size:1.02rem;line-height:1.88;color:#2c2c2c;text-align:justify;margin-bottom:14px" data-i18n="aboutp1">Formé en biotechnologies, le Fondateur a développé une approche rare : appliquer la logique des organismes vivants — autorégulation, homéostasie, bifurcation — à la gouvernance des sociétés humaines. Ce n'est pas une métaphore. C'est une méthode.</p>
+    <p style="font-size:1.02rem;line-height:1.88;color:#2c2c2c;text-align:justify;margin-bottom:14px" data-i18n="aboutp2">Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.</p>
+    <p style="font-size:1.02rem;line-height:1.88;color:#2c2c2c;text-align:justify" data-i18n="aboutp3">Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.</p>
+  </div>
+  <p style="text-align:center;margin-top:24px;font-size:0.9rem;color:#888;font-family:Arial,sans-serif">© 2026 Le Fondateur — <span data-i18n="aboutrights">Tous droits réservés</span></p>
 </section>
 
+<hr>
+
 <footer>
-    <p>© 2026 <span>Universel</span> — <span data-i18n="footer_slogan">Parce que personne ne devrait être laissé derrière</span> 🌈</p>
+  <p>© 2026 <span>Universel</span> — <span data-i18n="footerslogan">Parce que personne ne devrait être laissé derrière</span></p>
 </footer>
 
 <script>
 const translations = {
-    fr: {
-        nav_vision: "La Vision",
-        nav_discussion: "Discussion",
-        nav_these: "📖 Un peu plus…",
-        nav_theorie: "🔬 Nouvelle Approche",
-        nav_guerre: "⚔️ Guerre",
-        nav_about: "À propos",
-        nav_contact: "Contact",
-        vision_title: "Notre Vision",
-        v1_title: "Le monde que nous avons construit est à bout de souffle.",
-        v1_text: "Les inégalités n'ont jamais été aussi criantes. Des millions de personnes travaillent à s'épuiser sans jamais réussir à couvrir leurs besoins de base. Les services communautaires, les travailleurs de l'ombre, ceux qui tiennent le filet social à bout de bras — on les abandonne. Pendant ce temps, la richesse se concentre dans les mains d'un nombre toujours plus petit, pendant que la majorité survit. Ce n'est pas une fatalité. C'est un choix systémique. Et ce choix-là nous coûte collectivement bien plus que ce qu'il rapporte à quelques-uns.",
-        v2_title: "Nous sommes à la croisée des chemins.",
-        v2_text: "Les crises se multiplient — économiques, climatiques, sociales — parce qu'elles ont toutes la même racine : un système conçu pour produire et accumuler, pas pour prendre soin. Chaque fois qu'on rafistole un bout, trois autres lâchent. Ce n'est plus un problème de gestion. C'est un problème de fondation.",
-        v3_title: "Mais l'humanité a toujours su se relever — quand elle choisit de se retrouver.",
-        v3_text: "Il existe une autre façon. Une façon où les besoins essentiels ne sont plus des privilèges, mais des droits réels. Où le pouvoir est diffusé dans la masse plutôt que concentré au sommet. Où coopérer devient plus rationnel qu'accumuler. Ce n'est pas une utopie — c'est une architecture sociale à construire ensemble, une décision collective que des millions de personnes ordinaires, partout, sont déjà prêtes à prendre.",
-        v4_cta: "✊ Universel, c'est ce mouvement-là. Et il commence maintenant.",
-        disc_title: "💬 Espace de discussion",
-        disc_intro: "Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.",
-        disc_cta_text: "Tu veux partager ta réflexion, poser une question ou rejoindre le mouvement?",
-        disc_cta_btn: "✉️ Écrire au Fondateur",
-        contact_title: "Contact",
-        contact_text: "Tu veux en savoir plus ou contribuer au mouvement?",
-        about_title: "À propos du Fondateur",
-        about_name: "Le Fondateur",
-        about_tagline: "Penseur systémique · Biotechnologiste · Architecte de l'Universalité",
-        about_p1: "Formé en biotechnologies, le Fondateur a développé une approche rare : appliquer la logique des organismes vivants — autorégulation, homéostasie, bifurcation — à la gouvernance des sociétés humaines. Ce n'est pas une métaphore. C'est une méthode.",
-        about_p2: "Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.",
-        about_p3: "Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.",
-        about_rights: "Tous droits réservés",
-        footer_slogan: "Parce que personne ne devrait être laissé derrière"
-    },
-    en: {
-        nav_vision: "Our Vision",
-        nav_discussion: "Discussion",
-        nav_these: "📖 Learn More…",
-        nav_theorie: "🔬 New Approach",
-        nav_guerre: "⚔️ War",
-        nav_about: "About",
-        nav_contact: "Contact",
-        vision_title: "Our Vision",
-        v1_title: "The world we built is running out of breath.",
-        v1_text: "Inequality has never been so glaring. Millions of people work themselves to exhaustion without ever managing to cover their basic needs. Community services, shadow workers, those holding the social safety net together — we abandon them. Meanwhile, wealth concentrates in fewer and fewer hands while the majority merely survives. This is not inevitable. It is a systemic choice. And that choice costs us collectively far more than it benefits the few.",
-        v2_title: "We stand at a crossroads.",
-        v2_text: "Crises are multiplying — economic, climatic, social — because they all share the same root: a system designed to produce and accumulate, not to care. Every time we patch one part, three others break. This is no longer a management problem. It is a foundational problem.",
-        v3_title: "But humanity has always known how to rise — when it chooses to come together.",
-        v3_text: "There is another way. A way where essential needs are no longer privileges, but real rights. Where power is diffused among the many rather than concentrated at the top. Where cooperating becomes more rational than accumulating. This is not a utopia — it is a social architecture to build together, a collective decision that millions of ordinary people, everywhere, are already ready to make.",
-        v4_cta: "✊ Universel is that movement. And it starts now.",
-        disc_title: "💬 Discussion Space",
-        disc_intro: "Share your perspective, ask questions, join the movement. All constructive viewpoints are welcome.",
-        disc_cta_text: "Want to share a thought, ask a question or join the movement?",
-        disc_cta_btn: "✉️ Write to the Founder",
-        contact_title: "Contact",
-        contact_text: "Want to learn more or contribute to the movement?",
-        about_title: "About the Founder",
-        about_name: "The Founder",
-        about_tagline: "Systemic Thinker · Biotechnologist · Architect of Universality",
-        about_p1: "Trained in biotechnology, the Founder developed a rare approach: applying the logic of living organisms — self-regulation, homeostasis, bifurcation — to the governance of human societies. This is not a metaphor. It is a method.",
-        about_p2: "For over a decade, he has been developing the Evolutionary Socio-Trajectory — an original theoretical framework that transforms elite-mass confrontation into a positive-sum game, proposing a self-regulating governance architecture based on leading indicators, quantum computing, and collective prediction.",
-        about_p3: "His identity remains deliberately discreet. Ideas carry a force that precedes and transcends whoever holds them. They are here to be refuted, improved, or adopted — not judged through a face.",
-        about_rights: "All rights reserved",
-        footer_slogan: "Because no one should be left behind"
-    }
+  fr: {
+    navvision: "La Vision", navdiscussion: "Discussion",
+    navthese: "📖 Un peu plus…", navtheorie: "Nouvelle Approche",
+    navguerre: "⚔️ Guerre", navchomage: "📉 Chômage",
+    navabout: "À propos", navcontact: "Contact",
+    visiontitle: "Notre Vision",
+    v1title: "Le monde que nous avons construit est à bout de souffle.",
+    v1text: "Les inégalités n'ont jamais été aussi criantes. Des millions de personnes travaillent à s'épuiser sans jamais réussir à couvrir leurs besoins de base. Les services communautaires, les travailleurs de l'ombre, ceux qui tiennent le filet social à bout de bras — on les abandonne. Pendant ce temps, la richesse se concentre dans les mains d'un nombre toujours plus petit, pendant que la majorité survit. Ce n'est pas une fatalité. C'est un choix systémique. Et ce choix-là nous coûte collectivement bien plus que ce qu'il rapporte à quelques-uns.",
+    v2title: "Nous sommes à la croisée des chemins.",
+    v2text: "Les crises se multiplient — économiques, climatiques, sociales — parce qu'elles ont toutes la même racine : un système conçu pour produire et accumuler, pas pour prendre soin. Chaque fois qu'on rafistole un bout, trois autres lâchent. Ce n'est plus un problème de gestion. C'est un problème de fondation.",
+    v3title: "Mais l'humanité a toujours su se relever quand elle choisit de se retrouver.",
+    v3text: "Il existe une autre façon. Une façon où les besoins essentiels ne sont plus des privilèges, mais des droits réels. Où le pouvoir est diffusé dans la masse plutôt que concentré au sommet. Où coopérer devient plus rationnel qu'accumuler. Ce n'est pas une utopie — c'est une architecture sociale à construire ensemble, une décision collective que des millions de personnes ordinaires, partout, sont déjà prêtes à prendre.",
+    v4cta: "✊ Universel, c'est ce mouvement-là. Et il commence maintenant.",
+    disctitle: "Espace de discussion",
+    discintro: "Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.",
+    discctatext: "Tu veux partager ta réflexion, poser une question ou rejoindre le mouvement?",
+    discctabtn: "✉️ Écrire au Fondateur",
+    contacttitle: "Contact",
+    contacttext: "Tu veux en savoir plus ou contribuer au mouvement?",
+    abouttitle: "À propos du Fondateur", aboutname: "Le Fondateur",
+    abouttagline: "Penseur systémique · Biotechnologiste · Architecte de l'Universalité",
+    aboutp1: "Formé en biotechnologies, le Fondateur a développé une approche rare : appliquer la logique des organismes vivants — autorégulation, homéostasie, bifurcation — à la gouvernance des sociétés humaines. Ce n'est pas une métaphore. C'est une méthode.",
+    aboutp2: "Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.",
+    aboutp3: "Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.",
+    aboutrights: "Tous droits réservés",
+    footerslogan: "Parce que personne ne devrait être laissé derrière"
+  },
+  en: {
+    navvision: "Our Vision", navdiscussion: "Discussion",
+    navthese: "📖 Learn More", navtheorie: "New Approach",
+    navguerre: "⚔️ War", navchomage: "📉 Unemployment",
+    navabout: "About", navcontact: "Contact",
+    visiontitle: "Our Vision",
+    v1title: "The world we built is running out of breath.",
+    v1text: "Inequality has never been so glaring. Millions of people work themselves to exhaustion without ever managing to cover their basic needs. Community services, shadow workers, those holding the social safety net together — we abandon them. Meanwhile, wealth concentrates in fewer and fewer hands while the majority merely survives. This is not inevitable. It is a systemic choice. And that choice costs us collectively far more than it benefits the few.",
+    v2title: "We stand at a crossroads.",
+    v2text: "Crises are multiplying — economic, climatic, social — because they all share the same root: a system designed to produce and accumulate, not to care. Every time we patch one part, three others break. This is no longer a management problem. It is a foundational problem.",
+    v3title: "But humanity has always known how to rise when it chooses to come together.",
+    v3text: "There is another way. A way where essential needs are no longer privileges, but real rights. Where power is diffused among the many rather than concentrated at the top. Where cooperating becomes more rational than accumulating. This is not a utopia — it is a social architecture to build together, a collective decision that millions of ordinary people, everywhere, are already ready to make.",
+    v4cta: "✊ Universel is that movement. And it starts now.",
+    disctitle: "Discussion Space",
+    discintro: "Share your perspective, ask questions, join the movement. All constructive viewpoints are welcome.",
+    discctatext: "Want to share a thought, ask a question or join the movement?",
+    discctabtn: "✉️ Write to the Founder",
+    contacttitle: "Contact",
+    contacttext: "Want to learn more or contribute to the movement?",
+    abouttitle: "About the Founder", aboutname: "The Founder",
+    abouttagline: "Systemic Thinker · Biotechnologist · Architect of Universality",
+    aboutp1: "Trained in biotechnology, the Founder developed a rare approach: applying the logic of living organisms — self-regulation, homeostasis, bifurcation — to the governance of human societies. This is not a metaphor. It is a method.",
+    aboutp2: "For over a decade, he has been developing the Evolutionary Socio-Trajectory — an original theoretical framework that transforms elite-mass confrontation into a positive-sum game, proposing a self-regulating governance architecture based on leading indicators, quantum computing, and collective prediction.",
+    aboutp3: "His identity remains deliberately discreet. Ideas carry a force that precedes and transcends whoever holds them. They are here to be refuted, improved, or adopted — not judged through a face.",
+    aboutrights: "All rights reserved",
+    footerslogan: "Because no one should be left behind"
+  }
 };
 
 let currentLang = 'fr';
 
 function toggleLang() {
-    currentLang = currentLang === 'fr' ? 'en' : 'fr';
-    document.getElementById('langBtn').textContent = currentLang === 'fr' ? 'EN' : 'FR';
-    document.documentElement.lang = currentLang;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[currentLang][key]) {
-            el.textContent = translations[currentLang][key];
-        }
-    });
+  currentLang = currentLang === 'fr' ? 'en' : 'fr';
+  document.getElementById('langBtn').textContent = currentLang === 'fr' ? 'EN' : 'FR';
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[currentLang][key]) el.textContent = translations[currentLang][key];
+  });
 }
 </script>
-
 </body>
 </html>
