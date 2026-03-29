@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Le Revenu Universel de Base comme pilier de l'Universalité : enjeux, mécanique, financement par l'IA et transition vers l'autosuffisance collective." />
+  <meta name="keywords" content="revenu universel de base, RUB, universalité, financement IA, taxe robot, autosuffisance, surproduction" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Le Fondateur Universel" />
+  <title>UN MONDE UNIVERSEL — Revenu Universel de Base</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
+
+    .site-header {
+      background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);
+      text-align: center;
+      padding: 42px 20px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(135,206,235,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 100%, rgba(135,206,235,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .site-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      color: #ffffff;
+      letter-spacing: 0.10em;
+      text-shadow: 0 2px 24px rgba(135,206,235,0.5), 0 0 60px rgba(135,206,235,0.2);
+      line-height: 1.1;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .site-title span { color: #87CEEB; }
+    .site-slogan {
+      font-family: 'Lato', Arial, sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+      color: #cce4f7;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    .site-slogan::before, .site-slogan::after {
+      content: " ✦ ";
+      color: #87CEEB;
+      opacity: 0.7;
+    }
+
+    nav {
+      background: #1a3a6b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 20px;
+      flex-wrap: wrap;
+    }
+    .hero-nav {
+      width: calc(100% + 40px);
+      margin: 18px -20px 22px;
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
+      z-index: 1;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    nav a:hover { color: #87CEEB; }
+    .lang-btn {
+      background: #87CEEB;
+      color: #1a3a6b;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .lang-btn:hover { background: #fff; }
+
+    .rub-hero {
+      background: linear-gradient(180deg, #1a3a6b 0%, #87CEEB 65%, #b8e0f7 100%);
+      text-align: center;
+      padding: 36px 20px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    .rub-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 10%, rgba(255,255,255,0.22) 0%, transparent 42%);
+      pointer-events: none;
+    }
+    .rub-logo-wrap {
+      max-width: 360px;
+      margin: 0 auto 22px;
+      position: relative;
+      z-index: 1;
+    }
+    .rub-logo-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      box-shadow: 0 10px 34px rgba(13,34,87,0.22);
+    }
+    .rub-kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 16px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #ffffff;
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    .rub-hero h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      color: #16345f;
+      letter-spacing: 0.08em;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.35);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .rub-hero h1 span { color: #1f4f86; }
+    .rub-hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #f7fcff;
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 50px 24px;
+    }
+    section h2 {
+      font-size: 1.9rem;
+      color: #1a3a6b;
+      margin-bottom: 28px;
+      border-left: 5px solid #87CEEB;
+      padding-left: 14px;
+    }
+    .vision-block { margin-bottom: 28px; }
+    .vision-block h3 {
+      font-size: 1.1rem;
+      color: #1a3a6b;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .vision-block p, .vision-block li {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #2c2c2c;
+      text-align: justify;
+    }
+    .vision-block ul { padding-left: 22px; }
+    .vision-block.cta p {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #1a3a6b;
+      text-align: center;
+      margin-top: 10px;
+    }
+    hr {
+      border: none;
+      border-top: 2px solid #87CEEB;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .highlight-box {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      padding: 28px 32px;
+      border-left: 5px solid #87CEEB;
+      margin: 24px 0 30px;
+    }
+    .highlight-box p {
+      font-size: 1.03rem;
+      line-height: 1.88;
+      color: #2c2c2c;
+      text-align: justify;
+    }
+
+    .rub-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+      margin: 28px 0;
+    }
+    .rub-card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      padding: 24px 22px;
+      border-top: 4px solid #87CEEB;
+    }
+    .rub-card h3 {
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 1rem;
+      color: #1a3a6b;
+      margin-bottom: 10px;
+      font-style: normal;
+      font-weight: 700;
+    }
+    .rub-card p {
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 0.96rem;
+      line-height: 1.72;
+      color: #555;
+      text-align: left;
+    }
+
+    .pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 26px;
+    }
+    .pillar-item {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      padding: 20px 24px;
+      border-left: 5px solid #87CEEB;
+    }
+    .pillar-item strong {
+      color: #1a3a6b;
+      font-family: 'Lato', Arial, sans-serif;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.97rem;
+    }
+    .pillar-item p {
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555;
+      text-align: left;
+    }
+
+    .discussion {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 40px 24px;
+    }
+    .discussion h2 {
+      font-size: 1.9rem;
+      color: #1a3a6b;
+      margin-bottom: 10px;
+      border-left: 5px solid #87CEEB;
+      padding-left: 14px;
+    }
+    .discussion p.intro {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 28px;
+      font-family: Arial, sans-serif;
+    }
+
+    footer {
+      background: #1a3a6b;
+      color: #cce4f7;
+      text-align: center;
+      padding: 24px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+    }
+    footer span { color: #87CEEB; font-weight: bold; }
+
+    @media (max-width: 700px) {
+      .rub-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .site-title { letter-spacing: 0.06em; }
+      nav { gap: 12px; padding: 12px 14px; }
+      nav a { font-size: 0.80rem; }
+      .rub-hero { padding: 28px 16px 22px; }
+      .rub-logo-wrap { max-width: 280px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title" data-i18n="siteTitle">UN MONDE <span>UNIVERSEL</span></h1>
+    <p class="site-slogan" data-i18n="siteSlogan">Parce que personne ne devrait être laissé derrière</p>
+  </header>
+
+  
+
+  <div class="rub-hero">
+    <div class="rub-logo-wrap">
+      <img src="IMG_0296.jpeg" alt="Logo Universel avec arc-en-ciel et nuage" loading="lazy" width="1024" height="1024" />
+    </div>
+    <nav class="hero-nav">
+    <a href="index.html#vision" data-i18n="navvision">La Vision</a>
+    <a href="index.html#discussion" data-i18n="navdiscussion">Discussion</a>
+    <a href="these.html" data-i18n="navthese">📖 Un peu plus…</a>
+    <a href="theorie.html" data-i18n="navtheorie">Nouvelle Approche</a>
+    <a href="guerre.html" style="color:#ff9090" data-i18n="navguerre">⚔️ Guerre</a>
+    <a href="chomage.html" data-i18n="navchomage">📉 Chômage</a>
+    <a href="rub.html" style="color:#87CEEB;border-bottom:2px solid #87CEEB;" data-i18n="navrub">RUB</a>
+    <a href="index.html#apropos" data-i18n="navabout">À propos</a>
+    <a href="index.html#contact" data-i18n="navcontact">Contact</a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+  </nav>
+    <div class="rub-kicker" data-i18n="heroKicker">Pilier structurel de l'Universalité</div>
+    <h1 data-i18n="heroTitle">REVENU UNIVERSEL <span>DE BASE</span></h1>
+    <p data-i18n="heroText">Une architecture concrète pour retirer la survie du marché du travail, réduire la surproduction, affaiblir la publicité imposée et redistribuer les gains de l'intelligence artificielle vers l'ensemble de la population.</p>
+  </div>
+
+  <section id="vision">
+    <h2 data-i18n="rubSection1Title">Pourquoi le RUB devient nécessaire</h2>
+
+    <div class="vision-block">
+      <h3 data-i18n="rubS1H1">Le système actuel transforme la survie en dépendance.</h3>
+      <p data-i18n="rubS1P1">Le capitalisme a transformé les besoins fondamentaux de la vie — se nourrir, se loger, se soigner — en marchandises dont l'accès exige une participation permanente et épuisante au marché du travail. Ce faisant, il a confisqué la ressource la plus précieuse de l'être humain : son temps.</p>
+    </div>
+
+    <div class="vision-block">
+      <h3 data-i18n="rubS1H2">La publicité sert cette mécanique.</h3>
+      <p data-i18n="rubS1P2">Quand l'économie dépend de la surproduction, elle dépend aussi de la fabrication artificielle du désir. La publicité n'est donc plus un simple outil de communication : elle devient une infrastructure psychologique destinée à maintenir l'achat, l'insatisfaction et la dépendance à la consommation.</p>
+    </div>
+
+    <div class="highlight-box">
+      <p data-i18n="rubS1Quote">L'Universalité propose une rupture radicale à travers le principe d'autosuffisance collective : produire ce dont on a besoin, réduire la surproduction, éliminer le gaspillage systémique, et garantir l'accès à la nourriture, au logement et aux soins non pas par le mérite marchand mais par le simple fait d'exister.</p>
+    </div>
+
+    <div class="vision-block">
+      <h3 data-i18n="rubS1H3">Le RUB retire l'aiguillon permanent du manque.</h3>
+      <p data-i18n="rubS1P3">Le Revenu Universel de Base ne règle pas tout à lui seul, mais il modifie la base psychologique et matérielle du système. Lorsque chacun sait qu'il peut couvrir ses besoins essentiels, la peur perd sa fonction de discipline économique, et la capacité de choisir, de coopérer et de refuser l'absurde réapparaît.</p>
+    </div>
+  </section>
+  <hr />
+
+  <section id="mecanique">
+    <h2 data-i18n="rubSection2Title">La mécanique du Revenu Universel de Base</h2>
+
+    <div class="vision-block">
+      <h3 data-i18n="rubS2H1">Un droit économique, pas une assistance conditionnelle.</h3>
+      <p data-i18n="rubS2P1">Le RUB est un versement récurrent accordé à chaque adulte, indépendamment de son emploi, de son revenu ou de sa situation personnelle. Il crée un plancher économique universel. Son rôle n'est pas de remplacer toute la société, mais de rendre enfin réels les droits proclamés en retirant l'angoisse de survie comme moteur de l'organisation sociale.</p>
+    </div>
+
+    <div class="rub-grid">
+      <div class="rub-card">
+        <h3 data-i18n="card1Title">Universel</h3>
+        <p data-i18n="card1Text">Chaque personne reçoit la base sans test de mérite. Cela évite la stigmatisation, simplifie l'administration et affirme que la dignité ne dépend pas d'une validation bureaucratique.</p>
+      </div>
+      <div class="rub-card">
+        <h3 data-i18n="card2Title">Inconditionnel</h3>
+        <p data-i18n="card2Text">Le revenu n'est pas lié à un comportement imposé. Il n'oblige pas à accepter n'importe quel emploi, n'importe quelle humiliation ou n'importe quelle dépendance.</p>
+      </div>
+      <div class="rub-card">
+        <h3 data-i18n="card3Title">Récurrent</h3>
+        <p data-i18n="card3Text">Ce n'est pas une prime ponctuelle. C'est une structure stable qui permet de planifier, respirer, se former, réparer, créer et participer à la vie collective avec continuité.</p>
+      </div>
+      <div class="rub-card">
+        <h3 data-i18n="card4Title">Transformateur</h3>
+        <p data-i18n="card4Text">Son but profond est de déplacer le centre de gravité du système : passer d'une économie fondée sur la contrainte à une société fondée sur la sécurité, la coopération et l'autonomie.</p>
+      </div>
+    </div>
+
+    <div class="vision-block">
+      <h3 data-i18n="rubS2H2">Dans la trajectoire de l'Universalité.</h3>
+      <p data-i18n="rubS2P2">La thèse esquisse une transition en trois phases dont la première inclut explicitement une réforme fiscale progressive et un revenu universel de base expérimental. Le RUB n'apparaît donc pas ici comme un gadget isolé, mais comme l'une des fondations initiales d'une transformation structurelle plus vaste.</p>
+    </div>
+  </section>
+  <hr />
+
+  <section id="ia">
+    <h2 data-i18n="rubSection3Title">Pourquoi proposer un financement par l'IA</h2>
+
+    <div class="vision-block">
+      <h3 data-i18n="rubS3H1">Parce que l'automatisation concentre déjà les gains.</h3>
+      <p data-i18n="rubS3P1">L'intelligence artificielle et l'automatisation augmentent fortement la productivité tout en réduisant la dépendance des entreprises au travail humain. Sans mécanisme de redistribution, cette richesse s'accumule en haut pendant que la masse absorbe l'instabilité, les pertes d'emplois et la précarisation.</p>
+    </div>
+
+    <div class="vision-block">
+      <h3 data-i18n="rubS3H2">Parce qu'il faut reconnecter progrès technique et bien commun.</h3>
+      <p data-i18n="rubS3P2">Si la machine remplace une part croissante du travail, alors une part croissante de la valeur générée doit revenir à tous. L'IA ne doit pas devenir un accélérateur d'inégalités, mais un levier de libération collective. C'est ici que le financement du RUB par l'IA prend sa cohérence.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar-item">
+        <strong data-i18n="fund1Title">1. Taxe sur les profits des entreprises IA</strong>
+        <p data-i18n="fund1Text">Plus les profits issus de l'automatisation et des modèles IA augmentent, plus une part fixe ou progressive alimente un fonds commun destiné au RUB.</p>
+      </div>
+      <div class="pillar-item">
+        <strong data-i18n="fund2Title">2. Taxe robot et automatisation</strong>
+        <p data-i18n="fund2Text">Lorsqu'un système automatisé remplace un emploi ou réduit fortement la masse salariale, une contribution équivalente à une part des charges évitées peut être redirigée vers le revenu universel.</p>
+      </div>
+      <div class="pillar-item">
+        <strong data-i18n="fund3Title">3. Dividende sur les données et les infrastructures numériques</strong>
+        <p data-i18n="fund3Text">Les modèles IA s'appuient sur des corpus et des infrastructures issus de la société entière. Une part de cette valeur peut être reconnue comme un dividende collectif, redistribué à l'ensemble de la population.</p>
+      </div>
+      <div class="pillar-item">
+        <strong data-i18n="fund4Title">4. Commission sur l'économie autonome</strong>
+        <p data-i18n="fund4Text">À mesure que des agents logiciels accomplissent des transactions, des tâches et des arbitrages économiques, une micro-contribution sur ces flux peut financer durablement le RUB.</p>
+      </div>
+    </div>
+  </section>
+  <hr />
+
+  <section id="enjeux">
+    <h2 data-i18n="rubSection4Title">Les enjeux réels</h2>
+
+    <div class="vision-block">
+      <h3 data-i18n="rubS4H1">Le défi n'est pas technique, il est politique.</h3>
+      <p data-i18n="rubS4P1">La question centrale n'est pas de savoir si la société a les ressources pour garantir une base économique à tous. La question réelle est de savoir si nous acceptons de déplacer une part du pouvoir hors des structures qui profitent de la précarité et de la surconsommation.</p>
+    </div>
+
+    <div class="rub-grid">
+      <div class="rub-card">
+        <h3 data-i18n="issue1Title">Coopération fiscale</h3>
+        <p data-i18n="issue1Text">Les grandes entreprises numériques peuvent déplacer leurs profits. Un RUB financé par l'IA exigera une coordination fiscale plus solide entre États.</p>
+      </div>
+      <div class="rub-card">
+        <h3 data-i18n="issue2Title">Montant juste</h3>
+        <p data-i18n="issue2Text">Le niveau du RUB doit être suffisant pour garantir la base sans devenir un simple amortisseur symbolique. Il doit être pensé comme un vrai socle de dignité.</p>
+      </div>
+      <div class="rub-card">
+        <h3 data-i18n="issue3Title">Gouvernance du fonds</h3>
+        <p data-i18n="issue3Text">Le fonds de redistribution doit être transparent, traçable et protégé contre la captation par les intérêts privés ou partisans.</p>
+      </div>
+      <div class="rub-card">
+        <h3 data-i18n="issue4Title">Transition culturelle</h3>
+        <p data-i18n="issue4Text">Il faut sortir de l'idée que l'être humain doit mériter son droit d'exister par l'épuisement marchand. Le RUB demande aussi une maturation morale et politique.</p>
+      </div>
+    </div>
+
+    <div class="vision-block cta">
+      <p data-i18n="rubFinalCta">✊ Le RUB n'est pas une dépense de plus. C'est le point de bascule qui permet de passer d'une société qui gère la rareté artificielle à une société qui organise consciemment l'abondance utile.</p>
+    </div>
+  </section>
+  <hr />
+
+  <div class="discussion">
+    <h2 data-i18n="disctitle">Espace de discussion</h2>
+    <p class="intro" data-i18n="discintro">Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.</p>
+    <div style="text-align:center; padding:10px 0 10px;">
+      <p style="font-family:Arial,sans-serif; font-size:1rem; color:#555; margin-bottom:24px;" data-i18n="discctatext">Tu veux partager ta réflexion, poser une question ou rejoindre le mouvement?</p>
+      <a href="mailto:fondateuruniversalite@gmail.com?subject=Discussion RUB" style="display:inline-block; background:#1a3a6b; color:#fff; font-family:Arial,sans-serif; font-weight:bold; font-size:1rem; padding:14px 36px; border-radius:30px; text-decoration:none; letter-spacing:0.05em; box-shadow:0 4px 16px rgba(26,58,107,0.25);" onmouseover="this.style.background='#2a5298'" onmouseout="this.style.background='#1a3a6b'" data-i18n="discctabtn">✉️ Écrire au Fondateur</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 <span>Universel</span> <span data-i18n="footerslogan">Parce que personne ne devrait être laissé derrière</span></p>
+  </footer>
+
+  <script>
+    const translations = {
+      fr: {
+        siteSlogan: 'Parce que personne ne devrait être laissé derrière',
+        navvision: 'La Vision',
+        navdiscussion: 'Discussion',
+        navthese: '📖 Un peu plus…',
+        navtheorie: 'Nouvelle Approche',
+        navguerre: '⚔️ Guerre',
+        navchomage: '📉 Chômage',
+        navrub: 'RUB',
+        navabout: 'À propos',
+        navcontact: 'Contact',
+        heroKicker: "Pilier structurel de l'Universalité",
+        heroTitle: 'REVENU UNIVERSEL <span>DE BASE</span>',
+        heroText: "Une architecture concrète pour retirer la survie du marché du travail, réduire la surproduction, affaiblir la publicité imposée et redistribuer les gains de l'intelligence artificielle vers l'ensemble de la population.",
+        rubSection1Title: 'Pourquoi le RUB devient nécessaire',
+        rubS1H1: 'Le système actuel transforme la survie en dépendance.',
+        rubS1P1: "Le capitalisme a transformé les besoins fondamentaux de la vie — se nourrir, se loger, se soigner — en marchandises dont l'accès exige une participation permanente et épuisante au marché du travail. Ce faisant, il a confisqué la ressource la plus précieuse de l'être humain : son temps.",
+        rubS1H2: 'La publicité sert cette mécanique.',
+        rubS1P2: "Quand l'économie dépend de la surproduction, elle dépend aussi de la fabrication artificielle du désir. La publicité n'est donc plus un simple outil de communication : elle devient une infrastructure psychologique destinée à maintenir l'achat, l'insatisfaction et la dépendance à la consommation.",
+        rubS1Quote: "L'Universalité propose une rupture radicale à travers le principe d'autosuffisance collective : produire ce dont on a besoin, réduire la surproduction, éliminer le gaspillage systémique, et garantir l'accès à la nourriture, au logement et aux soins non pas par le mérite marchand mais par le simple fait d'exister.",
+        rubS1H3: "Le RUB retire l'aiguillon permanent du manque.",
+        rubS1P3: "Le Revenu Universel de Base ne règle pas tout à lui seul, mais il modifie la base psychologique et matérielle du système. Lorsque chacun sait qu'il peut couvrir ses besoins essentiels, la peur perd sa fonction de discipline économique, et la capacité de choisir, de coopérer et de refuser l'absurde réapparaît.",
+        rubSection2Title: 'La mécanique du Revenu Universel de Base',
+        rubS2H1: 'Un droit économique, pas une assistance conditionnelle.',
+        rubS2P1: "Le RUB est un versement récurrent accordé à chaque adulte, indépendamment de son emploi, de son revenu ou de sa situation personnelle. Il crée un plancher économique universel. Son rôle n'est pas de remplacer toute la société, mais de rendre enfin réels les droits proclamés en retirant l'angoisse de survie comme moteur de l'organisation sociale.",
+        card1Title: 'Universel',
+        card1Text: "Chaque personne reçoit la base sans test de mérite. Cela évite la stigmatisation, simplifie l'administration et affirme que la dignité ne dépend pas d'une validation bureaucratique.",
+        card2Title: 'Inconditionnel',
+        card2Text: "Le revenu n'est pas lié à un comportement imposé. Il n'oblige pas à accepter n'importe quel emploi, n'importe quelle humiliation ou n'importe quelle dépendance.",
+        card3Title: 'Récurrent',
+        card3Text: "Ce n'est pas une prime ponctuelle. C'est une structure stable qui permet de planifier, respirer, se former, réparer, créer et participer à la vie collective avec continuité.",
+        card4Title: 'Transformateur',
+        card4Text: "Son but profond est de déplacer le centre de gravité du système : passer d'une économie fondée sur la contrainte à une société fondée sur la sécurité, la coopération et l'autonomie.",
+        rubS2H2: "Dans la trajectoire de l'Universalité.",
+        rubS2P2: "La thèse esquisse une transition en trois phases dont la première inclut explicitement une réforme fiscale progressive et un revenu universel de base expérimental. Le RUB n'apparaît donc pas ici comme un gadget isolé, mais comme l'une des fondations initiales d'une transformation structurelle plus vaste.",
+        rubSection3Title: "Pourquoi proposer un financement par l'IA",
+        rubS3H1: "Parce que l'automatisation concentre déjà les gains.",
+        rubS3P1: "L'intelligence artificielle et l'automatisation augmentent fortement la productivité tout en réduisant la dépendance des entreprises au travail humain. Sans mécanisme de redistribution, cette richesse s'accumule en haut pendant que la masse absorbe l'instabilité, les pertes d'emplois et la précarisation.",
+        rubS3H2: "Parce qu'il faut reconnecter progrès technique et bien commun.",
+        rubS3P2: "Si la machine remplace une part croissante du travail, alors une part croissante de la valeur générée doit revenir à tous. L'IA ne doit pas devenir un accélérateur d'inégalités, mais un levier de libération collective. C'est ici que le financement du RUB par l'IA prend sa cohérence.",
+        fund1Title: '1. Taxe sur les profits des entreprises IA',
+        fund1Text: "Plus les profits issus de l'automatisation et des modèles IA augmentent, plus une part fixe ou progressive alimente un fonds commun destiné au RUB.",
+        fund2Title: '2. Taxe robot et automatisation',
+        fund2Text: "Lorsqu'un système automatisé remplace un emploi ou réduit fortement la masse salariale, une contribution équivalente à une part des charges évitées peut être redirigée vers le revenu universel.",
+        fund3Title: '3. Dividende sur les données et les infrastructures numériques',
+        fund3Text: "Les modèles IA s'appuient sur des corpus et des infrastructures issus de la société entière. Une part de cette valeur peut être reconnue comme un dividende collectif, redistribué à l'ensemble de la population.",
+        fund4Title: "4. Commission sur l'économie autonome",
+        fund4Text: "À mesure que des agents logiciels accomplissent des transactions, des tâches et des arbitrages économiques, une micro-contribution sur ces flux peut financer durablement le RUB.",
+        rubSection4Title: 'Les enjeux réels',
+        rubS4H1: "Le défi n'est pas technique, il est politique.",
+        rubS4P1: "La question centrale n'est pas de savoir si la société a les ressources pour garantir une base économique à tous. La question réelle est de savoir si nous acceptons de déplacer une part du pouvoir hors des structures qui profitent de la précarité et de la surconsommation.",
+        issue1Title: 'Coopération fiscale',
+        issue1Text: "Les grandes entreprises numériques peuvent déplacer leurs profits. Un RUB financé par l'IA exigera une coordination fiscale plus solide entre États.",
+        issue2Title: 'Montant juste',
+        issue2Text: "Le niveau du RUB doit être suffisant pour garantir la base sans devenir un simple amortisseur symbolique. Il doit être pensé comme un vrai socle de dignité.",
+        issue3Title: 'Gouvernance du fonds',
+        issue3Text: "Le fonds de redistribution doit être transparent, traçable et protégé contre la captation par les intérêts privés ou partisans.",
+        issue4Title: 'Transition culturelle',
+        issue4Text: "Il faut sortir de l'idée que l'être humain doit mériter son droit d'exister par l'épuisement marchand. Le RUB demande aussi une maturation morale et politique.",
+        rubFinalCta: "✊ Le RUB n'est pas une dépense de plus. C'est le point de bascule qui permet de passer d'une société qui gère la rareté artificielle à une société qui organise consciemment l'abondance utile.",
+        disctitle: 'Espace de discussion',
+        discintro: 'Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.',
+        discctatext: 'Tu veux partager ta réflexion, poser une question ou rejoindre le mouvement?',
+        discctabtn: '✉️ Écrire au Fondateur',
+        footerslogan: 'Parce que personne ne devrait être laissé derrière'
+      },
+      en: {
+        siteSlogan: 'Because no one should be left behind',
+        navvision: 'Our Vision',
+        navdiscussion: 'Discussion',
+        navthese: 'Learn More',
+        navtheorie: '🔬 New Approach',
+        navguerre: '⚔️ War',
+        navchomage: '📉 Unemployment',
+        navrub: 'UBI',
+        navabout: 'About',
+        navcontact: 'Contact',
+        heroKicker: 'A structural pillar of Universality',
+        heroTitle: 'UNIVERSAL BASIC <span>INCOME</span>',
+        heroText: 'A concrete architecture to remove survival from the labor market, reduce overproduction, weaken imposed advertising, and redistribute artificial intelligence gains to the entire population.',
+        rubSection1Title: 'Why UBI becomes necessary',
+        rubS1H1: 'The current system turns survival into dependency.',
+        rubS1P1: 'Capitalism has turned the fundamental needs of life — eating, housing, healing — into commodities whose access requires permanent and exhausting participation in the labor market. In doing so, it confiscated the most precious human resource: time.',
+        rubS1H2: 'Advertising serves this mechanism.',
+        rubS1P2: 'When the economy depends on overproduction, it also depends on the artificial manufacture of desire. Advertising is therefore no longer a simple communication tool: it becomes a psychological infrastructure designed to maintain purchasing, dissatisfaction, and dependence on consumption.',
+        rubS1Quote: 'Universality proposes a radical break through the principle of collective self-sufficiency: producing what we need, reducing overproduction, eliminating systemic waste, and guaranteeing access to food, housing, and care not through market merit but through the simple fact of existing.',
+        rubS1H3: 'UBI removes the permanent sting of scarcity.',
+        rubS1P3: 'Universal Basic Income does not solve everything on its own, but it changes the psychological and material base of the system. When everyone knows they can cover their essential needs, fear loses its role as economic discipline, and the capacity to choose, cooperate, and refuse the absurd reappears.',
+        rubSection2Title: 'The mechanics of Universal Basic Income',
+        rubS2H1: 'An economic right, not conditional assistance.',
+        rubS2P1: 'UBI is a recurring payment granted to every adult, regardless of employment, income, or personal situation. It creates a universal economic floor. Its role is not to replace all society, but to finally make proclaimed rights real by removing survival anxiety as the engine of social organization.',
+        card1Title: 'Universal',
+        card1Text: 'Everyone receives the base without a merit test. This avoids stigma, simplifies administration, and affirms that dignity does not depend on bureaucratic validation.',
+        card2Title: 'Unconditional',
+        card2Text: 'Income is not tied to imposed behavior. It does not force people to accept any job, any humiliation, or any dependency.',
+        card3Title: 'Recurring',
+        card3Text: 'It is not a one-time bonus. It is a stable structure that allows people to plan, breathe, train, repair, create, and participate in collective life continuously.',
+        card4Title: 'Transformative',
+        card4Text: 'Its deeper purpose is to shift the center of gravity of the system: from an economy based on coercion to a society based on security, cooperation, and autonomy.',
+        rubS2H2: 'Within the trajectory of Universality.',
+        rubS2P2: 'The thesis outlines a three-phase transition whose first stage explicitly includes progressive tax reform and an experimental universal basic income. UBI therefore appears not as an isolated gadget, but as one of the initial foundations of a wider structural transformation.',
+        rubSection3Title: 'Why propose AI-based funding',
+        rubS3H1: 'Because automation already concentrates the gains.',
+        rubS3P1: 'Artificial intelligence and automation sharply increase productivity while reducing companies’ dependence on human labor. Without a redistribution mechanism, this wealth accumulates at the top while the many absorb instability, job losses, and precarization.',
+        rubS3H2: 'Because technical progress must reconnect with the common good.',
+        rubS3P2: 'If the machine replaces a growing share of labor, then a growing share of the generated value must return to everyone. AI must not become an accelerator of inequality, but a lever of collective liberation. That is where AI-funded UBI finds its coherence.',
+        fund1Title: '1. Tax on AI company profits',
+        fund1Text: 'The more profits generated by automation and AI models increase, the more a fixed or progressive share feeds a common fund dedicated to UBI.',
+        fund2Title: '2. Robot and automation tax',
+        fund2Text: 'When an automated system replaces a job or sharply reduces payroll, a contribution equivalent to part of the avoided charges can be redirected to universal income.',
+        fund3Title: '3. Dividend on data and digital infrastructures',
+        fund3Text: 'AI models rely on corpora and infrastructures produced by society as a whole. Part of that value can be recognized as a collective dividend redistributed to everyone.',
+        fund4Title: '4. Commission on the autonomous economy',
+        fund4Text: 'As software agents carry out transactions, tasks, and economic arbitrage, a micro-contribution on these flows can sustainably fund UBI.',
+        rubSection4Title: 'The real stakes',
+        rubS4H1: 'The challenge is not technical, but political.',
+        rubS4P1: 'The central question is not whether society has the resources to guarantee an economic base for all. The real question is whether we accept moving part of power away from structures that profit from precarity and overconsumption.',
+        issue1Title: 'Tax cooperation',
+        issue1Text: 'Large digital companies can move profits around. AI-funded UBI will require stronger fiscal coordination between states.',
+        issue2Title: 'Fair amount',
+        issue2Text: 'The UBI level must be sufficient to guarantee the base without becoming merely symbolic cushioning. It must be conceived as a true floor of dignity.',
+        issue3Title: 'Fund governance',
+        issue3Text: 'The redistribution fund must be transparent, traceable, and protected from capture by private or partisan interests.',
+        issue4Title: 'Cultural transition',
+        issue4Text: 'We must move beyond the idea that human beings must earn their right to exist through market exhaustion. UBI also requires moral and political maturation.',
+        rubFinalCta: '✊ UBI is not just another expense. It is the tipping point that allows society to move from managing artificial scarcity to consciously organizing useful abundance.',
+        disctitle: 'Discussion Space',
+        discintro: 'Share your perspective, ask your questions, join the movement. All constructive viewpoints are welcome.',
+        discctatext: 'Do you want to share your thoughts, ask a question, or join the movement?',
+        discctabtn: '✉️ Write to the Founder',
+        footerslogan: 'Because no one should be left behind'
+      }
+    };
+
+    let currentLang = 'fr';
+
+    function applyLang(lang) {
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+          if (key === 'heroTitle') {
+            el.innerHTML = t[key];
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      });
+      const titleEl = document.querySelector('.site-title');
+      if (titleEl) {
+        if (lang === 'fr') {
+          titleEl.innerHTML = 'UN MONDE <span>UNIVERSEL</span>';
+        } else {
+          titleEl.innerHTML = 'A <span>UNIVERSAL</span> WORLD';
+        }
+      }
+      document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
+      const sloganEl = document.querySelector('.site-slogan');
+      if (sloganEl && !sloganEl.textContent.trim()) {
+        sloganEl.textContent = lang === 'fr' ? 'Parce que personne ne devrait être laissé derrière' : 'Because no one should be left behind';
+      }
+    }
+
+    function toggleLang() {
+      currentLang = currentLang === 'fr' ? 'en' : 'fr';
+      applyLang(currentLang);
+    }
+  </script>
+</body>
+</html>
