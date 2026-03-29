@@ -18,6 +18,9 @@
   <meta property="og:locale" content="fr_CA">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Un peu plus… — Thèse | Universel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
@@ -107,21 +110,140 @@
         footer span { color: #87CEEB; font-weight: bold; }
 
         hr { border: none; border-top: 1px solid #c8dff0; margin: 30px 0; }
-    </style>
+    
+    .site-header {
+      background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);
+      text-align: center;
+      padding: 42px 20px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(135,206,235,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 100%, rgba(135,206,235,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .site-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      color: #ffffff;
+      letter-spacing: 0.10em;
+      text-shadow: 0 2px 24px rgba(135,206,235,0.5), 0 0 60px rgba(135,206,235,0.2);
+      line-height: 1.1;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .site-title span {
+      color: #87CEEB;
+    }
+    .site-slogan {
+      font-family: 'Lato', Arial, sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+      color: #cce4f7;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    .site-slogan::before,
+    .site-slogan::after {
+      content: '— ';
+      color: #87CEEB;
+      opacity: 0.7;
+    }
+    .site-slogan::after { content: ' —'; }
+    .hero {
+      background: linear-gradient(180deg, #1a3a6b 0%, #87CEEB 60%, #b8e0f7 100%);
+      text-align: center;
+      padding: 30px 20px 30px;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 36px rgba(0,0,0,0.28);
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 14px;
+    }
+    nav {
+      background: #1a3a6b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 20px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    nav a:hover { color: #87CEEB; }
+    nav a.active { color: #87CEEB; border-bottom: 2px solid #87CEEB; padding-bottom: 2px; }
+    .lang-btn {
+      background: #87CEEB;
+      color: #1a3a6b;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .lang-btn:hover { background: #fff; }
+    @media (max-width: 768px) {
+      .site-title { letter-spacing: 0.06em; }
+      nav { gap: 12px; padding: 12px 14px; }
+      nav a { font-size: 0.80rem; }
+    }
+
+</style>
 </head>
 <body>
 <div id="content-fr" style="display:block;">
+<header class="site-header">
+  <h1 class="site-title">UN MONDE <span>UNIVERSEL</span></h1>
+  <p class="site-slogan">Parce que personne ne devrait être laissé derrière</p>
+</header>
+
 <div class="hero">
-    <a href="index.html"><img src="logo_universel.jpeg.JPG" alt="Logo Universel"></a>
+  <a href="index.html"><img src="logo_universel.jpeg.JPG" alt="Logo Universel"></a>
 </div>
 
 <nav>
     <a href="index.html">🏠 Accueil</a>
     <a href="index.html#vision">La Vision</a>
     <a href="index.html#discussion">Discussion</a>
-    <a href="these.html" style="color:#87CEEB; border-bottom:2px solid #87CEEB;">📖 Un peu plus…</a>
-    <a href="theorie.html">🔬 Nouvelle Approche</a>
-    <a href="guerre.html" style="color:#ff6666;">⚔️ Guerre</a>
+    <a href="these.html" class="active">📖 Un peu plus…</a>
+    <a href="theorie.html">Nouvelle Approche</a>
+    <a href="guerre.html" style="color:#ff9090;">⚔️ Guerre</a>
     <a href="chomage.html">📉 Chômage</a>
     <a href="index.html#apropos">À propos</a>
     <a href="index.html#contact">Contact</a>
@@ -466,21 +588,28 @@
 </footer>
 </div>
 <div id="content-en" style="display:none;">
+<header class="site-header">
+  <h1 class="site-title">ONE <span>UNIVERSAL</span> WORLD</h1>
+  <p class="site-slogan">Because no one should be left behind</p>
+</header>
+
 <div class="hero">
-    <a href="index.html"><img src="logo_universel.jpeg.JPG" alt="Universel Logo"></a>
+  <a href="index.html"><img src="logo_universel.jpeg.JPG" alt="Universal Logo"></a>
 </div>
+
 <nav>
     <a href="index.html">🏠 Home</a>
-    <a href="index.html#vision">Our Vision</a>
+    <a href="index.html#vision">Vision</a>
     <a href="index.html#discussion">Discussion</a>
-    <a href="these.html" style="color:#87CEEB; border-bottom:2px solid #87CEEB;">📖 Learn More…</a>
-    <a href="theorie.html">🔬 New Approach</a>
-    <a href="guerre.html" style="color:#ff6666;">⚔️ War</a>
+    <a href="these.html" class="active">📖 Learn More</a>
+    <a href="theorie.html">New Approach</a>
+    <a href="guerre.html" style="color:#ff9090;">⚔️ War</a>
     <a href="chomage.html">📉 Unemployment</a>
     <a href="index.html#apropos">About</a>
     <a href="index.html#contact">Contact</a>
-    <button class="lang-btn" onclick="toggleLang()" id="langBtn2">FR</button>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">FR</button>
 </nav>
+
 <div class="container">
     <h1>On the Urgency of Replacing Capitalism with Universality</h1>
     <h1 style="font-size:1.2rem; margin-top:8px;">Toward a New Paradigm of Human Governance</h1>
