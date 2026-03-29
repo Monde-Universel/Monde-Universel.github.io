@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://monde-universel.github.io/sitemap.xml
