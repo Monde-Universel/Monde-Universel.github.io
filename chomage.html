@@ -20,7 +20,7 @@
   <title>Chômage &amp; Universalité | Universel</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Georgia, serif; background: #0a0a14; color: #e8e8e8; }
+    body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
 
     .site-header {
       background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);
@@ -70,111 +70,116 @@
     .site-slogan::after { content: ' —'; }
 
 
-    .hero { background: linear-gradient(180deg, #0a0a2e 0%, #1a1a4e 50%, #0a0a14 100%);
+    .hero { background: linear-gradient(180deg, #1a3a6b 0%, #87CEEB 60%, #b8e0f7 100%);
       text-align: center; padding: 30px 20px 20px; }
-    .hero img { max-width: 180px; width: 50%; border-radius: 10px; opacity: 0.85; }
+    .hero img { max-width: 180px; width: 50%; border-radius: 10px; opacity: 1; box-shadow: 0 8px 36px rgba(0,0,0,0.18); }
 
-    nav { background: #111130; display: flex; justify-content: center; align-items: center;
-      gap: 22px; padding: 14px 20px; flex-wrap: wrap; border-bottom: 2px solid #3a3a8b; }
-    nav a { color: #ccc; text-decoration: none; font-family: Arial, sans-serif;
+    nav { background: #1a3a6b; display: flex; justify-content: center; align-items: center;
+      gap: 22px; padding: 14px 20px; flex-wrap: wrap; }
+    nav a { color: #fff; text-decoration: none; font-family: Arial, sans-serif;
       font-size: 0.9rem; font-weight: bold; letter-spacing: 0.04em; transition: color 0.2s; }
     nav a:hover { color: #87CEEB; }
-    .lang-btn { background: #3a3a8b; color: #fff; border: none; border-radius: 20px;
+    .lang-btn { background: #87CEEB; color: #1a3a6b; border: none; border-radius: 20px;
       padding: 6px 16px; font-family: Arial, sans-serif; font-size: 0.9rem;
       font-weight: bold; cursor: pointer; transition: all 0.2s; }
-    .lang-btn:hover { background: #87CEEB; color: #0a0a2e; }
+    .lang-btn:hover { background: #fff; color: #1a3a6b; }
 
-    .banner { background: linear-gradient(135deg, #0a0a2e, #1a1a5e);
-      text-align: center; padding: 50px 24px 40px; border-bottom: 3px solid #4444bb; }
-    .banner .tag { display: inline-block; background: #3a3a8b; color: #87CEEB;
+    .banner { background: linear-gradient(135deg, #1a3a6b 0%, #2a5298 60%, #1a3a6b 100%);
+      text-align: center; padding: 50px 24px 40px; border-bottom: 3px solid #87CEEB; }
+    .banner .tag { display: inline-block; background: #87CEEB; color: #1a3a6b;
       font-family: Arial, sans-serif; font-size: 0.78rem; font-weight: bold;
       letter-spacing: 0.18em; padding: 5px 18px; border-radius: 4px; margin-bottom: 18px; }
     .banner h1 { font-size: clamp(1.4rem, 4vw, 2.2rem); color: #fff; line-height: 1.3;
       max-width: 800px; margin: 0 auto 14px; text-shadow: 0 2px 8px rgba(0,0,0,.5); }
-    .banner p { font-family: Arial, sans-serif; color: #9090cc; font-size: 0.95rem; font-style: italic; }
+    .banner p { font-family: Arial, sans-serif; color: #d7ebfb; font-size: 0.95rem; font-style: italic; }
 
     .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
 
-    .intro-block { background: #111130; border-left: 4px solid #4444bb;
+    .intro-block { background: #fff; border-left: 4px solid #87CEEB;
       border-radius: 8px; padding: 24px 28px; margin-bottom: 40px; }
-    .intro-block p { font-size: 1.05rem; line-height: 1.85; color: #ddd; text-align: justify; margin-bottom: 12px; }
+    .intro-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 12px; }
     .intro-block p:last-child { margin-bottom: 0; }
 
     .section-header { display: flex; align-items: center; gap: 12px;
-      margin: 44px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #222; }
+      margin: 44px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #d9e7f6; }
     .section-header .icon { font-size: 1.6rem; }
-    .section-header h2 { font-size: 1.4rem; color: #87CEEB; }
+    .section-header h2 { font-size: 1.4rem; color: #1a3a6b; }
 
     .drivers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px; margin: 24px 0; }
-    .driver-card { background: #111130; border: 1px solid #2a2a6a;
-      border-top: 3px solid #4444bb; border-radius: 10px; padding: 20px 16px; }
+    .driver-card { background: #fff; border: 1px solid #d6e4f2;
+      border-top: 3px solid #87CEEB; border-radius: 10px; padding: 20px 16px; }
     .driver-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
-    .driver-card h3 { font-size: 1rem; color: #87CEEB; font-family: Arial, sans-serif; margin-bottom: 8px; }
-    .driver-card p { font-size: 0.88rem; line-height: 1.7; color: #aaa; }
+    .driver-card h3 { font-size: 1rem; color: #1a3a6b; font-family: Arial, sans-serif; margin-bottom: 8px; }
+    .driver-card p { font-size: 0.88rem; line-height: 1.7; color: #555; }
 
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 16px; margin: 24px 0; }
-    .stat-card { background: #111130; border: 1px solid #2a2a6a;
+    .stat-card { background: #fff; border: 1px solid #d6e4f2;
       border-top: 3px solid #87CEEB; border-radius: 10px; padding: 20px 16px; text-align: center; }
     .stat-card .number { font-size: 1.9rem; font-weight: bold; color: #87CEEB;
       font-family: Arial, sans-serif; line-height: 1.1; }
-    .stat-card .label { font-size: 0.82rem; color: #888; font-family: Arial, sans-serif; margin-top: 6px; }
+    .stat-card .label { font-size: 0.82rem; color: #555; font-family: Arial, sans-serif; margin-top: 6px; }
 
     .content-block { margin-bottom: 32px; }
-    .content-block h3 { font-size: 1.15rem; color: #aaaaff; margin-bottom: 12px; font-style: italic; }
-    .content-block p { font-size: 1rem; line-height: 1.85; color: #ccc; text-align: justify; margin-bottom: 10px; }
+    .content-block h3 { color: #1a3a6b;  font-size: 1.15rem; color: #1a3a6b; margin-bottom: 12px; font-style: italic; }
+    .content-block p { color: #2c2c2c;  font-size: 1rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 10px; }
     .content-block ul { padding-left: 22px; margin: 10px 0; }
-    .content-block li { font-size: 0.98rem; line-height: 1.75; color: #ccc; margin-bottom: 8px; }
+    .content-block li { font-size: 0.98rem; line-height: 1.75; color: #2c2c2c; margin-bottom: 8px; }
     .content-block li strong { color: #87CEEB; }
 
     .table-wrapper { overflow-x: auto; margin: 20px 0; }
     table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 0.9rem; }
-    th { background: #1a1a4e; color: #87CEEB; padding: 10px 14px; text-align: left; border-bottom: 2px solid #4444bb; }
-    td { padding: 10px 14px; border-bottom: 1px solid #1e1e3e; color: #ccc; }
-    tr:hover td { background: #111130; }
-    td:nth-child(3) { color: #ff9999; }
+    th { background: #2a5298; color: #87CEEB; padding: 10px 14px; text-align: left; border-bottom: 2px solid #87CEEB; }
+    td { padding: 10px 14px; border-bottom: 1px solid #ffffff; color: #2c2c2c; }
+    tr:hover td { background: #ffffff; }
+    td:nth-child(3) { color: #1a3a6b; }
     td:nth-child(3)[data-good] { color: #87CEEB; }
 
-    .universality-box { background: linear-gradient(135deg, #0a1a0a, #0a2a1a);
-      border: 1px solid #2a6a2a; border-left: 4px solid #4CAF50;
-      border-radius: 10px; padding: 28px; margin: 40px 0; }
-    .universality-box h2 { font-size: 1.3rem; color: #4CAF50; margin-bottom: 16px; }
-    .universality-box p { font-size: 1rem; line-height: 1.85; color: #ddd; text-align: justify; margin-bottom: 12px; }
+    .universality-box { background: #ffffff;
+      border: 1px solid #d6e4f2; border-left: 4px solid #87CEEB;
+      border-radius: 10px; padding: 28px; margin: 40px 0; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+    .universality-box h2 { font-size: 1.3rem; color: #1a3a6b; margin-bottom: 16px; }
+    .universality-box p { font-size: 1rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 12px; }
     .universality-box ul { padding-left: 22px; margin: 10px 0; }
-    .universality-box li { font-size: 0.98rem; line-height: 1.75; color: #ccc; margin-bottom: 8px; }
-    .universality-box li strong { color: #4CAF50; }
+    .universality-box li { font-size: 0.98rem; line-height: 1.75; color: #2c2c2c; margin-bottom: 8px; }
+    .universality-box li strong { color: #1a3a6b; }
 
-.diag-wrapper { background: #111130; border: 1px solid #2a2a6a; border-radius: 12px;
-      padding: 28px 20px; margin: 30px 0; }
-    .diag-heading { color: #87CEEB; font-family: Arial, sans-serif; font-size: 1rem;
+.diag-wrapper { background: #ffffff; border: 1px solid #d6e4f2; border-radius: 12px;
+      padding: 28px 20px; margin: 30px 0; position: relative; overflow: hidden; }
+    .diag-wrapper::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: #87CEEB; }
+    .diag-heading { color: #1a3a6b; font-family: Arial, sans-serif; font-size: 1rem;
       margin-bottom: 20px; }
-    .diag-box { border-radius: 8px; padding: 12px 20px; text-align: center;
+    .diag-box { border-radius: 10px; padding: 14px 20px; text-align: center;
       font-family: Arial, sans-serif; font-weight: bold; font-size: 0.9rem;
-      letter-spacing: 0.03em; margin: 0 auto; max-width: 480px; }
-    .diag-top { background: #1a1a4e; color: #87CEEB; border: 1px solid #4444bb; }
-    .diag-warn { background: #2a1010; color: #ff9999; border: 1px solid #8b0000; }
-    .diag-ok { background: #0a2a0a; color: #4CAF50; border: 1px solid #2a6a2a; }
+      letter-spacing: 0.03em; margin: 0 auto; max-width: 480px; box-shadow: 0 3px 12px rgba(0,0,0,0.05); }
+    .diag-top { background: #2a5298; color: #eaf6ff; border: 1px solid #87CEEB; }
+    .diag-warn { background: #2a1010; color: #1a3a6b; border: 1px solid #8b0000; }
+    .diag-ok { background: #0a2a0a; color: #1a3a6b; border: 1px solid #2a6a2a; }
     .diag-arrow { text-align: center; color: #555; font-size: 1.4rem;
       line-height: 1; margin: 6px 0; }
+
+    .diag-warn { background: #ffffff; color: #1a3a6b; border: 1px solid #d6e4f2; border-top: 3px solid #d66a6a; }
+    .diag-ok { background: #ffffff; color: #1a3a6b; border: 1px solid #d6e4f2; border-top: 3px solid #87CEEB; }
+
     .diag-causes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
       max-width: 480px; margin: 0 auto; }
     @media(min-width: 520px) {
       .diag-causes { grid-template-columns: repeat(4, 1fr); }
     }
-    .diag-cause { background: #1e1e3e; color: #aaaaff; border: 1px solid #3a3a8b;
-      border-radius: 8px; padding: 12px 8px; text-align: center;
+    .diag-cause { background: #ffffff; color: #1a3a6b; border: 1px solid #d6e4f2;
+      border-top: 3px solid #87CEEB; border-radius: 8px; padding: 12px 8px; text-align: center;
       font-family: Arial, sans-serif; font-size: 0.82rem; font-weight: bold;
-      line-height: 1.5; }
+      line-height: 1.5; box-shadow: 0 3px 12px rgba(0,0,0,0.05); }
 
-    .conclusion-box { background: #0d0d1e; border: 1px solid #3a3a8b;
-      border-radius: 10px; padding: 28px; margin-top: 40px; text-align: center; }
-    .conclusion-box p { font-size: 1.1rem; line-height: 1.85; color: #ddd; margin-bottom: 12px; }
-    .conclusion-box p strong { color: #87CEEB; }
+    .conclusion-box { background: #ffffff; border: 1px solid #d6e4f2;
+      border-left: 4px solid #87CEEB; border-radius: 10px; padding: 28px; margin-top: 40px; text-align: center; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+    .conclusion-box p { font-size: 1.1rem; line-height: 1.85; color: #2c2c2c; margin-bottom: 12px; }
+    .conclusion-box p strong { color: #1a3a6b; }
 
-    .divider { border: none; border-top: 1px solid #1e1e3e; margin: 36px 0; }
-    footer { background: #070712; color: #555; text-align: center; padding: 22px 20px;
-      font-family: Arial, sans-serif; font-size: 0.85rem; border-top: 2px solid #3a3a8b; }
+    .divider { border: none; border-top: 1px solid #d6e4f2; margin: 36px 0; }
+    footer { background: #1a3a6b; color: #cce4f7; text-align: center; padding: 22px 20px;
+      font-family: Arial, sans-serif; font-size: 0.85rem; border-top: 2px solid #87CEEB; }
     footer span { color: #87CEEB; font-weight: bold; }
     footer a { color: #87CEEB; text-decoration: none; }
   </style>
@@ -220,32 +225,32 @@
 
   <!-- DIAGRAM — styled HTML version -->
   <div class="diag-wrapper">
-    <h3 class="diag-heading">📊 Schéma des Inégalités Structurelles</h3>
+    <h3 class="diag-heading" id="diag-heading">📊 Schéma des Inégalités Structurelles</h3>
 
-    <div class="diag-box diag-top">
+    <div class="diag-box diag-top" id="diag-top">
       INÉGALITÉS STRUCTURELLES DU CAPITALISME
     </div>
     <div class="diag-arrow">↓</div>
 
     <div class="diag-causes">
-      <div class="diag-cause">🏭<br>Tarifs Trump</div>
-      <div class="diag-cause">✂️<br>Coupes fédérales</div>
-      <div class="diag-cause">🛢️<br>Guerre en Iran</div>
-      <div class="diag-cause">🤖<br>Automatisation IA</div>
+      <div class="diag-cause" id="diag-c1">🏭<br>Tarifs Trump</div>
+      <div class="diag-cause" id="diag-c2">✂️<br>Coupes fédérales</div>
+      <div class="diag-cause" id="diag-c3">🛢️<br>Guerre en Iran</div>
+      <div class="diag-cause" id="diag-c4">🤖<br>Automatisation IA</div>
     </div>
     <div class="diag-arrow">↓</div>
 
-    <div class="diag-box diag-warn">
+    <div class="diag-box diag-warn" id="diag-w1">
       DESTRUCTION ACCÉLÉRÉE DE LA CLASSE MOYENNE
     </div>
     <div class="diag-arrow">↓</div>
 
-    <div class="diag-box diag-warn">
+    <div class="diag-box diag-warn" id="diag-w2">
       CHÔMAGE + STAGFLATION + INSTABILITÉ SOCIALE
     </div>
     <div class="diag-arrow">↓</div>
 
-    <div class="diag-box diag-ok">
+    <div class="diag-box diag-ok" id="diag-ok">
       → L'UNIVERSALITÉ comme réponse systémique
     </div>
   </div>
@@ -386,11 +391,11 @@
   <div class="conclusion-box">
     <p><strong id="ccl1">Le chômage structurel n'est pas un échec individuel.</strong> <span id="ccl1b">C'est la conséquence prévisible d'un système qui automatise pour maximiser le profit privé sans mécanisme de redistribution des gains collectifs.</span></p>
     <p id="ccl2">Chaque travailleur déplacé par un algorithme n'a pas échoué à s'adapter — il a été abandonné par un système qui ne prévoit pas de lui rendre sa contribution sous une autre forme.</p>
-    <p style="color:#87CEEB; font-weight:bold; margin-top:14px" id="ccl3">🌍 L'Universalité ne demande pas aux humains de courir plus vite que les machines. Elle demande que les gains des machines appartiennent à l'humanité.</p>
+    <p style="color:#1a3a6b; font-weight:bold; margin-top:14px" id="ccl3">🌍 L'Universalité ne demande pas aux humains de courir plus vite que les machines. Elle demande que les gains des machines appartiennent à l'humanité.</p>
   </div>
 
   <div style="text-align:center; margin-top:40px">
-    <a href="index.html" style="background:#3a3a8b;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold" id="btn-home">Retour à l'accueil</a>
+    <a href="index.html" style="background:#d6e4f2;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold" id="btn-home">Retour à l'accueil</a>
   </div>
 
 </div><!-- .container -->
@@ -405,7 +410,7 @@ const TR = {
     'site-title':'UN MONDE UNIVERSEL','site-slogan':'Parce que personne ne devrait être laissé derrière','nav-vision':'La Vision','nav-discussion':'Discussion','nav-these':'📖 Un peu plus…',
     'nav-theorie':'🔬 Nouvelle Approche','nav-guerre':'⚔️ Guerre',
     'nav-chomage':'📉 Chômage','nav-rub':'RUB','nav-about':'À propos','nav-contact':'Contact',
-    'tag-text':'ANALYSE ÉCONOMIQUE',
+    'tag-text':'ANALYSE ÉCONOMIQUE','diag-heading':'📊 Schéma des Inégalités Structurelles','diag-top':'INÉGALITÉS STRUCTURELLES DU CAPITALISME','diag-c1':'🏭<br>Tarifs Trump','diag-c2':'✂️<br>Coupes fédérales','diag-c3':'🛢️<br>Guerre en Iran','diag-c4':'🤖<br>Automatisation IA','diag-w1':'DESTRUCTION ACCÉLÉRÉE DE LA CLASSE MOYENNE','diag-w2':'CHÔMAGE + STAGFLATION + INSTABILITÉ SOCIALE','diag-ok':'→ L\'UNIVERSALITÉ comme réponse systémique',
     'banner-title':'La Destruction Accélérée de la Classe Moyenne<br>Chômage, Stagflation &amp; Montée de la Classe Pauvre',
     'banner-sub':'Tarifs · IA · Guerre en Iran · Coupes fédérales — Quatre moteurs d\'un même effondrement',
     'intro1':'Les inégalités structurelles du capitalisme ne s\'effondrent pas soudainement — elles s\'accélèrent. En 2025-2026, quatre vecteurs convergent simultanément pour détruire la classe moyenne à une vitesse sans précédent : les tarifs Trump, les coupes fédérales, la guerre en Iran et l\'automatisation par l\'IA.',
@@ -456,10 +461,10 @@ const TR = {
     'btn-home':'Retour à l\'accueil','footer-txt':'Parce que personne ne devrait être laissé derrière'
   },
   en: {
-    'nav-home':'🏠 Home','nav-vision':'The Vision','nav-these':'📖 A Bit More…',
+    'site-slogan':'Because no one should be left behind','nav-home':'🏠 Home','nav-vision':'The Vision','nav-these':'📖 A Bit More…',
     'nav-theorie':'🔬 New Approach','nav-guerre':'⚔️ War',
     'nav-chomage':'📉 Unemployment','nav-rub':'UBI','nav-about':'About','nav-contact':'Contact',
-    'tag-text':'ECONOMIC ANALYSIS',
+    'tag-text':'ECONOMIC ANALYSIS','diag-heading':'📊 Diagram of Structural Inequalities','diag-top':'STRUCTURAL INEQUALITIES OF CAPITALISM','diag-c1':'🏭<br>Trump Tariffs','diag-c2':'✂️<br>Federal Cuts','diag-c3':'🛢️<br>War in Iran','diag-c4':'🤖<br>AI Automation','diag-w1':'ACCELERATED DESTRUCTION OF THE MIDDLE CLASS','diag-w2':'UNEMPLOYMENT + STAGFLATION + SOCIAL INSTABILITY','diag-ok':'→ UNIVERSALITY as a systemic response',
     'banner-title':'The Accelerated Destruction of the Middle Class<br>Unemployment, Stagflation &amp; Rise of the Working Poor',
     'banner-sub':'Tariffs · AI · Iran War · Federal Cuts — Four engines of the same collapse',
     'intro1':'The structural inequalities of capitalism do not collapse suddenly — they accelerate. In 2025-2026, four vectors converge simultaneously to destroy the middle class at an unprecedented pace: Trump tariffs, federal cuts, the Iran war oil shock, and AI automation replacing jobs faster than training systems can absorb.',
@@ -518,13 +523,13 @@ function applyTranslations() {
   Object.keys(t).forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
-    if (id === 'banner-title') el.innerHTML = t[id];
+    if (['banner-title','diag-heading','diag-top','diag-c1','diag-c2','diag-c3','diag-c4','diag-w1','diag-w2','diag-ok'].includes(id)) el.innerHTML = t[id];
     else el.textContent = t[id];
   });
   const title = document.getElementById('site-title');
   const slogan = document.getElementById('site-slogan');
   if (title) title.innerHTML = currentLang === 'fr' ? 'UN MONDE <span>UNIVERSEL</span>' : 'A <span>UNIVERSAL</span> WORLD';
-  if (slogan) slogan.textContent = t['site-slogan'];
+  if (slogan) slogan.textContent = t['site-slogan'] || (currentLang === 'fr' ? 'Parce que personne ne devrait être laissé derrière' : 'Because no one should be left behind');
   // Update nav links text
   const navLinks = {
     'index.html#vision': 'nav-vision', 'index.html#discussion': 'nav-discussion',
