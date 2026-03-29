@@ -22,6 +22,54 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Georgia, serif; background: #0a0a14; color: #e8e8e8; }
 
+    .site-header {
+      background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);
+      text-align: center;
+      padding: 42px 20px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(135,206,235,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 100%, rgba(135,206,235,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .site-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      color: #ffffff;
+      letter-spacing: 0.10em;
+      text-shadow: 0 2px 24px rgba(135,206,235,0.5), 0 0 60px rgba(135,206,235,0.2);
+      line-height: 1.1;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .site-title span { color: #87CEEB; }
+    .site-slogan {
+      font-family: Arial, sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+      color: #cce4f7;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    .site-slogan::before,
+    .site-slogan::after {
+      content: '— ';
+      color: #87CEEB;
+      opacity: 0.7;
+    }
+    .site-slogan::after { content: ' —'; }
+
+
     .hero { background: linear-gradient(180deg, #0a0a2e 0%, #1a1a4e 50%, #0a0a14 100%);
       text-align: center; padding: 30px 20px 20px; }
     .hero img { max-width: 180px; width: 50%; border-radius: 10px; opacity: 0.85; }
@@ -132,18 +180,25 @@
   </style>
 </head>
 <body>
+<header class="site-header">
+  <h1 class="site-title" id="site-title">UN MONDE <span>UNIVERSEL</span></h1>
+  <p class="site-slogan" id="site-slogan">Parce que personne ne devrait être laissé derrière</p>
+</header>
+
+
 
 <div class="hero">
   <a href="index.html"><img src="logo_universel.jpeg.JPG" alt="Logo Universel"></a>
 </div>
 
 <nav>
-  <a href="index.html">🏠 Accueil</a>
   <a href="index.html#vision">La Vision</a>
+  <a href="index.html#discussion">Discussion</a>
   <a href="these.html">📖 Un peu plus…</a>
   <a href="theorie.html">🔬 Nouvelle Approche</a>
   <a href="guerre.html" style="color:#ff6666;">⚔️ Guerre</a>
   <a href="chomage.html" style="color:#87CEEB;border-bottom:2px solid #87CEEB;">📉 Chômage</a>
+  <a href="rub.html">RUB</a>
   <a href="index.html#apropos">À propos</a>
   <a href="index.html#contact">Contact</a>
   <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
@@ -347,9 +402,9 @@
 <script>
 const TR = {
   fr: {
-    'nav-home':'🏠 Accueil','nav-vision':'La Vision','nav-these':'📖 Un peu plus…',
+    'site-title':'UN MONDE UNIVERSEL','site-slogan':'Parce que personne ne devrait être laissé derrière','nav-vision':'La Vision','nav-discussion':'Discussion','nav-these':'📖 Un peu plus…',
     'nav-theorie':'🔬 Nouvelle Approche','nav-guerre':'⚔️ Guerre',
-    'nav-chomage':'📉 Chômage','nav-about':'À propos','nav-contact':'Contact',
+    'nav-chomage':'📉 Chômage','nav-rub':'RUB','nav-about':'À propos','nav-contact':'Contact',
     'tag-text':'ANALYSE ÉCONOMIQUE',
     'banner-title':'La Destruction Accélérée de la Classe Moyenne<br>Chômage, Stagflation &amp; Montée de la Classe Pauvre',
     'banner-sub':'Tarifs · IA · Guerre en Iran · Coupes fédérales — Quatre moteurs d\'un même effondrement',
@@ -403,7 +458,7 @@ const TR = {
   en: {
     'nav-home':'🏠 Home','nav-vision':'The Vision','nav-these':'📖 A Bit More…',
     'nav-theorie':'🔬 New Approach','nav-guerre':'⚔️ War',
-    'nav-chomage':'📉 Unemployment','nav-about':'About','nav-contact':'Contact',
+    'nav-chomage':'📉 Unemployment','nav-rub':'UBI','nav-about':'About','nav-contact':'Contact',
     'tag-text':'ECONOMIC ANALYSIS',
     'banner-title':'The Accelerated Destruction of the Middle Class<br>Unemployment, Stagflation &amp; Rise of the Working Poor',
     'banner-sub':'Tariffs · AI · Iran War · Federal Cuts — Four engines of the same collapse',
@@ -466,11 +521,15 @@ function applyTranslations() {
     if (id === 'banner-title') el.innerHTML = t[id];
     else el.textContent = t[id];
   });
+  const title = document.getElementById('site-title');
+  const slogan = document.getElementById('site-slogan');
+  if (title) title.innerHTML = currentLang === 'fr' ? 'UN MONDE <span>UNIVERSEL</span>' : 'A <span>UNIVERSAL</span> WORLD';
+  if (slogan) slogan.textContent = t['site-slogan'];
   // Update nav links text
   const navLinks = {
-    'index.html': 'nav-home', 'index.html#vision': 'nav-vision',
+    'index.html#vision': 'nav-vision', 'index.html#discussion': 'nav-discussion',
     'these.html': 'nav-these', 'theorie.html': 'nav-theorie',
-    'guerre.html': 'nav-guerre', 'chomage.html': 'nav-chomage',
+    'guerre.html': 'nav-guerre', 'chomage.html': 'nav-chomage', 'rub.html': 'nav-rub',
     'index.html#apropos': 'nav-about', 'index.html#contact': 'nav-contact'
   };
   document.querySelectorAll('nav a').forEach(a => {
