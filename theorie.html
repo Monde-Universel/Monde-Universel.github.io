@@ -22,6 +22,54 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
 
+        .site-header {
+            background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);
+            text-align: center;
+            padding: 42px 20px 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .site-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(135,206,235,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 20% 100%, rgba(135,206,235,0.07) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .site-title {
+            font-family: 'Cinzel', Georgia, serif;
+            font-weight: 900;
+            font-size: clamp(2rem, 6vw, 4.2rem);
+            color: #ffffff;
+            letter-spacing: 0.10em;
+            text-shadow: 0 2px 24px rgba(135,206,235,0.5), 0 0 60px rgba(135,206,235,0.2);
+            line-height: 1.1;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .site-title span { color: #87CEEB; }
+        .site-slogan {
+            font-family: Arial, sans-serif;
+            font-weight: 300;
+            font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+            color: #cce4f7;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+        .site-slogan::before,
+        .site-slogan::after {
+            content: '— ';
+            color: #87CEEB;
+            opacity: 0.7;
+        }
+        .site-slogan::after { content: ' —'; }
+
+
         .hero {
             background: linear-gradient(180deg, #1a3a6b 0%, #2a5298 50%, #87CEEB 100%);
             text-align: center; padding: 40px 20px 30px;
@@ -149,6 +197,12 @@
     </style>
 </head>
 <body>
+<header class="site-header">
+    <h1 class="site-title" id="site-title">UN MONDE <span>UNIVERSEL</span></h1>
+    <p class="site-slogan" id="site-slogan">Parce que personne ne devrait être laissé derrière</p>
+</header>
+
+
 
 <div class="hero">
     <img src="logo_universel.jpeg.JPG" alt="Logo Universel">
@@ -161,10 +215,12 @@
 <nav>
     <a href="index.html">🏠 Accueil</a>
     <a href="index.html#vision">La Vision</a>
+    <a href="index.html#discussion">Discussion</a>
     <a href="these.html">📖 Un peu plus…</a>
     <a href="theorie.html" class="active" style="color:#87CEEB; border-bottom:2px solid #87CEEB;">🔬 Nouvelle Approche</a>
     <a href="guerre.html" style="color:#ff6666;">⚔️ Guerre</a>
     <a href="chomage.html">📉 Chômage</a>
+    <a href="rub.html">RUB</a>
     <a href="index.html#apropos">À propos</a>
     <a href="index.html#contact">Contact</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
@@ -395,10 +451,12 @@
 <nav>
     <a href="index.html">🏠 Home</a>
     <a href="index.html#vision">Our Vision</a>
+    <a href="index.html#discussion">Discussion</a>
     <a href="these.html">📖 Learn More…</a>
     <a href="theorie.html" class="active" style="color:#87CEEB; border-bottom:2px solid #87CEEB;">🔬 New Approach</a>
     <a href="guerre.html" style="color:#ff6666;">⚔️ War</a>
     <a href="chomage.html">📉 Unemployment</a>
+    <a href="rub.html">UBI</a>
     <a href="index.html#apropos">About</a>
     <a href="index.html#contact">Contact</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn2">FR</button>
@@ -629,16 +687,29 @@
 
 <script>
 let currentLang = 'fr';
+function applyTopLang() {
+    const title = document.getElementById('site-title');
+    const slogan = document.getElementById('site-slogan');
+    const footer = document.getElementById('footer-text');
+    if (currentLang === 'fr') {
+        if (title) title.innerHTML = 'UN MONDE <span>UNIVERSEL</span>';
+        if (slogan) slogan.textContent = 'Parce que personne ne devrait être laissé derrière';
+        if (footer) footer.textContent = 'Parce que personne ne devrait être laissé derrière';
+    } else {
+        if (title) title.innerHTML = 'A <span>UNIVERSAL</span> WORLD';
+        if (slogan) slogan.textContent = 'Because no one should be left behind';
+        if (footer) footer.textContent = 'Because no one should be left behind';
+    }
+    document.documentElement.lang = currentLang;
+}
 function toggleLang() {
     currentLang = currentLang === 'fr' ? 'en' : 'fr';
     document.getElementById('content-fr').style.display = currentLang === 'fr' ? 'block' : 'none';
     document.getElementById('content-en').style.display = currentLang === 'en' ? 'block' : 'none';
-    document.getElementById('footer-text').textContent = currentLang === 'fr'
-        ? 'Parce que personne ne devrait être laissé derrière'
-        : 'Because no one should be left behind';
-    document.documentElement.lang = currentLang;
+    applyTopLang();
     window.scrollTo(0, 0);
 }
+document.addEventListener('DOMContentLoaded', applyTopLang);
 </script>
 
 </body>
