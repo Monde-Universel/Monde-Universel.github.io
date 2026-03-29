@@ -20,100 +20,159 @@
     <title>Guerre — Catastrophe Écologique | Universel</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Georgia, serif; background: #0d0d0d; color: #e8e8e8; }
+        body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
 
-        .hero { background: linear-gradient(180deg, #1a0000 0%, #3d0000 50%, #0d0d0d 100%);
+        .site-header {
+            background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);
+            text-align: center;
+            padding: 42px 20px 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .site-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(135,206,235,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 20% 100%, rgba(135,206,235,0.07) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .site-title {
+            font-family: 'Cinzel', Georgia, serif;
+            font-weight: 900;
+            font-size: clamp(2rem, 6vw, 4.2rem);
+            color: #ffffff;
+            letter-spacing: 0.10em;
+            text-shadow: 0 2px 24px rgba(135,206,235,0.5), 0 0 60px rgba(135,206,235,0.2);
+            line-height: 1.1;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .site-title span { color: #87CEEB; }
+        .site-slogan {
+            font-family: Arial, sans-serif;
+            font-weight: 300;
+            font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+            color: #cce4f7;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+        .site-slogan::before,
+        .site-slogan::after {
+            content: '— ';
+            color: #87CEEB;
+            opacity: 0.7;
+        }
+        .site-slogan::after { content: ' —'; }
+
+
+        .hero { background: linear-gradient(180deg, #1a3a6b 0%, #2a5298 50%, #f0f7ff 100%);
             text-align: center; padding: 30px 20px 20px; }
-        .hero img { max-width: 180px; width: 50%; border-radius: 10px; opacity: 0.85; }
+        .hero img { max-width: 180px; width: 50%; border-radius: 10px; opacity: 1; box-shadow: 0 8px 36px rgba(0,0,0,0.18); }
 
-        nav { background: #1a1a1a; display: flex; justify-content: center; align-items: center;
-            gap: 22px; padding: 14px 20px; flex-wrap: wrap; border-bottom: 2px solid #8b0000; }
-        nav a { color: #ccc; text-decoration: none; font-family: Arial, sans-serif; font-size: 0.9rem;
+        nav { background: #1a3a6b; display: flex; justify-content: center; align-items: center;
+            gap: 22px; padding: 14px 20px; flex-wrap: wrap; border-bottom: 2px solid #87CEEB; }
+        nav a { color: #fff; text-decoration: none; font-family: Arial, sans-serif; font-size: 0.9rem;
             font-weight: bold; letter-spacing: 0.04em; transition: color 0.2s; }
-        nav a:hover { color: #ff4444; }
-        .lang-btn { background: #8b0000; color: #fff; border: none; border-radius: 20px;
+        nav a:hover { color: #87CEEB; }
+        .lang-btn { background: #87CEEB; color: #1a3a6b; border: none; border-radius: 20px;
             padding: 6px 16px; font-family: Arial, sans-serif; font-size: 0.9rem;
             font-weight: bold; cursor: pointer; transition: all 0.2s; }
-        .lang-btn:hover { background: #ff4444; }
+        .lang-btn:hover { background: #fff; }
 
-        .banner { background: linear-gradient(135deg, #1a0000, #3d0000); text-align: center;
-            padding: 50px 24px 40px; border-bottom: 3px solid #8b0000; }
-        .banner .tag { display: inline-block; background: #8b0000; color: #fff;
+        .banner { background: linear-gradient(135deg, #1a3a6b, #2a5298); text-align: center;
+            padding: 50px 24px 40px; border-bottom: 3px solid #87CEEB; }
+        .banner .tag { display: inline-block; background: #b22222; color: #ffffff;
             font-family: Arial, sans-serif; font-size: 0.8rem; font-weight: bold;
             letter-spacing: 0.15em; padding: 5px 16px; border-radius: 4px; margin-bottom: 18px; }
         .banner h1 { font-size: clamp(1.4rem, 4vw, 2.2rem); color: #fff; line-height: 1.3;
             max-width: 800px; margin: 0 auto 16px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-        .banner p { font-family: Arial, sans-serif; color: #bbb; font-size: 0.95rem; font-style: italic; }
+        .banner p { font-family: Arial, sans-serif; color: #d7ebfb; font-size: 0.95rem; font-style: italic; }
 
         .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
 
-        .intro-block { background: #1a1a1a; border-left: 4px solid #8b0000;
-            border-radius: 8px; padding: 24px 28px; margin-bottom: 40px; }
-        .intro-block p { font-size: 1.05rem; line-height: 1.85; color: #ddd; text-align: justify; margin-bottom: 12px; }
+        .intro-block { background: #ffffff; border-left: 4px solid #87CEEB;
+            border-radius: 10px; padding: 24px 28px; margin-bottom: 40px; position: relative; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.05); }
+        .intro-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: #87CEEB; }
+        .intro-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 12px; }
         .intro-block p:last-child { margin-bottom: 0; }
 
         .section-header { display: flex; align-items: center; gap: 12px; margin: 44px 0 20px;
-            padding-bottom: 10px; border-bottom: 2px solid #333; }
+            padding-bottom: 10px; border-bottom: 2px solid #d6e4f2; }
         .section-header .icon { font-size: 1.6rem; }
-        .section-header h2 { font-size: 1.4rem; color: #ff6666; }
+        .section-header h2 { font-size: 1.4rem; color: #1a3a6b; }
 
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 16px; margin: 24px 0; }
-        .stat-card { background: #1a1a1a; border: 1px solid #333; border-top: 3px solid #8b0000;
-            border-radius: 10px; padding: 20px 16px; text-align: center; }
-        .stat-card .number { font-size: 1.8rem; font-weight: bold; color: #ff6666;
+        .stat-card { background: #ffffff; border: 1px solid #d6e4f2; border-top: 3px solid #87CEEB;
+            border-radius: 10px; padding: 20px 16px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+        .stat-card .number { font-size: 1.8rem; font-weight: bold; color: #1a3a6b;
             font-family: Arial, sans-serif; line-height: 1.1; }
-        .stat-card .label { font-size: 0.82rem; color: #999; font-family: Arial, sans-serif; margin-top: 6px; }
+        .stat-card .label { font-size: 0.82rem; color: #666; font-family: Arial, sans-serif; margin-top: 6px; }
 
         .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 14px; margin: 24px 0; }
-        .img-card { border-radius: 10px; overflow: hidden; background: #1a1a1a; border: 1px solid #333; }
+        .img-card { border-radius: 10px; overflow: hidden; background: #ffffff; border: 1px solid #d6e4f2; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
         .img-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
         .img-card .caption { padding: 10px 12px; font-family: Arial, sans-serif; font-size: 0.82rem;
-            color: #aaa; font-style: italic; line-height: 1.5; }
+            color: #555; font-style: italic; line-height: 1.5; }
 
         .content-block { margin-bottom: 32px; }
-        .content-block h3 { font-size: 1.15rem; color: #ff9999; margin-bottom: 12px; font-style: italic; }
-        .content-block p { font-size: 1rem; line-height: 1.85; color: #ccc; text-align: justify; margin-bottom: 10px; }
+        .content-block h3 { font-size: 1.15rem; color: #1a3a6b; margin-bottom: 12px; font-style: italic; }
+        .content-block p { font-size: 1rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 10px; }
         .content-block ul { padding-left: 22px; margin: 10px 0; }
-        .content-block li { font-size: 0.98rem; line-height: 1.75; color: #ccc; margin-bottom: 6px; }
-        .content-block li strong { color: #ff9999; }
+        .content-block li { font-size: 0.98rem; line-height: 1.75; color: #2c2c2c; margin-bottom: 6px; }
+        .content-block li strong { color: #1a3a6b; }
 
-        .capitalism-box { background: linear-gradient(135deg, #1a0d00, #2d1a00);
-            border: 1px solid #8b4500; border-left: 4px solid #ff8c00;
-            border-radius: 10px; padding: 28px; margin: 40px 0; }
-        .capitalism-box h2 { font-size: 1.3rem; color: #ffaa44; margin-bottom: 16px; }
-        .capitalism-box p { font-size: 1rem; line-height: 1.85; color: #ddd; text-align: justify; margin-bottom: 12px; }
+        .capitalism-box { background: #ffffff;
+            border: 1px solid #d6e4f2; border-left: 4px solid #87CEEB;
+            border-radius: 10px; padding: 28px; margin: 40px 0; position: relative; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+        .capitalism-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: #87CEEB; }
+        .capitalism-box h2 { font-size: 1.3rem; color: #1a3a6b; margin-bottom: 16px; }
+        .capitalism-box p { font-size: 1rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 12px; }
         .capitalism-box ul { padding-left: 22px; margin: 10px 0; }
-        .capitalism-box li { font-size: 0.98rem; line-height: 1.75; color: #ccc; margin-bottom: 8px; }
-        .capitalism-box li strong { color: #ffaa44; }
+        .capitalism-box li { font-size: 0.98rem; line-height: 1.75; color: #2c2c2c; margin-bottom: 8px; }
+        .capitalism-box li strong { color: #1a3a6b; }
 
-        .conclusion-box { background: #111; border: 1px solid #8b0000;
-            border-radius: 10px; padding: 28px; margin-top: 40px; text-align: center; }
-        .conclusion-box p { font-size: 1.1rem; line-height: 1.85; color: #ddd; margin-bottom: 12px; }
-        .conclusion-box p strong { color: #ff6666; }
+        .conclusion-box { background: #ffffff; border: 1px solid #d6e4f2;
+            border-left: 4px solid #87CEEB; border-radius: 10px; padding: 28px; margin-top: 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+        .conclusion-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: #87CEEB; }
+        .conclusion-box p { font-size: 1.1rem; line-height: 1.85; color: #2c2c2c; margin-bottom: 12px; }
+        .conclusion-box p strong { color: #1a3a6b; }
 
-        .divider { border: none; border-top: 1px solid #2a2a2a; margin: 36px 0; }
+        .divider { border: none; border-top: 1px solid #d6e4f2; margin: 36px 0; }
 
-        footer { background: #111; color: #666; text-align: center; padding: 22px 20px;
-            font-family: Arial, sans-serif; font-size: 0.85rem; border-top: 2px solid #8b0000; }
+        footer { background: #1a3a6b; color: #cce4f7; text-align: center; padding: 22px 20px;
+            font-family: Arial, sans-serif; font-size: 0.85rem; border-top: 2px solid #87CEEB; }
         footer span { color: #87CEEB; font-weight: bold; }
         footer a { color: #87CEEB; text-decoration: none; }
     </style>
 </head>
 <body>
+<header class="site-header">
+    <h1 class="site-title" id="site-title">UN MONDE <span>UNIVERSEL</span></h1>
+    <p class="site-slogan" id="site-slogan">Parce que personne ne devrait être laissé derrière</p>
+</header>
+
+
 
 <div class="hero">
     <a href="index.html"><img src="logo_universel.jpeg.JPG" alt="Logo Universel"></a>
 </div>
 
 <nav>
-    <a href="index.html" data-i18n="nav_home">🏠 Accueil</a>
     <a href="index.html#vision" data-i18n="nav_vision">La Vision</a>
+    <a href="index.html#discussion" data-i18n="nav_discussion">Discussion</a>
     <a href="these.html" data-i18n="nav_these">📖 Un peu plus…</a>
     <a href="theorie.html" data-i18n="nav_theorie">🔬 Nouvelle Approche</a>
-    <a href="guerre.html" style="color:#ff4444;" data-i18n="nav_guerre">⚔️ Guerre</a>
+    <a href="guerre.html" style="color:#ff8c8c;border-bottom:2px solid #ff8c8c;" data-i18n="nav_guerre">⚔️ Guerre</a>
     <a href="chomage.html" data-i18n="nav_chomage">📉 Chômage</a>
+    <a href="rub.html" data-i18n="nav_rub">RUB</a>
+    <a href="index.html#apropos" data-i18n="nav_about">À propos</a>
     <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
 </nav>
@@ -290,7 +349,7 @@
     </div>
 
     <div style="text-align:center; margin-top:40px;">
-        <a href="index.html" style="background:#8b0000; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-family:Arial,sans-serif; font-weight:bold;" data-i18n="btn_home">← Retour à l'accueil</a>
+        <a href="index.html" style="background:#87CEEB; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-family:Arial,sans-serif; font-weight:bold;" data-i18n="btn_home">← Retour à l'accueil</a>
     </div>
 
 </div>
@@ -302,12 +361,16 @@
 <script>
 const translations = {
   fr: {
+    site_slogan: "Parce que personne ne devrait être laissé derrière",
     nav_home: "🏠 Accueil",
     nav_vision: "La Vision",
+    nav_discussion: "Discussion",
     nav_these: "📖 Un peu plus…",
     nav_theorie: "🔬 Nouvelle Approche",
     nav_guerre: "⚔️ Guerre",
     nav_chomage: "📉 Chômage",
+    nav_rub: "RUB",
+    nav_about: "À propos",
     nav_contact: "Contact",
     tag: "BULLETIN SPÉCIAL",
     banner_title: "Au-delà des Conséquences Économiques et Politiques :<br>Une Catastrophe Écologique Sans Précédent",
@@ -366,12 +429,15 @@ const translations = {
     footer_txt: "Parce que personne ne devrait être laissé derrière"
   },
   en: {
+    site_slogan: "Because no one should be left behind",
     nav_home: "🏠 Home",
     nav_vision: "The Vision",
     nav_these: "📖 Learn More…",
     nav_theorie: "🔬 New Approach",
     nav_guerre: "⚔️ War",
     nav_chomage: "📉 Unemployment",
+    nav_rub: "UBI",
+    nav_about: "About",
     nav_contact: "Contact",
     tag: "SPECIAL REPORT",
     banner_title: "Beyond Economic and Political Consequences:<br>An Unprecedented Ecological Catastrophe",
@@ -441,6 +507,10 @@ function toggleLang() {
 }
 
 function applyTranslations() {
+    const title = document.getElementById('site-title');
+    const slogan = document.getElementById('site-slogan');
+    if (title) title.innerHTML = currentLang === 'fr' ? 'UN MONDE <span>UNIVERSEL</span>' : 'A <span>UNIVERSAL</span> WORLD';
+    if (slogan) slogan.textContent = translations[currentLang].site_slogan || (currentLang === 'fr' ? 'Parce que personne ne devrait être laissé derrière' : 'Because no one should be left behind');
     const t = translations[currentLang];
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
