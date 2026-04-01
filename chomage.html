@@ -183,6 +183,41 @@
     footer span { color: #87CEEB; font-weight: bold; }
     footer a { color: #87CEEB; text-decoration: none; }
   </style>
+
+<style>
+.univ-encadre-cri {
+  margin: 40px auto 28px auto;
+  padding: 28px 30px;
+  max-width: 980px;
+  background: linear-gradient(180deg, #0b1f4d 0%, #102a66 100%);
+  border: 3px solid #d4af37;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.28), inset 0 0 0 1px rgba(255,215,120,0.18);
+  color: #fff;
+}
+.univ-encadre-cri h3 {
+  margin: 0 0 18px 0;
+  font-size: 1.45rem;
+  line-height: 1.3;
+  color: #f5d97b;
+}
+.univ-encadre-cri p {
+  margin: 0 0 16px 0;
+  color: #fff;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+.univ-encadre-cri p:last-child { margin-bottom: 0; }
+@media (max-width: 768px) {
+  .univ-encadre-cri {
+    margin: 32px 0 24px 0;
+    padding: 22px 20px;
+  }
+  .univ-encadre-cri h3 { font-size: 1.2rem; }
+  .univ-encadre-cri p { font-size: 1rem; line-height: 1.75; }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -394,6 +429,14 @@
     <p style="color:#1a3a6b; font-weight:bold; margin-top:14px" id="ccl3">🌍 L'Universalité ne demande pas aux humains de courir plus vite que les machines. Elle demande que les gains des machines appartiennent à l'humanité.</p>
   </div>
 
+  <section class="univ-encadre-cri" aria-label="Le cri intérieur du chômage">
+    <h3 id="cry-title">Le cri intérieur du chômage</h3>
+    <p id="cry-p1">Le chômage n’est plus seulement une absence de travail. Il devient une sensation d’être lentement poussé hors du monde, comme si tout continuait d’avancer sauf toi, pendant que les portes se ferment une à une et que chaque facture vient te rappeler que ton existence a désormais un prix que tu ne peux plus payer.</p>
+    <p id="cry-p2">À force de compter, de couper, de renoncer, on finit par voir partout la mécanique froide d’un système qui épuise les corps et écrase les volontés. Ce n’est pas forcément un complot; c’est parfois pire: une organisation du réel si indifférente qu’elle produit la même angoisse, le même sentiment d’abandon, la même impression d’être sacrifié en silence.</p>
+    <p id="cry-p3">Alors le chômage cesse d’être une statistique et devient un cri intérieur. La souffrance budgétaire s’installe, le pessimisme gagne du terrain, et l’effondrement socio-économique ne ressemble plus à une théorie, mais à une fatigue collective qui ronge les pauvres, fragilise la classe moyenne et transforme l’avenir en menace.</p>
+  </section>
+
+
   <div style="text-align:center; margin-top:40px">
     <a href="index.html" style="background:#d6e4f2;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold" id="btn-home">Retour à l'accueil</a>
   </div>
@@ -458,7 +501,11 @@ const TR = {
     'ccl1':'Le chômage structurel n\'est pas un échec individuel.','ccl1b':'C\'est la conséquence prévisible d\'un système qui automatise pour maximiser le profit privé sans redistribuer les gains collectifs.',
     'ccl2':'Chaque travailleur déplacé par un algorithme n\'a pas échoué à s\'adapter — il a été abandonné par un système sans mécanisme de redistribution.',
     'ccl3':'🌍 L\'Universalité ne demande pas aux humains de courir plus vite que les machines. Elle demande que les gains des machines appartiennent à l\'humanité.',
-    'btn-home':'Retour à l\'accueil','footer-txt':'Parce que personne ne devrait être laissé derrière'
+    'btn-home':'Retour à l\'accueil','footer-txt':'Parce que personne ne devrait être laissé derrière',
+    'cry-title':'Le cri intérieur du chômage',
+    'cry-p1':'Le chômage n’est plus seulement une absence de travail. Il devient une sensation d’être lentement poussé hors du monde, comme si tout continuait d’avancer sauf toi, pendant que les portes se ferment une à une et que chaque facture vient te rappeler que ton existence a désormais un prix que tu ne peux plus payer.',
+    'cry-p2':'À force de compter, de couper, de renoncer, on finit par voir partout la mécanique froide d’un système qui épuise les corps et écrase les volontés. Ce n’est pas forcément un complot; c’est parfois pire: une organisation du réel si indifférente qu’elle produit la même angoisse, le même sentiment d’abandon, la même impression d’être sacrifié en silence.',
+    'cry-p3':'Alors le chômage cesse d’être une statistique et devient un cri intérieur. La souffrance budgétaire s’installe, le pessimisme gagne du terrain, et l’effondrement socio-économique ne ressemble plus à une théorie, mais à une fatigue collective qui ronge les pauvres, fragilise la classe moyenne et transforme l’avenir en menace.'
   },
   en: {
     'site-slogan':'Because no one should be left behind','nav-home':'🏠 Home','nav-vision':'The Vision','nav-these':'📖 A Bit More…',
@@ -512,7 +559,11 @@ const TR = {
     'ccl1':'Structural unemployment is not individual failure.','ccl1b':'It is the predictable consequence of a system that automates to maximize private profit without redistributing collective gains.',
     'ccl2':'Every worker displaced by an algorithm did not fail to adapt — they were abandoned by a system with no redistribution mechanism.',
     'ccl3':'🌍 Universality does not ask humans to run faster than machines. It asks that the gains from machines belong to humanity.',
-    'btn-home':'Back to Home','footer-txt':'Because no one should be left behind'
+    'btn-home':'Back to Home','footer-txt':'Because no one should be left behind',
+    'cry-title':'The inner cry of unemployment',
+    'cry-p1':'Unemployment is no longer just the absence of work. It becomes the feeling of being slowly pushed out of the world, as if everything kept moving forward except you, while doors close one by one and every bill reminds you that your existence now carries a price you can no longer afford to pay.',
+    'cry-p2':'After so much counting, cutting, and giving things up, people begin to see everywhere the cold machinery of a system that exhausts bodies and crushes human will. It is not necessarily a conspiracy; sometimes it is worse: an organization of reality so indifferent that it produces the same anxiety, the same abandonment, the same impression of being sacrificed in silence.',
+    'cry-p3':'Then unemployment stops being a statistic and becomes an inner cry. Budgetary suffering settles in, pessimism gains ground, and socio-economic collapse no longer feels like a theory, but like a collective exhaustion that wears down the poor, destabilizes the middle class, and turns the future into a threat.'
   }
 };
 
