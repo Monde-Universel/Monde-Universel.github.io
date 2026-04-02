@@ -154,6 +154,41 @@
     .vision-block h3 { font-size: 1.1rem; color: #1a3a6b; margin-bottom: 10px; font-style: italic; }
     .vision-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; }
     .vision-block.cta p { font-size: 1.15rem; font-weight: bold; color: #1a3a6b; text-align: center; margin-top: 10px; }
+
+    .manifesto-inline {
+      position: relative;
+      background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(233,244,255,0.96) 100%);
+      border: 1px solid rgba(26,58,107,0.12);
+      border-left: 6px solid #87CEEB;
+      border-radius: 18px;
+      padding: 30px 28px;
+      box-shadow: 0 14px 34px rgba(13,34,87,0.10);
+      overflow: hidden;
+    }
+    .manifesto-inline::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(135,206,235,0.20), transparent 34%);
+      pointer-events: none;
+    }
+    .manifesto-inline h3,
+    .manifesto-inline p {
+      position: relative;
+      z-index: 1;
+    }
+    .manifesto-inline h3 {
+      color: #0d2257;
+      margin-bottom: 16px;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .manifesto-inline p {
+      font-size: 1.08rem;
+      line-height: 1.95;
+    }
+
     hr { border: none; border-top: 2px solid #87CEEB; max-width: 780px; margin: 0 auto; }
     .discussion { background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 780px; margin: 0 auto 60px; padding: 40px 24px; }
     .discussion h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 10px; border-left: 5px solid #87CEEB; padding-left: 14px; }
@@ -228,6 +263,11 @@
   <div class="vision-block">
     <h3 data-i18n="v3title">Mais l'humanité a toujours su se relever quand elle choisit de se retrouver.</h3>
     <p data-i18n="v3text">Il existe une autre façon. Une façon où les besoins essentiels ne sont plus des privilèges, mais des droits réels. Où le pouvoir est diffusé dans la masse plutôt que concentré au sommet. Où coopérer devient plus rationnel qu'accumuler. Ce n'est pas une utopie — c'est une architecture sociale à construire ensemble, une décision collective que des millions de personnes ordinaires, partout, sont déjà prêtes à prendre.</p>
+  </div>
+
+  <div class="vision-block manifesto-inline">
+    <h3 data-i18n="manifestotitle">Déclaration</h3>
+    <p data-i18n="manifestotext">Le futur n’appartient pas à la compétition sans fin, mais à l’intelligence collective qui apprend à coopérer. Lorsque la masse humaine s’organise pour protéger la vie plutôt que pour accumuler le pouvoir, elle révèle une forme supérieure d’ordre : une auto-gouvernance orientée vers l’équilibre, la dignité et la continuité du vivant.</p>
   </div>
   <div class="vision-block cta">
     <p data-i18n="v4cta">✊ Universel, c'est ce mouvement-là. Et il commence maintenant.</p>
@@ -323,6 +363,8 @@ const translations = {
     v2text:  "Les crises se multiplient — économiques, climatiques, sociales — parce qu'elles ont toutes la même racine : un système conçu pour produire et accumuler, pas pour prendre soin. Chaque fois qu'on rafistole un bout, trois autres lâchent. Ce n'est plus un problème de gestion. C'est un problème de fondation.",
     v3title: "Mais l'humanité a toujours su se relever quand elle choisit de se retrouver.",
     v3text:  "Il existe une autre façon. Une façon où les besoins essentiels ne sont plus des privilèges, mais des droits réels. Où le pouvoir est diffusé dans la masse plutôt que concentré au sommet. Où coopérer devient plus rationnel qu'accumuler. Ce n'est pas une utopie — c'est une architecture sociale à construire ensemble, une décision collective que des millions de personnes ordinaires, partout, sont déjà prêtes à prendre.",
+    manifestotitle: "Déclaration",
+    manifestotext: "Le futur n’appartient pas à la compétition sans fin, mais à l’intelligence collective qui apprend à coopérer. Lorsque la masse humaine s’organise pour protéger la vie plutôt que pour accumuler le pouvoir, elle révèle une forme supérieure d’ordre : une auto-gouvernance orientée vers l’équilibre, la dignité et la continuité du vivant.",
     v4cta:   "✊ Universel, c'est ce mouvement-là. Et il commence maintenant.",
 
     /* ── Discussion ── */
