@@ -194,6 +194,66 @@
         footer span { color: #87CEEB; font-weight: bold; }
 
         hr { border: none; border-top: 2px solid #c8dff0; margin: 40px 0; }
+
+        .stabilite-universelle {
+            background: linear-gradient(180deg, #fdfefe 0%, #f4f8fc 100%);
+            border: 3px solid #1a3a6b;
+            border-radius: 18px;
+            padding: 30px 34px;
+            margin: 42px 0 28px;
+            position: relative;
+            box-shadow:
+                0 0 0 4px #87CEEB,
+                0 14px 34px rgba(26,58,107,0.12),
+                inset 0 0 0 1px rgba(255,255,255,0.85);
+            overflow: hidden;
+        }
+        .stabilite-universelle::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(135,206,235,0.10) 0px, rgba(135,206,235,0.10) 1px, transparent 1px, transparent 14px),
+                linear-gradient(rgba(135,206,235,0.07) 0px, rgba(135,206,235,0.07) 1px, transparent 1px, transparent 14px);
+            background-size: 14px 14px;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+        .stabilite-universelle > * { position: relative; z-index: 1; }
+        .stabilite-kicker {
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #5a7391;
+            margin-bottom: 14px;
+        }
+        .stabilite-universelle h2 {
+            font-size: clamp(1.7rem, 4vw, 2.8rem);
+            line-height: 1.08;
+            color: #17345b;
+            margin-bottom: 18px;
+        }
+        .stabilite-universelle p {
+            font-size: 1rem;
+            line-height: 1.88;
+            color: #2c2c2c;
+            text-align: left;
+            margin-bottom: 12px;
+            max-width: none;
+        }
+        .stabilite-universelle p:last-child { margin-bottom: 0; }
+        @media (max-width: 700px) {
+            .stabilite-universelle {
+                padding: 24px 22px;
+                border-radius: 16px;
+                box-shadow: 0 0 0 3px #87CEEB, 0 10px 26px rgba(26,58,107,0.12);
+            }
+            .stabilite-universelle h2 { font-size: clamp(1.5rem, 8vw, 2.2rem); }
+        }
+
     </style>
 </head>
 <body>
@@ -436,6 +496,28 @@
         </div>
     </div>
 
+    <div class="stabilite-universelle">
+        <div class="stabilite-kicker">Socio-trajectoire évolutive</div>
+        <h2>Principe universel de stabilité</h2>
+        <p>La stabilité n’est pas d’abord une affaire de domination, mais d’agencement.</p>
+        <p>Ce ne sont pas les plus grands qui fondent le réel, mais les plus petites unités capables de coopérer, d’échanger de l’information et de se coordonner dans le temps.</p>
+        <p>Le grand n’existe que parce que le petit communique.</p>
+        <p>Toute structure durable, qu’elle soit cellule, organisme, écosystème ou société, repose sur une intelligence distribuée avant d’être une puissance centralisée.</p>
+        <p>Le vivant nous enseigne que la robustesse naît de la relation.</p>
+        <p>Les microorganismes transforment les milieux, soutiennent les cycles essentiels et façonnent les conditions dont dépendent les formes plus vastes de la vie.</p>
+        <p>Même les organismes complexes demeurent traversés, soutenus et orientés par des communications fines, locales et souvent invisibles.</p>
+        <p>Ainsi, l’ordre véritable ne descend pas seulement d’en haut; il monte d’en bas.</p>
+        <p>Il émerge lorsque des unités modestes trouvent un langage commun, limitent leurs conflits et composent ensemble une cohérence supérieure.</p>
+        <p>La survie n’est donc pas seulement compétition, mais capacité d’orchestrer la diversité sans l’écraser.</p>
+        <p>Ce principe vaut pour la biologie, mais aussi pour les sociétés humaines.</p>
+        <p>Une économie qui détruit ses petites unités détruit sa propre base adaptative.</p>
+        <p>Une civilisation qui rompt la circulation entre le local et le global fragilise la totalité qu’elle prétend renforcer.</p>
+        <p>Ce qui façonne l’avenir n’est pas seulement la force brute, mais la qualité des liens.</p>
+        <p>Le petit bien relié devient plus puissant que le grand mal coordonné.</p>
+        <p>Et toute transcendance réelle commence par une coopération assez fine pour faire émerger un nouveau niveau d’être.</p>
+    </div>
+
+
     <!-- CONCLUSION -->
     <div class="conclusion-finale">
         <p>La Socio-trajectoire évolutive dépasse les paradigmes existants de la sociologie politique, de la théorie des jeux et de la gouvernance institutionnelle. Elle intègre la biologie des systèmes, la physique des bifurcations, la dynamique de la masse sociale, et l'architecture technique du calcul prédictif dans un cadre unifié dont aucun Bourdieu, Wallerstein ou Parsons n'a formulé l'équivalent.</p>
@@ -671,6 +753,28 @@
             <p style="line-height:1.85; color:#fff; font-style:italic;">To any elite reading these lines: the rational long-term interest — patrimonial survival, dynastic legitimacy, stability of the environment in which wealth operates — is <strong>incompatible</strong> with appropriating this tool outside its framework. Scenario A2 is not a sacrifice. It is the only calculation that also protects elites.</p>
         </div>
     </div>
+
+    <div class="stabilite-universelle">
+        <div class="stabilite-kicker">Evolutionary Socio-Trajectory</div>
+        <h2>Universal Principle of Stability</h2>
+        <p>Stability is not primarily a matter of domination, but of arrangement.</p>
+        <p>Reality is not founded by the largest structures, but by the smallest units able to cooperate, exchange information, and coordinate through time.</p>
+        <p>The large exists only because the small communicates.</p>
+        <p>Every durable structure, whether a cell, an organism, an ecosystem, or a society, relies on distributed intelligence before it becomes centralized power.</p>
+        <p>Life teaches us that robustness emerges from relationship.</p>
+        <p>Microorganisms transform environments, sustain essential cycles, and shape the conditions on which larger forms of life depend.</p>
+        <p>Even complex organisms remain traversed, supported, and guided by fine, local, and often invisible forms of communication.</p>
+        <p>Thus, true order does not descend only from above; it rises from below.</p>
+        <p>It emerges when modest units find a common language, limit their conflicts, and compose a higher coherence together.</p>
+        <p>Survival is therefore not only competition, but the capacity to orchestrate diversity without crushing it.</p>
+        <p>This principle applies to biology, but also to human societies.</p>
+        <p>An economy that destroys its small units destroys its own adaptive foundation.</p>
+        <p>A civilization that breaks the circulation between the local and the global weakens the very whole it claims to strengthen.</p>
+        <p>What shapes the future is not brute force alone, but the quality of relationships.</p>
+        <p>The small, when well connected, becomes more powerful than the large when poorly coordinated.</p>
+        <p>And every real transcendence begins with cooperation refined enough to bring forth a new level of being.</p>
+    </div>
+
 
     <!-- CONCLUSION -->
     <div class="conclusion-finale">
