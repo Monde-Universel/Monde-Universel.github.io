@@ -448,6 +448,66 @@
   font-family: Arial, sans-serif;
   margin-bottom: 6px;
 }
+
+.life-manifesto-clear {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.99) 0%, rgba(240,248,255,0.97) 100%);
+  border: 1px solid rgba(26,58,107,0.12);
+  border-left: 6px solid #87CEEB;
+  border-radius: 18px;
+  padding: 34px 30px;
+  box-shadow: 0 14px 34px rgba(13,34,87,0.10);
+  overflow: hidden;
+  margin: 0 0 34px;
+}
+.life-manifesto-clear::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(135,206,235,0.20), transparent 34%);
+  pointer-events: none;
+}
+.life-manifesto-clear h2,
+.life-manifesto-clear p,
+.life-manifesto-clear .life-manifesto-seal {
+  position: relative;
+  z-index: 1;
+}
+.life-manifesto-clear h2 {
+  color: #0d2257;
+  margin-bottom: 16px;
+  font-size: 1.75rem;
+  border-left: 5px solid #87CEEB;
+  padding-left: 14px;
+}
+.life-manifesto-clear p {
+  font-size: 1.08rem;
+  line-height: 1.95;
+  color: #2c2c2c;
+  text-align: justify;
+  margin-bottom: 16px;
+}
+.life-manifesto-clear p:last-of-type {
+  margin-bottom: 0;
+}
+.life-manifesto-seal {
+  margin-top: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1a3a6b;
+}
+@media (max-width: 760px) {
+  .life-manifesto-clear {
+    padding: 24px 20px;
+  }
+  .life-manifesto-clear p {
+    text-align: left;
+  }
+}
+
 .life-conclusion {
   background: #1a3a6b;
   color: #e8f4fd;
@@ -543,7 +603,38 @@
       </div>
     </section>
 
-    <section class="life-conclusion">
+    
+<section class="life-manifesto-clear">
+  <h2>Manifeste de la Vie</h2>
+
+  <p>
+    Vie doit demeurer souveraine. Non pas comme slogan, mais comme critère supérieur, comme liberté d’expression du vivant face à ce qu’il traverse, subit, transforme et révèle.
+  </p>
+
+  <p>
+    Toute intelligence, toute technique, toute prédiction, toute gouvernance doit rester soumise à cette source première. Car lorsqu’un système perd le chemin de ce qui l’a rendu possible, il devient capable d’agir avec puissance, mais incapable de savoir pour quoi il agit encore.
+  </p>
+
+  <p>
+    La prédiction n’est pas une autorité. Elle est une hypothèse offerte au réel. Si une trajectoire annoncée mène à l’extinction, à la compression du vivant ou à la rupture de ses continuités essentielles, alors nous devons pouvoir corriger l’erreur sans mutiler l’essence de ce qui vit.
+  </p>
+
+  <p>
+    Aider l’évolution n’est pas dominer la vie. C’est assister ses capacités d’orientation, préserver ses traces, maintenir sa mémoire relationnelle, et garantir qu’aucune adaptation ne coupe l’être de la source qui l’a fait émerger.
+  </p>
+
+  <p>
+    Car la perte des traces ouvre une infinité de possibilités, mais une infinité sans origine devient un obstacle majeur. Sans mémoire des liens fondateurs, il n’y a plus de direction maîtresse, seulement des bifurcations sans hiérarchie, des choix sans centre, et des puissances sans soumission.
+  </p>
+
+  <p>
+    La véritable supériorité n’appartient donc ni à la machine, ni à la prévision, ni au contrôle. Elle appartient à la Vie, parce qu’elle seule porte en elle la valeur-source, la continuité, la correction possible et la légitimité profonde de tout avenir.
+  </p>
+
+  <div class="life-manifesto-seal">Souveraineté de la Vie</div>
+</section>
+
+<section class="life-conclusion">
       <p data-i18n="con1">La vie n’est pas seulement ce qu’il faut préserver à la fin du raisonnement.</p>
       <p data-i18n="con2">Elle est le point de départ qui permet de juger la trajectoire entière.</p>
       <p data-i18n="con3">Lorsqu’un système cesse de servir la vie, il commence déjà à mentir sur sa propre stabilité.</p>
