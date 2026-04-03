@@ -238,17 +238,19 @@
 </div>
 
 <nav>
-    <a href="index.html">🏠 Accueil</a>
-    <a href="index.html#vision">La Vision</a>
-    <a href="index.html#discussion">Discussion</a>
-    <a href="these.html" class="active">📖 Un peu plus…</a>
-    <a href="theorie.html">Nouvelle Approche</a>
-    <a href="guerre.html" style="color:#ff9090;">⚔️ Guerre</a>
-    <a href="chomage.html">📉 Chômage</a>
-    <a href="index.html#apropos">À propos</a>
-    <a href="index.html#contact">Contact</a>
-    <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
-</nav>
+                <a href="index.html">Accueil</a>
+                <a href="index.html#vision">La Vision</a>
+                <a href="index.html#discussion">Discussion</a>
+                <a href="these.html" class="active">Un peu plus</a>
+                <a href="theorie.html">Nouvelle Approche</a>
+                <a href="vie.html">Vie</a>
+                <a href="guerre.html" style="color:#ff9090;">Guerre</a>
+                <a href="chomage.html">Chômage</a>
+                <a href="rub.html">RUB</a>
+                <a href="index.html#apropos">À propos</a>
+                <a href="index.html#contact">Contact</a>
+                <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+            </nav>
 
 <div class="container">
 
@@ -598,17 +600,19 @@
 </div>
 
 <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="index.html#vision">Vision</a>
-    <a href="index.html#discussion">Discussion</a>
-    <a href="these.html" class="active">📖 Learn More</a>
-    <a href="theorie.html">New Approach</a>
-    <a href="guerre.html" style="color:#ff9090;">⚔️ War</a>
-    <a href="chomage.html">📉 Unemployment</a>
-    <a href="index.html#apropos">About</a>
-    <a href="index.html#contact">Contact</a>
-    <button class="lang-btn" onclick="toggleLang()" id="langBtn">FR</button>
-</nav>
+                <a href="index.html">Home</a>
+                <a href="index.html#vision">Vision</a>
+                <a href="index.html#discussion">Discussion</a>
+                <a href="these.html" class="active">Learn More</a>
+                <a href="theorie.html">New Approach</a>
+                <a href="vie.html">Life</a>
+                <a href="guerre.html" style="color:#ff9090;">War</a>
+                <a href="chomage.html">Unemployment</a>
+                <a href="rub.html">UBI</a>
+                <a href="index.html#apropos">About</a>
+                <a href="index.html#contact">Contact</a>
+                <button class="lang-btn" onclick="toggleLang()" id="langBtnFR">FR</button>
+            </nav>
 
 <div class="container">
     <h1>On the Urgency of Replacing Capitalism with Universality</h1>
@@ -897,8 +901,6 @@
 
 <script>
 let currentLang = 'fr';
-const __urlLang = window.__safeLang && window.__safeLang.getLangFromUrl ? window.__safeLang.getLangFromUrl() : null;
-if (__urlLang) currentLang = __urlLang;
 function toggleLang() {
     currentLang = currentLang === 'fr' ? 'en' : 'fr';
     document.getElementById('content-fr').style.display = currentLang === 'fr' ? 'block' : 'none';
@@ -910,71 +912,5 @@ function toggleLang() {
     window.scrollTo(0, 0);
 }
 </script>
-
-<script>
-(function () {
-  function getLangFromUrl() {
-    try {
-      const lang = new URLSearchParams(window.location.search).get('lang');
-      return (lang === 'en' || lang === 'fr') ? lang : null;
-    } catch (e) { return null; }
-  }
-  function normalizeHref(raw, lang) {
-    if (!raw) return raw;
-    if (raw.startsWith('mailto:') || raw.startsWith('tel:') || raw.startsWith('javascript:')) return raw;
-    if (/^https?:/i.test(raw)) return raw;
-    if (raw.startsWith('#')) return raw;
-    const parts = raw.split('#');
-    const base = parts[0];
-    const hash = parts[1] ? '#' + parts[1] : '';
-    try {
-      const url = new URL(base, window.location.href);
-      const pathname = url.pathname || '';
-      const isHtml = pathname.endsWith('.html') || pathname === '' || pathname.endsWith('/');
-      const looksInternalSection = /index\.html$/i.test(pathname) || pathname === window.location.pathname || pathname === '';
-      if (isHtml || looksInternalSection) url.searchParams.set('lang', lang);
-      return (url.pathname.split('/').pop() || url.pathname) + url.search + hash;
-    } catch (e) { return raw; }
-  }
-  function syncNavLinks() {
-    const lang = getLangFromUrl();
-    if (!lang) return;
-    document.querySelectorAll('nav a[href], footer a[href], a[href="index.html"], a[href^="index.html#"]').forEach(function (a) {
-      const href = a.getAttribute('href');
-      if (!href) return;
-      if (href.includes('logo_universel')) return;
-      a.setAttribute('href', normalizeHref(href, lang));
-    });
-  }
-  function bindLangButtons() {
-    document.querySelectorAll('.lang-btn').forEach(function (btn) {
-      if (btn.dataset.langSafeBound === '1') return;
-      btn.dataset.langSafeBound = '1';
-      btn.addEventListener('click', function () { setTimeout(syncNavLinks, 0); }, true);
-    });
-  }
-  window.__safeLang = {
-    getLangFromUrl: getLangFromUrl,
-    syncNavLinks: syncNavLinks,
-    bindLangButtons: bindLangButtons,
-    init: function (applyFn) {
-      const initial = getLangFromUrl();
-      if (initial && typeof applyFn === 'function') {
-        try { applyFn(initial); } catch (e) {}
-      }
-      setTimeout(syncNavLinks, 0);
-      setTimeout(syncNavLinks, 50);
-      setTimeout(syncNavLinks, 250);
-    }
-  };
-  document.addEventListener('DOMContentLoaded', function () {
-    bindLangButtons();
-    setTimeout(syncNavLinks, 0);
-    setTimeout(syncNavLinks, 50);
-    setTimeout(syncNavLinks, 250);
-  });
-})();
-</script>
-
 </body>
 </html>
