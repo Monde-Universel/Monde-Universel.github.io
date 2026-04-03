@@ -623,6 +623,8 @@ const translations = {
 };
 
 let currentLang = 'fr';
+const __urlLang = window.__safeLang && window.__safeLang.getLangFromUrl ? window.__safeLang.getLangFromUrl() : null;
+if (__urlLang) currentLang = __urlLang;
 
 function applyLang(lang) {
   const t = translations[lang];
@@ -651,6 +653,18 @@ function toggleLang() {
   currentLang = currentLang === 'fr' ? 'en' : 'fr';
   applyLang(currentLang);
 }
+</script>
+
+
+<script>
+(function () {
+  function getLangFromUrl() { try { const lang = new URLSearchParams(window.location.search).get('lang'); return (lang === 'en' || lang === 'fr') ? lang : null; } catch (e) { return null; } }
+  function normalizeHref(raw, lang) { if (!raw) return raw; if (raw.startsWith('mailto:') || raw.startsWith('tel:') || raw.startsWith('javascript:')) return raw; if (/^https?:/i.test(raw)) return raw; if (raw.startsWith('#')) return raw; const parts = raw.split('#'); const base = parts[0]; const hash = parts[1] ? '#' + parts[1] : ''; try { const url = new URL(base, window.location.href); const pathname = url.pathname || ''; const isHtml = pathname.endsWith('.html') || pathname === '' || pathname.endsWith('/'); const looksInternalSection = /index\.html$/i.test(pathname) || pathname === window.location.pathname || pathname === ''; if (isHtml || looksInternalSection) url.searchParams.set('lang', lang); return (url.pathname.split('/').pop() || url.pathname) + url.search + hash; } catch (e) { return raw; } }
+  function syncNavLinks() { const lang = getLangFromUrl(); if (!lang) return; document.querySelectorAll('nav a[href], footer a[href], a[href="index.html"], a[href^="index.html#"]').forEach(function (a) { const href = a.getAttribute('href'); if (!href) return; if (href.includes('logo_universel')) return; a.setAttribute('href', normalizeHref(href, lang)); }); }
+  function bindLangButtons() { document.querySelectorAll('.lang-btn').forEach(function (btn) { if (btn.dataset.langSafeBound === '1') return; btn.dataset.langSafeBound = '1'; btn.addEventListener('click', function () { setTimeout(syncNavLinks, 0); }, true); }); }
+  window.__safeLang = { getLangFromUrl:getLangFromUrl, syncNavLinks:syncNavLinks, bindLangButtons:bindLangButtons, init:function(applyFn){ const initial = getLangFromUrl(); if (initial && typeof applyFn === 'function') { try { applyFn(initial); } catch (e) {} } setTimeout(syncNavLinks,0); setTimeout(syncNavLinks,50); setTimeout(syncNavLinks,250);} };
+  document.addEventListener('DOMContentLoaded', function () { bindLangButtons(); setTimeout(syncNavLinks,0); setTimeout(syncNavLinks,50); setTimeout(syncNavLinks,250); });
+})();
 </script>
 
 </body>
