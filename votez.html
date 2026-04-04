@@ -7,11 +7,11 @@
   <meta name="keywords" content="vie, vivant, intuition, signaux faibles, compatibilité, monde universel" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Le Fondateur Universel" />
-  <link rel="canonical" href="https://monde-universel.github.io/vie.html" />
+  <link rel="canonical" href="https://monde-universel.github.io/votez.html" />
   <meta property="og:title" content="UN MONDE UNIVERSEL — Votez" />
   <meta property="og:description" content="Vote citoyen entre le capitalisme et l\'universalisme." />
   <meta property="og:image" content="https://monde-universel.github.io/logouniversel.jpeg.JPG" />
-  <meta property="og:url" content="https://monde-universel.github.io/vie.html" />
+  <meta property="og:url" content="https://monde-universel.github.io/votez.html" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_CA" />
   <title>UN MONDE UNIVERSEL — Votez</title>
@@ -622,6 +622,13 @@
     object-fit: cover;
     display: block;
   }
+  .vote-photo img.authoritarian-fit,
+  .vote-photo img.liberalism-fit {
+    object-fit: contain;
+    object-position: center;
+    background: #dbeaf7;
+    padding: 0;
+  }
   .vote-content {
     padding: 28px 24px 30px;
     display: flex;
@@ -754,6 +761,22 @@
     color: #4e5d73;
     line-height: 1.8;
   }
+  .vote-final-call {
+    display: none;
+    margin-top: 30px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #1a3a6b;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.6);
+  }
+  .vote-feedback.active .vote-final-call {
+    display: block;
+  }
+
   @media (max-width: 900px) {
     .vote-grid { grid-template-columns: 1fr; }
   }
@@ -770,6 +793,32 @@
 <style>
   nav a[aria-current="page"] { color: #87CEEB; }
   .vote-card.orange { border-top: 8px solid #e67e22; }
+
+  .vote-card.turquoise { border-top: 8px solid #16b7c9; }
+  .vote-card.brown { border-top: 8px solid #8d5a2b; }
+  .vote-card.turquoise .vote-badge {
+    background: rgba(22, 183, 201, 0.12);
+    color: #0f7f8c;
+  }
+  .vote-card.brown .vote-badge {
+    background: rgba(141, 90, 43, 0.12);
+    color: #6d431d;
+  }
+  .vote-card.turquoise .vote-list li::before {
+    background: #16b7c9;
+    box-shadow: 0 0 0 5px rgba(22,183,201,0.14);
+  }
+  .vote-card.brown .vote-list li::before {
+    background: #8d5a2b;
+    box-shadow: 0 0 0 5px rgba(141,90,43,0.14);
+  }
+  .vote-card.turquoise .vote-btn {
+    background: linear-gradient(135deg, #12a9bc, #0d7f8f);
+  }
+  .vote-card.brown .vote-btn {
+    background: linear-gradient(135deg, #8d5a2b, #6d431d);
+  }
+
   .vote-card.purple { border-top: 8px solid #7b3fe4; }
   .vote-card.orange .vote-badge {
     background: rgba(230,126,34,0.12);
@@ -806,24 +855,25 @@
     <p class="site-slogan" data-i18n="siteSlogan">Parce que personne ne devrait être laissé derrière</p>
   </header>
 <nav>
+    <a href="index.html" data-i18n="navhome">Accueil</a>
     <a href="index.html#vision" data-i18n="navvision">La Vision</a>
     <a href="index.html#discussion" data-i18n="navdiscussion">Discussion</a>
     <a href="these.html" data-i18n="navthese">Un peu plus</a>
     <a href="theorie.html" data-i18n="navtheorie">Nouvelle Approche</a>
     <a href="vie.html" data-i18n="navvie">Vie</a>
-    <a href="guerre.html" style="color:#ff9090" data-i18n="navguerre">Guerre</a>
+    <a href="guerre.html" data-i18n="navguerre" style="color:#ff9090">Guerre</a>
     <a href="chomage.html" data-i18n="navchomage">Chômage</a>
     <a href="rub.html" data-i18n="navrub">RUB</a>
+    <a href="votez.html" data-i18n="navvote" style="display:inline-block;padding:8px 18px;border-radius:999px;background:#ffd54f;color:#1a3a6b;font-weight:900;letter-spacing:0.06em;box-shadow:0 0 0 2px rgba(255,255,255,0.55),0 6px 18px rgba(0,0,0,0.18);text-transform:uppercase;">Vote</a>
     <a href="index.html#apropos" data-i18n="navabout">À propos</a>
     <a href="index.html#contact" data-i18n="navcontact">Contact</a>
-    <a href="votez.html" aria-current="page" data-i18n="navvote" style="color:#87CEEB;border-bottom:2px solid #87CEEB;padding-bottom:2px;">Le Vote</a>
-      <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
   </nav>
 
 <section class="vote-hero">
   <div class="vote-kicker" data-i18n="voteKicker">Choix de gouvernance</div>
   <h1 class="vote-title" data-i18n="voteTitle">Votez pour le système à adopter</h1>
-  <p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quatre choix distincts : capitalisme, universalisme, communisme et fascisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
+  <p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais six choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarian et libéralisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
 </section>
 
 <main class="vote-wrap">
@@ -901,9 +951,47 @@
     </article>
   </div>
 
+
+    <article class="vote-card turquoise">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/0bb58bd9-cec1-4fed-aa8a-ac7c2158bfde.png" alt="Illustration du clan Authoritarian" width="1024" height="1280" loading="lazy" class="authoritarian-fit">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="authoritarianBadge">Clan turquoise</span>
+        <h2 data-i18n="authoritarianTitle">Authoritarian</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="authoritarianDesc">Un paradigme centré sur le commandement vertical, la stabilité imposée, la centralisation du pouvoir et la réduction du dissensus politique au nom de l'ordre.</p>
+        <ul class="vote-list">
+          <li data-i18n="authoritarianPoint1">Concentrer la décision dans une autorité forte pour agir vite.</li>
+          <li data-i18n="authoritarianPoint2">Réduire les contre-pouvoirs au profit de la cohésion imposée.</li>
+          <li data-i18n="authoritarianPoint3">Faire de la sécurité, du contrôle et de la discipline les bases de la gouvernance.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Authoritarian" data-vote-key="authoritarian" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
+    <article class="vote-card brown">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/3c35f1f4-20ab-4ffa-a279-6ffbce854cec.png" alt="Illustration du clan Libéralisme" width="1024" height="1280" loading="lazy" class="liberalism-fit">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="liberalismBadge">Clan brun</span>
+        <h2 data-i18n="liberalismTitle">Libéralisme</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="liberalismDesc">Un paradigme axé sur les libertés individuelles, l'État de droit, le pluralisme, les droits civils et une économie de marché encadrée par des garanties institutionnelles.</p>
+        <ul class="vote-list">
+          <li data-i18n="liberalismPoint1">Protéger les droits individuels et la liberté d'expression.</li>
+          <li data-i18n="liberalismPoint2">Maintenir un équilibre entre marché, institutions et contre-pouvoirs.</li>
+          <li data-i18n="liberalismPoint3">Faire du pluralisme, du droit et de l'autonomie personnelle les bases de l'ordre collectif.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Libéralisme" data-vote-key="liberalism" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
   <div class="vote-feedback" id="voteFeedback" aria-live="polite">
     <h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
     <p id="voteFeedbackText" data-i18n="feedbackDefault">Votre choix apparaîtra ici après le clic sur un bouton.</p>
+    <p class="vote-final-call" id="voteFinalCall" data-i18n="voteFinalCall">Il NE MANQUE PLUS QUE VOUS!</p>
   </div>
 </main>
 
@@ -917,6 +1005,7 @@
 <script>
   const translations = {
     fr: {
+        navhome: 'Accueil',
       siteTitle: 'UN MONDE UNIVERSEL',
       siteSlogan: 'Parce que personne ne devrait être laissé derrière',
       navvision: 'La Vision',
@@ -959,7 +1048,22 @@
       fascismPoint1: 'Promettre une direction rapide par un pouvoir fort et une hiérarchie rigide.',
       fascismPoint2: "Imposer l'unité politique et sociale autour d'une identité centrale dominante.",
       fascismPoint3: "Faire de l'ordre, du contrôle et de l'obéissance les bases de la stabilité.",
+
+      authoritarianBadge: 'Clan turquoise',
+      authoritarianTitle: 'Authoritarian',
+      authoritarianDesc: "Un paradigme centré sur le commandement vertical, la stabilité imposée, la centralisation du pouvoir et la réduction du dissensus politique au nom de l'ordre.",
+      authoritarianPoint1: 'Concentrer la décision dans une autorité forte pour agir vite.',
+      authoritarianPoint2: 'Réduire les contre-pouvoirs au profit de la cohésion imposée.',
+      authoritarianPoint3: 'Faire de la sécurité, du contrôle et de la discipline les bases de la gouvernance.',
+      liberalismBadge: 'Clan brun',
+      liberalismTitle: 'Libéralisme',
+      liberalismDesc: "Un paradigme axé sur les libertés individuelles, l'État de droit, le pluralisme, les droits civils et une économie de marché encadrée par des garanties institutionnelles.",
+      liberalismPoint1: "Protéger les droits individuels et la liberté d'expression.",
+      liberalismPoint2: 'Maintenir un équilibre entre marché, institutions et contre-pouvoirs.',
+      liberalismPoint3: "Faire du pluralisme, du droit et de l'autonomie personnelle les bases de l'ordre collectif.",
+
       voteButton: 'Votez',
+      voteFinalCall: 'Il NE MANQUE PLUS QUE VOUS!',
       feedbackTitle: 'Intention de vote enregistrée',
       feedbackDefault: 'Votre choix apparaîtra ici après le clic sur un bouton.',
       feedbackSelected: 'Vous avez choisi : {choice}. Cette page est prête à être reliée à une vraie collecte de données, un formulaire ou une base de données.'
@@ -981,7 +1085,7 @@
       footer: 'Because no one should be left behind',
       voteKicker: 'Governance choice',
       voteTitle: 'Vote for the system to adopt',
-      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering four distinct choices: capitalism, universalism, communism, and fascism. Compare the ideological promises of each paradigm before casting your vote.',
+      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering six distinct choices: capitalism, universalism, communism, fascism, authoritarian, and liberalism. Compare the ideological promises of each paradigm before casting your vote.',
       promisesTitle: 'Ideological promises',
       capitalismBadge: 'Red faction',
       capitalismTitle: 'Capitalism',
@@ -1008,6 +1112,7 @@
       fascismPoint2: 'Impose political and social unity around a dominant central identity.',
       fascismPoint3: 'Make order, control, and obedience the foundations of stability.',
       voteButton: 'Vote',
+      voteFinalCall: 'ALL THAT IS MISSING IS YOU!',
       feedbackTitle: 'Voting intent recorded',
       feedbackDefault: 'Your selection will appear here after clicking a button.',
       feedbackSelected: 'You selected: {choice}. This page is ready to be connected to a real data collection system, form, or database.'
@@ -1019,13 +1124,17 @@
       capitalism: 'Capitalisme',
       universalism: 'Universalisme',
       communism: 'Communisme',
-      fascism: 'Fascisme'
+      fascism: 'Fascisme',
+      authoritarian: 'Authoritarian',
+      liberalism: 'Libéralisme'
     },
     en: {
       capitalism: 'Capitalism',
       universalism: 'Universalism',
       communism: 'Communism',
-      fascism: 'Fascism'
+      fascism: 'Fascism',
+      authoritarian: 'Authoritarian',
+      liberalism: 'Liberalism'
     }
   };
 

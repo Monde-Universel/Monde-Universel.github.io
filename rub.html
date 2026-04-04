@@ -339,14 +339,16 @@
       <img src="logo_universel.jpeg.JPG" alt="Logo Universel avec arc-en-ciel et nuage" loading="lazy" width="1024" height="1024" />
     </div>
     <nav class="hero-nav">
+    <a href="index.html" data-i18n="navhome">Accueil</a>
     <a href="index.html#vision" data-i18n="navvision">La Vision</a>
     <a href="index.html#discussion" data-i18n="navdiscussion">Discussion</a>
     <a href="these.html" data-i18n="navthese">📖 Un peu plus…</a>
     <a href="theorie.html" data-i18n="navtheorie">Nouvelle Approche</a>
     <a href="vie.html" data-i18n="navvie">Vie</a>
-<a href="guerre.html" style="color:#ff9090" data-i18n="navguerre">⚔️ Guerre</a>
+    <a href="guerre.html" style="color:#ff9090" data-i18n="navguerre">⚔️ Guerre</a>
     <a href="chomage.html" data-i18n="navchomage">📉 Chômage</a>
     <a href="rub.html" style="color:#87CEEB;border-bottom:2px solid #87CEEB;" data-i18n="navrub">RUB</a>
+    <a href="votez.html" style="display:inline-block;padding:8px 18px;border-radius:999px;background:#ffe082;color:#1a3a6b;font-weight:900;letter-spacing:0.06em;box-shadow:0 0 0 2px rgba(255,224,130,0.25),0 5px 14px rgba(0,0,0,0.16);text-transform:uppercase;" data-i18n="navvote">Vote</a>
     <a href="index.html#apropos" data-i18n="navabout">À propos</a>
     <a href="index.html#contact" data-i18n="navcontact">Contact</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
@@ -497,6 +499,8 @@
   <script>
     const translations = {
       fr: {
+        navvote: 'Vote',
+        navhome: 'Accueil',
         siteSlogan: 'Parce que personne ne devrait être laissé derrière',
         navvision: 'La Vision',
         navdiscussion: 'Discussion',
@@ -564,6 +568,7 @@
         footerslogan: 'Parce que personne ne devrait être laissé derrière'
       },
       en: {
+        navhome: 'Home',
         siteSlogan: 'Because no one should be left behind',
         navvision: 'Our Vision',
         navdiscussion: 'Discussion',
@@ -667,6 +672,14 @@ if (__urlLang) currentLang = __urlLang;
     function toggleLang() {
       currentLang = currentLang === 'fr' ? 'en' : 'fr';
       applyLang(currentLang);
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', currentLang);
+        history.replaceState({}, '', (url.pathname.split('/').pop() || 'rub.html') + url.search + url.hash);
+      } catch (e) {}
+      if (window.__safeLang && typeof window.__safeLang.syncNavLinks === 'function') {
+        setTimeout(window.__safeLang.syncNavLinks, 0);
+      }
     }
   </script>
 
