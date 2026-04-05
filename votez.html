@@ -846,6 +846,96 @@
     background: linear-gradient(135deg, #6a32cc 0%, #8d5bf0 100%);
     box-shadow: 0 10px 24px rgba(123,63,228,0.28);
   }
+
+  /* ── Anarchisme (noir) ── */
+  .vote-card.noir  { border-top: 8px solid #2c2c2c; }
+  .vote-card.noir .vote-badge {
+    background: rgba(44,44,44,0.12); color: #1a1a1a;
+    border: 1px solid rgba(44,44,44,0.28);
+  }
+  .vote-card.noir .vote-list li::before {
+    background: #2c2c2c;
+    box-shadow: 0 0 0 5px rgba(44,44,44,0.14);
+  }
+  .vote-card.noir .vote-btn {
+    background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+    box-shadow: 0 10px 24px rgba(44,44,44,0.30);
+  }
+
+  /* ── Écologisme (vert) ── */
+  .vote-card.vert  { border-top: 8px solid #1b5e20; }
+  .vote-card.vert .vote-badge {
+    background: rgba(27,94,32,0.12); color: #145218;
+    border: 1px solid rgba(27,94,32,0.28);
+  }
+  .vote-card.vert .vote-list li::before {
+    background: #1b5e20;
+    box-shadow: 0 0 0 5px rgba(27,94,32,0.14);
+  }
+  .vote-card.vert .vote-btn {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+    box-shadow: 0 10px 24px rgba(27,94,32,0.30);
+  }
+
+  /* ── Conservatisme (ambre) ── */
+  .vote-card.ambre { border-top: 8px solid #b07000; }
+  .vote-card.ambre .vote-badge {
+    background: rgba(176,112,0,0.12); color: #7a4e00;
+    border: 1px solid rgba(176,112,0,0.28);
+  }
+  .vote-card.ambre .vote-list li::before {
+    background: #b07000;
+    box-shadow: 0 0 0 5px rgba(176,112,0,0.14);
+  }
+  .vote-card.ambre .vote-btn {
+    background: linear-gradient(135deg, #8a5600 0%, #c98400 100%);
+    box-shadow: 0 10px 24px rgba(176,112,0,0.30);
+  }
+
+  /* ── Nationalisme (marine) ── */
+  .vote-card.marine { border-top: 8px solid #1a237e; }
+  .vote-card.marine .vote-badge {
+    background: rgba(26,35,126,0.12); color: #111a6a;
+    border: 1px solid rgba(26,35,126,0.28);
+  }
+  .vote-card.marine .vote-list li::before {
+    background: #1a237e;
+    box-shadow: 0 0 0 5px rgba(26,35,126,0.14);
+  }
+  .vote-card.marine .vote-btn {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    box-shadow: 0 10px 24px rgba(26,35,126,0.30);
+  }
+
+  /* ── Libertarianisme (jaune) ── */
+  .vote-card.jaune  { border-top: 8px solid #c49a00; }
+  .vote-card.jaune .vote-badge {
+    background: rgba(196,154,0,0.12); color: #8a6c00;
+    border: 1px solid rgba(196,154,0,0.28);
+  }
+  .vote-card.jaune .vote-list li::before {
+    background: #c49a00;
+    box-shadow: 0 0 0 5px rgba(196,154,0,0.14);
+  }
+  .vote-card.jaune .vote-btn {
+    background: linear-gradient(135deg, #a07e00 0%, #d4aa00 100%);
+    box-shadow: 0 10px 24px rgba(196,154,0,0.30);
+  }
+
+  /* ── Progressisme (rose) ── */
+  .vote-card.rose   { border-top: 8px solid #ad1457; }
+  .vote-card.rose .vote-badge {
+    background: rgba(173,20,87,0.12); color: #7d0e3e;
+    border: 1px solid rgba(173,20,87,0.28);
+  }
+  .vote-card.rose .vote-list li::before {
+    background: #ad1457;
+    box-shadow: 0 0 0 5px rgba(173,20,87,0.14);
+  }
+  .vote-card.rose .vote-btn {
+    background: linear-gradient(135deg, #880e4f 0%, #c2185b 100%);
+    box-shadow: 0 10px 24px rgba(173,20,87,0.30);
+  }
 </style>
 
 </head>
@@ -873,7 +963,7 @@
 <section class="vote-hero">
   <div class="vote-kicker" data-i18n="voteKicker">Choix de gouvernance</div>
   <h1 class="vote-title" data-i18n="voteTitle">Votez pour le système à adopter</h1>
-  <p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais six choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme et libéralisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
+  <p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais douze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme et progressisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
 </section>
 
 <main class="vote-wrap">
@@ -988,6 +1078,114 @@
       </div>
     </article>
 
+    <article class="vote-card noir">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/3fa8a636-e732-44b1-b9cc-b0d2c42b0517.png" alt="Illustration du clan Anarchisme" width="1024" height="1280" loading="lazy">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="anarchismBadge">Clan noir</span>
+        <h2 data-i18n="anarchismTitle">Anarchisme</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="anarchismDesc">Un paradigme fondé sur l'abolition de toute autorité imposée, l'autogestion collective et la liberté radicale de chaque individu hors de toute hiérarchie étatique ou capitaliste.</p>
+        <ul class="vote-list">
+          <li data-i18n="anarchismPoint1">Abolir l'État, les institutions coercitives et toute forme de domination imposée.</li>
+          <li data-i18n="anarchismPoint2">Organiser la société par la coopération volontaire, la commune libre et l'entraide directe.</li>
+          <li data-i18n="anarchismPoint3">Faire de l'autonomie individuelle et collective la seule base légitime de l'ordre social.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Anarchisme" data-vote-key="anarchism" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
+    <article class="vote-card vert">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/ac6cb07b-4abb-4770-aa2d-6e562f257a99.png" alt="Illustration du clan Écologisme" width="1024" height="1280" loading="lazy">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="ecologismBadge">Clan vert</span>
+        <h2 data-i18n="ecologismTitle">Écologisme</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="ecologismDesc">Un paradigme centré sur la préservation du vivant, la transition écologique, la justice environnementale et la redéfinition du progrès en harmonie avec les limites planétaires.</p>
+        <ul class="vote-list">
+          <li data-i18n="ecologismPoint1">Placer l'équilibre écologique et la survie du vivant au cœur de toute décision politique.</li>
+          <li data-i18n="ecologismPoint2">Transformer l'économie vers la sobriété, les énergies renouvelables et la décroissance choisie.</li>
+          <li data-i18n="ecologismPoint3">Faire de la justice environnementale une condition fondamentale de la justice sociale.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Écologisme" data-vote-key="ecologism" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
+    <article class="vote-card ambre">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/68b84b51-52c8-4c5d-aa79-bd8d37a53f9f.png" alt="Illustration du clan Conservatisme" width="1024" height="1280" loading="lazy">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="conservatismBadge">Clan ambre</span>
+        <h2 data-i18n="conservatismTitle">Conservatisme</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="conservatismDesc">Un paradigme fondé sur la préservation des institutions établies, des traditions, de l'ordre social hérité et de la stabilité comme valeur centrale de la gouvernance.</p>
+        <ul class="vote-list">
+          <li data-i18n="conservatismPoint1">Préserver les institutions, les valeurs et les structures qui ont fait leurs preuves dans le temps.</li>
+          <li data-i18n="conservatismPoint2">Favoriser la stabilité, la continuité et le changement graduel plutôt que la rupture radicale.</li>
+          <li data-i18n="conservatismPoint3">Faire de la famille, de la tradition et de l'appartenance communautaire les fondements du lien social.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Conservatisme" data-vote-key="conservatism" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
+    <article class="vote-card marine">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/548a4562-b3c5-4c31-a448-3b8c84b29342.png" alt="Illustration du clan Nationalisme" width="1024" height="1280" loading="lazy">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="nationalismBadge">Clan marine</span>
+        <h2 data-i18n="nationalismTitle">Nationalisme</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="nationalismDesc">Un paradigme axé sur la primauté de la nation, la souveraineté du peuple, la défense de l'identité collective et la priorité accordée aux intérêts nationaux dans toute décision politique.</p>
+        <ul class="vote-list">
+          <li data-i18n="nationalismPoint1">Défendre la souveraineté nationale contre les ingérences extérieures et les pouvoirs supranationaux.</li>
+          <li data-i18n="nationalismPoint2">Affirmer l'identité culturelle, historique et linguistique du peuple comme fondement de la cohésion.</li>
+          <li data-i18n="nationalismPoint3">Faire de l'intérêt national la boussole de toute politique économique, sociale et étrangère.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Nationalisme" data-vote-key="nationalism" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
+    <article class="vote-card jaune">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/3c5a23e6-eb8a-4198-8f3c-096d94c6232f.png" alt="Illustration du clan Libertarianisme" width="1024" height="1280" loading="lazy">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="libertarianismBadge">Clan jaune</span>
+        <h2 data-i18n="libertarianismTitle">Libertarianisme</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="libertarianismDesc">Un paradigme qui place la liberté individuelle au-dessus de tout, prône un État minimal ou inexistant, et défend la primauté de la responsabilité personnelle sur l'intervention collective.</p>
+        <ul class="vote-list">
+          <li data-i18n="libertarianismPoint1">Réduire l'État à sa plus simple expression pour libérer l'individu de toute contrainte imposée.</li>
+          <li data-i18n="libertarianismPoint2">Défendre la propriété individuelle, les contrats libres et l'absence de coercition comme principes fondamentaux.</li>
+          <li data-i18n="libertarianismPoint3">Faire de la liberté personnelle absolue le seul critère légitime d'organisation de la société.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Libertarianisme" data-vote-key="libertarianism" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
+    <article class="vote-card rose">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/d86a5708-698b-47cc-aa3c-58eed856b9d5.png" alt="Illustration du clan Progressisme" width="1024" height="1280" loading="lazy">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="progressismBadge">Clan rose</span>
+        <h2 data-i18n="progressismTitle">Progressisme</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="progressismDesc">Un paradigme axé sur la réforme sociale profonde, l'égalité des droits, l'inclusion, la justice systémique et la transformation des structures qui perpétuent les inégalités.</p>
+        <ul class="vote-list">
+          <li data-i18n="progressismPoint1">Réformer les institutions pour éliminer les inégalités systémiques et garantir l'égalité réelle des chances.</li>
+          <li data-i18n="progressismPoint2">Élargir les droits civiques, sociaux et économiques à tous les groupes historiquement marginalisés.</li>
+          <li data-i18n="progressismPoint3">Faire du changement social actif et continu la condition d'une société plus juste et plus inclusive.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Progressisme" data-vote-key="progressism" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
   <div class="vote-feedback" id="voteFeedback" aria-live="polite">
     <h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
     <p id="voteFeedbackText" data-i18n="feedbackDefault">Votre choix apparaîtra ici après le clic sur un bouton.</p>
@@ -1022,7 +1220,7 @@
       footer: 'Parce que personne ne devrait être laissé derrière',
       voteKicker: 'Choix de gouvernance',
       voteTitle: 'Votez pour le système à adopter',
-      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais six choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme et libéralisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
+      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais douze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme et progressisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
       promisesTitle: 'Promesses idéologiques',
       capitalismBadge: 'Clan rouge',
       capitalismTitle: 'Capitalisme',
@@ -1062,6 +1260,42 @@
       liberalismPoint2: 'Maintenir un équilibre entre marché, institutions et contre-pouvoirs.',
       liberalismPoint3: "Faire du pluralisme, du droit et de l'autonomie personnelle les bases de l'ordre collectif.",
 
+      anarchismBadge: 'Clan noir',
+      anarchismTitle: 'Anarchisme',
+      anarchismDesc: "Un paradigme fondé sur l'abolition de toute autorité imposée, l'autogestion collective et la liberté radicale de chaque individu hors de toute hiérarchie étatique ou capitaliste.",
+      anarchismPoint1: "Abolir l'État, les institutions coercitives et toute forme de domination imposée.",
+      anarchismPoint2: 'Organiser la société par la coopération volontaire, la commune libre et l\'entraide directe.',
+      anarchismPoint3: "Faire de l'autonomie individuelle et collective la seule base légitime de l'ordre social.",
+      ecologismBadge: 'Clan vert',
+      ecologismTitle: 'Écologisme',
+      ecologismDesc: 'Un paradigme centré sur la préservation du vivant, la transition écologique, la justice environnementale et la redéfinition du progrès en harmonie avec les limites planétaires.',
+      ecologismPoint1: 'Placer l\'équilibre écologique et la survie du vivant au cœur de toute décision politique.',
+      ecologismPoint2: 'Transformer l\'économie vers la sobriété, les énergies renouvelables et la décroissance choisie.',
+      ecologismPoint3: 'Faire de la justice environnementale une condition fondamentale de la justice sociale.',
+      conservatismBadge: 'Clan ambre',
+      conservatismTitle: 'Conservatisme',
+      conservatismDesc: "Un paradigme fondé sur la préservation des institutions établies, des traditions, de l'ordre social hérité et de la stabilité comme valeur centrale de la gouvernance.",
+      conservatismPoint1: 'Préserver les institutions, les valeurs et les structures qui ont fait leurs preuves dans le temps.',
+      conservatismPoint2: 'Favoriser la stabilité, la continuité et le changement graduel plutôt que la rupture radicale.',
+      conservatismPoint3: "Faire de la famille, de la tradition et de l'appartenance communautaire les fondements du lien social.",
+      nationalismBadge: 'Clan marine',
+      nationalismTitle: 'Nationalisme',
+      nationalismDesc: "Un paradigme axé sur la primauté de la nation, la souveraineté du peuple, la défense de l'identité collective et la priorité accordée aux intérêts nationaux dans toute décision politique.",
+      nationalismPoint1: 'Défendre la souveraineté nationale contre les ingérences extérieures et les pouvoirs supranationaux.',
+      nationalismPoint2: "Affirmer l'identité culturelle, historique et linguistique du peuple comme fondement de la cohésion.",
+      nationalismPoint3: "Faire de l'intérêt national la boussole de toute politique économique, sociale et étrangère.",
+      libertarianismBadge: 'Clan jaune',
+      libertarianismTitle: 'Libertarianisme',
+      libertarianismDesc: "Un paradigme qui place la liberté individuelle au-dessus de tout, prône un État minimal ou inexistant, et défend la primauté de la responsabilité personnelle sur l'intervention collective.",
+      libertarianismPoint1: "Réduire l'État à sa plus simple expression pour libérer l'individu de toute contrainte imposée.",
+      libertarianismPoint2: 'Défendre la propriété individuelle, les contrats libres et l\'absence de coercition comme principes fondamentaux.',
+      libertarianismPoint3: 'Faire de la liberté personnelle absolue le seul critère légitime d\'organisation de la société.',
+      progressismBadge: 'Clan rose',
+      progressismTitle: 'Progressisme',
+      progressismDesc: 'Un paradigme axé sur la réforme sociale profonde, l\'égalité des droits, l\'inclusion, la justice systémique et la transformation des structures qui perpétuent les inégalités.',
+      progressismPoint1: 'Réformer les institutions pour éliminer les inégalités systémiques et garantir l\'égalité réelle des chances.',
+      progressismPoint2: 'Élargir les droits civiques, sociaux et économiques à tous les groupes historiquement marginalisés.',
+      progressismPoint3: 'Faire du changement social actif et continu la condition d\'une société plus juste et plus inclusive.',
       voteButton: 'Votez',
       voteFinalCall: 'Il NE MANQUE PLUS QUE VOUS!',
       feedbackTitle: 'Intention de vote enregistrée',
@@ -1086,7 +1320,7 @@
       footer: 'Because no one should be left behind',
       voteKicker: 'Governance choice',
       voteTitle: 'Vote for the system to adopt',
-      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering six distinct choices: capitalism, universalism, communism, fascism, authoritarism, and liberalism. Compare the ideological promises of each paradigm before casting your vote.',
+      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering twelve distinct choices: capitalism, universalism, communism, fascism, authoritarism, liberalism, anarchism, ecologism, conservatism, nationalism, libertarianism, and progressivism. Compare the ideological promises of each paradigm before casting your vote.',
       promisesTitle: 'Ideological promises',
       capitalismBadge: 'Red faction',
       capitalismTitle: 'Capitalism',
@@ -1124,6 +1358,42 @@
       liberalismPoint1: 'Protect individual rights and freedom of expression.',
       liberalismPoint2: 'Maintain a balance between market forces, institutions, and checks and balances.',
       liberalismPoint3: 'Make pluralism, law, and personal autonomy the basis of collective order.',
+      anarchismBadge: 'Black faction',
+      anarchismTitle: 'Anarchism',
+      anarchismDesc: 'A paradigm based on the abolition of all imposed authority, collective self-management, and the radical freedom of every individual outside any state or capitalist hierarchy.',
+      anarchismPoint1: 'Abolish the state, coercive institutions, and all forms of imposed domination.',
+      anarchismPoint2: 'Organize society through voluntary cooperation, free communes, and direct mutual aid.',
+      anarchismPoint3: 'Make individual and collective autonomy the only legitimate basis of social order.',
+      ecologismBadge: 'Green faction',
+      ecologismTitle: 'Ecologism',
+      ecologismDesc: 'A paradigm centered on the preservation of life, ecological transition, environmental justice, and redefining progress in harmony with planetary limits.',
+      ecologismPoint1: 'Place ecological balance and the survival of life at the heart of all political decisions.',
+      ecologismPoint2: 'Transform the economy toward sobriety, renewable energy, and deliberate degrowth.',
+      ecologismPoint3: 'Make environmental justice a fundamental condition of social justice.',
+      conservatismBadge: 'Amber faction',
+      conservatismTitle: 'Conservatism',
+      conservatismDesc: 'A paradigm based on the preservation of established institutions, traditions, inherited social order, and stability as a core value of governance.',
+      conservatismPoint1: 'Preserve institutions, values, and structures that have proven their worth over time.',
+      conservatismPoint2: 'Favor stability, continuity, and gradual change rather than radical rupture.',
+      conservatismPoint3: 'Make family, tradition, and community belonging the foundations of social cohesion.',
+      nationalismBadge: 'Navy faction',
+      nationalismTitle: 'Nationalism',
+      nationalismDesc: 'A paradigm focused on the primacy of the nation, the sovereignty of the people, the defense of collective identity, and the prioritization of national interests in all political decisions.',
+      nationalismPoint1: 'Defend national sovereignty against foreign interference and supranational powers.',
+      nationalismPoint2: 'Assert the cultural, historical, and linguistic identity of the people as the basis for cohesion.',
+      nationalismPoint3: 'Make the national interest the compass for all economic, social, and foreign policy.',
+      libertarianismBadge: 'Yellow faction',
+      libertarianismTitle: 'Libertarianism',
+      libertarianismDesc: 'A paradigm that places individual freedom above all else, advocates for a minimal or non-existent state, and defends the primacy of personal responsibility over collective intervention.',
+      libertarianismPoint1: 'Reduce the state to its simplest expression to free the individual from all imposed constraints.',
+      libertarianismPoint2: 'Defend individual property, free contracts, and the absence of coercion as fundamental principles.',
+      libertarianismPoint3: 'Make absolute personal freedom the only legitimate criterion for organizing society.',
+      progressismBadge: 'Pink faction',
+      progressismTitle: 'Progressivism',
+      progressismDesc: 'A paradigm focused on deep social reform, equal rights, inclusion, systemic justice, and the transformation of structures that perpetuate inequalities.',
+      progressismPoint1: 'Reform institutions to eliminate systemic inequalities and guarantee real equality of opportunity.',
+      progressismPoint2: 'Expand civil, social, and economic rights to all historically marginalized groups.',
+      progressismPoint3: 'Make active and continuous social change the condition of a more just and inclusive society.',
       voteButton: 'Vote',
       voteFinalCall: 'ALL THAT IS MISSING IS YOU!',
       feedbackTitle: 'Voting intent recorded',
@@ -1139,7 +1409,13 @@
       communism: 'Communisme',
       fascism: 'Fascisme',
       authoritarian: 'Authoritarisme',
-      liberalism: 'Libéralisme'
+      liberalism: 'Libéralisme',
+      anarchism: 'Anarchisme',
+      ecologism: 'Écologisme',
+      conservatism: 'Conservatisme',
+      nationalism: 'Nationalisme',
+      libertarianism: 'Libertarianisme',
+      progressism: 'Progressisme'
     },
     en: {
       capitalism: 'Capitalism',
@@ -1147,7 +1423,13 @@
       communism: 'Communism',
       fascism: 'Fascism',
       authoritarian: 'Authoritarism',
-      liberalism: 'Liberalism'
+      liberalism: 'Liberalism',
+      anarchism: 'Anarchism',
+      ecologism: 'Ecologism',
+      conservatism: 'Conservatism',
+      nationalism: 'Nationalism',
+      libertarianism: 'Libertarianism',
+      progressism: 'Progressivism'
     }
   };
 
