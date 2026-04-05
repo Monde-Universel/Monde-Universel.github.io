@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pourquoi une gouvernance mondiale complémentaire peut devenir nécessaire, quels seraient ses bienfaits, ses vulnérabilités, ses champs de compétence et les réformes constitutionnelles à venir." />
+  <meta name="keywords" content="gouvernance mondiale, gouvernance planétaire, subsidiarité, biens communs mondiaux, constitution mondiale, universalité" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Le Fondateur Universel" />
+  <title>UN MONDE UNIVERSEL — Évolution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
+
+    .site-header {
+      position: relative;
+      overflow: hidden;
+    }
+    .site-branding {
+      background: linear-gradient(160deg, #173672 0%, #1f4f8f 46%, #2a86b8 100%);
+      text-align: center;
+      padding: 46px 20px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-branding::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 100%, rgba(135,206,235,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .site-logo-band {
+      background: linear-gradient(180deg, #21457f 0%, #1f3f7d 100%);
+      padding: 14px 16px 8px;
+      text-align: center;
+      position: relative;
+    }
+    .site-logo-band::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: min(86vw, 420px);
+      height: 1px;
+      background: rgba(255,255,255,0.14);
+    }
+    .site-logo-band img {
+      width: 88px;
+      height: 88px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+      background: rgba(255,255,255,0.08);
+      display: inline-block;
+    }
+    .site-nav-wrap {
+      background: linear-gradient(180deg, #1f3f7d 0%, #1e3b73 100%);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 7px 14px 9px;
+      text-align: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .site-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      color: #ffffff;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+    }
+    .site-slogan {
+      color: rgba(255,255,255,0.82);
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 1.02rem;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .top-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 16px;
+      margin-bottom: 6px;
+      font-family: 'Lato', Arial, sans-serif;
+      line-height: 1.2;
+    }
+    .top-nav a {
+      color: rgba(255,255,255,0.95);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+    .top-nav a.active { border-color: rgba(255,255,255,0.85); }
+    .top-nav a.vote-link {
+      color: #cce0ff;
+      border-color: rgba(204,224,255,0.85);
+    }
+    .top-nav a.war-link {
+      color: #ff8d8d;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 8px;
+    }
+    .lang-btn {
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      padding: 7px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 0.88rem;
+    }
+    .lang-btn.active { background: rgba(255,255,255,0.18); }
+
+    .rub-page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 20px 70px;
+    }
+    .rub-hero {
+      background: linear-gradient(180deg, #7fb0d8 0%, #abd1ea 100%);
+      border: none;
+      border-radius: 0 0 34px 34px;
+      padding: 34px 24px 42px;
+      text-align: center;
+      box-shadow: inset 0 12px 32px rgba(255,255,255,0.08);
+      margin: 0 -20px 28px;
+    }
+    .rub-logo-wrap {
+      width: 128px;
+      height: 128px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(53,116,145,0.18);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18), 0 18px 40px rgba(26,58,107,0.10);
+    }
+    .rub-logo-wrap { display: none; }
+
+    .rub-kicker {
+      display: inline-block;
+      background: rgba(255,255,255,0.14);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 0.83rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 {
+      font-family: 'Cinzel', Georgia, serif;
+      line-height: 1.22;
+    }
+    h1 {
+      font-size: clamp(2.45rem, 6vw, 4.35rem);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      color: #fffaf2;
+      -webkit-text-stroke: 1px rgba(0,0,0,0.42);
+      text-shadow: 0 3px 12px rgba(0,0,0,0.18);
+    }
+    h1 span { display: block; }
+    .hero-text {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.96);
+      max-width: 820px;
+      margin: 0 auto;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.10);
+    }
+
+    .rub-section {
+      background: #ffffff;
+      border: 1px solid #d7e8f4;
+      border-radius: 28px;
+      padding: 28px 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 16px 38px rgba(27, 74, 121, 0.06);
+    }
+    .section-label {
+      font-family: 'Lato', Arial, sans-serif;
+      color: #2f6b95;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.9vw, 3rem);
+      margin-bottom: 18px;
+      color: #17315d;
+    }
+    .vision-block + .vision-block { margin-top: 18px; }
+    .vision-block h3 {
+      font-size: clamp(1.42rem, 2.3vw, 1.85rem);
+      margin-bottom: 8px;
+      color: #183a63;
+    }
+    .vision-block p, .quote-box, .issue-item, .pillar-item, .cta-text, li {
+      font-size: 1.04rem;
+      line-height: 1.9;
+      color: #22364d;
+    }
+    .quote-box {
+      margin-top: 18px;
+      padding: 18px 18px;
+      border-left: 4px solid #4d94bc;
+      background: #edf7fd;
+      border-radius: 18px;
+      font-style: italic;
+      color: #18334e;
+    }
+    .rub-grid, .issues-grid, .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .rub-card, .issue-item, .pillar-item {
+      background: linear-gradient(180deg, #f8fcff 0%, #eef7fc 100%);
+      border: 1px solid #d7e8f4;
+      border-radius: 22px;
+      padding: 18px;
+    }
+    .rub-card h3, .issue-item h3 { margin-bottom: 8px; color: #0f2f56; font-size: 1.28rem; }
+    .pillar-item h3 { margin-bottom: 8px; color: #0f2f56; font-size: 1.28rem; }
+    .limits-list { padding-left: 22px; }
+    .limits-list li + li { margin-top: 12px; }
+    .contact-section {
+      text-align: center;
+      background: linear-gradient(180deg, #eaf7ff 0%, #deeffb 100%);
+      border: 1px solid #cde3f2;
+      border-radius: 28px;
+      padding: 34px 22px;
+      box-shadow: 0 18px 45px rgba(27, 74, 121, 0.08);
+    }
+    .contact-title {
+      font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+      margin-bottom: 10px;
+      color: #133761;
+    }
+    .cta-text { max-width: 760px; margin: 0 auto 18px; }
+    .contact-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #2d5f92 0%, #3b8ab7 100%);
+      color: #fff;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-family: 'Lato', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 12px 30px rgba(26,58,107,0.18);
+    }
+    .site-footer {
+      text-align: center;
+      color: #5b6d85;
+      font-family: 'Lato', Arial, sans-serif;
+      padding: 0 20px 44px;
+    }
+
+    @media (max-width: 800px) {
+      .rub-grid, .issues-grid, .pillars-grid { grid-template-columns: 1fr; }
+      .site-header { padding: 34px 16px 30px; }
+      .rub-page { padding: 24px 14px 54px; }
+      .rub-hero, .rub-section, .contact-section { border-radius: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-branding">
+      <h1 class="site-title" data-i18n="siteTitle">UN MONDE UNIVERSEL</h1>
+      <p class="site-slogan" data-i18n="siteSlogan">Parce que personne ne devrait être laissé derrière</p>
+    </div>
+    <div class="site-logo-band">
+      <img src="logo_universel.jpeg.JPG" alt="Logo Universel" />
+    </div>
+    <div class="site-nav-wrap">
+      <nav class="top-nav">
+        <a href="index.html" data-i18n="navhome">Accueil</a>
+        <a href="vision.html" data-i18n="navvision">La Vision</a>
+        <a href="discussion.html" data-i18n="navdiscussion">Discussion</a>
+        <a href="these.html" data-i18n="navthese">📖 Un peu plus…</a>
+        <a href="theorie.html" data-i18n="navtheorie">Nouvelle Approche</a>
+        <a href="vie.html" data-i18n="navvie">Vie</a>
+        <a href="guerre.html" class="war-link" data-i18n="navguerre">⚔️ Guerre</a>
+        <a href="chomage.html" data-i18n="navchomage">📉 Chômage</a>
+        <a href="rub.html" data-i18n="navrub">RUB</a>
+        <a href="vote.html" class="vote-link" data-i18n="navvote">Vote</a>
+        <a href="evolution.html" class="active" data-i18n="navevolution">Évolution</a>
+        <a href="about.html" data-i18n="navabout">À propos</a>
+        <a href="contact.html" data-i18n="navcontact">Contact</a>
+      </nav>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="rub-page">
+    <section class="rub-hero">
+      <div class="rub-kicker" data-i18n="heroKicker">Échelle politique émergente</div>
+      <h1 data-i18n="heroTitle">L’ÉVOLUTION <span>VERS UNE GOUVERNANCE</span> <span>MONDIALE COMPLÉMENTAIRE</span></h1>
+      <p class="hero-text" data-i18n="heroText">Une architecture politique limitée, démocratique et planétaire pour traiter uniquement ce que les nations, les régions et les unions existantes ne peuvent plus accomplir seules.</p>
+    </section>
+
+    <section class="rub-section">
+      <div class="section-label" data-i18n="evoSection1Title">Pourquoi cette évolution devient nécessaire</div>
+      <h2 class="section-title" data-i18n="evoS1H1">Le monde a dépassé la portée des souverainetés isolées.</h2>
+      <div class="vision-block">
+        <p data-i18n="evoS1P1">Le climat, les pandémies, l’intelligence artificielle, les armes de destruction massive, l’espace orbital et les chocs financiers globaux ne s’arrêtent pas aux frontières. Lorsque les causes sont mondiales mais que les instruments restent nationaux, le système accumule les retards, les contradictions et les angles morts.</p>
+      </div>
+      <div class="vision-block">
+        <h3 data-i18n="evoS1H2">Les institutions actuelles coordonnent, mais ne suffisent plus.</h3>
+        <p data-i18n="evoS1P2">Les mécanismes internationaux existants ralentissent certains conflits et organisent certaines coopérations, mais ils demeurent trop fragmentés, trop dépendants des rapports de force et souvent trop faibles pour protéger réellement les biens communs planétaires.</p>
+      </div>
+      <div class="quote-box" data-i18n="evoS1Quote">Une gouvernance mondiale complémentaire n’a pas vocation à remplacer les peuples, les nations ou les cultures. Elle n’a de sens que comme niveau limité de protection, de coordination et d’arbitrage là où l’échelle inférieure échoue objectivement.</div>
+      <div class="vision-block">
+        <h3 data-i18n="evoS1H3">Le problème n’est pas l’existence des nations, mais l’absence d’un niveau adapté.</h3>
+        <p data-i18n="evoS1P3">Il ne s’agit donc pas d’abolir la souveraineté, mais de la redéfinir dans un monde devenu structurellement interdépendant. Une souveraineté mature reconnaît ses limites lorsqu’un dommage local devient un risque global.</p>
+      </div>
+    </section>
+
+    <section class="rub-section">
+      <div class="section-label" data-i18n="evoSection2Title">Les bienfaits possibles</div>
+      <h2 class="section-title" data-i18n="evoS2H1">Une gouvernance mondiale limitée pourrait réduire le chaos structurel.</h2>
+      <div class="vision-block">
+        <p data-i18n="evoS2P1">Le premier bénéfice serait de combler les zones sans responsable clair : atmosphère, océans hors juridiction, biosphère, espace orbital, cyberstabilité et risques technologiques extrêmes. Ce qu’aucun État ne peut protéger seul trouverait enfin un cadre commun d’action.</p>
+      </div>
+      <div class="rub-grid">
+        <article class="rub-card">
+          <h3 data-i18n="card1Title">Réduire les vides de gouvernance</h3>
+          <p data-i18n="card1Text">Les domaines actuellement dispersés entre traités faibles, institutions fragmentées et intérêts concurrents pourraient être traités avec une cohérence minimale.</p>
+        </article>
+        <article class="rub-card">
+          <h3 data-i18n="card2Title">Prévenir l’irréversible</h3>
+          <p data-i18n="card2Text">Plus un risque est global, plus le coût du retard devient immense. Une instance commune limiterait les réponses tardives, contradictoires et politiquement paralysées.</p>
+        </article>
+        <article class="rub-card">
+          <h3 data-i18n="card3Title">Stabiliser la coopération</h3>
+          <p data-i18n="card3Text">Des règles transparentes et ciblées réduiraient les coûts de négociation permanente entre puissances et offriraient une base plus lisible à l’action collective.</p>
+        </article>
+        <article class="rub-card">
+          <h3 data-i18n="card4Title">Limiter la loi du plus fort</h3>
+          <p data-i18n="card4Text">Quand aucun arbitre crédible n’existe, les plus puissants imposent leurs normes de fait. Un niveau démocratisé peut réintroduire du droit là où domine le rapport de force.</p>
+        </article>
+      </div>
+      <div class="vision-block" style="margin-top:18px;">
+        <h3 data-i18n="evoS2H2">Le bénéfice essentiel est systémique.</h3>
+        <p data-i18n="evoS2P2">L’enjeu n’est pas seulement de mieux gérer quelques crises. Il s’agit de doter l’humanité d’un niveau politique capable d’empêcher que l’interdépendance devienne une machine incontrôlée.</p>
+      </div>
+    </section>
+
+    <section class="rub-section">
+      <div class="section-label" data-i18n="evoSection3Title">Rôle et champs de compétence</div>
+      <h2 class="section-title" data-i18n="evoS3H1">Le niveau mondial devrait être fort sur peu de sujets.</h2>
+      <div class="vision-block">
+        <p data-i18n="evoS3P1">Son mandat peut se résumer en trois fonctions : protéger les biens communs planétaires, coordonner les réponses aux risques systémiques, et arbitrer les différends majeurs entre souverainetés lorsque leurs effets débordent sur l’ensemble humain.</p>
+      </div>
+      <div class="vision-block">
+        <h3 data-i18n="evoS3H2">Les compétences doivent rester fermées et explicites.</h3>
+        <p data-i18n="evoS3P2">Climat, biosphère, océans hors juridiction, pôles, espace orbital, paix et désarmement, pandémies, biosécurité extrême, IA à haut risque, cyberstabilité et crises systémiques sur l’alimentation, l’énergie ou la finance mondiale : voilà le périmètre légitime d’un tel niveau.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-item">
+          <h3 data-i18n="fund1Title">Protéger</h3>
+          <p data-i18n="fund1Text">Défendre les biens communs planétaires lorsque l’inaction locale menace l’ensemble.</p>
+        </div>
+        <div class="pillar-item">
+          <h3 data-i18n="fund2Title">Coordonner</h3>
+          <p data-i18n="fund2Text">Rendre certaines réponses communes obligatoires face aux risques transfrontaliers majeurs.</p>
+        </div>
+        <div class="pillar-item">
+          <h3 data-i18n="fund3Title">Arbitrer</h3>
+          <p data-i18n="fund3Text">Trancher les différends entre États quand leurs décisions produisent des dommages globaux.</p>
+        </div>
+        <div class="pillar-item">
+          <h3 data-i18n="fund4Title">S’arrêter</h3>
+          <p data-i18n="fund4Text">Ne jamais empiéter sur les domaines que les peuples, les régions et les nations peuvent gouverner eux-mêmes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="rub-section">
+      <div class="section-label" data-i18n="evoSection4Title">Vulnérabilités et limites</div>
+      <h2 class="section-title" data-i18n="evoS4H1">Un projet mondial n’est viable que s’il sait se limiter lui-même.</h2>
+      <div class="vision-block">
+        <p data-i18n="evoS4P1">Le premier risque est la concentration excessive du pouvoir : un niveau mondial mal limité pourrait devenir technocratique, opaque ou autoritaire. Le deuxième est la capture par les grandes puissances ou les intérêts économiques dominants. Le troisième est le glissement hors mandat, lorsque le centre prétend normer la culture, l’éducation ou les modèles sociaux internes.</p>
+      </div>
+      <div class="issues-grid">
+        <article class="issue-item">
+          <h3 data-i18n="issue1Title">Subsidiarité obligatoire</h3>
+          <p data-i18n="issue1Text">Le niveau mondial ne doit intervenir que lorsque le niveau inférieur ne peut agir sans dommage majeur pour l’ensemble.</p>
+        </article>
+        <article class="issue-item">
+          <h3 data-i18n="issue2Title">Compétences constitutionnellement fermées</h3>
+          <p data-i18n="issue2Text">Chaque transfert de compétence doit être écrit, justifié, contrôlé, révocable et soumis à des garde-fous démocratiques réels.</p>
+        </article>
+        <article class="issue-item">
+          <h3 data-i18n="issue3Title">Pluralité protégée</h3>
+          <p data-i18n="issue3Text">La culture, la langue, l’éducation ordinaire, les modèles sociaux internes et la vie politique concrète des peuples doivent rester hors de sa portée.</p>
+        </article>
+      </div>
+      <div class="vision-block" style="margin-top:18px;">
+        <h3 data-i18n="evoS4H2">L’enjeu le plus actuel est constitutionnel.</h3>
+        <p data-i18n="evoS4P2">Il faut reconnaître juridiquement les biens communs planétaires, encadrer l’abus de souveraineté lorsque ses effets deviennent mondiaux, démocratiser les institutions transnationales et constitutionnaliser la régulation des technologies systémiques comme l’IA avancée, la biosécurité et les infrastructures critiques.</p>
+      </div>
+      <div class="quote-box" data-i18n="closingQuote">✊ Une gouvernance mondiale complémentaire n’a de sens que si elle devient l’outil limité par lequel l’humanité protège ce qu’aucune nation ne peut sauver seule.</div>
+    </section>
+
+    <section class="contact-section">
+      <h2 class="contact-title" data-i18n="contactTitle">Tu veux proposer une compétence mondiale, contester une limite ou approfondir cette architecture?</h2>
+      <p class="cta-text" data-i18n="ctaText">Partagez votre point de vue, critiquez la proposition, affinez ses limites, ou aidez à penser les compétences mondiales réellement légitimes. Tous les points de vue constructifs sont les bienvenus.</p>
+      <a class="contact-btn" href="mailto:contact@monde-universel.org" data-i18n="contactAction">✉️ Écrire au Fondateur</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footerText">Une gouvernance mondiale n’a de sens que si elle protège le commun sans absorber la vie politique réelle des peuples.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      fr: {
+        siteTitle: 'UN MONDE UNIVERSEL',
+        siteSlogan: 'Parce que personne ne devrait être laissé derrière',
+        navhome: 'Accueil',
+        navvision: 'La Vision',
+        navdiscussion: 'Discussion',
+        navthese: '📖 Un peu plus…',
+        navtheorie: 'Nouvelle Approche',
+        navvie: 'Vie',
+        navguerre: '⚔️ Guerre',
+        navchomage: '📉 Chômage',
+        navrub: 'RUB',
+        navevolution: 'Évolution',
+        navvote: 'Vote',
+        navabout: 'À propos',
+        navcontact: 'Contact',
+        heroKicker: 'Échelle politique émergente',
+        heroTitle: 'L’ÉVOLUTION <span>VERS UNE GOUVERNANCE</span> <span>MONDIALE COMPLÉMENTAIRE</span>',
+        heroText: 'Une architecture politique limitée, démocratique et planétaire pour traiter uniquement ce que les nations, les régions et les unions existantes ne peuvent plus accomplir seules.',
+        evoSection1Title: 'Pourquoi cette évolution devient nécessaire',
+        evoS1H1: 'Le monde a dépassé la portée des souverainetés isolées.',
+        evoS1P1: 'Le climat, les pandémies, l’intelligence artificielle, les armes de destruction massive, l’espace orbital et les chocs financiers globaux ne s’arrêtent pas aux frontières. Lorsque les causes sont mondiales mais que les instruments restent nationaux, le système accumule les retards, les contradictions et les angles morts.',
+        evoS1H2: 'Les institutions actuelles coordonnent, mais ne suffisent plus.',
+        evoS1P2: 'Les mécanismes internationaux existants ralentissent certains conflits et organisent certaines coopérations, mais ils demeurent trop fragmentés, trop dépendants des rapports de force et souvent trop faibles pour protéger réellement les biens communs planétaires.',
+        evoS1Quote: 'Une gouvernance mondiale complémentaire n’a pas vocation à remplacer les peuples, les nations ou les cultures. Elle n’a de sens que comme niveau limité de protection, de coordination et d’arbitrage là où l’échelle inférieure échoue objectivement.',
+        evoS1H3: 'Le problème n’est pas l’existence des nations, mais l’absence d’un niveau adapté.',
+        evoS1P3: 'Il ne s’agit donc pas d’abolir la souveraineté, mais de la redéfinir dans un monde devenu structurellement interdépendant. Une souveraineté mature reconnaît ses limites lorsqu’un dommage local devient un risque global.',
+        evoSection2Title: 'Les bienfaits possibles',
+        evoS2H1: 'Une gouvernance mondiale limitée pourrait réduire le chaos structurel.',
+        evoS2P1: 'Le premier bénéfice serait de combler les zones sans responsable clair : atmosphère, océans hors juridiction, biosphère, espace orbital, cyberstabilité et risques technologiques extrêmes. Ce qu’aucun État ne peut protéger seul trouverait enfin un cadre commun d’action.',
+        card1Title: 'Réduire les vides de gouvernance',
+        card1Text: 'Les domaines actuellement dispersés entre traités faibles, institutions fragmentées et intérêts concurrents pourraient être traités avec une cohérence minimale.',
+        card2Title: 'Prévenir l’irréversible',
+        card2Text: 'Plus un risque est global, plus le coût du retard devient immense. Une instance commune limiterait les réponses tardives, contradictoires et politiquement paralysées.',
+        card3Title: 'Stabiliser la coopération',
+        card3Text: 'Des règles transparentes et ciblées réduiraient les coûts de négociation permanente entre puissances et offriraient une base plus lisible à l’action collective.',
+        card4Title: 'Limiter la loi du plus fort',
+        card4Text: 'Quand aucun arbitre crédible n’existe, les plus puissants imposent leurs normes de fait. Un niveau démocratisé peut réintroduire du droit là où domine le rapport de force.',
+        evoS2H2: 'Le bénéfice essentiel est systémique.',
+        evoS2P2: 'L’enjeu n’est pas seulement de mieux gérer quelques crises. Il s’agit de doter l’humanité d’un niveau politique capable d’empêcher que l’interdépendance devienne une machine incontrôlée.',
+        evoSection3Title: 'Rôle et champs de compétence',
+        evoS3H1: 'Le niveau mondial devrait être fort sur peu de sujets.',
+        evoS3P1: 'Son mandat peut se résumer en trois fonctions : protéger les biens communs planétaires, coordonner les réponses aux risques systémiques, et arbitrer les différends majeurs entre souverainetés lorsque leurs effets débordent sur l’ensemble humain.',
+        evoS3H2: 'Les compétences doivent rester fermées et explicites.',
+        evoS3P2: 'Climat, biosphère, océans hors juridiction, pôles, espace orbital, paix et désarmement, pandémies, biosécurité extrême, IA à haut risque, cyberstabilité et crises systémiques sur l’alimentation, l’énergie ou la finance mondiale : voilà le périmètre légitime d’un tel niveau.',
+        fund1Title: 'Protéger',
+        fund1Text: 'Défendre les biens communs planétaires lorsque l’inaction locale menace l’ensemble.',
+        fund2Title: 'Coordonner',
+        fund2Text: 'Rendre certaines réponses communes obligatoires face aux risques transfrontaliers majeurs.',
+        fund3Title: 'Arbitrer',
+        fund3Text: 'Trancher les différends entre États quand leurs décisions produisent des dommages globaux.',
+        fund4Title: 'S’arrêter',
+        fund4Text: 'Ne jamais empiéter sur les domaines que les peuples, les régions et les nations peuvent gouverner eux-mêmes.',
+        evoSection4Title: 'Vulnérabilités et limites',
+        evoS4H1: 'Un projet mondial n’est viable que s’il sait se limiter lui-même.',
+        evoS4P1: 'Le premier risque est la concentration excessive du pouvoir : un niveau mondial mal limité pourrait devenir technocratique, opaque ou autoritaire. Le deuxième est la capture par les grandes puissances ou les intérêts économiques dominants. Le troisième est le glissement hors mandat, lorsque le centre prétend normer la culture, l’éducation ou les modèles sociaux internes.',
+        issue1Title: 'Subsidiarité obligatoire',
+        issue1Text: 'Le niveau mondial ne doit intervenir que lorsque le niveau inférieur ne peut agir sans dommage majeur pour l’ensemble.',
+        issue2Title: 'Compétences constitutionnellement fermées',
+        issue2Text: 'Chaque transfert de compétence doit être écrit, justifié, contrôlé, révocable et soumis à des garde-fous démocratiques réels.',
+        issue3Title: 'Pluralité protégée',
+        issue3Text: 'La culture, la langue, l’éducation ordinaire, les modèles sociaux internes et la vie politique concrète des peuples doivent rester hors de sa portée.',
+        evoS4H2: 'L’enjeu le plus actuel est constitutionnel.',
+        evoS4P2: 'Il faut reconnaître juridiquement les biens communs planétaires, encadrer l’abus de souveraineté lorsque ses effets deviennent mondiaux, démocratiser les institutions transnationales et constitutionnaliser la régulation des technologies systémiques comme l’IA avancée, la biosécurité et les infrastructures critiques.',
+        closingQuote: '✊ Une gouvernance mondiale complémentaire n’a de sens que si elle devient l’outil limité par lequel l’humanité protège ce qu’aucune nation ne peut sauver seule.',
+        contactTitle: 'Tu veux proposer une compétence mondiale, contester une limite ou approfondir cette architecture?',
+        ctaText: 'Partagez votre point de vue, critiquez la proposition, affinez ses limites, ou aidez à penser les compétences mondiales réellement légitimes. Tous les points de vue constructifs sont les bienvenus.',
+        contactAction: '✉️ Écrire au Fondateur',
+        footerText: 'Une gouvernance mondiale n’a de sens que si elle protège le commun sans absorber la vie politique réelle des peuples.'
+      },
+      en: {
+        siteTitle: 'ONE UNIVERSAL WORLD',
+        siteSlogan: 'Because no one should be left behind',
+        navhome: 'Home',
+        navvision: 'The Vision',
+        navdiscussion: 'Discussion',
+        navthese: '📖 A bit more…',
+        navtheorie: 'New Approach',
+        navvie: 'Life',
+        navguerre: '⚔️ War',
+        navchomage: '📉 Unemployment',
+        navrub: 'UBI',
+        navevolution: 'Evolution',
+        navvote: 'Vote',
+        navabout: 'About',
+        navcontact: 'Contact',
+        heroKicker: 'An emerging political scale',
+        heroTitle: 'THE EVOLUTION <span>TOWARD COMPLEMENTARY</span> <span>GLOBAL GOVERNANCE</span>',
+        heroText: 'A limited, democratic and planetary political architecture designed to address only what nations, regions and existing unions can no longer achieve on their own.',
+        evoSection1Title: 'Why this evolution is becoming necessary',
+        evoS1H1: 'The world has outgrown isolated sovereignties.',
+        evoS1P1: 'Climate, pandemics, artificial intelligence, weapons of mass destruction, orbital space and global financial shocks do not stop at borders. When causes are global but instruments remain national, the system accumulates delays, contradictions and blind spots.',
+        evoS1H2: 'Current institutions coordinate, but no longer suffice.',
+        evoS1P2: 'Existing international mechanisms slow some conflicts and organize some cooperation, but they remain too fragmented, too dependent on power balances and often too weak to truly protect planetary commons.',
+        evoS1Quote: 'Complementary global governance is not meant to replace peoples, nations or cultures. It only makes sense as a limited level of protection, coordination and arbitration where lower scales objectively fail.',
+        evoS1H3: 'The problem is not the existence of nations, but the lack of an appropriate level.',
+        evoS1P3: 'The aim is therefore not to abolish sovereignty, but to redefine it in a structurally interdependent world. A mature sovereignty recognizes its limits when local damage becomes a global risk.',
+        evoSection2Title: 'Possible benefits',
+        evoS2H1: 'Limited global governance could reduce structural chaos.',
+        evoS2P1: 'The first benefit would be to fill areas with no clear steward: the atmosphere, waters beyond national jurisdiction, the biosphere, orbital space, cyber stability and extreme technological risks. What no state can protect alone would finally gain a common framework for action.',
+        card1Title: 'Reducing governance gaps',
+        card1Text: 'Areas now scattered across weak treaties, fragmented institutions and competing interests could be handled with minimal coherence.',
+        card2Title: 'Preventing the irreversible',
+        card2Text: 'The more global a risk becomes, the greater the cost of delay. A common authority would limit late, contradictory and politically paralyzed responses.',
+        card3Title: 'Stabilizing cooperation',
+        card3Text: 'Transparent and targeted rules would reduce the costs of permanent negotiation among major powers and provide a clearer basis for collective action.',
+        card4Title: 'Limiting the law of the strongest',
+        card4Text: 'When no credible arbiter exists, the most powerful actors impose their norms in practice. A democratized level can reintroduce law where raw power dominates.',
+        evoS2H2: 'The essential benefit is systemic.',
+        evoS2P2: 'The issue is not merely managing a few crises better. It is about giving humanity a political level capable of preventing interdependence from becoming an uncontrollable machine.',
+        evoSection3Title: 'Role and fields of competence',
+        evoS3H1: 'The global level should be strong on very few subjects.',
+        evoS3P1: 'Its mandate can be summarized in three functions: protecting planetary commons, coordinating responses to systemic risks, and arbitrating major disputes between sovereignties when their effects spill over onto humanity as a whole.',
+        evoS3H2: 'Competences must remain closed and explicit.',
+        evoS3P2: 'Climate, the biosphere, waters beyond national jurisdiction, the poles, orbital space, peace and disarmament, pandemics, extreme biosecurity, high-risk AI, cyber stability and systemic crises affecting food, energy or global finance: that is the legitimate perimeter of such a level.',
+        fund1Title: 'Protect',
+        fund1Text: 'Defend planetary commons when local inaction threatens the whole.',
+        fund2Title: 'Coordinate',
+        fund2Text: 'Make certain common responses mandatory in the face of major transboundary risks.',
+        fund3Title: 'Arbitrate',
+        fund3Text: 'Settle disputes between states when their decisions produce global harm.',
+        fund4Title: 'Stop',
+        fund4Text: 'Never intrude into domains that peoples, regions and nations can govern by themselves.',
+        evoSection4Title: 'Vulnerabilities and limits',
+        evoS4H1: 'A global project is viable only if it can limit itself.',
+        evoS4P1: 'The first risk is excessive concentration of power: a poorly limited global level could become technocratic, opaque or authoritarian. The second is capture by major powers or dominant economic interests. The third is mandate drift, when the center starts trying to regulate culture, education or internal social models.',
+        issue1Title: 'Mandatory subsidiarity',
+        issue1Text: 'The global level must intervene only when the lower level cannot act without major harm to the whole.',
+        issue2Title: 'Constitutionally closed competences',
+        issue2Text: 'Every transfer of competence must be written, justified, controlled, reversible and subject to real democratic safeguards.',
+        issue3Title: 'Protected plurality',
+        issue3Text: 'Culture, language, ordinary education, internal social models and the concrete political life of peoples must remain outside its reach.',
+        evoS4H2: 'The most immediate issue is constitutional.',
+        evoS4P2: 'Planetary commons must be legally recognized, abuses of sovereignty must be framed when their effects become global, transnational institutions must be democratized, and the regulation of systemic technologies such as advanced AI, biosecurity and critical infrastructures must be constitutionalized.',
+        closingQuote: '✊ Complementary global governance only makes sense if it becomes the limited tool through which humanity protects what no nation can save alone.',
+        contactTitle: 'Do you want to propose a global competence, challenge a limit or deepen this architecture?',
+        ctaText: 'Share your point of view, challenge the proposal, refine its limits, or help think through which global competences are truly legitimate. All constructive perspectives are welcome.',
+        contactAction: '✉️ Write to the Founder',
+        footerText: 'Global governance only makes sense if it protects the common good without absorbing the real political life of peoples.'
+      }
+    };
+
+    function applyTranslations(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
+    });
+  </script>
+</body>
+</html>
