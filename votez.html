@@ -530,6 +530,66 @@
   .life-opening, .life-card, .life-strand, .life-conclusion { padding: 24px 20px; }
   .life-opening p, .life-card p, .life-strand p, .life-conclusion p { text-align: left; }
 }
+
+  .trajectory-section {
+    max-width: 1200px;
+    margin: 34px auto 52px;
+    padding: 0 20px;
+  }
+  .trajectory-premium {
+    position: relative;
+    background: linear-gradient(145deg, rgba(255,255,255,0.985) 0%, rgba(233,244,255,0.97) 52%, rgba(248,252,255,0.98) 100%);
+    border: 1px solid rgba(26,58,107,0.12);
+    border-top: 8px solid #1a3a6b;
+    border-radius: 22px;
+    box-shadow: 0 14px 34px rgba(13,34,87,0.12);
+    overflow: hidden;
+  }
+  .trajectory-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(135,206,235,0.20), transparent 34%), radial-gradient(circle at bottom left, rgba(26,58,107,0.08), transparent 28%);
+    pointer-events: none;
+  }
+  .trajectory-premium > * { position: relative; z-index: 1; }
+  .trajectory-premium-head { padding: 34px 32px 24px; border-bottom: 1px solid rgba(26,58,107,0.10); }
+  .trajectory-kicker { display:inline-block; border-radius:999px; padding:7px 14px; margin-bottom:16px; font-family:'Lato',Arial,sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; background:rgba(26,58,107,0.10); color:#1a3a6b; border:1px solid rgba(26,58,107,0.20); }
+  .trajectory-title { font-family:'Cinzel',Georgia,serif; font-size:clamp(1.65rem,3.1vw,2.5rem); color:#1a3a6b; letter-spacing:0.06em; text-transform:uppercase; line-height:1.18; margin:0 0 16px; }
+  .trajectory-intro { max-width:900px; }
+  .trajectory-intro p { font-family:'Lato',Arial,sans-serif; font-size:1.02rem; line-height:1.86; color:#4d5b70; margin:0 0 14px; text-align:justify; }
+  .trajectory-intro p:last-child { margin-bottom:0; }
+  .trajectory-premium-grid { display:grid; grid-template-columns:minmax(0,1.18fr) minmax(320px,0.82fr); gap:0; }
+  .trajectory-main { padding:32px; }
+  .trajectory-side { padding:32px 32px 32px 28px; background:linear-gradient(180deg, rgba(255,255,255,0.38) 0%, rgba(214,232,247,0.36) 100%); border-left:1px solid rgba(26,58,107,0.10); }
+  .trajectory-block-title { display:flex; align-items:center; gap:12px; font-family:'Lato',Arial,sans-serif; font-size:0.84rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#1a3a6b; margin-bottom:18px; }
+  .trajectory-block-title::before { content:''; width:36px; height:2px; background:linear-gradient(90deg,#1a3a6b,#87CEEB); border-radius:999px; }
+  .trajectory-step { padding:0 0 18px; margin-bottom:18px; border-bottom:1px solid rgba(26,58,107,0.10); }
+  .trajectory-step:last-child { margin-bottom:0; }
+  .trajectory-step h3 { font-family:'Cinzel',Georgia,serif; font-size:clamp(1.08rem,1.7vw,1.35rem); color:#1a3a6b; letter-spacing:0.04em; text-transform:uppercase; line-height:1.28; margin:0 0 10px; }
+  .trajectory-step p { font-family:'Lato',Arial,sans-serif; font-size:1rem; line-height:1.82; color:#4d5b70; margin:0 0 12px; text-align:justify; }
+  .trajectory-step p:last-child { margin-bottom:0; }
+  .trajectory-vector { background:linear-gradient(135deg,#1a3a6b 0%,#2a5298 100%); border-radius:18px; padding:24px 22px; margin:14px 0 16px; box-shadow:0 12px 30px rgba(26,58,107,0.22); text-align:center; }
+  .trajectory-vector strong { display:block; font-family:'Lato',Arial,sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.72); margin-bottom:10px; }
+  .trajectory-vector p { font-family:'Cinzel',Georgia,serif; font-size:clamp(1.08rem,2vw,1.45rem); color:#fff; margin:0; letter-spacing:0.05em; line-height:1.45; text-align:center; }
+  .trajectory-note { background:rgba(255,255,255,0.78); border:1px solid rgba(26,58,107,0.10); border-radius:16px; padding:18px 18px 18px 20px; box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); margin-bottom:14px; }
+  .trajectory-note p { margin:0; font-family:'Lato',Arial,sans-serif; font-size:0.98rem; line-height:1.76; color:#334155; text-align:left; }
+  .trajectory-advantage { position:relative; padding:16px 16px 16px 44px; border-radius:15px; background:rgba(255,255,255,0.82); border:1px solid rgba(26,58,107,0.10); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); }
+  .trajectory-advantage + .trajectory-advantage { margin-top:12px; }
+  .trajectory-advantage::before { content:''; position:absolute; left:16px; top:21px; width:12px; height:12px; border-radius:50%; background:#1a3a6b; box-shadow:0 0 0 5px rgba(26,58,107,0.14); }
+  .trajectory-advantage strong { display:block; font-family:'Lato',Arial,sans-serif; font-size:0.92rem; font-weight:700; letter-spacing:0.03em; color:#1a3a6b; margin-bottom:4px; }
+  .trajectory-advantage span { display:block; font-family:'Lato',Arial,sans-serif; font-size:0.97rem; line-height:1.7; color:#4d5b70; }
+  @media (max-width:980px) {
+    .trajectory-premium-grid { grid-template-columns:1fr; }
+    .trajectory-side { border-left:none; border-top:1px solid rgba(26,58,107,0.10); padding:28px 32px 32px; }
+  }
+  @media (max-width:640px) {
+    .trajectory-section { padding:0 14px; }
+    .trajectory-premium-head,.trajectory-main,.trajectory-side { padding:24px 20px; }
+    .trajectory-title { letter-spacing:0.04em; }
+    .trajectory-intro p,.trajectory-step p,.trajectory-note p,.trajectory-advantage span { text-align:left; }
+    .trajectory-vector { padding:20px 16px; }
+  }
 </style>
 
 
@@ -938,32 +998,6 @@
   }
 </style>
 
-
-<style>
-  .trajectory-section { max-width: 1200px; margin: 34px auto 52px; padding: 0 20px; }
-  .trajectory-head { text-align: left; margin-bottom: 32px; max-width: 900px; }
-  .trajectory-title { font-family: 'Cinzel', Georgia, serif; font-size: clamp(1.55rem, 3vw, 2.3rem); color: #1a3a6b; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; line-height: 1.2; }
-  .trajectory-lead { font-family: 'Lato', Arial, sans-serif; font-size: 1rem; line-height: 1.8; color: #4d5b70; margin-bottom: 14px; }
-  .trajectory-lead:last-child { margin-bottom: 0; }
-  .trajectory-body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; align-items: stretch; margin-bottom: 8px; }
-  .trajectory-card { background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(233,244,255,0.96) 100%); border: 1px solid rgba(26,58,107,0.12); border-top: 8px solid #1a3a6b; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.10); padding: 28px 24px 30px; display: flex; flex-direction: column; }
-  .trajectory-mini { display: inline-block; align-self: flex-start; border-radius: 999px; padding: 7px 14px; margin-bottom: 14px; font-family: 'Lato', Arial, sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; background: rgba(26,58,107,0.10); color: #1a3a6b; border: 1px solid rgba(26,58,107,0.20); }
-  .trajectory-card h3 { font-family: 'Cinzel', Georgia, serif; font-size: clamp(1.15rem, 2vw, 1.5rem); color: #1a3a6b; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 12px; line-height: 1.25; }
-  .trajectory-card p { font-family: 'Lato', Arial, sans-serif; font-size: 1rem; line-height: 1.8; color: #4d5b70; margin: 0 0 14px; }
-  .trajectory-card p:last-child { margin-bottom: 0; }
-  .trajectory-vector { background: linear-gradient(135deg, #1a3a6b 0%, #2a5298 100%); border-radius: 18px; padding: 28px; margin: 8px 0 18px; box-shadow: 0 10px 30px rgba(26,58,107,0.22); text-align: center; }
-  .trajectory-vector strong { display: block; font-family: 'Lato', Arial, sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.70); margin-bottom: 10px; }
-  .trajectory-vector p { font-family: 'Cinzel', Georgia, serif; font-size: clamp(1.1rem, 2.3vw, 1.55rem); color: #ffffff; margin: 0; letter-spacing: 0.05em; }
-  .trajectory-advantages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .trajectory-advantages.single-column { grid-template-columns: 1fr; }
-  .trajectory-advantage { position: relative; padding: 14px 16px 14px 44px; border-radius: 14px; background: rgba(255,255,255,0.78); border: 1px solid rgba(26,58,107,0.10); color: #334155; font-family: 'Lato', Arial, sans-serif; line-height: 1.65; }
-  .trajectory-advantage::before { content: ''; position: absolute; left: 16px; top: 18px; width: 12px; height: 12px; border-radius: 50%; background: #1a3a6b; box-shadow: 0 0 0 5px rgba(26,58,107,0.14); }
-  .trajectory-advantage strong { display: block; font-weight: 700; font-size: 0.92rem; color: #1a3a6b; letter-spacing: 0.03em; margin-bottom: 4px; }
-  .trajectory-advantage span { font-size: 0.97rem; color: #4d5b70; display: block; }
-  @media (max-width: 900px) { .trajectory-body { grid-template-columns: 1fr; } }
-  @media (max-width: 640px) { .trajectory-section { padding: 0 14px; } .trajectory-card { padding: 22px 18px 24px; } .trajectory-vector { padding: 22px 18px; } }
-</style>
-
 </head>
 <body>
 <header class="site-header">
@@ -994,41 +1028,59 @@
 
 
 <section class="trajectory-section" aria-labelledby="trajectory-title">
-  <div class="trajectory-head">
-    <h2 class="trajectory-title" id="trajectory-title">Trajectoire démocratique</h2>
-    <p class="trajectory-lead">Dans les démocraties actuelles, on vote pour des partis. Mais un parti, c’est souvent un mélange flou d’idées — un peu de tout, assez vague pour plaire au plus grand nombre, sans jamais vraiment assumer une direction claire. Résultat : les citoyens choisissent des représentants, mais perdent rapidement le contrôle de la direction réelle prise par leur gouvernement.</p>
-    <p class="trajectory-lead">La Démocratie Vectorielle à Coalitions de Factions propose une alternative fondée sur la clarté, la cohérence et la mesurabilité.</p>
-  </div>
-  <div class="trajectory-body">
-    <article class="trajectory-card">
-      <div class="trajectory-mini">Comment ça fonctionne</div>
-      <h3>1. Voter pour des factions, pas des partis</h3>
-      <p>Les citoyens votent pour des factions idéologiques pures — des courants de pensée clairs et assumés comme le capitalisme, l’écologisme, le progressisme, le libertarianisme, etc. — ou pour des coalitions de factions qui se forment naturellement selon les réalités sociales et politiques du moment.</p>
-      <h3>2. Un vecteur idéologique issu du vote</h3>
-      <p>L’ensemble des votes produit un vecteur idéologique national : un profil en pourcentages qui reflète exactement la composition des courants soutenus par la population.</p>
-      <div class="trajectory-vector">
-        <strong>Exemple</strong>
-        <p>76% capitaliste · 16% écologiste · 8% progressiste</p>
+  <article class="trajectory-premium">
+    <div class="trajectory-premium-head">
+      <div class="trajectory-kicker">Trajectoire démocratique</div>
+      <h2 class="trajectory-title" id="trajectory-title">Une grande carte éditoriale de direction collective</h2>
+      <div class="trajectory-intro">
+        <p>Dans les démocraties actuelles, on vote pour des partis. Mais un parti, c’est souvent un mélange flou d’idées — un peu de tout, assez vague pour plaire au plus grand nombre, sans jamais vraiment assumer une direction claire. Résultat : les citoyens choisissent des représentants, mais perdent rapidement le contrôle de la direction réelle prise par leur gouvernement.</p>
+        <p>La Démocratie Vectorielle à Coalitions de Factions propose une alternative fondée sur la clarté, la cohérence et la mesurabilité : on vote d’abord pour des courants idéologiques distincts, puis on laisse la composition réelle du vote définir la structure du pouvoir.</p>
       </div>
-      <p>Ce vecteur devient la boussole officielle de la législature.</p>
-      <h3>3. Des coalitions cohérentes avec la réalité sociale</h3>
-      <p>Les factions dont les valeurs sont compatibles se regroupent en coalitions de factions pour gouverner ensemble. Ces coalitions ne naissent pas de calculs stratégiques en arrière-scène — elles émergent des conditions sociales et politiques réelles, ce qui garantit une cohérence naturelle entre les alliés.</p>
-      <h3>4. Un contrôle de la trajectoire</h3>
-      <p>Un Organe de Cohérence Démocratique (OCD) indépendant surveille en permanence si les politiques mises en place — budgets, lois, réformes — respectent le profil idéologique issu du vote. En cas d’écart significatif, des mécanismes de correction sont déclenchés : rapports publics, débats obligatoires, ou référendum de réajustement.</p>
-    </article>
-
-    <article class="trajectory-card">
-      <div class="trajectory-mini">Pourquoi cette méthode est meilleure</div>
-      <div class="trajectory-advantages single-column">
-        <div class="trajectory-advantage"><strong>✔ Clarté idéologique</strong><span>Chaque faction sait exactement ce qu’elle défend. Chaque citoyen sait exactement pour quoi il vote. Plus de faux-semblants ni de promesses à géométrie variable.</span></div>
-        <div class="trajectory-advantage"><strong>✔ Représentation fidèle de la société</strong><span>Le vecteur idéologique capture la diversité réelle de la population. Toutes les sensibilités importantes ont un poids proportionnel dans les décisions, pas seulement celles du parti gagnant.</span></div>
-        <div class="trajectory-advantage"><strong>✔ Coalitions naturelles et stables</strong><span>Puisque les coalitions émergent des conditions sociopolitiques réelles plutôt qu’être bricolées après coup, elles sont fondées sur des affinités genuines — ce qui les rend plus cohérentes et plus durables.</span></div>
-        <div class="trajectory-advantage"><strong>✔ Une trajectoire mesurable</strong><span>Pour la première fois, on peut répondre à la question : est-ce que le gouvernement va vraiment là où les citoyens l’ont envoyé? La trajectoire démocratique devient observable, vérifiable, et corrigeable.</span></div>
-        <div class="trajectory-advantage"><strong>✔ Responsabilité par domaine de compétence</strong><span>Chaque élu porte un mandat idéologique dans son domaine. On sait toujours qui est responsable de quoi, et pourquoi une décision a été prise selon quel courant de pensée.</span></div>
-        <div class="trajectory-advantage"><strong>✔ Fin de la démocratie d’alternance stérile</strong><span>On sort du cycle de 4 ans où on change de parti sans jamais contrôler la direction réelle. La démocratie vectorielle instaure une démocratie de trajectoire : on choisit non seulement qui gouverne, mais où on va collectivement.</span></div>
+    </div>
+    <div class="trajectory-premium-grid">
+      <div class="trajectory-main">
+        <div class="trajectory-block">
+          <div class="trajectory-block-title">Comment ça fonctionne</div>
+          <div class="trajectory-step">
+            <h3>1. Voter pour des factions, pas des partis</h3>
+            <p>Les citoyens votent pour des factions idéologiques pures — des courants de pensée clairs et assumés comme le capitalisme, l’écologisme, le progressisme, le libertarianisme, etc. Le vote ne porte donc pas sur des coalitions. Celles-ci se forment seulement après le scrutin.</p>
+          </div>
+          <div class="trajectory-step">
+            <h3>2. Un vecteur idéologique issu du vote</h3>
+            <p>L’ensemble des votes produit un vecteur idéologique national : un profil en pourcentages qui reflète exactement la composition des courants soutenus par la population.</p>
+            <div class="trajectory-vector">
+              <strong>Exemple de vecteur</strong>
+              <p>76% capitaliste · 16% écologiste · 8% progressiste</p>
+            </div>
+            <p>Ce vecteur devient la boussole officielle de la législature. Il sert aussi à répartir de manière proportionnelle la quantité de représentants attribuée à chaque courant idéologique dans les institutions.</p>
+          </div>
+          <div class="trajectory-step">
+            <h3>3. Des coalitions formées après le vote</h3>
+            <p>Une fois la représentation proportionnelle établie à partir du vecteur, les factions dont les valeurs sont compatibles peuvent délibérer afin de former un gouvernement. Les coalitions émergent donc après le vote, à partir de la réalité idéologique exprimée par la population, et non avant lui.</p>
+            <p>Une délibération peut ensuite déterminer les fonctions de chaque proportion du nouveau gouvernement : quels représentants prennent quels ministères, quelles responsabilités et quels domaines d’action, en cohérence avec leur poids respectif dans le vecteur idéologique.</p>
+          </div>
+          <div class="trajectory-step">
+            <h3>4. Un contrôle de la trajectoire</h3>
+            <p>Un Organe de Cohérence Démocratique (OCD) indépendant surveille en permanence si les politiques mises en place — budgets, lois, réformes — respectent le profil idéologique issu du vote. En cas d’écart significatif, des mécanismes de correction sont déclenchés : rapports publics, débats obligatoires, ou référendum de réajustement.</p>
+          </div>
+        </div>
       </div>
-    </article>
-  </div>
+      <aside class="trajectory-side">
+        <div class="trajectory-block">
+          <div class="trajectory-block-title">Pourquoi cette méthode est meilleure</div>
+          <div class="trajectory-note">
+            <p>Cette méthode remplace la logique floue du parti par une logique de composition mesurable. Elle permet de voir non seulement qui entre au pouvoir, mais dans quelle proportion idéologique réelle la société souhaite avancer.</p>
+          </div>
+          <div class="trajectory-advantage"><strong>Clarté idéologique</strong><span>Chaque faction sait exactement ce qu’elle défend. Chaque citoyen sait exactement pour quoi il vote. Plus de faux-semblants ni de promesses à géométrie variable.</span></div>
+          <div class="trajectory-advantage"><strong>Représentation fidèle de la société</strong><span>Le vecteur idéologique capture la diversité réelle de la population. Toutes les sensibilités importantes ont un poids proportionnel dans les représentants et dans la formation du pouvoir, pas seulement dans le camp dominant.</span></div>
+          <div class="trajectory-advantage"><strong>Coalitions naturelles et cohérentes</strong><span>Comme les coalitions se forment après le vote, elles découlent d’abord de la représentation réelle produite par le vecteur. Elles reposent donc sur des compatibilités idéologiques observables plutôt que sur des alliances électorales artificielles.</span></div>
+          <div class="trajectory-advantage"><strong>Une trajectoire mesurable</strong><span>Pour la première fois, on peut répondre à la question : est-ce que le gouvernement va vraiment là où les citoyens l’ont envoyé? La trajectoire démocratique devient observable, vérifiable, et corrigeable.</span></div>
+          <div class="trajectory-advantage"><strong>Responsabilité par domaine de compétence</strong><span>La délibération postélectorale permet d’attribuer les fonctions de gouvernement selon le poids de chaque courant. On sait alors qui est responsable de quoi, et pourquoi une décision a été prise selon quelle orientation idéologique.</span></div>
+          <div class="trajectory-advantage"><strong>Fin de la démocratie d’alternance stérile</strong><span>On sort du cycle de 4 ans où on change de parti sans jamais contrôler la direction réelle. La démocratie vectorielle instaure une démocratie de trajectoire : on choisit non seulement qui gouverne, mais où on va collectivement.</span></div>
+        </div>
+      </aside>
+    </div>
+  </article>
 </section>
 
 <main class="vote-wrap">
