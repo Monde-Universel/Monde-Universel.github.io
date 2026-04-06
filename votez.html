@@ -996,6 +996,36 @@
     background: linear-gradient(135deg, #880e4f 0%, #c2185b 100%);
     box-shadow: 0 10px 24px rgba(173,20,87,0.30);
   }
+
+  /* ── Socialisme (bordeaux) ── */
+  .vote-card.bordeaux { border-top: 8px solid #8c1a2e; }
+  .vote-card.bordeaux .vote-badge {
+    background: rgba(140,26,46,0.12); color: #6a121e;
+    border: 1px solid rgba(140,26,46,0.28);
+  }
+  .vote-card.bordeaux .vote-list li::before {
+    background: #8c1a2e;
+    box-shadow: 0 0 0 5px rgba(140,26,46,0.14);
+  }
+  .vote-card.bordeaux .vote-btn {
+    background: linear-gradient(135deg, #6e1424 0%, #a82236 100%);
+    box-shadow: 0 10px 24px rgba(140,26,46,0.30);
+  }
+
+  /* ── Transhumanisme (argent) ── */
+  .vote-card.argent { border-top: 8px solid #536878; }
+  .vote-card.argent .vote-badge {
+    background: rgba(83,104,120,0.12); color: #344f60;
+    border: 1px solid rgba(83,104,120,0.28);
+  }
+  .vote-card.argent .vote-list li::before {
+    background: #536878;
+    box-shadow: 0 0 0 5px rgba(83,104,120,0.14);
+  }
+  .vote-card.argent .vote-btn {
+    background: linear-gradient(135deg, #3d5060 0%, #7090a8 100%);
+    box-shadow: 0 10px 24px rgba(83,104,120,0.30);
+  }
 </style>
 
 </head>
@@ -1023,7 +1053,7 @@
 <section class="vote-hero">
   <div class="vote-kicker" data-i18n="voteKicker">Choix de gouvernance</div>
   <h1 class="vote-title" data-i18n="voteTitle">Votez pour le système à adopter</h1>
-  <p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais douze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme et progressisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
+  <p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quatorze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme et transhumanisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
 </section>
 
 
@@ -1303,6 +1333,42 @@
       </div>
     </article>
 
+    <article class="vote-card bordeaux">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/d8caa6d5-1e4d-4e07-92dc-4ece55201384.png" alt="Illustration du clan Socialisme" width="1024" height="1280" loading="lazy">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="socialismBadge">Clan bordeaux</span>
+        <h2 data-i18n="socialismTitle">Socialisme</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="socialismDesc">Un paradigme fondé sur la propriété collective des moyens de production, la redistribution des richesses, la solidarité de classe et la primauté du bien commun sur le profit individuel.</p>
+        <ul class="vote-list">
+          <li data-i18n="socialismPoint1">Nationaliser les industries stratégiques et redistribuer équitablement les fruits du travail collectif.</li>
+          <li data-i18n="socialismPoint2">Placer la justice sociale et l'égalité économique au centre de l'organisation politique et institutionnelle.</li>
+          <li data-i18n="socialismPoint3">Faire de la solidarité de classe et de la lutte contre les inégalités structurelles le moteur du changement.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Socialisme" data-vote-key="socialism" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
+    <article class="vote-card argent">
+      <div class="vote-photo">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/fd01248c-ebc8-463b-874d-ef58dc002ce3.png" alt="Illustration du clan Transhumanisme" width="1024" height="1280" loading="lazy">
+      </div>
+      <div class="vote-content">
+        <span class="vote-badge" data-i18n="transhumanismBadge">Clan argent</span>
+        <h2 data-i18n="transhumanismTitle">Transhumanisme</h2>
+        <div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+        <p class="vote-desc" data-i18n="transhumanismDesc">Un paradigme fondé sur le dépassement des limites biologiques humaines par la technologie, l'augmentation cognitive et physique, et la redéfinition de l'humanité à travers la convergence homme-machine.</p>
+        <ul class="vote-list">
+          <li data-i18n="transhumanismPoint1">Accélérer la convergence technologique pour augmenter les capacités humaines au-delà de leurs limites naturelles.</li>
+          <li data-i18n="transhumanismPoint2">Mettre la recherche en intelligence artificielle, biotechnologie et cybernétique au service de l'évolution humaine.</li>
+          <li data-i18n="transhumanismPoint3">Faire de la maîtrise technologique de la condition humaine le nouveau horizon de la civilisation.</li>
+        </ul>
+        <button class="vote-btn" type="button" data-vote="Transhumanisme" data-vote-key="transhumanism" data-i18n="voteButton">Votez</button>
+      </div>
+    </article>
+
   <div class="vote-feedback" id="voteFeedback" aria-live="polite">
     <h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
     <p id="voteFeedbackText" data-i18n="feedbackDefault">Votre choix apparaîtra ici après le clic sur un bouton.</p>
@@ -1337,7 +1403,7 @@
       footer: 'Parce que personne ne devrait être laissé derrière',
       voteKicker: 'Choix de gouvernance',
       voteTitle: 'Votez pour le système à adopter',
-      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais douze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme et progressisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
+      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quatorze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme et transhumanisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
       promisesTitle: 'Promesses idéologiques',
       capitalismBadge: 'Clan rouge',
       capitalismTitle: 'Capitalisme',
@@ -1413,6 +1479,18 @@
       progressismPoint1: 'Réformer les institutions pour éliminer les inégalités systémiques et garantir l\'égalité réelle des chances.',
       progressismPoint2: 'Élargir les droits civiques, sociaux et économiques à tous les groupes historiquement marginalisés.',
       progressismPoint3: 'Faire du changement social actif et continu la condition d\'une société plus juste et plus inclusive.',
+      socialismBadge: 'Clan bordeaux',
+      socialismTitle: 'Socialisme',
+      socialismDesc: "Un paradigme fondé sur la propriété collective des moyens de production, la redistribution des richesses, la solidarité de classe et la primauté du bien commun sur le profit individuel.",
+      socialismPoint1: "Nationaliser les industries stratégiques et redistribuer équitablement les fruits du travail collectif.",
+      socialismPoint2: "Placer la justice sociale et l'égalité économique au centre de l'organisation politique et institutionnelle.",
+      socialismPoint3: "Faire de la solidarité de classe et de la lutte contre les inégalités structurelles le moteur du changement.",
+      transhumanismBadge: 'Clan argent',
+      transhumanismTitle: 'Transhumanisme',
+      transhumanismDesc: "Un paradigme fondé sur le dépassement des limites biologiques humaines par la technologie, l'augmentation cognitive et physique, et la redéfinition de l'humanité à travers la convergence homme-machine.",
+      transhumanismPoint1: "Accélérer la convergence technologique pour augmenter les capacités humaines au-delà de leurs limites naturelles.",
+      transhumanismPoint2: "Mettre la recherche en intelligence artificielle, biotechnologie et cybernétique au service de l'évolution humaine.",
+      transhumanismPoint3: "Faire de la maîtrise technologique de la condition humaine le nouveau horizon de la civilisation.",
       voteButton: 'Votez',
       voteFinalCall: 'Il NE MANQUE PLUS QUE VOUS!',
       feedbackTitle: 'Intention de vote enregistrée',
@@ -1437,7 +1515,7 @@
       footer: 'Because no one should be left behind',
       voteKicker: 'Governance choice',
       voteTitle: 'Vote for the system to adopt',
-      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering twelve distinct choices: capitalism, universalism, communism, fascism, authoritarism, liberalism, anarchism, ecologism, conservatism, nationalism, libertarianism, and progressivism. Compare the ideological promises of each paradigm before casting your vote.',
+      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering fourteen distinct choices: capitalism, universalism, communism, fascism, authoritarism, liberalism, anarchism, ecologism, conservatism, nationalism, libertarianism, progressivism, socialism, and transhumanism. Compare the ideological promises of each paradigm before casting your vote.',
       promisesTitle: 'Ideological promises',
       capitalismBadge: 'Red faction',
       capitalismTitle: 'Capitalism',
@@ -1511,6 +1589,18 @@
       progressismPoint1: 'Reform institutions to eliminate systemic inequalities and guarantee real equality of opportunity.',
       progressismPoint2: 'Expand civil, social, and economic rights to all historically marginalized groups.',
       progressismPoint3: 'Make active and continuous social change the condition of a more just and inclusive society.',
+      socialismBadge: 'Bordeaux faction',
+      socialismTitle: 'Socialism',
+      socialismDesc: 'A paradigm based on collective ownership of the means of production, redistribution of wealth, class solidarity, and the primacy of the common good over individual profit.',
+      socialismPoint1: 'Nationalize strategic industries and equitably redistribute the fruits of collective labor.',
+      socialismPoint2: 'Place social justice and economic equality at the center of political and institutional organization.',
+      socialismPoint3: 'Make class solidarity and the fight against structural inequalities the engine of change.',
+      transhumanismBadge: 'Silver faction',
+      transhumanismTitle: 'Transhumanism',
+      transhumanismDesc: 'A paradigm based on transcending human biological limits through technology, cognitive and physical augmentation, and the redefinition of humanity through the human-machine convergence.',
+      transhumanismPoint1: 'Accelerate technological convergence to enhance human capabilities beyond their natural limits.',
+      transhumanismPoint2: 'Deploy research in artificial intelligence, biotechnology, and cybernetics in service of human evolution.',
+      transhumanismPoint3: 'Make the technological mastery of the human condition the new horizon of civilization.',
       voteButton: 'Vote',
       voteFinalCall: 'ALL THAT IS MISSING IS YOU!',
       feedbackTitle: 'Voting intent recorded',
@@ -1532,7 +1622,9 @@
       conservatism: 'Conservatisme',
       nationalism: 'Nationalisme',
       libertarianism: 'Libertarianisme',
-      progressism: 'Progressisme'
+      progressism: 'Progressisme',
+      socialism: 'Socialisme',
+      transhumanism: 'Transhumanisme'
     },
     en: {
       capitalism: 'Capitalism',
@@ -1546,7 +1638,9 @@
       conservatism: 'Conservatism',
       nationalism: 'Nationalism',
       libertarianism: 'Libertarianism',
-      progressism: 'Progressivism'
+      progressism: 'Progressivism',
+      socialism: 'Socialism',
+      transhumanism: 'Transhumanism'
     }
   };
 
