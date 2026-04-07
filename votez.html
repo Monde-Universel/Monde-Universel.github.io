@@ -1675,13 +1675,22 @@
     }
   };
 
-document.querySelectorAll('[data-vote-key]').forEach((btn) => {
+function getActiveLang() {
+    if (typeof window.umGetLang === 'function') {
+      return window.umGetLang();
+    }
+    return document.documentElement.lang === 'en' ? 'en' : 'fr';
+  }
+
+  document.querySelectorAll('[data-vote-key]').forEach((btn) => {
     btn.addEventListener('click', () => {
+      const lang = getActiveLang();
       const key = btn.getAttribute('data-vote-key');
-      const choice = voteChoiceLabels[currentLang][key] || btn.getAttribute('data-vote');
+      const choice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][key]) || btn.getAttribute('data-vote');
       const box = document.getElementById('voteFeedback');
       const text = document.getElementById('voteFeedbackText');
-      text.textContent = translations[currentLang].feedbackSelected.replace('{choice}', choice);
+      if (!box || !text) return;
+      text.textContent = translations[lang].feedbackSelected.replace('{choice}', choice);
       box.classList.add('active');
       box.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
