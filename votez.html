@@ -692,6 +692,7 @@
   }
   .vote-card.red { border-top: 8px solid #c62828; }
   .vote-card.blue { border-top: 8px solid #1565c0; }
+  .vote-card.or { border-top: 8px solid #c89b2b; }
   .vote-photo {
     aspect-ratio: 4 / 5;
     background: #dbeaf7;
@@ -737,6 +738,11 @@
     background: rgba(21,101,192,0.12);
     color: #114b8f;
     border: 1px solid rgba(21,101,192,0.24);
+  }
+  .vote-card.or .vote-badge {
+    background: rgba(200,155,43,0.12);
+    color: #8a6513;
+    border: 1px solid rgba(200,155,43,0.24);
   }
   .vote-content h2 {
     font-family: 'Cinzel', Georgia, serif;
@@ -796,6 +802,10 @@
     background: #1565c0;
     box-shadow: 0 0 0 5px rgba(21,101,192,0.14);
   }
+  .vote-card.or .vote-list li::before {
+    background: #c89b2b;
+    box-shadow: 0 0 0 5px rgba(200,155,43,0.14);
+  }
   .vote-btn {
     margin-top: auto;
     border: none;
@@ -817,6 +827,10 @@
   .vote-card.blue .vote-btn {
     background: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%);
     box-shadow: 0 10px 24px rgba(21,101,192,0.28);
+  }
+  .vote-card.or .vote-btn {
+    background: linear-gradient(135deg, #c89b2b 0%, #e2b94b 100%);
+    box-shadow: 0 10px 24px rgba(200,155,43,0.28);
   }
   .vote-btn:hover { transform: translateY(-2px); filter: brightness(1.04); }
   .vote-feedback {
@@ -1053,7 +1067,7 @@
 <section class="vote-hero">
 <div class="vote-kicker" data-i18n="voteKicker">Choix de gouvernance</div>
 <h1 class="vote-title" data-i18n="voteTitle">Votez pour le système à adopter</h1>
-<p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quatorze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme et transhumanisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
+<p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quinze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme et cohérentisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
 </section>
 <section aria-labelledby="trajectory-title" class="trajectory-section">
 <article class="trajectory-premium">
@@ -1353,6 +1367,24 @@
 <button class="vote-btn" data-i18n="voteButton" data-vote="Transhumanisme" data-vote-key="transhumanism" type="button">Votez</button>
 </div>
 </article>
+<article class="vote-card or">
+<div class="vote-photo">
+<img alt="Illustration du clan Cohérentisme" height="1280" loading="lazy" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/309e96ba-9b4f-4826-81ff-cda9cb1c3998.png" width="1024"/>
+</div>
+<div class="vote-content">
+<span class="vote-badge" data-i18n="coherentismBadge">Clan doré</span>
+<h2 data-i18n="coherentismTitle">Cohérentisme</h2>
+<div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+<p class="vote-desc" data-i18n="coherentismDesc">Une doctrine de réalignement systémique fondée sur la cohérence entre les valeurs déclarées, les institutions, les centres de pouvoir et les conséquences concrètes vécues par la population.</p>
+<ul class="vote-list">
+<li data-i18n="coherentismPoint1">Réconcilier l'élite et la masse par des mécanismes de responsabilité bidirectionnelle, afin que le pouvoir cesse de planer au-dessus du réel.</li>
+<li data-i18n="coherentismPoint2">Détecter et corriger les incohérences entre discours, lois, budgets et résultats mesurables avant qu'elles ne dégénèrent en crises structurelles.</li>
+<li data-i18n="coherentismPoint3">Aligner l'innovation technologique, la dignité humaine et la protection du vivant pour mettre la puissance systémique au service du bien commun.</li>
+</ul>
+<button class="vote-btn" data-i18n="voteButton" data-vote="Cohérentisme" data-vote-key="coherentism" type="button">Votez</button>
+</div>
+</article>
+
 <div aria-live="polite" class="vote-feedback" id="voteFeedback">
 <h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
 <p data-i18n="feedbackDefault" id="voteFeedbackText">Votre choix apparaîtra ici après le clic sur un bouton.</p>
@@ -1655,7 +1687,8 @@
       libertarianism: 'Libertarianisme',
       progressism: 'Progressisme',
       socialism: 'Socialisme',
-      transhumanism: 'Transhumanisme'
+      transhumanism: 'Transhumanisme',
+      coherentism: 'Cohérentisme'
     },
     en: {
       capitalism: 'Capitalism',
@@ -1671,19 +1704,25 @@
       libertarianism: 'Libertarianism',
       progressism: 'Progressivism',
       socialism: 'Socialism',
-      transhumanism: 'Transhumanism'
+      transhumanism: 'Transhumanism',
+      coherentism: 'Coherentism'
     }
   };
 
 document.querySelectorAll('[data-vote-key]').forEach((btn) => {
     btn.addEventListener('click', () => {
+      const lang = (typeof currentLang !== 'undefined' && translations[currentLang]) ? currentLang : (document.documentElement.lang === 'en' ? 'en' : 'fr');
       const key = btn.getAttribute('data-vote-key');
-      const choice = voteChoiceLabels[currentLang][key] || btn.getAttribute('data-vote');
+      const choice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][key]) || btn.getAttribute('data-vote');
       const box = document.getElementById('voteFeedback');
       const text = document.getElementById('voteFeedbackText');
-      text.textContent = translations[currentLang].feedbackSelected.replace('{choice}', choice);
-      box.classList.add('active');
-      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (text && translations[lang] && translations[lang].feedbackSelected) {
+        text.textContent = translations[lang].feedbackSelected.replace('{choice}', choice);
+      }
+      if (box) {
+        box.classList.add('active');
+        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     });
   });
 
