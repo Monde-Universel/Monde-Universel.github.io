@@ -1067,7 +1067,7 @@
 <section class="vote-hero">
 <div class="vote-kicker" data-i18n="voteKicker">Choix de gouvernance</div>
 <h1 class="vote-title" data-i18n="voteTitle">Votez pour le système à adopter</h1>
-<p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quinze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme et cohérentisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
+<p class="vote-intro" data-i18n="voteIntro" id="voteIntroText">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quinze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme et cohérentisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
 </section>
 <section aria-labelledby="trajectory-title" class="trajectory-section">
 <article class="trajectory-premium">
@@ -1386,7 +1386,7 @@
 </article>
 
 <div aria-live="polite" class="vote-feedback" id="voteFeedback">
-<h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
+<h3 data-i18n="feedbackTitle" id="voteFeedbackTitle">Intention de vote enregistrée</h3>
 <p id="voteFeedbackText">Votre choix apparaîtra ici après le clic sur un bouton.</p>
 <p class="vote-final-call" data-i18n="voteFinalCall" id="voteFinalCall">Il NE MANQUE PLUS QUE VOUS!</p>
 </div>
@@ -1412,7 +1412,7 @@
       footer: 'Parce que personne ne devrait être laissé derrière',
       voteKicker: 'Choix de gouvernance',
       voteTitle: 'Votez pour le système à adopter',
-      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quatorze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme et transhumanisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
+      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quinze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme et cohérentisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
       promisesTitle: 'Promesses idéologiques',
       capitalismBadge: 'Clan rouge',
       capitalismTitle: 'Capitalisme',
@@ -1721,55 +1721,72 @@
     }
   };
 
+let votePageLang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+
+function renderVoteUI(lang) {
+  var intro = document.getElementById('voteIntroText');
+  var feedbackTitle = document.getElementById('voteFeedbackTitle');
+  var feedbackText = document.getElementById('voteFeedbackText');
+  var finalCall = document.getElementById('voteFinalCall');
+  var box = document.getElementById('voteFeedback');
+
+  if (intro && translations[lang] && translations[lang].voteIntro) {
+    intro.textContent = translations[lang].voteIntro;
+  }
+  if (feedbackTitle && translations[lang] && translations[lang].feedbackTitle) {
+    feedbackTitle.textContent = translations[lang].feedbackTitle;
+  }
+  if (finalCall && translations[lang] && translations[lang].voteFinalCall) {
+    finalCall.textContent = translations[lang].voteFinalCall;
+  }
+  if (!feedbackText) return;
+
+  if (box && box.classList.contains('active')) {
+    var selectedKey = box.getAttribute('data-selected-key');
+    if (selectedKey && translations[lang] && translations[lang].feedbackSelected) {
+      var localizedChoice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][selectedKey]) || selectedKey;
+      feedbackText.textContent = translations[lang].feedbackSelected.replace('{choice}', localizedChoice);
+      return;
+    }
+  }
+
+  if (translations[lang] && translations[lang].feedbackDefault) {
+    feedbackText.textContent = translations[lang].feedbackDefault;
+  }
+}
+
 document.querySelectorAll('[data-vote-key]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const lang = (typeof currentLang !== 'undefined' && translations[currentLang]) ? currentLang : (document.documentElement.lang === 'en' ? 'en' : 'fr');
-      const key = btn.getAttribute('data-vote-key');
-      const choice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][key]) || btn.getAttribute('data-vote');
-      const box = document.getElementById('voteFeedback');
-      const feedbackText = document.getElementById('voteFeedbackText');
-      if (box) {
-        box.setAttribute('data-selected-key', key);
-        box.classList.add('active');
-      }
-      if (feedbackText && translations[lang] && translations[lang].feedbackSelected) {
-        feedbackText.textContent = translations[lang].feedbackSelected.replace('{choice}', choice);
-      }
-      if (box) {
-        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
-  });
-
-
-
-  // Écoute les changements de langue déclenchés par nav.js
-  document.addEventListener('umLangChange', function (e) {
-    var lang = e.detail.lang;
-    document.querySelectorAll('[data-i18n]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n');
-      if (translations[lang] && translations[lang][key] !== undefined) {
-        el.innerHTML = translations[lang][key];
-      }
-    });
-
-    var feedbackText = document.getElementById('voteFeedbackText');
-    var box = document.getElementById('voteFeedback');
-    if (!feedbackText) return;
-
-    if (box && box.classList.contains('active')) {
-      var selectedKey = box.getAttribute('data-selected-key');
-      if (selectedKey && translations[lang] && translations[lang].feedbackSelected) {
-        var localizedChoice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][selectedKey]) || selectedKey;
-        feedbackText.textContent = translations[lang].feedbackSelected.replace('{choice}', localizedChoice);
-        return;
-      }
+  btn.addEventListener('click', () => {
+    const key = btn.getAttribute('data-vote-key');
+    const box = document.getElementById('voteFeedback');
+    if (box) {
+      box.setAttribute('data-selected-key', key);
+      box.classList.add('active');
     }
-
-    if (translations[lang] && translations[lang].feedbackDefault) {
-      feedbackText.textContent = translations[lang].feedbackDefault;
+    renderVoteUI(votePageLang);
+    if (box) {
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   });
+});
+
+// Écoute les changements de langue déclenchés par nav.js
+document.addEventListener('umLangChange', function (e) {
+  var lang = e.detail.lang === 'en' ? 'en' : 'fr';
+  votePageLang = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+
+  renderVoteUI(lang);
+});
+
+renderVoteUI(votePageLang);
 </script>
 </body>
 </html>
