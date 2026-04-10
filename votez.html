@@ -1387,7 +1387,7 @@
 
 <div aria-live="polite" class="vote-feedback" id="voteFeedback">
 <h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
-<p data-i18n="feedbackDefault" id="voteFeedbackText">Votre choix apparaîtra ici après le clic sur un bouton.</p>
+<p id="voteFeedbackText">Votre choix apparaîtra ici après le clic sur un bouton.</p>
 <p class="vote-final-call" data-i18n="voteFinalCall" id="voteFinalCall">Il NE MANQUE PLUS QUE VOUS!</p>
 </div>
 </main>
@@ -1755,11 +1755,13 @@ document.querySelectorAll('[data-vote-key]').forEach((btn) => {
 
     var box = document.getElementById('voteFeedback');
     var feedbackText = document.getElementById('voteFeedbackText');
-    if (box && box.classList.contains('active') && feedbackText) {
-      var activeChoice = box.getAttribute('data-selected-key');
-      if (activeChoice && translations[lang] && translations[lang].feedbackSelected) {
-        var localizedChoice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][activeChoice]) || activeChoice;
-        feedbackText.textContent = translations[lang].feedbackSelected.replace('{choice}', localizedChoice);
+    if (feedbackText) {
+      if (box && box.classList.contains('active')) {
+        var activeChoice = box.getAttribute('data-selected-key');
+        if (activeChoice && translations[lang] && translations[lang].feedbackSelected) {
+          var localizedChoice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][activeChoice]) || activeChoice;
+          feedbackText.textContent = translations[lang].feedbackSelected.replace('{choice}', localizedChoice);
+        }
       } else if (translations[lang] && translations[lang].feedbackDefault) {
         feedbackText.textContent = translations[lang].feedbackDefault;
       }
