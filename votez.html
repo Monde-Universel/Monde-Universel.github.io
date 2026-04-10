@@ -1728,6 +1728,9 @@ document.querySelectorAll('[data-vote-key]').forEach((btn) => {
       const choice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][key]) || btn.getAttribute('data-vote');
       const box = document.getElementById('voteFeedback');
       const text = document.getElementById('voteFeedbackText');
+      if (box) {
+        box.setAttribute('data-selected-key', key);
+      }
       if (text && translations[lang] && translations[lang].feedbackSelected) {
         text.textContent = translations[lang].feedbackSelected.replace('{choice}', choice);
       }
@@ -1753,16 +1756,9 @@ document.querySelectorAll('[data-vote-key]').forEach((btn) => {
     var box = document.getElementById('voteFeedback');
     var feedbackText = document.getElementById('voteFeedbackText');
     if (box && box.classList.contains('active') && feedbackText) {
-      var activeChoice = null;
-      Object.keys(voteChoiceLabels.fr).forEach(function (key) {
-        var frLabel = voteChoiceLabels.fr[key];
-        var enLabel = voteChoiceLabels.en[key];
-        if (feedbackText.textContent.indexOf(frLabel) !== -1 || feedbackText.textContent.indexOf(enLabel) !== -1) {
-          activeChoice = key;
-        }
-      });
+      var activeChoice = box.getAttribute('data-selected-key');
       if (activeChoice && translations[lang] && translations[lang].feedbackSelected) {
-        var localizedChoice = voteChoiceLabels[lang][activeChoice] || activeChoice;
+        var localizedChoice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][activeChoice]) || activeChoice;
         feedbackText.textContent = translations[lang].feedbackSelected.replace('{choice}', localizedChoice);
       } else if (translations[lang] && translations[lang].feedbackDefault) {
         feedbackText.textContent = translations[lang].feedbackDefault;
