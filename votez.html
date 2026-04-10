@@ -692,7 +692,6 @@
   }
   .vote-card.red { border-top: 8px solid #c62828; }
   .vote-card.blue { border-top: 8px solid #1565c0; }
-  .vote-card.or { border-top: 8px solid #c89b2b; }
   .vote-photo {
     aspect-ratio: 4 / 5;
     background: #dbeaf7;
@@ -738,11 +737,6 @@
     background: rgba(21,101,192,0.12);
     color: #114b8f;
     border: 1px solid rgba(21,101,192,0.24);
-  }
-  .vote-card.or .vote-badge {
-    background: rgba(200,155,43,0.12);
-    color: #8a6513;
-    border: 1px solid rgba(200,155,43,0.24);
   }
   .vote-content h2 {
     font-family: 'Cinzel', Georgia, serif;
@@ -802,10 +796,6 @@
     background: #1565c0;
     box-shadow: 0 0 0 5px rgba(21,101,192,0.14);
   }
-  .vote-card.or .vote-list li::before {
-    background: #c89b2b;
-    box-shadow: 0 0 0 5px rgba(200,155,43,0.14);
-  }
   .vote-btn {
     margin-top: auto;
     border: none;
@@ -827,10 +817,6 @@
   .vote-card.blue .vote-btn {
     background: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%);
     box-shadow: 0 10px 24px rgba(21,101,192,0.28);
-  }
-  .vote-card.or .vote-btn {
-    background: linear-gradient(135deg, #c89b2b 0%, #e2b94b 100%);
-    box-shadow: 0 10px 24px rgba(200,155,43,0.28);
   }
   .vote-btn:hover { transform: translateY(-2px); filter: brightness(1.04); }
   .vote-feedback {
@@ -1067,7 +1053,7 @@
 <section class="vote-hero">
 <div class="vote-kicker" data-i18n="voteKicker">Choix de gouvernance</div>
 <h1 class="vote-title" data-i18n="voteTitle">Votez pour le système à adopter</h1>
-<p class="vote-intro" data-i18n="voteIntro" id="voteIntroText">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quinze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme et cohérentisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
+<p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quatorze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme et transhumanisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
 </section>
 <section aria-labelledby="trajectory-title" class="trajectory-section">
 <article class="trajectory-premium">
@@ -1091,7 +1077,7 @@
 </div>
 <div class="trajectory-step">
 <h3 data-i18n="trajStep2Title">2. Vote de faction — Exprimer la direction collective</h3>
-<p data-i18n="trajStep2Text1">Une fois les sept factions légitimées et inscrites au scrutin, chaque citoyen vote librement pour le courant idéologique de son choix parmi elles. L’ensemble de ces votes produit un vecteur idéologique national : un profil en pourcentages qui reflète avec précision la composition de la volonté collective.</p>
+<p data-i18n="trajStep2Text1">Une fois les sept factions légitimées et inscrites au scrutin, chaque citoyen vote librement pour le courant idéologique de son choix parmi elles. L’ensemble de ces votes produit un vecteur idéologique national : un profil en pourcentages qui reflète avec précision la composition de la volonté collective. Pour pouvoir être incluse dans le vecteur, une faction doit toutefois atteindre un minimum de 5 % du vote.</p>
 <div class="trajectory-vector">
 <strong data-i18n="trajVectorLabel">Exemple de vecteur</strong>
 <p data-i18n="trajVectorExample">38 % écologiste · 24 % progressiste · 20 % socialiste · 10 % libertarien · 8 % capitaliste</p>
@@ -1367,27 +1353,9 @@
 <button class="vote-btn" data-i18n="voteButton" data-vote="Transhumanisme" data-vote-key="transhumanism" type="button">Votez</button>
 </div>
 </article>
-<article class="vote-card or">
-<div class="vote-photo">
-<img alt="Illustration du clan Cohérentisme" height="1280" loading="lazy" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/309e96ba-9b4f-4826-81ff-cda9cb1c3998.png" width="1024"/>
-</div>
-<div class="vote-content">
-<span class="vote-badge" data-i18n="coherentismBadge">Clan doré</span>
-<h2 data-i18n="coherentismTitle">Cohérentisme</h2>
-<div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
-<p class="vote-desc" data-i18n="coherentismDesc">Une doctrine de réalignement systémique fondée sur la cohérence entre les valeurs déclarées, les institutions, les centres de pouvoir et les conséquences concrètes vécues par la population.</p>
-<ul class="vote-list">
-<li data-i18n="coherentismPoint1">Réconcilier l'élite et la masse par des mécanismes de responsabilité bidirectionnelle, afin que le pouvoir cesse de planer au-dessus du réel.</li>
-<li data-i18n="coherentismPoint2">Détecter et corriger les incohérences entre discours, lois, budgets et résultats mesurables avant qu'elles ne dégénèrent en crises structurelles.</li>
-<li data-i18n="coherentismPoint3">Aligner l'innovation technologique, la dignité humaine et la protection du vivant pour mettre la puissance systémique au service du bien commun.</li>
-</ul>
-<button class="vote-btn" data-i18n="voteButton" data-vote="Cohérentisme" data-vote-key="coherentism" type="button">Votez</button>
-</div>
-</article>
-
 <div aria-live="polite" class="vote-feedback" id="voteFeedback">
-<h3 data-i18n="feedbackTitle" id="voteFeedbackTitle">Intention de vote enregistrée</h3>
-<p id="voteFeedbackText">Votre choix apparaîtra ici après le clic sur un bouton.</p>
+<h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
+<p data-i18n="feedbackDefault" id="voteFeedbackText">Votre choix apparaîtra ici après le clic sur un bouton.</p>
 <p class="vote-final-call" data-i18n="voteFinalCall" id="voteFinalCall">Il NE MANQUE PLUS QUE VOUS!</p>
 </div>
 </main>
@@ -1412,7 +1380,7 @@
       footer: 'Parce que personne ne devrait être laissé derrière',
       voteKicker: 'Choix de gouvernance',
       voteTitle: 'Votez pour le système à adopter',
-      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quinze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme et cohérentisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
+      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quatorze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme et transhumanisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
       promisesTitle: 'Promesses idéologiques',
       capitalismBadge: 'Clan rouge',
       capitalismTitle: 'Capitalisme',
@@ -1500,12 +1468,6 @@
       transhumanismPoint1: "Accélérer la convergence technologique pour augmenter les capacités humaines au-delà de leurs limites naturelles.",
       transhumanismPoint2: "Mettre la recherche en intelligence artificielle, biotechnologie et cybernétique au service de l'évolution humaine.",
       transhumanismPoint3: "Faire de la maîtrise technologique de la condition humaine le nouveau horizon de la civilisation.",
-      coherentismBadge: 'Clan doré',
-      coherentismTitle: 'Cohérentisme',
-      coherentismDesc: 'Une doctrine de réalignement systémique fondée sur la cohérence entre les valeurs déclarées, les institutions, les centres de pouvoir et les conséquences concrètes vécues par la population.',
-      coherentismPoint1: 'Réconcilier l\'élite et la masse par des mécanismes de responsabilité bidirectionnelle, afin que le pouvoir cesse de planer au-dessus du réel.',
-      coherentismPoint2: 'Détecter et corriger les incohérences entre discours, lois, budgets et résultats mesurables avant qu\'elles ne dégénèrent en crises structurelles.',
-      coherentismPoint3: 'Aligner l\'innovation technologique, la dignité humaine et la protection du vivant pour mettre la puissance systémique au service du bien commun.',
             trajKicker: 'Trajectoire démocratique',
       trajTitle: 'Une grande carte électorale de direction collective',
       trajIntro1: 'Dans les démocraties actuelles, on vote pour des partis. Mais un parti, c’est souvent un mélange flou d’idées — un peu de tout, assez vague pour plaire au plus grand nombre, sans jamais vraiment assumer une direction claire. Résultat : les citoyens choisissent des représentants, mais perdent rapidement le contrôle de la direction réelle prise par leur gouvernement.',
@@ -1516,7 +1478,7 @@
       trajStep1Text: 'En premier lieu, toute la population est appelée à voter pour constituer la carte électorale : les sept factions qui recueillent le plus grand soutien de l’opinion publique obtiennent chacune un siège de scrutin. Ce premier tour ne porte pas sur des individus ni sur des politiques concrètes — il détermine uniquement quels courants idéologiques méritent d’être représentés. La société décide collectivement de son spectre idéologique avant même de choisir sa direction.',
       trajStep1TextB: 'En cas d’égalité parfaite entre deux factions ou plus pour la septième position, la population entière est rappelée au scrutin — mais uniquement pour départager les factions concernées. Les six positions déjà acquises restent intactes. Cette règle s’applique également à trois décomptes identiques ou plus, sans modifier la procédure.',
       trajStep2Title: '2. Vote de faction — Exprimer la direction collective',
-      trajStep2Text1: 'Une fois les sept factions légitimées et inscrites au scrutin, chaque citoyen vote librement pour le courant idéologique de son choix parmi elles. L’ensemble de ces votes produit un vecteur idéologique national : un profil en pourcentages qui reflète avec précision la composition de la volonté collective.',
+      trajStep2Text1: 'Une fois les sept factions légitimées et inscrites au scrutin, chaque citoyen vote librement pour le courant idéologique de son choix parmi elles. L’ensemble de ces votes produit un vecteur idéologique national : un profil en pourcentages qui reflète avec précision la composition de la volonté collective. Pour pouvoir être incluse dans le vecteur, une faction doit toutefois atteindre un minimum de 5 % du vote.',
       trajVectorLabel: 'Exemple de vecteur',
       trajVectorExample: '38 % écologiste · 24 % progressiste · 20 % socialiste · 10 % libertarien · 8 % capitaliste',
       trajStep2Text2: 'Ce vecteur devient la boussole officielle de la législature. Il détermine la répartition proportionnelle des représentants de chaque faction dans les institutions, et sert tout au long du mandat à vérifier que la trajectoire réelle du gouvernement reste fidèle au mandat collectif.',
@@ -1557,7 +1519,7 @@
       footer: 'Because no one should be left behind',
       voteKicker: 'Governance choice',
       voteTitle: 'Vote for the system to adopt',
-      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering fifteen distinct choices: capitalism, universalism, communism, fascism, authoritarism, liberalism, anarchism, ecologism, conservatism, nationalism, libertarianism, progressivism, socialism, transhumanism, and coherentism. Compare the ideological promises of each paradigm before casting your vote.',
+      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering fourteen distinct choices: capitalism, universalism, communism, fascism, authoritarism, liberalism, anarchism, ecologism, conservatism, nationalism, libertarianism, progressivism, socialism, and transhumanism. Compare the ideological promises of each paradigm before casting your vote.',
       promisesTitle: 'Ideological promises',
       capitalismBadge: 'Red faction',
       capitalismTitle: 'Capitalism',
@@ -1583,13 +1545,13 @@
       fascismPoint1: 'Promise rapid direction through strong power and rigid hierarchy.',
       fascismPoint2: 'Impose political and social unity around a dominant central identity.',
       fascismPoint3: 'Make order, control, and obedience the foundations of stability.',
-      authoritarianBadge: 'Turquoise faction',
+      authoritarianBadge: 'Turquoise clan',
       authoritarianTitle: 'Authoritarism',
       authoritarianDesc: 'A paradigm centered on vertical command, imposed stability, centralized power, and the reduction of political dissent in the name of order.',
       authoritarianPoint1: 'Concentrate decision-making in a strong authority to act quickly.',
       authoritarianPoint2: 'Reduce counter-powers in favor of enforced cohesion.',
       authoritarianPoint3: 'Make security, control, and discipline the basis of governance.',
-      liberalismBadge: 'Brown faction',
+      liberalismBadge: 'Brown clan',
       liberalismTitle: 'Liberalism',
       liberalismDesc: 'A paradigm focused on individual liberties, the rule of law, pluralism, civil rights, and a market economy framed by institutional guarantees.',
       liberalismPoint1: 'Protect individual rights and freedom of expression.',
@@ -1643,12 +1605,6 @@
       transhumanismPoint1: 'Accelerate technological convergence to enhance human capabilities beyond their natural limits.',
       transhumanismPoint2: 'Deploy research in artificial intelligence, biotechnology, and cybernetics in service of human evolution.',
       transhumanismPoint3: 'Make the technological mastery of the human condition the new horizon of civilization.',
-      coherentismBadge: 'Golden faction',
-      coherentismTitle: 'Coherentism',
-      coherentismDesc: 'A doctrine of systemic realignment grounded in coherence between declared values, institutions, centers of power, and the concrete consequences experienced by the population.',
-      coherentismPoint1: 'Reconcile elites and the masses through mechanisms of two-way accountability, so power no longer floats above reality.',
-      coherentismPoint2: 'Detect and correct incoherence between discourse, laws, budgets, and measurable outcomes before it turns into structural crisis.',
-      coherentismPoint3: 'Align technological innovation, human dignity, and the protection of life so systemic power serves the common good.',
             trajKicker: 'Democratic Trajectory',
       trajTitle: 'A Major Electoral Map of Collective Direction',
       trajIntro1: 'In today\'s democracies, people vote for parties. But a party is often a blurry mix of ideas — vague enough to appeal to as many people as possible, without truly committing to a clear direction. The result: citizens choose representatives but quickly lose control over their government\'s actual direction.',
@@ -1659,7 +1615,7 @@
       trajStep1Text: 'First, the entire population is called to vote to establish the electoral map: the seven factions receiving the strongest public support each earn a ballot seat. This first round is not about individuals or specific policies — it determines solely which ideological currents deserve to be represented. Society collectively decides its ideological spectrum before even choosing its direction.',
       trajStep1TextB: 'In the event of a perfect tie between two or more factions for the seventh position, the entire population is called back to the polls — but only to break the tie between the factions concerned. The six already secured positions remain intact. This rule also applies to three identical counts or more, without changing the procedure.',
       trajStep2Title: '2. Faction Vote — Expressing the Collective Direction',
-      trajStep2Text1: 'Once the seven factions are legitimized and registered on the ballot, each citizen votes freely for the ideological current of their choice among them. The totality of these votes produces a national ideological vector: a percentage-based profile that precisely reflects the composition of the collective will.',
+      trajStep2Text1: 'Once the seven factions are legitimized and registered on the ballot, each citizen votes freely for the ideological current of their choice among them. The totality of these votes produces a national ideological vector: a percentage-based profile that precisely reflects the composition of the collective will. To be included in the vector, however, a faction must reach a minimum of 5% of the vote.',
       trajVectorLabel: 'Vector Example',
       trajVectorExample: '38 % ecologist · 24 % progressivist · 20 % socialist · 10 % libertarian · 8 % capitalist',
       trajStep2Text2: 'This vector becomes the official compass of the legislature. It determines the proportional distribution of each faction\'s representatives within institutions, and serves throughout the mandate to verify that the government\'s real trajectory remains faithful to the collective mandate expressed by the population.',
@@ -1699,8 +1655,7 @@
       libertarianism: 'Libertarianisme',
       progressism: 'Progressisme',
       socialism: 'Socialisme',
-      transhumanism: 'Transhumanisme',
-      coherentism: 'Cohérentisme'
+      transhumanism: 'Transhumanisme'
     },
     en: {
       capitalism: 'Capitalism',
@@ -1716,77 +1671,34 @@
       libertarianism: 'Libertarianism',
       progressism: 'Progressivism',
       socialism: 'Socialism',
-      transhumanism: 'Transhumanism',
-      coherentism: 'Coherentism'
+      transhumanism: 'Transhumanism'
     }
   };
 
-let votePageLang = document.documentElement.lang === 'en' ? 'en' : 'fr';
-
-function renderVoteUI(lang) {
-  var intro = document.getElementById('voteIntroText');
-  var feedbackTitle = document.getElementById('voteFeedbackTitle');
-  var feedbackText = document.getElementById('voteFeedbackText');
-  var finalCall = document.getElementById('voteFinalCall');
-  var box = document.getElementById('voteFeedback');
-
-  if (intro && translations[lang] && translations[lang].voteIntro) {
-    intro.textContent = translations[lang].voteIntro;
-  }
-  if (feedbackTitle && translations[lang] && translations[lang].feedbackTitle) {
-    feedbackTitle.textContent = translations[lang].feedbackTitle;
-  }
-  if (finalCall && translations[lang] && translations[lang].voteFinalCall) {
-    finalCall.textContent = translations[lang].voteFinalCall;
-  }
-  if (!feedbackText) return;
-
-  if (box && box.classList.contains('active')) {
-    var selectedKey = box.getAttribute('data-selected-key');
-    if (selectedKey && translations[lang] && translations[lang].feedbackSelected) {
-      var localizedChoice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][selectedKey]) || selectedKey;
-      feedbackText.textContent = translations[lang].feedbackSelected.replace('{choice}', localizedChoice);
-      return;
-    }
-  }
-
-  if (translations[lang] && translations[lang].feedbackDefault) {
-    feedbackText.textContent = translations[lang].feedbackDefault;
-  }
-}
-
 document.querySelectorAll('[data-vote-key]').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const key = btn.getAttribute('data-vote-key');
-    const box = document.getElementById('voteFeedback');
-    if (box) {
-      box.setAttribute('data-selected-key', key);
+    btn.addEventListener('click', () => {
+      const key = btn.getAttribute('data-vote-key');
+      const choice = voteChoiceLabels[currentLang][key] || btn.getAttribute('data-vote');
+      const box = document.getElementById('voteFeedback');
+      const text = document.getElementById('voteFeedbackText');
+      text.textContent = translations[currentLang].feedbackSelected.replace('{choice}', choice);
       box.classList.add('active');
-    }
-    renderVoteUI(votePageLang);
-    if (box) {
       box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  });
-});
-
-// Écoute les changements de langue déclenchés par nav.js
-document.addEventListener('umLangChange', function (e) {
-  var lang = e.detail.lang === 'en' ? 'en' : 'fr';
-  votePageLang = lang;
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll('[data-i18n]').forEach(function (el) {
-    var key = el.getAttribute('data-i18n');
-    if (translations[lang] && translations[lang][key] !== undefined) {
-      el.innerHTML = translations[lang][key];
-    }
+    });
   });
 
-  renderVoteUI(lang);
-});
 
-renderVoteUI(votePageLang);
+
+  // Écoute les changements de langue déclenchés par nav.js
+  document.addEventListener('umLangChange', function (e) {
+    var lang = e.detail.lang;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key] !== undefined) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+  });
 </script>
 </body>
 </html>
