@@ -1749,6 +1749,25 @@ document.querySelectorAll('[data-vote-key]').forEach((btn) => {
         el.innerHTML = translations[lang][key];
       }
     });
+
+    var box = document.getElementById('voteFeedback');
+    var feedbackText = document.getElementById('voteFeedbackText');
+    if (box && box.classList.contains('active') && feedbackText) {
+      var activeChoice = null;
+      Object.keys(voteChoiceLabels.fr).forEach(function (key) {
+        var frLabel = voteChoiceLabels.fr[key];
+        var enLabel = voteChoiceLabels.en[key];
+        if (feedbackText.textContent.indexOf(frLabel) !== -1 || feedbackText.textContent.indexOf(enLabel) !== -1) {
+          activeChoice = key;
+        }
+      });
+      if (activeChoice && translations[lang] && translations[lang].feedbackSelected) {
+        var localizedChoice = voteChoiceLabels[lang][activeChoice] || activeChoice;
+        feedbackText.textContent = translations[lang].feedbackSelected.replace('{choice}', localizedChoice);
+      } else if (translations[lang] && translations[lang].feedbackDefault) {
+        feedbackText.textContent = translations[lang].feedbackDefault;
+      }
+    }
   });
 </script>
 </body>
