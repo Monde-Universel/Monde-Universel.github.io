@@ -1059,6 +1059,12 @@
     background: linear-gradient(135deg, #3d5060 0%, #7090a8 100%);
     box-shadow: 0 10px 24px rgba(83,104,120,0.30);
   }
+
+  /* ── Véritisme (blanc) ── */
+  .vote-card.blanc { border-top: 8px solid #f2f4f7; }
+  .vote-card.blanc .vote-badge { background: rgba(255,255,255,0.92); color: #4d5b70; border: 1px solid rgba(26,58,107,0.16); }
+  .vote-card.blanc .vote-list li::before { background: #f2f4f7; box-shadow: 0 0 0 5px rgba(242,244,247,0.70); border: 1px solid rgba(26,58,107,0.14); }
+  .vote-card.blanc .vote-btn { background: linear-gradient(135deg, #dfe6ee 0%, #ffffff 100%); color: #1a3a6b; border: 1px solid rgba(26,58,107,0.18); box-shadow: 0 10px 24px rgba(120,138,160,0.24); }
 </style>
 </head>
 <body><script src="nav.js"></script>
@@ -1067,7 +1073,7 @@
 <section class="vote-hero">
 <div class="vote-kicker" data-i18n="voteKicker">Choix de gouvernance</div>
 <h1 class="vote-title" data-i18n="voteTitle">Votez pour le système à adopter</h1>
-<p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quinze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme et cohérentisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
+<p class="vote-intro" data-i18n="voteIntro">Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais seize choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme, cohérentisme et véritisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.</p>
 </section>
 <section aria-labelledby="trajectory-title" class="trajectory-section">
 <article class="trajectory-premium">
@@ -1385,6 +1391,24 @@
 </div>
 </article>
 
+
+<article class="vote-card blanc">
+<div class="vote-photo">
+<img alt="Illustration du clan Véritisme" height="1024" loading="lazy" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/d58cfeca-0597-4466-a8dc-f913617da686.png" width="1024"/>
+</div>
+<div class="vote-content">
+<span class="vote-badge" data-i18n="veritismBadge">Clan blanc</span>
+<h2 data-i18n="veritismTitle">Véritisme</h2>
+<div class="vote-subtitle" data-i18n="promisesTitle">Promesses idéologiques</div>
+<p class="vote-desc" data-i18n="veritismDesc">Un paradigme fondé sur l’honnêteté absolue envers la vérité, l’alignement du discours, de la cohérence, de l’action et du résultat, afin d’orienter la société vers une lumière commune.</p>
+<ul class="vote-list">
+<li data-i18n="veritismPoint1">Exiger une transparence radicale entre ce qui est dit, ce qui est fait et ce qui est obtenu.</li>
+<li data-i18n="veritismPoint2">Refuser les écarts entre parole publique, responsabilité réelle et conséquences concrètes du pouvoir.</li>
+<li data-i18n="veritismPoint3">Faire de la vérité assumée, de la cohérence vérifiable et de l’élévation collective les bases du gouvernement.</li>
+</ul>
+<button class="vote-btn" data-i18n="voteButton" data-vote="Véritisme" data-vote-key="veritism" type="button">Votez</button>
+</div>
+</article>
 <div aria-live="polite" class="vote-feedback" id="voteFeedback">
 <h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
 <p id="voteFeedbackText">Votre choix apparaîtra ici après le clic sur un bouton.</p>
@@ -1412,7 +1436,7 @@
       footer: 'Parce que personne ne devrait être laissé derrière',
       voteKicker: 'Choix de gouvernance',
       voteTitle: 'Votez pour le système à adopter',
-      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quinze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme et cohérentisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
+      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quatorze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme et transhumanisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
       promisesTitle: 'Promesses idéologiques',
       capitalismBadge: 'Clan rouge',
       capitalismTitle: 'Capitalisme',
@@ -1557,7 +1581,7 @@
       footer: 'Because no one should be left behind',
       voteKicker: 'Governance choice',
       voteTitle: 'Vote for the system to adopt',
-      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering fifteen distinct choices: capitalism, universalism, communism, fascism, authoritarism, liberalism, anarchism, ecologism, conservatism, nationalism, libertarianism, progressivism, socialism, transhumanism, and coherentism. Compare the ideological promises of each paradigm before casting your vote.',
+      voteIntro: 'This page is dedicated to gathering public intent regarding a change in the system of governance, now offering sixteen distinct choices: capitalism, universalism, communism, fascism, authoritarism, liberalism, anarchism, ecologism, conservatism, nationalism, libertarianism, progressivism, socialism, transhumanism, coherentism, and veritism. Compare the ideological promises of each paradigm before casting your vote.',
       promisesTitle: 'Ideological promises',
       capitalismBadge: 'Red faction',
       capitalismTitle: 'Capitalism',
@@ -1700,7 +1724,8 @@
       progressism: 'Progressisme',
       socialism: 'Socialisme',
       transhumanism: 'Transhumanisme',
-      coherentism: 'Cohérentisme'
+      coherentism: 'Cohérentisme',
+      veritism: 'Véritisme'
     },
     en: {
       capitalism: 'Capitalism',
@@ -1717,7 +1742,8 @@
       progressism: 'Progressivism',
       socialism: 'Socialism',
       transhumanism: 'Transhumanism',
-      coherentism: 'Coherentism'
+      coherentism: 'Coherentism',
+      veritism: 'Veritism'
     }
   };
 
