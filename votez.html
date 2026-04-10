@@ -1065,6 +1065,12 @@
   .vote-card.blanc .vote-badge { background: rgba(255,255,255,0.92); color: #4d5b70; border: 1px solid rgba(26,58,107,0.16); }
   .vote-card.blanc .vote-list li::before { background: #f2f4f7; box-shadow: 0 0 0 5px rgba(242,244,247,0.70); border: 1px solid rgba(26,58,107,0.14); }
   .vote-card.blanc .vote-btn { background: linear-gradient(135deg, #dfe6ee 0%, #ffffff 100%); color: #1a3a6b; border: 1px solid rgba(26,58,107,0.18); box-shadow: 0 10px 24px rgba(120,138,160,0.24); }
+
+  .back-to-top { position: fixed; right: 18px; bottom: 18px; display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border: none; border-radius: 999px; background: linear-gradient(135deg, #1a3a6b 0%, #2a5298 100%); color: #fff; font-family: 'Lato', Arial, sans-serif; font-size: 0.92rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: 0 10px 24px rgba(13,34,87,0.24); cursor: pointer; z-index: 1200; opacity: 0; visibility: hidden; transform: translateY(16px); transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, filter 0.2s ease; }
+  .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { filter: brightness(1.06); }
+  .back-to-top__icon { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.14); font-size: 1rem; line-height: 1; }
+  @media (max-width: 640px) { .back-to-top { right: 14px; bottom: 14px; padding: 11px 14px; font-size: 0.84rem; gap: 8px; } }
 </style>
 </head>
 <body><script src="nav.js"></script>
@@ -1416,6 +1422,11 @@
 </div>
 </main>
 
+<button aria-label="Retour en haut" class="back-to-top" id="backToTopBtn" type="button">
+<span aria-hidden="true" class="back-to-top__icon">↑</span>
+<span data-i18n="backToTop">Haut</span>
+</button>
+
 <script>
   const translations = {
     fr: {
@@ -1436,7 +1447,7 @@
       footer: 'Parce que personne ne devrait être laissé derrière',
       voteKicker: 'Choix de gouvernance',
       voteTitle: 'Votez pour le système à adopter',
-      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais quatorze choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme et transhumanisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
+      voteIntro: "Cette page est dédiée à recueillir l'intention de la population face à un changement de système de gouvernance, en proposant désormais seize choix distincts : capitalisme, universalisme, communisme, fascisme, authoritarisme, libéralisme, anarchisme, écologisme, conservatisme, nationalisme, libertarianisme, progressisme, socialisme, transhumanisme, cohérentisme et véritisme. Comparez les promesses idéologiques de chaque paradigme avant d'exprimer votre vote.",
       promisesTitle: 'Promesses idéologiques',
       capitalismBadge: 'Clan rouge',
       capitalismTitle: 'Capitalisme',
@@ -1561,7 +1572,8 @@
       voteFinalCall: 'Il NE MANQUE PLUS QUE VOUS!',
       feedbackTitle: 'Intention de vote enregistrée',
       feedbackDefault: 'Votre choix apparaîtra ici après le clic sur un bouton.',
-      feedbackSelected: 'Vous avez choisi : {choice}. Cette page est prête à être reliée à une vraie collecte de données, un formulaire ou une base de données.'
+      feedbackSelected: 'Vous avez choisi : {choice}. Cette page est prête à être reliée à une vraie collecte de données, un formulaire ou une base de données.',
+      backToTop: 'Haut'
     },
     en: {
       navhome: 'Home',
@@ -1704,7 +1716,8 @@
       voteFinalCall: 'ALL THAT IS MISSING IS YOU!',
       feedbackTitle: 'Voting intent recorded',
       feedbackDefault: 'Your selection will appear here after clicking a button.',
-      feedbackSelected: 'You selected: {choice}. This page is ready to be connected to a real data collection system, form, or database.'
+      feedbackSelected: 'You selected: {choice}. This page is ready to be connected to a real data collection system, form, or database.',
+      backToTop: 'Top'
     }
   };
 
@@ -1779,6 +1792,11 @@ document.querySelectorAll('[data-vote-key]').forEach((btn) => {
       }
     });
 
+    var backToTopBtn = document.getElementById('backToTopBtn');
+    if (backToTopBtn && translations[lang] && translations[lang].backToTop) {
+      backToTopBtn.setAttribute('aria-label', translations[lang].backToTop);
+    }
+
     var box = document.getElementById('voteFeedback');
     var feedbackText = document.getElementById('voteFeedbackText');
     if (feedbackText) {
@@ -1793,6 +1811,20 @@ document.querySelectorAll('[data-vote-key]').forEach((btn) => {
       }
     }
   });
+
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  function toggleBackToTopButton() {
+    if (!backToTopBtn) return;
+    backToTopBtn.classList.toggle('is-visible', window.scrollY > 420);
+  }
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    toggleBackToTopButton();
+    window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
+  }
+
 </script>
 </body>
 </html>
