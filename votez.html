@@ -1640,6 +1640,7 @@
     }
   };
 
+  let currentLang = (window.umGetLang && window.umGetLang()) || document.documentElement.lang || 'fr';
   const voteChoiceLabels = {
     fr: {
       capitalism: 'Capitalisme',
@@ -1675,6 +1676,13 @@
     }
   };
 
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n');
+    if (translations[currentLang] && translations[currentLang][key] !== undefined) {
+      el.innerHTML = translations[currentLang][key];
+    }
+  });
+
 document.querySelectorAll('[data-vote-key]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const key = btn.getAttribute('data-vote-key');
@@ -1692,6 +1700,7 @@ document.querySelectorAll('[data-vote-key]').forEach((btn) => {
   // Écoute les changements de langue déclenchés par nav.js
   document.addEventListener('umLangChange', function (e) {
     var lang = e.detail.lang;
+    currentLang = lang;
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       if (translations[lang] && translations[lang][key] !== undefined) {
