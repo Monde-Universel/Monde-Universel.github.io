@@ -98,7 +98,6 @@ h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 28px; border-left: 5px so
 h3 { font-size: 1.1rem; color: #1a3a6b; margin-bottom: 10px; }\n\
 a { text-decoration: none; }\n\
 img { max-width: 100%; display: block; }\n\
-
 \n\
 .um-header {\n\
   background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);\n\
