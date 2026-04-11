@@ -84,20 +84,7 @@
 /* ── UM shared styles ── */\n\
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\n\
 html { scroll-behavior: smooth; }\n\
-body { font-family: \'Lato\', Arial, sans-serif; background: #f0f7ff; color: #1a1a2e; }\n\
-p, li, .page-wrap p, .intro-block p, .card p, section p {\n\
-  font-family: Georgia, serif;\n\
-  font-size: 1.05rem;\n\
-  line-height: 1.85;\n\
-  color: #2c2c2c;\n\
-}\n\
-h1, h2, h3, h4 {\n\
-  font-family: \'Cinzel\', Georgia, serif;\n\
-}\n\
-h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 28px; border-left: 5px solid #87CEEB; padding-left: 14px; }\n\
-h3 { font-size: 1.1rem; color: #1a3a6b; margin-bottom: 10px; }\n\
-a { text-decoration: none; }\n\
-img { max-width: 100%; display: block; }\n\
+body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }\n\
 \n\
 .um-header {\n\
   background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);\n\
@@ -158,44 +145,9 @@ img { max-width: 100%; display: block; }\n\
 }\n\
 .um-footer span { color: #87CEEB; font-weight: bold; }\n\
 \n\
-/* ── Bouton retour en haut ── */\n\
-.um-back-top {\n\
-  position: fixed;\n\
-  bottom: 28px;\n\
-  right: 22px;\n\
-  width: 46px;\n\
-  height: 46px;\n\
-  background: linear-gradient(145deg, #1a3a6b, #2a5298);\n\
-  color: #87CEEB;\n\
-  border: none;\n\
-  border-radius: 50%;\n\
-  font-size: 1.3rem;\n\
-  font-weight: 900;\n\
-  cursor: pointer;\n\
-  box-shadow: 0 4px 18px rgba(26,58,107,0.40);\n\
-  display: flex;\n\
-  align-items: center;\n\
-  justify-content: center;\n\
-  opacity: 0;\n\
-  pointer-events: none;\n\
-  transition: opacity .3s ease, transform .3s ease;\n\
-  z-index: 9999;\n\
-  line-height: 1;\n\
-}\n\
-.um-back-top.um-visible {\n\
-  opacity: 1;\n\
-  pointer-events: auto;\n\
-}\n\
-.um-back-top:hover {\n\
-  background: linear-gradient(145deg, #2a5298, #1b5e8a);\n\
-  transform: translateY(-3px);\n\
-  color: #fff;\n\
-}\n\
-\n\
 @media (max-width: 640px) {\n\
   .um-nav { gap: 12px; padding: 12px 14px; }\n\
   .um-nav a { font-size: .80rem; }\n\
-  .um-back-top { bottom: 18px; right: 14px; width: 40px; height: 40px; font-size: 1.1rem; }\n\
 }\n\
 ';
 
@@ -265,8 +217,7 @@ img { max-width: 100%; display: block; }\n\
   function buildFooter(l) {
     return '<footer class="um-footer">'
       + '<p>2026 <span>Universel</span> — <span data-um="footer">' + T[l].footer + '</span></p>'
-      + '</footer>'
-      + '<button class="um-back-top" id="umBackTop" aria-label="Retour en haut" title="Retour en haut" onclick="window.scrollTo({top:0,behavior:\'smooth\'})">↑</button>';
+      + '</footer>';
   }
 
   /* ══════════════════════════════════════════════════════════════════
@@ -323,24 +274,11 @@ img { max-width: 100%; display: block; }\n\
     document.head.insertBefore(s, document.head.firstChild);
   }
 
-  function initBackToTop() {
-    var btn = document.getElementById('umBackTop');
-    if (!btn) return;
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 320) {
-        btn.classList.add('um-visible');
-      } else {
-        btn.classList.remove('um-visible');
-      }
-    }, { passive: true });
-  }
-
   function init() {
     injectFonts();
     injectStyles();
     document.body.insertAdjacentHTML('afterbegin', buildHeader(lang) + buildNav(lang));
     document.body.insertAdjacentHTML('beforeend',  buildFooter(lang));
-    initBackToTop();
     setTimeout(function () {
       document.dispatchEvent(new CustomEvent('umLangChange', { detail: { lang: lang } }));
     }, 0);
