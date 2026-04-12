@@ -218,7 +218,7 @@
 }
 </style>
 </head>
-<body>
+<body><script src="nav.js"></script>
 
 <div class="hero">
 <a href="index.html"><img alt="Logo Universel" src="logo_universel.jpeg.JPG"/></a>
@@ -397,10 +397,7 @@
 <div style="text-align:center; margin-top:40px">
 <a href="index.html" id="btn-home" style="background:#d6e4f2;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold">Retour à l'accueil</a>
 </div>
-</div><!-- .container -->
-
-
-<script>
+</div><!-- .container --><script>
 const TR = {
   fr: {
     'site-title':'UN MONDE UNIVERSEL','site-slogan':'Parce que personne ne devrait être laissé derrière','nav-vision':'La Vision','nav-discussion':'Discussion','nav-these':'📖 Un peu plus…',
@@ -535,6 +532,22 @@ const TR = {
   }
   document.addEventListener('umLangChange', function(e) { applyPageLang(e.detail.lang); });
 })();
-</script>  <script src="nav.js"></script>
+</script>
+<script>
+(function(){
+  function centerChomageLogo(){
+    document.querySelectorAll('img[alt*="Universel"], img[alt*="universel"]').forEach(function(img){
+      img.style.display = "block";
+      img.style.marginLeft = "auto";
+      img.style.marginRight = "auto";
+      if (img.parentElement) {
+        img.parentElement.style.textAlign = "center";
+      }
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", centerChomageLogo, { once:true });
+  else centerChomageLogo();
+})();
+</script>
 </body>
 </html>

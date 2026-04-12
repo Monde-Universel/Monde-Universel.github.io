@@ -710,7 +710,7 @@
 
 
 <script>
-
+(function() {
   const translations = {
     fr: {
       siteTitle: 'UN MONDE UNIVERSEL',
@@ -898,28 +898,33 @@
       conclusionQuote: '"The human at the center. Pedagogy as the compass. AI as the lever."'
     }
   };
-
-  let currentLang = (() => { try { return localStorage.getItem('umLang') || 'fr'; } catch (e) { return 'fr'; } })();
-
-  function applyTranslations(lang) {
-    currentLang = lang;
-    document.documentElement.lang = lang;
-    document.querySelectorAll('[data-i18n]').forEach((el) => {
+  function applyEducationLang(lang) {
+    const t = translations[lang] || translations.fr || {};
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
       const key = el.getAttribute('data-i18n');
-      if (translations[lang] && translations[lang][key]) {
-        el.innerHTML = translations[lang][key];
-      }
+      if (Object.prototype.hasOwnProperty.call(t, key)) el.innerHTML = t[key];
     });
-    const btn =    if (btn) btn.textContent = lang === 'fr' ? 'EN' : 'FR';
+    document.documentElement.lang = lang;
+    document.title = lang === 'en'
+      ? 'A UNIVERSAL WORLD — AI and Education'
+      : "UN MONDE UNIVERSEL — L'IA et l'Éducation";
   }
-
-  
-  applyTranslations('fr');
-
-  document.addEventListener('umLangChange', function(e) { applyTranslations(e.detail.lang); });
-  applyTranslations(currentLang);
-
+  function initEducationLang() {
+    let lang = 'fr';
+    try { lang = localStorage.getItem('umLang') || 'fr'; } catch (e) {}
+    applyEducationLang(lang);
+  }
+  document.addEventListener('umLangChange', function(e) {
+    if (e && e.detail && e.detail.lang) applyEducationLang(e.detail.lang);
+  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEducationLang, { once: true });
+  } else {
+    initEducationLang();
+  }
+})();
 </script>
 <script src="nav.js"></script>
+
 </body>
 </html>
