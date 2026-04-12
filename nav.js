@@ -55,7 +55,7 @@
       footer:      'Parce que personne ne devrait être laissé derrière',
     },
     en: {
-      before:      'A '
+      before:      'A ',
       hl:          'UNIVERSAL',
       after:       ' WORLD',
       slogan:      'Because no one should be left behind',
