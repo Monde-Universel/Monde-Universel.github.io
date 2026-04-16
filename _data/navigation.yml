@@ -1,7 +1,27 @@
-- title: Accueil
-  url: /
+- title: Acceuil
+  url: /index.html
+- title: Un peu plus
+  url: /these.html
+- title: Nouvelle approche
+  url: /theorie.html
 - title: Vie
-  url: /vie/
+  url: /vie.html
+- title: Guerre
+  url: /guerre.html
+- title: Chômage
+  url: /chomage.html
+- title: RUB
+  url: /rub.html
 - title: Éducation
-  url: /education/
+  url: /education.html
+- title: Évolution
+  url: /evolution.html
+- title: Le Vote
+  url: /votez.html
+- title: Discussion
+  url: "/index.html#discussion"
+- title: À propos
+  url: "/index.html#a-propos"
+- title: Contact
+  url: "/index.html#contact"
 
