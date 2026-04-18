@@ -1,8 +1,18 @@
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="site-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  <div class="container header-shell">
+    <div class="header-top">
+      <a class="site-brand" href="{{ '/index.html' | relative_url }}">
+        <span class="site-brand__title">UN MONDE UNIVERSEL</span>
+        <span class="site-brand__tagline">Parce que personne ne devrait être laissé derrière</span>
+      </a>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Basculer le thème">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </div>
+
     {% include nav.html %}
-    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Basculer le thème">◐</button>
   </div>
 </header>
+
 
