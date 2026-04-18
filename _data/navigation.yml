@@ -1,27 +1,57 @@
-- title: Acceuil
-  url: /index.html
-- title: Un peu plus
-  url: /these.html
-- title: Nouvelle approche
-  url: /theorie.html
-- title: Vie
-  url: /vie.html
-- title: Guerre
-  url: /guerre.html
-- title: Chômage
-  url: /chomage.html
-- title: RUB
-  url: /rub.html
-- title: Éducation
-  url: /education.html
-- title: Évolution
-  url: /evolution.html
-- title: Le Vote
-  url: /votez.html
-- title: Discussion
-  url: "/index.html#discussion"
-- title: À propos
-  url: "/index.html#a-propos"
-- title: Contact
-  url: "/index.html#contact"
+- url: /index.html
+  fr: Accueil
+  en: Home
 
+- url: /index.html#vision
+  fr: La Vision
+  en: The Vision
+
+- url: /index.html#discussion
+  fr: Discussion
+  en: Discussion
+
+- url: /these.html
+  fr: Un peu plus
+  en: A Little More
+
+- url: /theorie.html
+  fr: Nouvelle Approche
+  en: New Approach
+
+- url: /vie.html
+  fr: Vie
+  en: Life
+
+- url: /guerre.html
+  fr: Guerre
+  en: War
+  alert: true
+
+- url: /chomage.html
+  fr: Chômage
+  en: Unemployment
+
+- url: /rub.html
+  fr: RUB
+  en: UBI
+
+- url: /education.html
+  fr: Éducation
+  en: Education
+
+- url: /evolution.html
+  fr: Évolution
+  en: Evolution
+
+- url: /votez.html
+  fr: Le Vote
+  en: The Vote
+  vote: true
+
+- url: /index.html#apropos
+  fr: À propos
+  en: About
+
+- url: /index.html#contact
+  fr: Contact
+  en: Contact
