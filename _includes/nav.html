@@ -1,23 +1,14 @@
 <nav class="site-nav" aria-label="Navigation principale">
   <ul class="site-nav__list">
     {% for item in site.data.navigation %}
-      {% assign current = false %}
-      {% if page.url == item.url %}
-        {% assign current = true %}
-      {% endif %}
-
-      {% assign item_is_anchor = false %}
-      {% if item.url contains '#' %}
-        {% assign item_is_anchor = true %}
-      {% endif %}
-
       <li class="site-nav__item">
         <a
-          class="site-nav__link"
+          class="site-nav__link{% if item.alert %} site-nav__link--alert{% endif %}{% if item.vote %} site-nav__link--vote{% endif %}"
           href="{{ item.url | relative_url }}"
-          {% if current and item_is_anchor == false %}aria-current="page"{% endif %}
+          data-label-fr="{{ item.fr }}"
+          data-label-en="{{ item.en }}"
         >
-          {{ item.title }}
+          {{ item.fr }}
         </a>
       </li>
     {% endfor %}
