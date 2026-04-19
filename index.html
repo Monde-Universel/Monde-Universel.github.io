@@ -39,7 +39,7 @@ og_locale: fr_CA
   height: 100%;
   border: 0;
 }
-section { max-width: 780px; margin: 0 auto; padding: 50px 24px; }
+section { max-width: 920px; margin: 0 auto; padding: 50px 18px; }
 .vision-block { margin-bottom: 28px; }
 .vision-block h3 { font-size: 1.1rem; color: var(--color-primary); margin-bottom: 10px; font-style: italic; }
 .vision-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; }
@@ -50,7 +50,7 @@ section { max-width: 780px; margin: 0 auto; padding: 50px 24px; }
   border: 1px solid rgba(26,58,107,0.12);
   border-left: 6px solid var(--color-accent);
   border-radius: 18px;
-  padding: 30px 28px;
+  padding: 30px 20px;
   box-shadow: 0 14px 34px rgba(13,34,87,0.10);
   overflow: hidden;
 }
@@ -75,9 +75,9 @@ section { max-width: 780px; margin: 0 auto; padding: 50px 24px; }
   background: var(--color-card);
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
-  max-width: 780px;
+  max-width: 920px;
   margin: 0 auto 60px;
-  padding: 40px 24px;
+  padding: 40px 20px;
 }
 .discussion p.intro {
   font-size: 1rem;
@@ -198,6 +198,29 @@ html[lang="en"] .manifesto-card--fr { display: none !important; }
   .manifesto-bridge__title,
   .manifesto-card__title { color: rgba(240, 245, 247, 0.94); }
 }
+
+@media (max-width: 768px) {
+  section {
+    padding: 38px 14px;
+  }
+
+  .manifesto-inline {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .discussion {
+    padding: 28px 16px;
+    border-radius: 14px;
+  }
+
+  .vision-block p,
+  .manifesto-inline p {
+    font-size: 1rem;
+    line-height: 1.78;
+  }
+}
+
 </style>
 
 <div class="hero">
