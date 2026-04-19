@@ -2,7 +2,7 @@
 
 :root,
 [data-theme="light"] {
-  /* Polices fidèles au site actuel */
+  /* Polices */
   --font-display: 'Cinzel', Georgia, serif;
   --font-ui: 'Lato', Arial, sans-serif;
   --font-body: Georgia, serif;
@@ -36,7 +36,7 @@
   --content-default: 53.75rem;
   --content-wide: 70rem;
 
-  /* Palette fidèle */
+  /* Couleurs */
   --color-bg: #f0f7ff;
   --color-bg-alt: #e7f1fb;
   --color-surface: #ffffff;
@@ -52,7 +52,7 @@
   --color-primary-deep: #0d2257;
   --color-primary-mid: #2a5298;
 
-  --color-accent: #87CEEB;
+  --color-accent: #87ceeb;
   --color-accent-soft: #cce4f7;
   --color-accent-pale: #b8e0f7;
 
@@ -75,7 +75,7 @@
   --radius-xl: 1rem;
   --radius-full: 999px;
 
-  /* Mouvement */
+  /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-base: 0.25s ease;
 
@@ -84,7 +84,7 @@
   --line-body: 1.85;
   --line-title: 1.15;
 
-  /* Dégradés fidèles */
+  /* Dégradés */
   --gradient-header: linear-gradient(160deg, var(--color-primary-deep) 0%, var(--color-primary) 45%, #1b5e8a 100%);
   --gradient-top-media: linear-gradient(180deg, var(--color-primary) 0%, var(--color-accent) 60%, var(--color-accent-pale) 100%);
   --gradient-banner: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 60%, var(--color-primary) 100%);
