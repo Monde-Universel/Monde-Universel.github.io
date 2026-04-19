@@ -26,15 +26,16 @@
       return value === "en" ? "en" : "fr";
     }
 
-    function setUrlLang(lang) {
-      const url = new URL(window.location.href);
-      url.searchParams.set("lang", lang);
-      window.history.replaceState({}, "", url);
+    function getThemeFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const value = params.get("theme");
+      return value === "dark" || value === "light" ? value : null;
     }
 
-    function withLang(href, lang) {
-      const url = new URL(href, window.location.origin);
+    function buildUrl(lang, theme, baseHref) {
+      const url = new URL(baseHref || window.location.href, window.location.origin);
       url.searchParams.set("lang", lang);
+      url.searchParams.set("theme", theme);
 
       if (url.origin === window.location.origin) {
         return url.pathname + url.search + url.hash;
@@ -42,7 +43,21 @@
       return url.toString();
     }
 
-    function applyLang(lang) {
+    function setUrlState(lang, theme) {
+      const next = buildUrl(lang, theme, window.location.href);
+      window.history.replaceState({}, "", next);
+    }
+
+    function cleanHref(href) {
+      return href
+        .replace(/[?&]lang=(fr|en)/g, "")
+        .replace(/[?&]theme=(light|dark)/g, "")
+        .replace(/\?&/, "?")
+        .replace(/\?$/, "")
+        .replace(/&$/, "");
+    }
+
+    function applyLang(lang, theme) {
       root.lang = lang;
       root.setAttribute("data-lang", lang);
 
@@ -74,11 +89,7 @@
         }
 
         if (rawHref) {
-          const cleanHref = rawHref
-            .replace(/[?&]lang=(fr|en)/g, "")
-            .replace(/\?$/, "")
-            .replace(/&$/, "");
-          link.setAttribute("href", withLang(cleanHref, lang));
+          link.setAttribute("href", buildUrl(lang, theme, cleanHref(rawHref)));
         }
       });
 
@@ -117,7 +128,8 @@
     }
 
     function getPreferredTheme() {
-      if (root.dataset.theme) return root.dataset.theme;
+      const urlTheme = getThemeFromUrl();
+      if (urlTheme) return urlTheme;
       return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     }
 
@@ -140,10 +152,10 @@
     let currentLang = getLangFromUrl();
     let currentTheme = getPreferredTheme();
 
-    applyLang(currentLang);
-    setUrlLang(currentLang);
-    markCurrentLink();
     applyTheme(currentTheme);
+    applyLang(currentLang, currentTheme);
+    setUrlState(currentLang, currentTheme);
+    markCurrentLink();
 
     window.addEventListener("hashchange", function () {
       markCurrentLink();
@@ -151,15 +163,17 @@
 
     window.addEventListener("popstate", function () {
       currentLang = getLangFromUrl();
-      applyLang(currentLang);
+      currentTheme = getPreferredTheme();
+      applyTheme(currentTheme);
+      applyLang(currentLang, currentTheme);
       markCurrentLink();
     });
 
     if (langToggle) {
       langToggle.addEventListener("click", function () {
         currentLang = currentLang === "fr" ? "en" : "fr";
-        setUrlLang(currentLang);
-        applyLang(currentLang);
+        setUrlState(currentLang, currentTheme);
+        applyLang(currentLang, currentTheme);
         markCurrentLink();
       });
     }
@@ -168,11 +182,18 @@
       themeToggle.addEventListener("click", function () {
         currentTheme = currentTheme === "dark" ? "light" : "dark";
         applyTheme(currentTheme);
+        setUrlState(currentLang, currentTheme);
+        applyLang(currentLang, currentTheme);
+        markCurrentLink();
       });
     }
 
     window.umGetLang = function () {
       return currentLang;
+    };
+
+    window.umGetTheme = function () {
+      return currentTheme;
     };
 
     window.toggleLang = function () {
