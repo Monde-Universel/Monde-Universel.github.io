@@ -2,26 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://monde-universel.github.io/</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-18</lastmod>
   </url>
   <url>
     <loc>https://monde-universel.github.io/these.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-18</lastmod>
   </url>
   <url>
     <loc>https://monde-universel.github.io/theorie.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://monde-universel.github.io/vie.html</loc>
+    <lastmod>2026-04-18</lastmod>
   </url>
   <url>
     <loc>https://monde-universel.github.io/guerre.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-18</lastmod>
   </url>
   <url>
     <loc>https://monde-universel.github.io/chomage.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-18</lastmod>
   </url>
   <url>
     <loc>https://monde-universel.github.io/rub.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://monde-universel.github.io/education.html</loc>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://monde-universel.github.io/evolution.html</loc>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://monde-universel.github.io/votez.html</loc>
+    <lastmod>2026-04-18</lastmod>
   </url>
 </urlset>
