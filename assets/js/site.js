@@ -13,7 +13,7 @@
         langBtn: 'EN'
       },
       en: {
-        brandTitle: 'ONE <span class="site-brand__hl">UNIVERSAL</span> WORLD',
+        brandTitle: 'A <span class="site-brand__hl">UNIVERSAL</span> WORLD',
         slogan: 'Because no one should be left behind',
         footer: 'Because no one should be left behind',
         langBtn: 'FR'
