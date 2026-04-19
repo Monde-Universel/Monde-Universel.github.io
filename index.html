@@ -182,21 +182,61 @@ html[lang="en"] .manifesto-card--fr { display: none !important; }
       radial-gradient(circle at bottom right, rgba(79, 152, 163, 0.12), transparent 28%);
   }
   .manifesto-bridge__inner {
-    background: rgba(17, 23, 26, 0.78);
-    border-color: rgba(79, 152, 163, 0.22);
-    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.26);
+    background: rgba(17, 23, 26, 0.92);
+    border-color: rgba(79, 152, 163, 0.28);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.32);
   }
   .manifesto-bridge__eyebrow {
-    background: rgba(79, 152, 163, 0.14);
-    color: #8fd3dc;
+    background: rgba(79, 152, 163, 0.18);
+    color: #a7e7ee;
+  }
+  .manifesto-bridge__title {
+    color: #d9f3f6;
   }
   .manifesto-card {
-    background: linear-gradient(180deg, rgba(20, 27, 30, 0.92) 0%, rgba(16, 22, 24, 0.98) 100%);
-    border-color: rgba(79, 152, 163, 0.18);
+    background: linear-gradient(180deg, rgba(22, 31, 35, 0.98) 0%, rgba(15, 21, 24, 1) 100%);
+    border-color: rgba(79, 152, 163, 0.22);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   }
-  .manifesto-card__body p,
-  .manifesto-bridge__title,
-  .manifesto-card__title { color: rgba(240, 245, 247, 0.94); }
+  .manifesto-card__title {
+    color: #dff6fa;
+  }
+  .manifesto-card__body p {
+    color: #edf6f8;
+    opacity: 1;
+    text-shadow: none;
+  }
+}
+
+html[data-theme="dark"] .manifesto-bridge {
+  background:
+    radial-gradient(circle at top left, rgba(79, 152, 163, 0.16), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(79, 152, 163, 0.12), transparent 28%);
+}
+html[data-theme="dark"] .manifesto-bridge__inner {
+  background: rgba(17, 23, 26, 0.92);
+  border-color: rgba(79, 152, 163, 0.28);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.32);
+}
+html[data-theme="dark"] .manifesto-bridge__eyebrow {
+  background: rgba(79, 152, 163, 0.18);
+  color: #a7e7ee;
+}
+html[data-theme="dark"] .manifesto-bridge__title {
+  color: #d9f3f6;
+}
+html[data-theme="dark"] .manifesto-card {
+  background: linear-gradient(180deg, rgba(22, 31, 35, 0.98) 0%, rgba(15, 21, 24, 1) 100%);
+  border-color: rgba(79, 152, 163, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+html[data-theme="dark"] .manifesto-card__title {
+  color: #dff6fa;
+}
+html[data-theme="dark"] .manifesto-card__body p {
+  color: #edf6f8;
+  opacity: 1;
+  text-shadow: none;
 }
 
 @media (max-width: 768px) {
@@ -414,5 +454,52 @@ document.addEventListener('DOMContentLoaded', function () {
   applyIndexLang(lang);
 });
 </script>
-</body>
-</html>
+
+<div class="hero">
+  <div class="video-wrapper">
+    <iframe allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy" src="https://www.youtube.com/embed/uRWT7g7jWYA?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=uRWT7g7jWYA&amp;rel=0&amp;modestbranding=1" title="Un Monde Universel"></iframe>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="discussion" id="discussion">
+  <h2 data-i18n="disctitle">Espace de discussion</h2>
+  <p class="intro" data-i18n="discintro">Partagez votre point de vue, posez vos questions, rejoignez le mouvement. Tous les points de vue constructifs sont les bienvenus.</p>
+  <div style="text-align:center;padding:10px 0 10px">
+    <p data-i18n="discctatext" style="font-family:Arial,sans-serif;font-size:1rem;color:#555;margin-bottom:24px">Tu veux partager ta réflexion, poser une question ou rejoindre le mouvement?</p>
+    <a data-i18n="discctabtn" href="mailto:fondateuruniversalite@gmail.com?subject=Discussion Universel" style="display:inline-block;background:#1a3a6b;color:#fff;font-family:Arial,sans-serif;font-weight:bold;font-size:1rem;padding:14px 36px;border-radius:30px;text-decoration:none;letter-spacing:0.05em;box-shadow:0 4px 16px rgba(26,58,107,0.25)">✉️ Écrire au Fondateur</a>
+  </div>
+</div>
+
+<section id="contact" style="text-align:center;padding-top:20px">
+  <h2 data-i18n="contacttitle" style="border-left:5px solid #87CEEB;padding-left:14px;display:inline-block;text-align:left">Contact</h2>
+  <p style="margin-top:16px;font-family:Arial,sans-serif;font-size:1rem;color:#444">
+    <span data-i18n="contacttext">Tu veux en savoir plus ou contribuer au mouvement?</span><br><br>
+    <a href="mailto:fondateuruniversalite@gmail.com" style="color:#1a3a6b;font-weight:bold;font-size:1.1rem">fondateuruniversalite@gmail.com</a>
+  </p>
+</section>
+
+<hr>
+
+<section id="apropos" style="padding:50px 24px">
+  <h2 data-i18n="abouttitle">À propos du Fondateur</h2>
+  <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-bottom:32px">
+    <img alt="Le Fondateur" height="150" loading="lazy" src="IMG_0382.jpeg.JPG" style="width:150px;height:150px;border-radius:50%;object-fit:cover;box-shadow:0 0 32px rgba(135,206,235,0.6);flex-shrink:0" width="150">
+    <div>
+      <p data-i18n="aboutname" style="font-size:1.3rem;font-weight:bold;color:#1a3a6b;margin-bottom:6px;font-family:Arial,sans-serif">Le Fondateur</p>
+      <p data-i18n="abouttagline" style="font-size:0.95rem;color:#555;font-style:italic;font-family:Arial,sans-serif">Penseur systémique · Biotechnologiste · Architecte de l'Universalité</p>
+    </div>
+  </div>
+  <div style="background:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,0.07);padding:28px 32px;border-left:5px solid #87CEEB">
+    <p data-i18n="aboutp1" style="font-size:1.02rem;line-height:1.88;color:#2c2c2c;text-align:justify;margin-bottom:14px">Formé en biotechnologies, le Fondateur a développé une approche rare : appliquer la logique des organismes vivants — autorégulation, homéostasie, bifurcation — à la gouvernance des sociétés humaines. Ce n'est pas une métaphore. C'est une méthode.</p>
+    <p data-i18n="aboutp2" style="font-size:1.02rem;line-height:1.88;color:#2c2c2c;text-align:justify;margin-bottom:14px">Depuis plus d'une décennie, il développe la Socio-trajectoire évolutive — un cadre théorique original qui transforme l'affrontement élite-masse en jeu à somme positive, et propose une architecture de gouvernance autorégulatrice fondée sur des indicateurs avancés, le calcul quantique et la prédiction collective.</p>
+    <p data-i18n="aboutp3" style="font-size:1.02rem;line-height:1.88;color:#2c2c2c;text-align:justify">Son identité reste volontairement discrète. Les idées ont une force qui précède et dépasse celui qui les porte. Elles sont ici pour être réfutées, améliorées, ou adoptées — pas pour être jugées à travers un visage.</p>
+  </div>
+  <p style="text-align:center;margin-top:24px;font-size:0.9rem;color:#888;font-family:Arial,sans-serif">© 2026 Le Fondateur — <span data-i18n="aboutrights">Tous droits réservés</span></p>
+</section>
+
+<hr>
+
+
