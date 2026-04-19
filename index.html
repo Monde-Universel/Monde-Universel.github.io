@@ -71,6 +71,50 @@ section { max-width: 920px; margin: 0 auto; padding: 50px 18px; }
   letter-spacing: 0.04em;
 }
 .manifesto-inline p { font-size: 1.08rem; line-height: 1.95; }
+@media (prefers-color-scheme: dark) {
+  .manifesto-inline {
+    background: linear-gradient(145deg, rgba(19, 26, 36, 0.96) 0%, rgba(11, 17, 26, 0.99) 100%);
+    border: 1px solid rgba(135, 206, 235, 0.22);
+    border-left: 6px solid #7fd9f6;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+  }
+
+  .manifesto-inline::before {
+    background: radial-gradient(circle at top right, rgba(135, 206, 235, 0.10), transparent 34%);
+  }
+
+  .manifesto-inline h3 {
+    color: #bfe9ff;
+  }
+
+  .manifesto-inline p {
+    color: rgba(237, 246, 248, 0.96);
+    opacity: 1;
+    text-shadow: none;
+  }
+}
+
+html[data-theme="dark"] .manifesto-inline {
+  background: linear-gradient(145deg, rgba(19, 26, 36, 0.96) 0%, rgba(11, 17, 26, 0.99) 100%);
+  border: 1px solid rgba(135, 206, 235, 0.22);
+  border-left: 6px solid #7fd9f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] .manifesto-inline::before {
+  background: radial-gradient(circle at top right, rgba(135, 206, 235, 0.10), transparent 34%);
+}
+
+html[data-theme="dark"] .manifesto-inline h3 {
+  color: #bfe9ff;
+}
+
+html[data-theme="dark"] .manifesto-inline p {
+  color: rgba(237, 246, 248, 0.96);
+  opacity: 1;
+  text-shadow: none;
+}
+
 .discussion {
   background: var(--color-card);
   border-radius: 16px;
