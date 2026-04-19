@@ -1,9 +1,17 @@
 <nav class="site-nav" aria-label="Navigation principale">
   <ul class="site-nav__list">
     {% for item in site.data.navigation %}
+      {% assign link_class = "site-nav__link" %}
+      {% if item.alert %}
+        {% assign link_class = link_class | append: " site-nav__link--alert" %}
+      {% endif %}
+      {% if item.vote %}
+        {% assign link_class = link_class | append: " site-nav__link--vote" %}
+      {% endif %}
+
       <li class="site-nav__item">
         <a
-          class="site-nav__link{% if item.alert %} site-nav__link--alert{% endif %}{% if item.vote %} site-nav__link--vote{% endif %}"
+          class="{{ link_class }}"
           href="{{ item.url | relative_url }}"
           data-label-fr="{{ item.fr }}"
           data-label-en="{{ item.en }}"
