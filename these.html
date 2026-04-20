@@ -5,6 +5,15 @@ lang: fr
 permalink: /these.html
 ---
 
+<style>
+#content-fr, #content-en { display: block; }
+#content-en { display: none; }
+html[lang="en"] #content-fr { display: none; }
+html[lang="en"] #content-en { display: block; }
+html[lang="fr"] #content-fr { display: block; }
+html[lang="fr"] #content-en { display: none; }
+</style>
+
 <div id="content-fr">
 
 <div class="container">
@@ -583,3 +592,18 @@ permalink: /these.html
 </div>
 </div>
 </div>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get('lang');
+  const lang = requested === 'en' ? 'en' : 'fr';
+  document.documentElement.setAttribute('lang', lang);
+  var fr = document.getElementById('content-fr');
+  var en = document.getElementById('content-en');
+  if (fr && en) {
+    fr.style.display = lang === 'fr' ? 'block' : 'none';
+    en.style.display = lang === 'en' ? 'block' : 'none';
+  }
+})();
+</script>
