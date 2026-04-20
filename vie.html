@@ -1,319 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vie devient le terme central d’une lecture du vivant, des ruptures et des incompatibilités systémiques dans l’univers d’Un Monde Universel." />
-  <meta name="keywords" content="vie, vivant, intuition, signaux faibles, compatibilité, monde universel" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Le Fondateur Universel" />
-  <link rel="canonical" href="https://monde-universel.github.io/vie.html" />
-  <meta property="og:title" content="Vie · Un Monde Universel" />
-  <meta property="og:description" content="Vie comme terme central, critère de lecture du vivant, des ruptures et des trajectoires." />
-  <meta property="og:image" content="https://monde-universel.github.io/logouniversel.jpeg" />
-  <meta property="og:url" content="https://monde-universel.github.io/vie.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_CA" />
-  <title>Vie · UN MONDE UNIVERSEL</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
+---
+layout: default
+title: "Vie · UN MONDE UNIVERSEL"
+lang: fr
+permalink: /vie.html
+---
 
-    /* ═══════════════════════════════════════
-       SITE HEADER — UN MONDE UNIVERSEL
-    ═══════════════════════════════════════ */
-    .site-header {
-      background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);
-      text-align: center;
-      padding: 42px 20px 36px;
-      position: relative;
-      overflow: hidden;
-    }
-    .site-header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(135,206,235,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 20% 100%, rgba(135,206,235,0.07) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .site-title {
-      font-family: 'Cinzel', Georgia, serif;
-      font-weight: 900;
-      font-size: clamp(2rem, 6vw, 4.2rem);
-      color: #ffffff;
-      letter-spacing: 0.10em;
-      text-shadow: 0 2px 24px rgba(135,206,235,0.5), 0 0 60px rgba(135,206,235,0.2);
-      line-height: 1.1;
-      margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
-    }
-    .site-title span {
-      color: #87CEEB;
-    }
-    .site-slogan {
-      font-family: 'Lato', Arial, sans-serif;
-      font-weight: 300;
-      font-size: clamp(0.95rem, 2.2vw, 1.35rem);
-      color: #cce4f7;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 1;
-    }
-    .site-slogan::before,
-    .site-slogan::after {
-      content: '— ';
-      color: #87CEEB;
-      opacity: 0.7;
-    }
-    .site-slogan::after { content: ' —'; }
-
-    /* ═══════════════════════════════════════
-       HERO (VIDEO)
-    ═══════════════════════════════════════ */
-    .hero {
-      background: linear-gradient(180deg, #1a3a6b 0%, #2a5298 50%, #87CEEB 100%);
-      text-align: center;
-      padding: 40px 20px 30px;
-    }
-    .hero img {
-      max-width: 220px;
-      width: 60%;
-      border-radius: 12px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
-    }
-
-    /* ═══════════════════════════════════════
-       NAV
-    ═══════════════════════════════════════ */
-    nav {
-      background: #1a3a6b;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      padding: 14px 20px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Lato', Arial, sans-serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
-      white-space: nowrap;
-    }
-    nav a:hover { color: #87CEEB; }
-    .lang-btn {
-      background: #87CEEB;
-      color: #1a3a6b;
-      border: none;
-      border-radius: 20px;
-      padding: 6px 16px;
-      font-family: 'Lato', Arial, sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-      letter-spacing: 0.05em;
-    }
-    .lang-btn:hover { background: #fff; }
-
-    /* ═══════════════════════════════════════
-       CONTENT
-    ═══════════════════════════════════════ */
-    section { max-width: 780px; margin: 0 auto; padding: 50px 24px; }
-    section h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 28px; border-left: 5px solid #87CEEB; padding-left: 14px; }
-    .vision-block { margin-bottom: 28px; }
-    .vision-block h3 { font-size: 1.1rem; color: #1a3a6b; margin-bottom: 10px; font-style: italic; }
-    .vision-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; }
-    .vision-block.cta p { font-size: 1.15rem; font-weight: bold; color: #1a3a6b; text-align: center; margin-top: 10px; }
-
-    .manifesto-inline {
-      position: relative;
-      background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(233,244,255,0.96) 100%);
-      border: 1px solid rgba(26,58,107,0.12);
-      border-left: 6px solid #87CEEB;
-      border-radius: 18px;
-      padding: 30px 28px;
-      box-shadow: 0 14px 34px rgba(13,34,87,0.10);
-      overflow: hidden;
-    }
-    .manifesto-inline::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(135,206,235,0.20), transparent 34%);
-      pointer-events: none;
-    }
-    .manifesto-inline h3,
-    .manifesto-inline p {
-      position: relative;
-      z-index: 1;
-    }
-    .manifesto-inline h3 {
-      color: #0d2257;
-      margin-bottom: 16px;
-      font-style: normal;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .manifesto-inline p {
-      font-size: 1.08rem;
-      line-height: 1.95;
-    }
-
-    hr { border: none; border-top: 2px solid #87CEEB; max-width: 780px; margin: 0 auto; }
-    .discussion { background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 780px; margin: 0 auto 60px; padding: 40px 24px; }
-    .discussion h2 { font-size: 1.9rem; color: #1a3a6b; margin-bottom: 10px; border-left: 5px solid #87CEEB; padding-left: 14px; }
-    .discussion p.intro { font-size: 1rem; color: #555; margin-bottom: 28px; font-family: Arial, sans-serif; }
-    footer { background: #1a3a6b; color: #cce4f7; text-align: center; padding: 24px 20px; font-family: Arial, sans-serif; font-size: 0.88rem; }
-    footer span { color: #87CEEB; font-weight: bold; }
-
-    /* ═══════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════ */
-    @media (max-width: 600px) {
-      .site-title { letter-spacing: 0.06em; }
-      nav { gap: 12px; padding: 12px 14px; }
-      nav a { font-size: 0.80rem; }
-    }
-  
-
-.manifesto-bridge {
-  position: relative;
-  padding: clamp(3.5rem, 6vw, 6rem) 1.25rem;
-  background:
-    radial-gradient(circle at top left, rgba(1, 105, 111, 0.12), transparent 32%),
-    radial-gradient(circle at bottom right, rgba(1, 105, 111, 0.08), transparent 28%);
-}
-.manifesto-bridge__inner {
-  position: relative;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: clamp(1.5rem, 2.5vw, 2.25rem);
-  border: 1px solid rgba(1, 105, 111, 0.14);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-}
-.manifesto-bridge__glow {
-  position: absolute;
-  inset: auto -10% -30% auto;
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(1, 105, 111, 0.16) 0%, rgba(1, 105, 111, 0) 72%);
-  pointer-events: none;
-}
-.manifesto-bridge__header {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 1.75rem;
-}
-.manifesto-bridge__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.9rem;
-  padding: 0.5rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(1, 105, 111, 0.1);
-  color: #01696f;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.manifesto-bridge__title {
-  max-width: 14ch;
-  margin: 0;
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-}
-.manifesto-bridge__grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1rem, 2vw, 1.5rem);
-}
-.manifesto-card {
-  height: 100%;
-  padding: clamp(1.25rem, 2vw, 1.8rem);
-  border-radius: 24px;
-  border: 1px solid rgba(1, 105, 111, 0.12);
-  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(247,250,250,0.98) 100%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-}
-.manifesto-card__title {
-  margin: 0 0 1rem;
-  font-size: clamp(1.25rem, 2vw, 1.7rem);
-  line-height: 1.05;
-}
-.manifesto-card__body {
-  display: grid;
-  gap: 1rem;
-}
-.manifesto-card__body p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.72;
-  color: rgba(18, 24, 27, 0.92);
-}
-@media (max-width: 980px) {
-  .manifesto-bridge__grid { grid-template-columns: 1fr; }
-  .manifesto-bridge__title { max-width: 100%; }
-}
-@media (max-width: 640px) {
-  .manifesto-bridge { padding: 2.5rem 0.95rem; }
-  .manifesto-bridge__inner { padding: 1rem; border-radius: 22px; }
-  .manifesto-card { padding: 1.05rem; border-radius: 18px; }
-  .manifesto-card__body p { font-size: 0.98rem; line-height: 1.64; }
-}
-@media (prefers-color-scheme: dark) {
-  .manifesto-bridge {
-    background:
-      radial-gradient(circle at top left, rgba(79, 152, 163, 0.16), transparent 32%),
-      radial-gradient(circle at bottom right, rgba(79, 152, 163, 0.12), transparent 28%);
-  }
-  .manifesto-bridge__inner {
-    background: rgba(17, 23, 26, 0.78);
-    border-color: rgba(79, 152, 163, 0.22);
-    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.26);
-  }
-  .manifesto-bridge__eyebrow {
-    background: rgba(79, 152, 163, 0.14);
-    color: #8fd3dc;
-  }
-  .manifesto-card {
-    background: linear-gradient(180deg, rgba(20, 27, 30, 0.92) 0%, rgba(16, 22, 24, 0.98) 100%);
-    border-color: rgba(79, 152, 163, 0.18);
-  }
-  .manifesto-card__body p,
-  .manifesto-bridge__title,
-  .manifesto-card__title {
-    color: rgba(240, 245, 247, 0.94);
-  }
-}
-
-
-
-
-[data-lang-panel][hidden] { display: none !important; }
-
-
+<style>
 .life-banner {
   background: linear-gradient(180deg, #1a3a6b 0%, #2a5298 52%, #87CEEB 100%);
   text-align: center;
@@ -368,76 +60,64 @@
   background: radial-gradient(circle at top right, rgba(135,206,235,0.20), transparent 34%);
   pointer-events: none;
 }
-.life-opening p, .life-opening h2 { position: relative; z-index: 1; }
+.life-opening > * { position: relative; z-index: 1; }
+.life-opening h2,
+.life-card h3,
+.life-strand h3 {
+  color: #1a3a6b;
+}
 .life-opening h2 {
-  color: #0d2257;
-  margin-bottom: 16px;
-  font-size: 1.75rem;
+  font-size: 1.9rem;
+  margin-bottom: 18px;
   border-left: 5px solid #87CEEB;
   padding-left: 14px;
 }
-.life-opening p {
-  font-size: 1.08rem;
-  line-height: 1.95;
+.life-opening p,
+.life-card p,
+.life-strand p,
+.life-conclusion p {
+  font-size: 1.05rem;
+  line-height: 1.85;
   color: #2c2c2c;
   text-align: justify;
-  margin-bottom: 16px;
+  margin: 0 0 16px;
 }
-.life-opening p:last-child { margin-bottom: 0; }
 .life-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 .life-card {
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  padding: 28px 26px;
-  border-top: 4px solid #87CEEB;
+  border: 1px solid rgba(26,58,107,0.12);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 28px rgba(13,34,87,0.08);
 }
 .life-card h3 {
-  font-size: 1.15rem;
-  color: #1a3a6b;
-  margin-bottom: 12px;
-  font-family: Arial, sans-serif;
-  letter-spacing: 0.02em;
-}
-.life-card p {
-  font-size: 1rem;
-  line-height: 1.86;
-  color: #2c2c2c;
-  text-align: justify;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 .life-strand {
-  background: linear-gradient(135deg, #1a3a6b, #2a5298);
-  color: #e8f4fd;
-  border-radius: 16px;
-  padding: 32px 32px;
-  margin: 10px 0 30px;
-  box-shadow: 0 12px 28px rgba(13,34,87,0.18);
+  background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(233,244,255,0.92) 100%);
+  border: 1px solid rgba(26,58,107,0.12);
+  border-radius: 18px;
+  padding: 32px 28px;
+  margin-bottom: 32px;
 }
 .life-strand h3 {
-  color: #87CEEB;
-  font-size: 1.16rem;
-  margin-bottom: 18px;
-  font-family: Arial, sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
 }
-.life-strand p {
-  font-size: 1rem;
-  line-height: 1.9;
-  margin-bottom: 14px;
-  text-align: justify;
-}
-.life-strand p:last-child { margin-bottom: 0; }
 .life-steps {
   display: grid;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 14px;
+  margin-top: 18px;
 }
 .life-step {
-  background: rgba(255,255,255,0.08);
+  background: #1a3a6b;
+  color: #e8f4fd;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 12px;
   padding: 18px 18px;
@@ -459,6 +139,8 @@
   font-size: 1.05rem;
   line-height: 1.9;
   margin: 0 0 12px;
+  color: #e8f4fd;
+  text-align: center;
 }
 .life-conclusion p:last-child {
   margin-bottom: 0;
@@ -471,75 +153,70 @@
   .life-opening p, .life-card p, .life-strand p, .life-conclusion p { text-align: left; }
 }
 </style>
-</head>
-<body>
 
+<div class="life-banner">
+<div class="tag" data-i18n="eyebrow">Terme central</div>
+<h1 data-i18n="title">Vie comme instrument de lecture</h1>
+<p class="subtitle" data-i18n="subtitle">Déployer le vivant comme critère central, comme mécanisme d’orientation et comme lecture des ruptures en formation.</p>
+</div>
 
-  <div class="hero">
-    <img src="IMG_0296.jpeg.JPG" alt="Logo Universel" loading="lazy" width="220" height="220" />
-  </div>
+<main class="life-shell">
+<section class="life-opening">
+<h2 data-i18n="openingTitle">Vie</h2>
+<p data-i18n="op1">Vie n’est pas ici un mot décoratif. C’est le terme central. Il désigne le critère premier à partir duquel un organisme, une relation, une société ou une civilisation peut être jugé : favorise-t-il la continuité du vivant, ou organise-t-il sa dégradation?</p>
+<p data-i18n="op2">Mes intuitions ne viennent pas d’un mystère séparé du réel. Elles naissent d’une sensibilité aux écarts, aux tensions et aux incompatibilités qui apparaissent avant que la rupture soit visible.</p>
+<p data-i18n="op3">Là où beaucoup perçoivent seulement des événements isolés, je tends à lire des structures, des signaux faibles et des mécanismes en formation.</p>
+<p data-i18n="op4">C’est pourquoi la vie devient, dans mon approche, non seulement une valeur, mais un instrument de lecture.</p>
+</section>
+<section class="life-grid">
+<article class="life-card">
+<h3 data-i18n="c1t">Vie comme critère</h3>
+<p data-i18n="c1p">Le vivant est ici le test le plus simple et le plus exigeant. Un système est juste dans la mesure où il maintient les conditions concrètes de viabilité, de dignité, de régénération et de continuité. Lorsqu’il détruit ces conditions tout en prétendant produire de l’ordre, il entre déjà dans une logique de dégradation.</p>
+</article>
+<article class="life-card">
+<h3 data-i18n="c2t">Le mécanisme intuitif</h3>
+<p data-i18n="c2p">L’intuition, dans cette perspective, n’est pas une magie privée. C’est une lecture précoce des dissonances entre ce qui est dit, ce qui est montré et ce qui est structurellement en train de se produire. Elle capte d’abord des écarts de cohérence avant que les conséquences deviennent manifestes.</p>
+</article>
+<article class="life-card">
+<h3 data-i18n="c3t">Signaux faibles</h3>
+<p data-i18n="c3p">Ce qui apparaît anodin à première vue peut déjà contenir la forme d’une bifurcation. Un mot, un rythme, une pression, une répétition ou une incohérence peuvent annoncer le type de trajectoire dans lequel un système s’engage. Lire la vie, c’est repérer tôt ces indices de compatibilité ou de rupture.</p>
+</article>
+<article class="life-card">
+<h3 data-i18n="c4t">Changer de monde</h3>
+<p data-i18n="c4p">Quand les contraintes environnementales deviennent sévères, ou quand demeurer dans le milieu d’origine cesse d’être viable, la vie ne choisit plus entre confort et effort : elle doit se réorganiser pour survivre. Le passage d’un monde à un autre devient alors un problème de compatibilité biologique, mécanique et écologique.</p>
+</article>
+</section>
+<section class="life-strand">
+<h3 data-i18n="strandTitle">Pourquoi Vie devient le terme central</h3>
+<p data-i18n="strandP1">Parce que tout ce qui dure vraiment doit, tôt ou tard, répondre à cette question : protège-t-il la possibilité de vivre, ou perfectionne-t-il les conditions de l’effondrement? La vie permet d’unifier ce que l’on sépare souvent artificiellement : le corps, la relation, la société, la technique, l’environnement, la gouvernance.</p>
+<p data-i18n="strandP2">Dans cette logique, l’intuition n’est pas l’opposé de la rigueur. Elle en est parfois l’avant-scène. Elle détecte les tensions avant qu’elles soient mesurées, puis la réflexion systémique les organise, les teste et les articule. C’est ainsi qu’une sensibilité devient méthode.</p>
+<p data-i18n="strandP3">Plus un système s’éloigne des conditions du vivant, plus il doit compenser par la contrainte, le déni ou la compression. Plus il se rapproche de la vie, plus la régulation peut devenir organique, préventive et compatible avec la continuité.</p>
+<div class="life-steps">
+<div class="life-step"><strong data-i18n="stepsTitle">Ce que lire la vie implique</strong><span data-i18n="s1">Détecter les incompatibilités avant la rupture visible.</span></div>
+<div class="life-step"><span data-i18n="s2">Comprendre qu’un déséquilibre prolongé finit toujours par demander une réorganisation.</span></div>
+<div class="life-step"><span data-i18n="s3">Traiter la dignité, la viabilité et la continuité comme des indicateurs structurels, non comme des luxes moraux.</span></div>
+<div class="life-step"><span data-i18n="s4">Penser la politique, la technique et l’adaptation comme des fonctions de protection du vivant.</span></div>
+</div>
+</section>
+<section class="life-conclusion">
+<p data-i18n="con1">La vie n’est pas seulement ce qu’il faut préserver à la fin du raisonnement.</p>
+<p data-i18n="con2">Elle est le point de départ qui permet de juger la trajectoire entière.</p>
+<p data-i18n="con3">Lorsqu’un système cesse de servir la vie, il commence déjà à mentir sur sa propre stabilité.</p>
+</section>
+</main>
 
-
-  <div class="life-banner">
-    <div class="tag" data-i18n="eyebrow">Terme central</div>
-    <h1 data-i18n="title">Vie comme instrument de lecture</h1>
-    <p class="subtitle" data-i18n="subtitle">Déployer le vivant comme critère central, comme mécanisme d’orientation et comme lecture des ruptures en formation.</p>
-  </div>
-
-  <main class="life-shell">
-    <section class="life-opening">
-      <h2 data-i18n="openingTitle">Vie</h2>
-      <p data-i18n="op1">Vie n’est pas ici un mot décoratif. C’est le terme central. Il désigne le critère premier à partir duquel un organisme, une relation, une société ou une civilisation peut être jugé : favorise-t-il la continuité du vivant, ou organise-t-il sa dégradation?</p>
-      <p data-i18n="op2">Mes intuitions ne viennent pas d’un mystère séparé du réel. Elles naissent d’une sensibilité aux écarts, aux tensions et aux incompatibilités qui apparaissent avant que la rupture soit visible.</p>
-      <p data-i18n="op3">Là où beaucoup perçoivent seulement des événements isolés, je tends à lire des structures, des signaux faibles et des mécanismes en formation.</p>
-      <p data-i18n="op4">C’est pourquoi la vie devient, dans mon approche, non seulement une valeur, mais un instrument de lecture.</p>
-    </section>
-
-    <section class="life-grid">
-      <article class="life-card">
-        <h3 data-i18n="c1t">Vie comme critère</h3>
-        <p data-i18n="c1p">Le vivant est ici le test le plus simple et le plus exigeant. Un système est juste dans la mesure où il maintient les conditions concrètes de viabilité, de dignité, de régénération et de continuité. Lorsqu’il détruit ces conditions tout en prétendant produire de l’ordre, il entre déjà dans une logique de dégradation.</p>
-      </article>
-      <article class="life-card">
-        <h3 data-i18n="c2t">Le mécanisme intuitif</h3>
-        <p data-i18n="c2p">L’intuition, dans cette perspective, n’est pas une magie privée. C’est une lecture précoce des dissonances entre ce qui est dit, ce qui est montré et ce qui est structurellement en train de se produire. Elle capte d’abord des écarts de cohérence avant que les conséquences deviennent manifestes.</p>
-      </article>
-      <article class="life-card">
-        <h3 data-i18n="c3t">Signaux faibles</h3>
-        <p data-i18n="c3p">Ce qui apparaît anodin à première vue peut déjà contenir la forme d’une bifurcation. Un mot, un rythme, une pression, une répétition ou une incohérence peuvent annoncer le type de trajectoire dans lequel un système s’engage. Lire la vie, c’est repérer tôt ces indices de compatibilité ou de rupture.</p>
-      </article>
-      <article class="life-card">
-        <h3 data-i18n="c4t">Changer de monde</h3>
-        <p data-i18n="c4p">Quand les contraintes environnementales deviennent sévères, ou quand demeurer dans le milieu d’origine cesse d’être viable, la vie ne choisit plus entre confort et effort : elle doit se réorganiser pour survivre. Le passage d’un monde à un autre devient alors un problème de compatibilité biologique, mécanique et écologique.</p>
-      </article>
-    </section>
-
-    <section class="life-strand">
-      <h3 data-i18n="strandTitle">Pourquoi Vie devient le terme central</h3>
-      <p data-i18n="strandP1">Parce que tout ce qui dure vraiment doit, tôt ou tard, répondre à cette question : protège-t-il la possibilité de vivre, ou perfectionne-t-il les conditions de l’effondrement? La vie permet d’unifier ce que l’on sépare souvent artificiellement : le corps, la relation, la société, la technique, l’environnement, la gouvernance.</p>
-      <p data-i18n="strandP2">Dans cette logique, l’intuition n’est pas l’opposé de la rigueur. Elle en est parfois l’avant-scène. Elle détecte les tensions avant qu’elles soient mesurées, puis la réflexion systémique les organise, les teste et les articule. C’est ainsi qu’une sensibilité devient méthode.</p>
-      <p data-i18n="strandP3">Plus un système s’éloigne des conditions du vivant, plus il doit compenser par la contrainte, le déni ou la compression. Plus il se rapproche de la vie, plus la régulation peut devenir organique, préventive et compatible avec la continuité.</p>
-      <div class="life-steps">
-        <div class="life-step"><strong data-i18n="stepsTitle">Ce que lire la vie implique</strong><span data-i18n="s1">Détecter les incompatibilités avant la rupture visible.</span></div>
-        <div class="life-step"><span data-i18n="s2">Comprendre qu’un déséquilibre prolongé finit toujours par demander une réorganisation.</span></div>
-        <div class="life-step"><span data-i18n="s3">Traiter la dignité, la viabilité et la continuité comme des indicateurs structurels, non comme des luxes moraux.</span></div>
-        <div class="life-step"><span data-i18n="s4">Penser la politique, la technique et l’adaptation comme des fonctions de protection du vivant.</span></div>
-      </div>
-    </section>
-
-    <section class="life-conclusion">
-      <p data-i18n="con1">La vie n’est pas seulement ce qu’il faut préserver à la fin du raisonnement.</p>
-      <p data-i18n="con2">Elle est le point de départ qui permet de juger la trajectoire entière.</p>
-      <p data-i18n="con3">Lorsqu’un système cesse de servir la vie, il commence déjà à mentir sur sa propre stabilité.</p>
-    </section>
-  </main>
-
-  <hr>
-  <footer>
-    <p>2026 <span>Universel</span> <span data-i18n="footer">Parce que personne ne devrait être laissé derrière</span></p>
-  </footer>
-
-  
-  <script src="nav.js"></script>
-</body>
-</html>
+<script>
+(function () {
+  const dictionary = {'eyebrow': 'Central term', 'title': 'Life as a reading instrument', 'subtitle': 'Deploy life as the central criterion, as a mechanism of orientation, and as a way of reading ruptures in formation.', 'openingTitle': 'Life', 'op1': 'Life is not used here as a decorative word. It is the central term. It designates the primary criterion by which an organism, a relationship, a society, or a civilization can be judged: does it support the continuity of life, or does it organize its degradation?', 'op2': 'My intuitions do not come from a mystery separated from reality. They arise from a sensitivity to gaps, tensions, and incompatibilities that appear before the rupture becomes visible.', 'op3': 'Where many perceive only isolated events, I tend to read structures, weak signals, and mechanisms in formation.', 'op4': 'That is why life becomes, in my approach, not only a value, but also an instrument of reading.', 'c1t': 'Life as criterion', 'c1p': 'Life is here the simplest and most demanding test. A system is just to the extent that it maintains the concrete conditions of viability, dignity, regeneration, and continuity. When it destroys those conditions while claiming to produce order, it already enters a logic of degradation.', 'c2t': 'The intuitive mechanism', 'c2p': 'Intuition, in this perspective, is not a private magic. It is an early reading of dissonances between what is said, what is shown, and what is structurally in the process of happening. It first captures gaps in coherence before the consequences become manifest.', 'c3t': 'Weak signals', 'c3p': 'What appears trivial at first sight may already contain the shape of a bifurcation. A word, a rhythm, a pressure, a repetition, or an incoherence can announce the type of trajectory into which a system is entering. Reading life means identifying early those signs of compatibility or rupture.', 'c4t': 'Changing worlds', 'c4p': 'When environmental constraints become severe, or when remaining in the original environment is no longer viable, life no longer chooses between comfort and effort: it must reorganize itself to survive. The passage from one world to another then becomes a question of biological, mechanical, and ecological compatibility.', 'strandTitle': 'Why Life becomes the central term', 'strandP1': 'Because everything that truly endures must, sooner or later, answer this question: does it protect the possibility of living, or does it perfect the conditions of collapse? Life makes it possible to unify what is often artificially separated: the body, the relationship, the society, the technique, the environment, and governance.', 'strandP2': 'In this logic, intuition is not the opposite of rigor. It is sometimes its front stage. It detects tensions before they are measured, then systemic reflection organizes, tests, and articulates them. This is how a sensitivity becomes a method.', 'strandP3': 'The more a system moves away from the conditions of life, the more it must compensate through constraint, denial, or compression. The closer it comes to life, the more regulation can become organic, preventive, and compatible with continuity.', 'stepsTitle': 'What reading life implies', 's1': 'Detect incompatibilities before the rupture becomes visible.', 's2': 'Understand that a prolonged imbalance always ends up demanding a reorganization.', 's3': 'Treat dignity, viability, and continuity as structural indicators, not as moral luxuries.', 's4': 'Think politics, technology, and adaptation as functions of protecting life.', 'con1': 'Life is not only what must be preserved at the end of the reasoning.', 'con2': 'It is the starting point that makes it possible to judge the entire trajectory.', 'con3': 'When a system stops serving life, it already begins to lie about its own stability.'};
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get('lang') === 'en' ? 'en' : 'fr';
+  document.documentElement.setAttribute('lang', lang);
+  if (lang !== 'en') return;
+  document.querySelectorAll('[data-i18n]').forEach((node) => {
+    const key = node.getAttribute('data-i18n');
+    if (dictionary[key]) {
+      node.textContent = dictionary[key];
+    }
+  });
+})();
+</script>
