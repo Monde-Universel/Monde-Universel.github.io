@@ -155,6 +155,7 @@ permalink: /vie.html
   color: #87CEEB;
   font-weight: bold;
 }
+[hidden] { display: none !important; }
 #content-fr, #content-en { display: block; }
 #content-en { display: none; }
 html[lang="en"] #content-fr { display: none; }
@@ -314,16 +315,21 @@ html[data-theme="dark"] .life-step {
 </main></div>
 
 <script>
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  const requested = params.get('lang');
-  const lang = requested === 'en' ? 'en' : 'fr';
-  document.documentElement.setAttribute('lang', lang);
-  var fr = document.getElementById('content-fr');
-  var en = document.getElementById('content-en');
-  if (fr && en) {
-    fr.style.display = lang === 'fr' ? 'block' : 'none';
-    en.style.display = lang === 'en' ? 'block' : 'none';
-  }
-})();
+function applyVieLang(lang) {
+  const current = lang === 'en' ? 'en' : 'fr';
+  const fr = document.getElementById('content-fr');
+  const en = document.getElementById('content-en');
+  document.documentElement.lang = current;
+  if (fr) fr.hidden = current !== 'fr';
+  if (en) en.hidden = current !== 'en';
+}
+
+document.addEventListener('umLangChange', function (e) {
+  applyVieLang(e && e.detail ? e.detail.lang : 'fr');
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const lang = window.umGetLang ? window.umGetLang() : (document.documentElement.lang || 'fr');
+  applyVieLang(lang);
+});
 </script>
