@@ -57,10 +57,18 @@ html[data-theme="dark"] {
   background: var(--ch-bg);
   color: var(--ch-text);
   padding-bottom: 4.5rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 .chomage-page *,
 .chomage-page *::before,
 .chomage-page *::after { box-sizing: border-box; }
+.chomage-page > .banner,
+.chomage-page > .container {
+  width: 100%;
+  max-width: 100%;
+}
 
 .chomage-page .banner {
   background: linear-gradient(135deg, #1a3a6b 0%, #2a5298 60%, #1a3a6b 100%);
@@ -104,10 +112,10 @@ html[data-theme="dark"] {
 }
 
 .chomage-page .container {
-  width: min(1240px, calc(100vw - 2rem));
-  max-width: 1240px;
+  width: 100%;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 2.5rem 0 0;
+  padding: 2.5rem 1rem 0;
 }
 .chomage-page .intro-block,
 .chomage-page .driver-card,
@@ -124,6 +132,8 @@ html[data-theme="dark"] {
   color: var(--ch-text);
   border: 1px solid var(--ch-border);
   box-shadow: var(--ch-shadow);
+  width: 100%;
+  max-width: 100%;
 }
 .chomage-page .intro-block,
 .chomage-page .content-block,
@@ -259,7 +269,7 @@ html[data-theme="dark"] .chomage-page .diag-ok { background: #1f4330; color: #f1
 }
 .chomage-page .diag-causes {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 12px;
 }
 .chomage-page .diag-cause {
@@ -274,7 +284,7 @@ html[data-theme="dark"] .chomage-page .diag-ok { background: #1f4330; color: #f1
 }
 
 .chomage-page .table-wrapper { overflow-x: auto; margin-bottom: 2rem; }
-.chomage-page table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.chomage-page table { width: 100%; border-collapse: collapse; min-width: 640px; max-width: 100%; }
 .chomage-page th, .chomage-page td {
   padding: 12px 14px;
   border-bottom: 1px solid var(--ch-border);
@@ -345,15 +355,26 @@ html[data-theme="dark"] .chomage-page .diag-cause {
 }
 
 @media (max-width: 820px) {
-  .chomage-page .container { width: calc(100vw - 1.2rem); }
-  .chomage-page .diag-causes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .chomage-page .container { padding-left: 0.8rem; padding-right: 0.8rem; }
 }
 @media (max-width: 560px) {
   .chomage-page .banner { padding-left: 0.9rem; padding-right: 0.9rem; }
+  .chomage-page .container { padding-left: 0.7rem; padding-right: 0.7rem; }
   .chomage-page .diag-causes,
   .chomage-page .drivers-grid,
   .chomage-page .stats-grid { grid-template-columns: 1fr; }
 }
+
+.chomage-page img,
+.chomage-page table,
+.chomage-page .diag-wrapper,
+.chomage-page .table-wrapper,
+.chomage-page .drivers-grid,
+.chomage-page .stats-grid,
+.chomage-page .diag-causes {
+  max-width: 100%;
+}
+
 </style>
 
 <div class="chomage-page" hidden id="content-fr"><div class="banner">
