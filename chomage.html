@@ -169,7 +169,43 @@ permalink: /chomage.html
       font-family: Arial, sans-serif; font-size: 0.85rem; border-top: 2px solid #87CEEB; }
     footer span { color: #87CEEB; font-weight: bold; }
     footer a { color: #87CEEB; text-decoration: none; }
-  </style>
+  
+.site-header .site-title,
+.site-title,
+.site-header .site-title span,
+.site-title span,
+html[data-theme="light"] .site-header .site-title,
+html[data-theme="light"] .site-title,
+html[data-theme="dark"] .site-header .site-title,
+html[data-theme="dark"] .site-title,
+html:not([data-theme]) .site-header .site-title,
+html:not([data-theme]) .site-title {
+  color: #f7fbff !important;
+  -webkit-text-fill-color: #f7fbff !important;
+  opacity: 1 !important;
+  text-shadow: 0 2px 18px rgba(4, 12, 28, 0.34), 0 0 1px rgba(255,255,255,0.45) !important;
+}
+.site-header .site-title span,
+.site-title span,
+html[data-theme="light"] .site-header .site-title span,
+html[data-theme="dark"] .site-header .site-title span,
+html:not([data-theme]) .site-header .site-title span {
+  color: #f7fbff !important;
+  -webkit-text-fill-color: #f7fbff !important;
+}
+.site-header .site-slogan,
+.site-slogan,
+.site-slogan::before,
+.site-slogan::after,
+html[data-theme="light"] .site-header .site-slogan,
+html[data-theme="dark"] .site-header .site-slogan,
+html:not([data-theme]) .site-header .site-slogan {
+  color: #e8f3ff !important;
+  -webkit-text-fill-color: #e8f3ff !important;
+  opacity: 1 !important;
+}
+
+</style>
 <style>
 .univ-encadre-cri {
   margin: 40px auto 28px auto;
