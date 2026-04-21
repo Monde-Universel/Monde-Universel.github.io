@@ -406,13 +406,181 @@ html[data-theme="dark"] [class*="heading"] {
     color: #f8fcff !important;
   }
 }
-@media (max-width: 768px) {
-  .container, main, .content-shell {
-    width: calc(100vw - 1.6rem) !important;
+
+
+#content-fr, #content-en {
+  width: 100%;
+}
+.container, main, .content-shell,
+#content-fr > .container,
+#content-en > .container {
+  width: min(1240px, calc(100vw - 2rem)) !important;
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.intro-block, .content-block, .table-wrapper, .universality-box, .conclusion-box, .final-box, .cry-box, .heart-box {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.banner h1,
+#banner-title,
+html[data-theme="dark"] .banner h1,
+html[data-theme="dark"] #banner-title,
+html[data-theme="light"] .banner h1,
+html[data-theme="light"] #banner-title,
+html:not([data-theme]) .banner h1,
+html:not([data-theme]) #banner-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.42) !important;
+}
+.banner p,
+#banner-sub,
+.banner .tag,
+#tag-text {
+  color: #eef7ff !important;
+}
+.banner .tag,
+#tag-text {
+  background: rgba(12, 27, 55, 0.86) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+}
+.universality-box,
+.conclusion-box,
+.final-box,
+.cry-box,
+.heart-box {
+  background: var(--c-surface) !important;
+  color: var(--c-text) !important;
+  border-color: var(--c-border) !important;
+  box-shadow: var(--c-shadow) !important;
+}
+.universality-box h2,
+.universality-box h3,
+.universality-box p,
+.universality-box li,
+.universality-box strong,
+.conclusion-box h2,
+.conclusion-box h3,
+.conclusion-box p,
+.conclusion-box li,
+.conclusion-box strong,
+.final-box h2,
+.final-box h3,
+.final-box p,
+.final-box li,
+.final-box strong,
+.cry-box h2,
+.cry-box h3,
+.cry-box p,
+.cry-box li,
+.cry-box strong,
+.heart-box h2,
+.heart-box h3,
+.heart-box p,
+.heart-box li,
+.heart-box strong {
+  color: var(--c-text) !important;
+}
+.universality-box h2,
+.universality-box h3,
+.universality-box strong,
+.conclusion-box h2,
+.conclusion-box h3,
+.conclusion-box strong,
+.final-box h2,
+.final-box h3,
+.final-box strong,
+.cry-box h2,
+.cry-box h3,
+.cry-box strong,
+.heart-box h2,
+.heart-box h3,
+.heart-box strong {
+  color: var(--c-title) !important;
+}
+html[data-theme="dark"] .universality-box,
+html[data-theme="dark"] .conclusion-box,
+html[data-theme="dark"] .final-box,
+html[data-theme="dark"] .cry-box,
+html[data-theme="dark"] .heart-box {
+  background: #14212c !important;
+  border-color: rgba(159, 222, 250, 0.24) !important;
+}
+html[data-theme="dark"] .universality-box p,
+html[data-theme="dark"] .universality-box li,
+html[data-theme="dark"] .universality-box strong,
+html[data-theme="dark"] .conclusion-box p,
+html[data-theme="dark"] .conclusion-box li,
+html[data-theme="dark"] .conclusion-box strong,
+html[data-theme="dark"] .final-box p,
+html[data-theme="dark"] .final-box li,
+html[data-theme="dark"] .final-box strong,
+html[data-theme="dark"] .cry-box p,
+html[data-theme="dark"] .cry-box li,
+html[data-theme="dark"] .cry-box strong,
+html[data-theme="dark"] .heart-box p,
+html[data-theme="dark"] .heart-box li,
+html[data-theme="dark"] .heart-box strong {
+  color: #eef5fb !important;
+}
+html[data-theme="dark"] .universality-box h2,
+html[data-theme="dark"] .universality-box h3,
+html[data-theme="dark"] .conclusion-box h2,
+html[data-theme="dark"] .conclusion-box h3,
+html[data-theme="dark"] .final-box h2,
+html[data-theme="dark"] .final-box h3,
+html[data-theme="dark"] .cry-box h2,
+html[data-theme="dark"] .cry-box h3,
+html[data-theme="dark"] .heart-box h2,
+html[data-theme="dark"] .heart-box h3 {
+  color: #f8fcff !important;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .universality-box,
+  html:not([data-theme]) .conclusion-box,
+  html:not([data-theme]) .final-box,
+  html:not([data-theme]) .cry-box,
+  html:not([data-theme]) .heart-box {
+    background: #14212c !important;
+    border-color: rgba(159, 222, 250, 0.24) !important;
   }
-  .banner, .hero-banner, .page-banner {
-    padding-left: 0.9rem !important;
-    padding-right: 0.9rem !important;
+  html:not([data-theme]) .universality-box p,
+  html:not([data-theme]) .universality-box li,
+  html:not([data-theme]) .universality-box strong,
+  html:not([data-theme]) .conclusion-box p,
+  html:not([data-theme]) .conclusion-box li,
+  html:not([data-theme]) .conclusion-box strong,
+  html:not([data-theme]) .final-box p,
+  html:not([data-theme]) .final-box li,
+  html:not([data-theme]) .final-box strong,
+  html:not([data-theme]) .cry-box p,
+  html:not([data-theme]) .cry-box li,
+  html:not([data-theme]) .cry-box strong,
+  html:not([data-theme]) .heart-box p,
+  html:not([data-theme]) .heart-box li,
+  html:not([data-theme]) .heart-box strong {
+    color: #eef5fb !important;
+  }
+  html:not([data-theme]) .universality-box h2,
+  html:not([data-theme]) .universality-box h3,
+  html:not([data-theme]) .conclusion-box h2,
+  html:not([data-theme]) .conclusion-box h3,
+  html:not([data-theme]) .final-box h2,
+  html:not([data-theme]) .final-box h3,
+  html:not([data-theme]) .cry-box h2,
+  html:not([data-theme]) .cry-box h3,
+  html:not([data-theme]) .heart-box h2,
+  html:not([data-theme]) .heart-box h3 {
+    color: #f8fcff !important;
+  }
+}
+@media (max-width: 768px) {
+  .container, main, .content-shell,
+  #content-fr > .container,
+  #content-en > .container {
+    width: calc(100vw - 1.2rem) !important;
   }
 }
 </style>
