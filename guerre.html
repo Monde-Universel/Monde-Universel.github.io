@@ -300,6 +300,81 @@ img {
   height: auto;
 }
 
+.capitalism-box,
+.conclusion-box {
+  background: var(--g-surface) !important;
+  color: var(--g-text) !important;
+  border-color: var(--g-border) !important;
+  box-shadow: var(--g-shadow) !important;
+}
+.capitalism-box h2,
+.conclusion-box h2,
+.capitalism-box h3,
+.conclusion-box h3,
+.capitalism-box strong,
+.conclusion-box strong {
+  color: var(--g-title) !important;
+}
+.capitalism-box p,
+.capitalism-box li,
+.capitalism-box .label,
+.capitalism-box .caption,
+.conclusion-box p,
+.conclusion-box li,
+.conclusion-box .label,
+.conclusion-box .caption {
+  color: var(--g-text) !important;
+}
+html[data-theme="dark"] .capitalism-box,
+html[data-theme="dark"] .conclusion-box {
+  background: #14212c !important;
+  border-color: rgba(159, 222, 250, 0.24) !important;
+}
+html[data-theme="dark"] .capitalism-box p,
+html[data-theme="dark"] .capitalism-box li,
+html[data-theme="dark"] .capitalism-box .label,
+html[data-theme="dark"] .capitalism-box .caption,
+html[data-theme="dark"] .conclusion-box p,
+html[data-theme="dark"] .conclusion-box li,
+html[data-theme="dark"] .conclusion-box .label,
+html[data-theme="dark"] .conclusion-box .caption {
+  color: #eef5fb !important;
+}
+html[data-theme="dark"] .capitalism-box h2,
+html[data-theme="dark"] .capitalism-box h3,
+html[data-theme="dark"] .capitalism-box strong,
+html[data-theme="dark"] .conclusion-box h2,
+html[data-theme="dark"] .conclusion-box h3,
+html[data-theme="dark"] .conclusion-box strong {
+  color: #f8fcff !important;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .capitalism-box,
+  html:not([data-theme]) .conclusion-box {
+    background: #14212c !important;
+    border-color: rgba(159, 222, 250, 0.24) !important;
+  }
+  html:not([data-theme]) .capitalism-box p,
+  html:not([data-theme]) .capitalism-box li,
+  html:not([data-theme]) .capitalism-box .label,
+  html:not([data-theme]) .capitalism-box .caption,
+  html:not([data-theme]) .conclusion-box p,
+  html:not([data-theme]) .conclusion-box li,
+  html:not([data-theme]) .conclusion-box .label,
+  html:not([data-theme]) .conclusion-box .caption {
+    color: #eef5fb !important;
+  }
+  html:not([data-theme]) .capitalism-box h2,
+  html:not([data-theme]) .capitalism-box h3,
+  html:not([data-theme]) .capitalism-box strong,
+  html:not([data-theme]) .conclusion-box h2,
+  html:not([data-theme]) .conclusion-box h3,
+  html:not([data-theme]) .conclusion-box strong {
+    color: #f8fcff !important;
+  }
+}
+
+
 @media (max-width: 768px) {
   .container {
     width: calc(100vw - 1.6rem) !important;
