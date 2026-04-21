@@ -272,6 +272,32 @@ p, li, .label, .caption, .source, .stat-card .label,
   color: var(--g-text) !important;
 }
 
+.content-block li strong,
+.capitalism-box li strong,
+.conclusion-box li strong,
+[class*="block"] li strong,
+[class*="card"] li strong {
+  color: var(--g-title) !important;
+}
+
+html[data-theme="dark"] .content-block li strong,
+html[data-theme="dark"] .capitalism-box li strong,
+html[data-theme="dark"] .conclusion-box li strong,
+html[data-theme="dark"] [class*="block"] li strong,
+html[data-theme="dark"] [class*="card"] li strong {
+  color: #f8fcff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .content-block li strong,
+  html:not([data-theme]) .capitalism-box li strong,
+  html:not([data-theme]) .conclusion-box li strong,
+  html:not([data-theme]) [class*="block"] li strong,
+  html:not([data-theme]) [class*="card"] li strong {
+    color: #f8fcff !important;
+  }
+}
+
 ul, ol { padding-left: 1.35rem !important; }
 .intro-block,
 .conclusion,
