@@ -1,23 +1,10 @@
-<!DOCTYPE html>
+---
+layout: default
+title: "Chômage · UN MONDE UNIVERSEL"
+lang: fr
+permalink: /chomage.html
+---
 
-<html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<!-- SEO META -->
-<meta content="Chômage structurel, stagflation et destruction de la classe moyenne : comment les tarifs Trump, l'automatisation par l'IA et les coupes fédérales accélèrent l'effondrement — et pourquoi l'Universalité est la seule réponse systémique." name="description"/>
-<meta content="chômage structurel, automatisation IA, stagflation, classe moyenne, universalité, revenu universel, tarifs Trump, coupes fédérales, mouvement universel" name="keywords"/>
-<meta content="index, follow" name="robots"/>
-<meta content="Le Fondateur — Universel" name="author"/>
-<link href="https://monde-universel.github.io/chomage.html" rel="canonical"/>
-<!-- Open Graph -->
-<meta content="Chômage &amp; Universalité — La Destruction de la Classe Moyenne | Universel" property="og:title"/>
-<meta content="Tarifs Trump, IA, coupes fédérales, guerre en Iran : 4 moteurs qui accélèrent le chômage structurel. L'Universalité comme réponse systémique." property="og:description"/>
-<meta content="https://monde-universel.github.io/logouniversel.jpeg.JPG" property="og:image"/>
-<meta content="https://monde-universel.github.io/chomage.html" property="og:url"/>
-<meta content="article" property="og:type"/>
-<meta content="fr_CA" property="og:locale"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Chômage &amp; Universalité | Universel</title>
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
@@ -216,19 +203,224 @@
   .univ-encadre-cri p { font-size: 1rem; line-height: 1.75; }
 }
 </style>
-</head>
-<body><script src="nav.js"></script>
+<style>
+[hidden] { display: none !important; }
+#content-fr, #content-en { display: block; }
+#content-en { display: none; }
+html[lang="en"] #content-fr { display: none; }
+html[lang="en"] #content-en { display: block; }
+html[lang="fr"] #content-fr { display: block; }
+html[lang="fr"] #content-en { display: none; }
 
-<div class="hero">
-<a href="index.html"><img alt="Logo Universel" src="logo_universel.jpeg.JPG"/></a>
-</div>
+:root, html[data-theme="light"] {
+  --c-bg: #f3f7fb;
+  --c-surface: #ffffff;
+  --c-surface-2: #edf4fb;
+  --c-text: #162433;
+  --c-soft: #41566d;
+  --c-title: #163b6a;
+  --c-border: rgba(22, 59, 106, 0.14);
+  --c-accent: #87ceeb;
+  --c-accent-strong: #1a3a6b;
+  --c-shadow: 0 12px 32px rgba(13, 34, 87, 0.08);
+}
+html[data-theme="dark"] {
+  --c-bg: #0d141c;
+  --c-surface: #121c25;
+  --c-surface-2: #182531;
+  --c-text: #eef5fb;
+  --c-soft: #d5e3ef;
+  --c-title: #f5fbff;
+  --c-border: rgba(159, 222, 250, 0.20);
+  --c-accent: #9fdefa;
+  --c-accent-strong: #d9efff;
+  --c-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --c-bg: #0d141c;
+    --c-surface: #121c25;
+    --c-surface-2: #182531;
+    --c-text: #eef5fb;
+    --c-soft: #d5e3ef;
+    --c-title: #f5fbff;
+    --c-border: rgba(159, 222, 250, 0.20);
+    --c-accent: #9fdefa;
+    --c-accent-strong: #d9efff;
+    --c-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  }
+}
 
-<div class="banner">
+body {
+  background: var(--c-bg) !important;
+  color: var(--c-text) !important;
+}
+.container, main, .content-shell {
+  width: min(1180px, calc(100vw - 2.5rem)) !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+.banner, .hero-banner, .page-banner {
+  padding: clamp(3rem, 6vw, 5rem) 1.15rem 2.4rem !important;
+}
+.banner h1, .banner p, .banner .tag,
+.hero-banner h1, .hero-banner p, .hero-banner .tag,
+.page-banner h1, .page-banner p, .page-banner .tag {
+  color: #f7fbff !important;
+}
+.banner .tag,
+.hero-banner .tag,
+.page-banner .tag {
+  background: rgba(11, 26, 54, 0.82) !important;
+  color: #f7fbff !important;
+  border: 1px solid rgba(255,255,255,0.20) !important;
+}
+
+h1, h2, h3, h4,
+.section-header h2,
+.section-header h3,
+.number,
+.stat-card .number,
+[class*="title"],
+[class*="heading"] {
+  color: var(--c-title) !important;
+}
+
+p, li, .label, .caption, .source, .stat-card .label,
+[class*="block"] p, [class*="block"] li,
+[class*="card"] p, [class*="card"] li,
+[class*="box"] p, [class*="box"] li,
+[class*="panel"] p, [class*="panel"] li {
+  color: var(--c-text) !important;
+}
+
+[class*="block"],
+[class*="card"],
+[class*="box"],
+[class*="panel"],
+.intro, .intro-block, .content-block, .summary, .summary-block, .conclusion, .conclusion-box, .callout {
+  background: var(--c-surface) !important;
+  color: var(--c-text) !important;
+  border-color: var(--c-border) !important;
+  box-shadow: var(--c-shadow) !important;
+}
+
+[class*="block"] strong,
+[class*="card"] strong,
+[class*="box"] strong,
+[class*="panel"] strong,
+li strong {
+  color: var(--c-title) !important;
+}
+
+ul, ol { padding-left: 1.35rem !important; }
+[class*="block"],
+[class*="card"],
+[class*="box"],
+[class*="panel"],
+.intro, .intro-block, .content-block, .summary, .summary-block, .conclusion, .conclusion-box, .callout {
+  padding-left: clamp(1rem, 2vw, 1.6rem) !important;
+  padding-right: clamp(1rem, 2vw, 1.6rem) !important;
+}
+img { max-width: 100%; height: auto; }
+
+html[data-theme="dark"] [class*="block"],
+html[data-theme="dark"] [class*="card"],
+html[data-theme="dark"] [class*="box"],
+html[data-theme="dark"] [class*="panel"],
+html[data-theme="dark"] .intro,
+html[data-theme="dark"] .intro-block,
+html[data-theme="dark"] .content-block,
+html[data-theme="dark"] .summary,
+html[data-theme="dark"] .summary-block,
+html[data-theme="dark"] .conclusion,
+html[data-theme="dark"] .conclusion-box,
+html[data-theme="dark"] .callout {
+  background: #14212c !important;
+  border-color: rgba(159, 222, 250, 0.24) !important;
+}
+html[data-theme="dark"] p,
+html[data-theme="dark"] li,
+html[data-theme="dark"] .label,
+html[data-theme="dark"] .caption,
+html[data-theme="dark"] .source,
+html[data-theme="dark"] [class*="block"] p,
+html[data-theme="dark"] [class*="block"] li,
+html[data-theme="dark"] [class*="card"] p,
+html[data-theme="dark"] [class*="card"] li,
+html[data-theme="dark"] [class*="box"] p,
+html[data-theme="dark"] [class*="box"] li,
+html[data-theme="dark"] [class*="panel"] p,
+html[data-theme="dark"] [class*="panel"] li {
+  color: #eef5fb !important;
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] strong,
+html[data-theme="dark"] li strong,
+html[data-theme="dark"] [class*="title"],
+html[data-theme="dark"] [class*="heading"] {
+  color: #f8fcff !important;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) [class*="block"],
+  html:not([data-theme]) [class*="card"],
+  html:not([data-theme]) [class*="box"],
+  html:not([data-theme]) [class*="panel"],
+  html:not([data-theme]) .intro,
+  html:not([data-theme]) .intro-block,
+  html:not([data-theme]) .content-block,
+  html:not([data-theme]) .summary,
+  html:not([data-theme]) .summary-block,
+  html:not([data-theme]) .conclusion,
+  html:not([data-theme]) .conclusion-box,
+  html:not([data-theme]) .callout {
+    background: #14212c !important;
+    border-color: rgba(159, 222, 250, 0.24) !important;
+  }
+  html:not([data-theme]) p,
+  html:not([data-theme]) li,
+  html:not([data-theme]) .label,
+  html:not([data-theme]) .caption,
+  html:not([data-theme]) .source,
+  html:not([data-theme]) [class*="block"] p,
+  html:not([data-theme]) [class*="block"] li,
+  html:not([data-theme]) [class*="card"] p,
+  html:not([data-theme]) [class*="card"] li,
+  html:not([data-theme]) [class*="box"] p,
+  html:not([data-theme]) [class*="box"] li,
+  html:not([data-theme]) [class*="panel"] p,
+  html:not([data-theme]) [class*="panel"] li {
+    color: #eef5fb !important;
+  }
+  html:not([data-theme]) h1,
+  html:not([data-theme]) h2,
+  html:not([data-theme]) h3,
+  html:not([data-theme]) h4,
+  html:not([data-theme]) strong,
+  html:not([data-theme]) li strong,
+  html:not([data-theme]) [class*="title"],
+  html:not([data-theme]) [class*="heading"] {
+    color: #f8fcff !important;
+  }
+}
+@media (max-width: 768px) {
+  .container, main, .content-shell {
+    width: calc(100vw - 1.6rem) !important;
+  }
+  .banner, .hero-banner, .page-banner {
+    padding-left: 0.9rem !important;
+    padding-right: 0.9rem !important;
+  }
+}
+</style>
+<div id="content-fr"><div class="banner">
 <div class="tag" id="tag-text">ANALYSE ÉCONOMIQUE</div>
 <h1 id="banner-title">La Destruction Accélérée de la Classe Moyenne<br/>Chômage, Stagflation &amp; Montée de la Classe Pauvre</h1>
 <p id="banner-sub">Tarifs · IA · Guerre en Iran · Coupes fédérales — Quatre moteurs d'un même effondrement</p>
-</div>
-<div class="container">
+</div><div class="container">
 <!-- INTRO -->
 <div class="intro-block">
 <p id="intro1">Les inégalités structurelles du capitalisme ne s'effondrent pas soudainement — elles s'accélèrent. En 2025-2026, quatre vecteurs convergent simultanément pour détruire la classe moyenne à une vitesse sans précédent dans l'histoire économique moderne : les tarifs douaniers de Trump, les coupes fédérales massives, la guerre en Iran et son choc pétrolier, et l'automatisation par l'IA qui remplace des emplois à un rythme que les systèmes de formation ne peuvent pas absorber.</p>
@@ -396,143 +588,196 @@
 <div style="text-align:center; margin-top:40px">
 <a href="index.html" id="btn-home" style="background:#d6e4f2;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold">Retour à l'accueil</a>
 </div>
-</div><!-- .container -->
-
-
+</div></div>
+<div id="content-en"><div class="banner">
+<div class="tag" id="tag-text">ECONOMIC ANALYSIS</div>
+<h1 id="banner-title">The Accelerated Destruction of the Middle Class<br/>Unemployment, Stagflation &amp; Rise of the Poor Class</h1>
+<p id="banner-sub">Prices · AI · War in Iran · Federal Cuts — Four Drivers of the Same Collapse</p>
+</div><div class="container">
+ INTRO 
+<div class="intro-block">
+<p id="intro1">The structural inequalities of capitalism are not suddenly collapsing — they are accelerating. In 2025-2026, four vectors converge simultaneously to destroy the middle class at a speed unprecedented in modern economic history: Trump's tariffs, massive federal cuts, the war in Iran and its oil shock, and AI automation that replaces jobs at a rate that training systems cannot absorb.</p>
+<p id="intro2">This is not an unfavorable situation. It is the logical and predictable convergence of the internal contradictions of an economic system whose fundamental mechanism – private accumulation to the detriment of the collective – is reaching its structural limits.</p>
+</div>
+ DIAGRAM — styled HTML version 
+<div class="diag-wrapper">
+<h3 class="diag-heading" id="diag-heading">📊 Diagram of Structural Inequalities</h3>
+<div class="diag-box diag-top" id="diag-top">
+      STRUCTURAL INEQUALITIES OF CAPITALISM
+    </div>
+<div class="diag-arrow">↓</div>
+<div class="diag-causes">
+<div class="diag-cause" id="diag-c1">🏭<br/>Trump Tariffs</div>
+<div class="diag-cause" id="diag-c2">✂️<br/>Federal cuts</div>
+<div class="diag-cause" id="diag-c3">🛢️<br/>War in Iran</div>
+<div class="diag-cause" id="diag-c4">🤖<br/>AI automation</div>
+</div>
+<div class="diag-arrow">↓</div>
+<div class="diag-box diag-warn" id="diag-w1">
+      ACCELERATED DESTRUCTION OF THE MIDDLE CLASS
+    </div>
+<div class="diag-arrow">↓</div>
+<div class="diag-box diag-warn" id="diag-w2">
+      UNEMPLOYMENT + STAGFLATION + SOCIAL INSTABILITY
+    </div>
+<div class="diag-arrow">↓</div>
+<div class="diag-box diag-ok" id="diag-ok">
+      → UNIVERSALITY as a systemic response
+    </div>
+</div>
+ THE 4 ENGINES 
+<div class="section-header">
+<span class="icon">⚙️</span>
+<h2 id="drivers-title">The 4 Drivers of Structural Unemployment</h2>
+</div>
+<div class="drivers-grid">
+<div class="driver-card">
+<span class="icon">🏭</span>
+<h3 id="d1-title">Trump Tariffs</h3>
+<p id="d1-text">Customs duties of up to 25% on steel, aluminum and Canadian/Mexican products. Chain reaction: rising costs → layoffs → inflation. Estimate: 400,000–750,000 jobs lost in the U.S. by the end of 2026.</p>
+</div>
+<div class="driver-card">
+<span class="icon">✂️</span>
+<h3 id="d2-title">Federal Cups (DOGE)</h3>
+<p id="d2-text">Massive cuts in the civil service, education and health. Multiplier effect: 1 public job eliminated = 1.5 to 2 private jobs lost in dependent communities.</p>
+</div>
+<div class="driver-card">
+<span class="icon">🛢️</span>
+<h3 id="d3-title">War in Iran</h3>
+<p id="d3-text">Strait of Hormuz destabilized. Soaring oil prices worsening stagflation. Transport, logistics and agriculture hit hard. Low-income workers absorb a disproportionate share of the shock.</p>
+</div>
+<div class="driver-card">
+<span class="icon">🤖</span>
+<h3 id="d4-title">AI automation</h3>
+<p id="d4-text">Most irreversible factor. Hits blue-collar AND white-collar workers simultaneously — eliminating the traditional reliance on reskilling for knowledge-based jobs. 30% of current tasks automatable by 2030 (McKinsey).</p>
+</div>
+</div>
+ STATS 
+<div class="section-header">
+<span class="icon">📉</span>
+<h2 id="stats-title">Key Data</h2>
+</div>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="number">35–45%</div>
+<div class="label" id="s1">Displaced workers will not find equivalent employment within 5 years</div>
+</div>
+<div class="stat-card">
+<div class="number">750 000</div>
+<div class="label" id="s2">Net jobs lost in the U.S. due to tariffs alone (CBO 2026 estimate)</div>
+</div>
+<div class="stat-card">
+<div class="number">30%</div>
+<div class="label" id="s3">Current tasks that can be automated by AI by 2030 — McKinsey Global Institute</div>
+</div>
+<div class="stat-card">
+<div class="number">~35%</div>
+<div class="label" id="s4">2030 projection: share of the population in a situation of poverty or precariousness in the G7 countries</div>
+</div>
+<div class="stat-card">
+<div class="number">1.5–2×</div>
+<div class="label" id="s5">Private jobs lost for each public job eliminated (multiplier effect)</div>
+</div>
+<div class="stat-card">
+<div class="number">55→40%</div>
+<div class="label" id="s6">Projected shrinkage of the middle class in G7 countries by 2030</div>
+</div>
+</div>
+<hr class="divider"/>
+ RECONVERSION 
+<div class="section-header">
+<span class="icon">👥</span>
+<h2 id="reconv-title">Who Cannot Retrain?</h2>
+</div>
+<div class="content-block">
+<p id="reconv-intro">AI automation is not comparable to previous industrial revolutions. It simultaneously hits blue-collar workers <em>And</em> white-collar workers, eliminating the traditional recourse to reskilling towards knowledge-based jobs. The result is a structural mismatch between the speed of job destruction and the capacity of training systems to adapt.</p>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th id="th1">Category</th>
+<th id="th2">% of workforce</th>
+<th id="th3">Capacity for reconversion</th>
+</tr>
+</thead>
+<tbody>
+<tr><td id="tc1">Under 30, graduates</td><td>~20%</td><td id="tc1b" style="color:#87CEEB">High</td></tr>
+<tr><td id="tc2">30–50 years, technical sectors</td><td>~25%</td><td id="tc2b" style="color:#ffcc44">Average with training</td></tr>
+<tr><td id="tc3">30–50 years, routine sectors</td><td>~30%</td><td id="tc3b" style="color:#ff9944">Low — cost/time prohibitive</td></tr>
+<tr><td id="tc4">50 years and over, few qualified</td><td>~15%</td><td id="tc4b" style="color:#ff6666">Very weak</td></tr>
+<tr><td id="tc5">Disabilities/social constraints</td><td>~10%</td><td id="tc5b" style="color:#ff4444">Almost zero without structural help</td></tr>
+</tbody>
+</table>
+</div>
+ WORKING POOR 
+<div class="section-header">
+<span class="icon">💸</span>
+<h2 id="poor-title">The Emergence of the Working Poor</h2>
+</div>
+<div class="content-block">
+<p id="poor1">The most worrying phenomenon is not traditional unemployment — it is the multiplication of <em>working poor</em> : full-time workers who remain below the poverty line. The platform economy (Uber, DoorDash, Amazon Flex) has institutionalized this model: jobs without social protection, without retirement, without health insurance.</p>
+<p id="poor2">The sectors most exposed to automation by AI are precisely those which constituted the social elevator of the middle class:</p>
+<ul>
+<li><strong id="li1s">Accounting and data entry:</strong> <span id="li1">~70% of positions at risk of automation</span></li>
+<li><strong id="li2s">Customer service / call centers:</strong> <span id="li2">~60% of positions replaceable by AI</span></li>
+<li><strong id="li3s">Transport/logistics:</strong> <span id="li3">~45% (autonomous trucking in acceleration)</span></li>
+<li><strong id="li4s">Law and paralegal:</strong> <span id="li4">~35% of automatable tasks</span></li>
+<li><strong id="li5s">Journalism and writing:</strong> <span id="li5">~40% of content already produced by AI</span></li>
+</ul>
+</div>
+<hr class="divider"/>
+ UNIVERSALITY RESPONSE 
+<div class="universality-box">
+<h2 id="univ-title">🌍 UNIVERSALITY: The Only Structural Response</h2>
+<p id="univ1">Faced with this trajectory, the current capitalist system only offers palliative responses — employment insurance, limited requalification, conditional social assistance. These measures do not address the cause: they treat the symptoms of a system whose fundamental logic <em>product</em> exclusion.</p>
+<p id="univ2">UNIVERSALITY proposes a logical break: if work ceases to be the main mechanism for distributing value, then economic dignity must be <strong>decoupled from employment</strong>. This is not a radical idea — it is the inevitable mathematical conclusion of an economy that automates faster than it creates.</p>
+<p id="univ3">The concrete responses of UNIVERSALITY to the crisis of structural unemployment:</p>
+<ul>
+<li><strong id="u1s">Universal basic income:</strong> <span id="u1">Decouple survival from employment. Guarantee a level of dignity for all — not just the “deserving of the market.”</span></li>
+<li><strong id="u2s">Collective ownership of automation tools:</strong> <span id="u2">If robots and AI replace human labor, productivity gains belong to everyone, not shareholders.</span></li>
+<li><strong id="u3s">Redistribution of productivity gains:</strong> <span id="u3">Each efficiency gain generated by AI translates into reduction of collective working time or financing of common needs.</span></li>
+<li><strong id="u4s">Continuing training guaranteed:</strong> <span id="u4">Universal right to requalification without condition of merit or previous contribution.</span></li>
+<li><strong id="u5s">Free essential services:</strong> <span id="u5">Health, housing, basic nutrition and education cannot depend on a structurally failing labor market.</span></li>
+</ul>
+</div>
+<div class="content-block">
+<h3 id="q-title">The fundamental question</h3>
+<p id="q1">Past industrial revolutions destroyed jobs to create new ones. AI is different: it eliminates jobs in sectors that <em>were</em> the refuges of requalification. The historical replacement mechanism is broken.</p>
+<p id="q2">The real question is therefore no longer <em>“how to create more jobs”</em> - It is <em>“how does a society distribute its wealth when machines do the work”</em>. Capitalism cannot answer this question because its structural answer is always the same: wealth goes to the owner of capital. UNIVERSALITY reverses this logic.</p>
+</div>
+ CONCLUSION 
+<div class="conclusion-box">
+<p><strong id="ccl1">Structural unemployment is not an individual failure.</strong> <span id="ccl1b">This is the predictable consequence of a system that automates to maximize private profit without a mechanism for redistributing collective gains.</span></p>
+<p id="ccl2">Every worker displaced by an algorithm has not failed to adapt — they have been abandoned by a system that does not plan to return their contribution in any other form.</p>
+<p id="ccl3" style="color:#1a3a6b; font-weight:bold; margin-top:14px">🌍 UNIVERSALITY does not ask humans to run faster than machines. It demands that the machines' gains belong to humanity.</p>
+</div>
+<section aria-label="Le cri intérieur du chômage" class="univ-encadre-cri">
+<h3 id="cry-title">The inner cry of unemployment</h3>
+<p id="cry-p1">Unemployment is no longer just an absence of work. It becomes a feeling of being slowly pushed out of the world, as if everything continues to move forward except you, while the doors close one by one and each bill reminds you that your existence now has a price that you can no longer pay.</p>
+<p id="cry-p2">By counting, cutting, giving up, we end up seeing everywhere the cold mechanics of a system which exhausts bodies and crushes wills. It's not necessarily a conspiracy; it is sometimes worse: an organization of reality so indifferent that it produces the same anguish, the same feeling of abandonment, the same impression of being silently sacrificed.</p>
+<p id="cry-p3">Then unemployment ceases to be a statistic and becomes an inner cry. Fiscal suffering sets in, pessimism gains ground, and socio-economic collapse no longer resembles a theory, but a collective fatigue that eats away at the poor, weakens the middle class and transforms the future into a threat.</p>
+</section>
+<div style="text-align:center; margin-top:40px">
+<a href="index.html" id="btn-home" style="background:#d6e4f2;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold">Back to home</a>
+</div>
+</div></div>
 <script>
-const TR = {
-  fr: {
-    'site-title':'UN MONDE UNIVERSEL','site-slogan':'Parce que personne ne devrait être laissé derrière','nav-vision':'La Vision','nav-discussion':'Discussion','nav-these':'📖 Un peu plus…',
-    'nav-theorie':'🔬 Nouvelle Approche','nav-vie':'Vie','nav-guerre':'⚔️ Guerre',
-    'nav-chomage':'📉 Chômage','nav-rub':'RUB','nav-about':'À propos','nav-contact':'Contact',
-    'tag-text':'ANALYSE ÉCONOMIQUE','diag-heading':'📊 Schéma des Inégalités Structurelles','diag-top':'INÉGALITÉS STRUCTURELLES DU CAPITALISME','diag-c1':'🏭<br>Tarifs Trump','diag-c2':'✂️<br>Coupes fédérales','diag-c3':'🛢️<br>Guerre en Iran','diag-c4':'🤖<br>Automatisation IA','diag-w1':'DESTRUCTION ACCÉLÉRÉE DE LA CLASSE MOYENNE','diag-w2':'CHÔMAGE + STAGFLATION + INSTABILITÉ SOCIALE','diag-ok':'→ L\'UNIVERSALITÉ comme réponse systémique',
-    'banner-title':'La Destruction Accélérée de la Classe Moyenne<br>Chômage, Stagflation &amp; Montée de la Classe Pauvre',
-    'banner-sub':'Tarifs · IA · Guerre en Iran · Coupes fédérales — Quatre moteurs d\'un même effondrement',
-    'intro1':'Les inégalités structurelles du capitalisme ne s\'effondrent pas soudainement — elles s\'accélèrent. En 2025-2026, quatre vecteurs convergent simultanément pour détruire la classe moyenne à une vitesse sans précédent : les tarifs Trump, les coupes fédérales, la guerre en Iran et l\'automatisation par l\'IA.',
-    'intro2':'Ce n\'est pas une conjoncture défavorable. C\'est la convergence logique et prévisible des contradictions internes d\'un système dont la mécanique fondamentale atteint ses limites structurelles.',
-    'drivers-title':'Les 4 Moteurs du Chômage Structurel',
-    'd1-title':'Tarifs Trump','d1-text':'Droits de douane jusqu\'à 25% sur l\'acier, l\'aluminium et les produits canadiens/mexicains. Réaction en chaîne : hausse des coûts → licenciements → inflation. Estimation : 400 000–750 000 emplois perdus aux É.-U. d\'ici fin 2026.',
-    'd2-title':'Coupes fédérales (DOGE)','d2-text':'Suppressions massives dans la fonction publique, l\'éducation et la santé. Effet multiplicateur : 1 emploi public supprimé = 1,5 à 2 emplois privés perdus dans les communautés dépendantes.',
-    'd3-title':'Guerre en Iran','d3-text':'Détroit d\'Ormuz déstabilisé. Flambée du pétrole aggravant la stagflation. Transport, logistique et agriculture frappés de plein fouet.',
-    'd4-title':'Automatisation par l\'IA','d4-text':'Facteur le plus irréversible. Frappe simultanément cols bleus ET cols blancs. 30% des tâches actuelles automatisables d\'ici 2030 (McKinsey).',
-    'stats-title':'Données Clés',
-    's1':'Des travailleurs déplacés ne retrouveront pas d\'emploi équivalent d\'ici 5 ans',
-    's2':'Emplois nets perdus aux É.-U. à cause des seuls tarifs (estimation CBO 2026)',
-    's3':'Des tâches actuelles automatisables par l\'IA d\'ici 2030 — McKinsey',
-    's4':'Projection 2030 : part en pauvreté/précarité dans les pays du G7',
-    's5':'Emplois privés perdus par emploi public supprimé (effet multiplicateur)',
-    's6':'Rétrécissement projeté de la classe moyenne dans les pays du G7 d\'ici 2030',
-    'reconv-title':'Qui Ne Peut Pas Se Reconvertir ?',
-    'reconv-intro':'L\'automatisation par l\'IA n\'est pas comparable aux révolutions industrielles précédentes. Elle frappe simultanément les cols bleus et cols blancs, éliminant le recours traditionnel à la requalification. Le résultat est une inadéquation structurelle entre la vitesse de destruction des emplois et la capacité des systèmes de formation.',
-    'th1':'Catégorie','th2':'% de la main-d\'œuvre','th3':'Capacité de reconversion',
-    'tc1':'Moins de 30 ans, diplômés','tc1b':'Élevée',
-    'tc2':'30–50 ans, secteurs techniques','tc2b':'Moyenne avec formation',
-    'tc3':'30–50 ans, secteurs routiniers','tc3b':'Faible — coût/temps prohibitif',
-    'tc4':'50 ans et +, peu diplômés','tc4b':'Très faible',
-    'tc5':'Handicaps / contraintes sociales','tc5b':'Quasi nulle sans aide',
-    'poor-title':'L\'Émergence des Working Poor',
-    'poor1':'Le phénomène le plus inquiétant n\'est pas le chômage traditionnel — c\'est la multiplication des working poor : des travailleurs à temps plein qui restent sous le seuil de pauvreté.',
-    'poor2':'Les secteurs les plus exposés à l\'automatisation sont précisément ceux qui constituaient l\'ascenseur social de la classe moyenne :',
-    'li1s':'Comptabilité et saisie :','li1':'~70% des postes à risque',
-    'li2s':'Service client / centres d\'appel :','li2':'~60% remplaçables par l\'IA',
-    'li3s':'Transport / logistique :','li3':'~45% (camionnage autonome)',
-    'li4s':'Droit et paralégal :','li4':'~35% des tâches automatisables',
-    'li5s':'Journalisme et rédaction :','li5':'~40% déjà produits par IA',
-    'univ-title':'🌍 L\'Universalité : La Seule Réponse Structurelle',
-    'univ1':'Face à cette trajectoire, le capitalisme n\'offre que des réponses palliatives. Ces mesures traitent les symptômes d\'un système dont la logique fondamentale produit l\'exclusion.',
-    'univ2':'L\'Universalité propose une rupture : si le travail cesse d\'être le mécanisme de distribution de la valeur, la dignité économique doit être découplée de l\'emploi.',
-    'univ3':'Les réponses concrètes de l\'Universalité :',
-    'u1s':'Revenu universel de base :','u1':'Découpler la survie de l\'emploi. Garantir un plancher de dignité à tous.',
-    'u2s':'Propriété collective de l\'automatisation :','u2':'Si les IA remplacent le travail humain, les gains appartiennent à tous.',
-    'u3s':'Redistribution des gains de productivité :','u3':'Chaque gain d\'IA se traduit en réduction du temps de travail ou en financement collectif.',
-    'u4s':'Formation continue garantie :','u4':'Droit universel à la requalification sans condition.',
-    'u5s':'Services essentiels gratuits :','u5':'Santé, logement, alimentation et éducation découplés du marché du travail.',
-    'q-title':'La question fondamentale',
-    'q1':'Les révolutions passées ont détruit des emplois pour en créer de nouveaux. L\'IA est différente : elle supprime des emplois dans les secteurs de requalification eux-mêmes.',
-    'q2':'La vraie question n\'est plus "comment créer plus d\'emplois" — c\'est "comment une société distribue-t-elle sa richesse quand les machines font le travail".',
-    'ccl1':'Le chômage structurel n\'est pas un échec individuel.','ccl1b':'C\'est la conséquence prévisible d\'un système qui automatise pour maximiser le profit privé sans redistribuer les gains collectifs.',
-    'ccl2':'Chaque travailleur déplacé par un algorithme n\'a pas échoué à s\'adapter — il a été abandonné par un système sans mécanisme de redistribution.',
-    'ccl3':'🌍 L\'Universalité ne demande pas aux humains de courir plus vite que les machines. Elle demande que les gains des machines appartiennent à l\'humanité.',
-    'btn-home':'Retour à l\'accueil','footer-txt':'Parce que personne ne devrait être laissé derrière',
-    'cry-title':'Le cri intérieur du chômage',
-    'cry-p1':'Le chômage n’est plus seulement une absence de travail. Il devient une sensation d’être lentement poussé hors du monde, comme si tout continuait d’avancer sauf toi, pendant que les portes se ferment une à une et que chaque facture vient te rappeler que ton existence a désormais un prix que tu ne peux plus payer.',
-    'cry-p2':'À force de compter, de couper, de renoncer, on finit par voir partout la mécanique froide d’un système qui épuise les corps et écrase les volontés. Ce n’est pas forcément un complot; c’est parfois pire: une organisation du réel si indifférente qu’elle produit la même angoisse, le même sentiment d’abandon, la même impression d’être sacrifié en silence.',
-    'cry-p3':'Alors le chômage cesse d’être une statistique et devient un cri intérieur. La souffrance budgétaire s’installe, le pessimisme gagne du terrain, et l’effondrement socio-économique ne ressemble plus à une théorie, mais à une fatigue collective qui ronge les pauvres, fragilise la classe moyenne et transforme l’avenir en menace.'
-  },
-  en: {
-    'site-slogan':'Because no one should be left behind','nav-home':'🏠 Home','nav-vision':'The Vision','nav-these':'📖 A Bit More…',
-    'nav-theorie':'🔬 New Approach','nav-vie':'Life','nav-guerre':'⚔️ War',
-    'nav-chomage':'📉 Unemployment','nav-rub':'UBI','nav-about':'About','nav-contact':'Contact',
-    'tag-text':'ECONOMIC ANALYSIS','diag-heading':'📊 Diagram of Structural Inequalities','diag-top':'STRUCTURAL INEQUALITIES OF CAPITALISM','diag-c1':'🏭<br>Trump Tariffs','diag-c2':'✂️<br>Federal Cuts','diag-c3':'🛢️<br>War in Iran','diag-c4':'🤖<br>AI Automation','diag-w1':'ACCELERATED DESTRUCTION OF THE MIDDLE CLASS','diag-w2':'UNEMPLOYMENT + STAGFLATION + SOCIAL INSTABILITY','diag-ok':'→ UNIVERSALITY as a systemic response',
-    'banner-title':'The Accelerated Destruction of the Middle Class<br>Unemployment, Stagflation &amp; Rise of the Working Poor',
-    'banner-sub':'Tariffs · AI · Iran War · Federal Cuts — Four engines of the same collapse',
-    'intro1':'The structural inequalities of capitalism do not collapse suddenly — they accelerate. In 2025-2026, four vectors converge simultaneously to destroy the middle class at an unprecedented pace: Trump tariffs, federal cuts, the Iran war oil shock, and AI automation replacing jobs faster than training systems can absorb.',
-    'intro2':'This is not an unfavorable economic cycle. It is the logical and predictable convergence of the internal contradictions of a system whose fundamental mechanics have reached their structural limits.',
-    'drivers-title':'The 4 Engines of Structural Unemployment',
-    'd1-title':'Trump Tariffs','d1-text':'Duties up to 25% on steel, aluminum and Canadian/Mexican products. Chain reaction: cost increases → layoffs → inflation. Estimate: 400,000–750,000 jobs lost in the U.S. by end of 2026.',
-    'd2-title':'Federal Cuts (DOGE)','d2-text':'Massive cuts in public service, education and healthcare. Multiplier effect: 1 public job cut = 1.5 to 2 private jobs lost in dependent communities.',
-    'd3-title':'War in Iran','d3-text':'Strait of Hormuz destabilized. Oil surge aggravating stagflation. Transportation, logistics and agriculture hit hard. Low-income workers absorb a disproportionate share.',
-    'd4-title':'AI Automation','d4-text':'The most irreversible factor. Strikes both blue-collar AND white-collar jobs — eliminating traditional requalification pathways. 30% of current tasks automatable by 2030 (McKinsey).',
-    'stats-title':'Key Data',
-    's1':'Of displaced workers will not find equivalent employment within 5 years',
-    's2':'Net jobs lost in the U.S. from tariffs alone (CBO estimate 2026)',
-    's3':'Of current tasks automatable by AI by 2030 — McKinsey Global Institute',
-    's4':'2030 projection: share of population in poverty/precarity in G7 countries',
-    's5':'Private jobs lost per public job cut (multiplier effect)',
-    's6':'Projected shrinkage of the middle class in G7 countries by 2030',
-    'reconv-title':'Who Cannot Retrain?',
-    'reconv-intro':'AI automation is not comparable to previous industrial revolutions. It simultaneously strikes blue-collar and white-collar workers, eliminating the traditional pathway to knowledge economy jobs. The result is a structural mismatch between the speed of job destruction and training system capacity.',
-    'th1':'Category','th2':'% of workforce','th3':'Retraining capacity',
-    'tc1':'Under 30, educated','tc1b':'High',
-    'tc2':'30–50, technical sectors','tc2b':'Moderate with training',
-    'tc3':'30–50, routine sectors','tc3b':'Low — prohibitive cost/time',
-    'tc4':'50+ with low education','tc4b':'Very low',
-    'tc5':'Disabilities / social constraints','tc5b':'Near zero without structural support',
-    'poor-title':'The Rise of the Working Poor',
-    'poor1':'The most alarming phenomenon is not traditional unemployment — it is the multiplication of working poor: full-time workers who remain below the poverty line.',
-    'poor2':'The sectors most exposed to AI automation are precisely those that formed the social elevator of the middle class:',
-    'li1s':'Accounting and data entry:','li1':'~70% of positions at automation risk',
-    'li2s':'Customer service / call centers:','li2':'~60% replaceable by AI',
-    'li3s':'Transportation / logistics:','li3':'~45% (autonomous trucking acceleration)',
-    'li4s':'Law and paralegal:','li4':'~35% of tasks automatable',
-    'li5s':'Journalism and writing:','li5':'~40% already produced by AI',
-    'univ-title':'🌍 Universality: The Only Structural Response',
-    'univ1':'Facing this trajectory, capitalism offers only palliative responses — unemployment insurance, limited retraining, conditional welfare. These measures treat symptoms of a system whose fundamental logic produces exclusion.',
-    'univ2':'Universality proposes a logical break: if work ceases to be the primary value distribution mechanism, economic dignity must be decoupled from employment.',
-    'univ3':'Concrete responses from Universality to structural unemployment:',
-    'u1s':'Universal basic income:','u1':'Decouple survival from employment. Guarantee a floor of dignity for all.',
-    'u2s':'Collective ownership of automation:','u2':'If AI replaces human labor, productivity gains belong to everyone.',
-    'u3s':'Redistribution of productivity gains:','u3':'Every AI efficiency gain translates to reduced collective work time or common funding.',
-    'u4s':'Guaranteed lifelong learning:','u4':'Universal right to requalification without conditions.',
-    'u5s':'Free essential services:','u5':'Health, housing, food and education cannot depend on a structurally failing labor market.',
-    'q-title':'The Fundamental Question',
-    'q1':'Past industrial revolutions destroyed jobs to create new ones. AI is different: it eliminates jobs in the very sectors that were requalification refuges.',
-    'q2':'The real question is no longer "how to create more jobs" — it is "how does a society distribute its wealth when machines do the work".',
-    'ccl1':'Structural unemployment is not individual failure.','ccl1b':'It is the predictable consequence of a system that automates to maximize private profit without redistributing collective gains.',
-    'ccl2':'Every worker displaced by an algorithm did not fail to adapt — they were abandoned by a system with no redistribution mechanism.',
-    'ccl3':'🌍 Universality does not ask humans to run faster than machines. It asks that the gains from machines belong to humanity.',
-    'btn-home':'Back to Home','footer-txt':'Because no one should be left behind',
-    'cry-title':'The inner cry of unemployment',
-    'cry-p1':'Unemployment is no longer just the absence of work. It becomes the feeling of being slowly pushed out of the world, as if everything kept moving forward except you, while doors close one by one and every bill reminds you that your existence now carries a price you can no longer afford to pay.',
-    'cry-p2':'After so much counting, cutting, and giving things up, people begin to see everywhere the cold machinery of a system that exhausts bodies and crushes human will. It is not necessarily a conspiracy; sometimes it is worse: an organization of reality so indifferent that it produces the same anxiety, the same abandonment, the same impression of being sacrificed in silence.',
-    'cry-p3':'Then unemployment stops being a statistic and becomes an inner cry. Budgetary suffering settles in, pessimism gains ground, and socio-economic collapse no longer feels like a theory, but like a collective exhaustion that wears down the poor, destabilizes the middle class, and turns the future into a threat.'
-  }
-};
-(function() {
-  function applyPageLang(lang) {
-    var t = TR[lang] || TR.fr || {};
-    document.querySelectorAll('[data-i18n]').forEach(function(el) {
-      var key = el.getAttribute('data-i18n');
-      if (t[key] !== undefined) el.innerHTML = t[key];
-    });
-    document.documentElement.lang = lang;
-    if (lang === 'en') {
-      document.title = 'UNIVERSAL — Unemployment is not a natural destiny';
-    } else {
-      document.title = 'UN MONDE UNIVERSEL — Le chômage n'est pas une fatalité naturelle';
-    }
-  }
-  document.addEventListener('umLangChange', function(e) { applyPageLang(e.detail.lang); });
-})();
-</script></body>
-</html>
+function applyChomageLang(lang) {
+  const current = lang === 'en' ? 'en' : 'fr';
+  const fr = document.getElementById('content-fr');
+  const en = document.getElementById('content-en');
+  document.documentElement.lang = current;
+  if (fr) fr.hidden = current !== 'fr';
+  if (en) en.hidden = current !== 'en';
+}
+
+document.addEventListener('umLangChange', function (e) {
+  applyChomageLang(e && e.detail ? e.detail.lang : 'fr');
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const lang = window.umGetLang ? window.umGetLang() : (document.documentElement.lang || 'fr');
+  applyChomageLang(lang);
+});
+</script>
