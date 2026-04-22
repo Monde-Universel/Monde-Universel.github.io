@@ -1,17 +1,25 @@
 <header class="site-header">
   <div class="container header-shell">
     <div class="header-top">
+      {% if page.lang == 'en' %}
+        {% assign brand_logo = site.brand.logo_en %}
+        {% assign brand_home_label = 'Home - A Universal World' %}
+        {% assign brand_alt = 'A Universal World — Because no one should be left behind' %}
+      {% else %}
+        {% assign brand_logo = site.brand.logo_fr %}
+        {% assign brand_home_label = 'Accueil - Un Monde Universel' %}
+        {% assign brand_alt = 'Un Monde Universel — Parce que personne ne devrait être laissé derrière' %}
+      {% endif %}
+
       <a
         class="site-brand site-brand--logo"
         href="{{ '/index.html' | relative_url }}"
-        aria-label="Accueil - Un Monde Universel"
-        data-i18n-aria-label="brandAria"
+        aria-label="{{ brand_home_label }}"
       >
         <img
           class="site-brand__logo"
-          src="{{ '/assets/images/logo-umu-final.png' | relative_url }}"
-          alt="Un Monde Universel — Parce que personne ne devrait être laissé derrière"
-          data-i18n-alt="brandAlt"
+          src="{{ brand_logo | relative_url }}"
+          alt="{{ brand_alt }}"
           loading="eager"
           decoding="async"
         >
