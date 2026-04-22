@@ -5,19 +5,36 @@
         class="site-brand site-brand--logo"
         href="{{ '/index.html' | relative_url }}"
         aria-label="Accueil - Un Monde Universel"
+        data-i18n-aria-label="brandAria"
       >
         <img
           class="site-brand__logo"
           src="{{ '/assets/images/logo-umu-final.png' | relative_url }}"
           alt="Un Monde Universel — Parce que personne ne devrait être laissé derrière"
+          data-i18n-alt="brandAlt"
           loading="eager"
           decoding="async"
         >
       </a>
 
       <div class="header-actions">
-        <button class="lang-btn" type="button" data-lang-toggle aria-label="Switch language">EN</button>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Basculer le thème">
+        <button
+          class="lang-btn"
+          type="button"
+          data-lang-toggle
+          aria-label="Switch language"
+          data-i18n-aria-label="langToggle"
+        >
+          EN
+        </button>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Basculer le thème"
+          data-i18n-aria-label="themeToggle"
+        >
           <span aria-hidden="true">◐</span>
         </button>
       </div>
