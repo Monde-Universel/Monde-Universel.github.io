@@ -2,13 +2,13 @@
   <div class="container header-shell">
     <div class="header-top">
       {% if page.lang == 'en' %}
-        {% assign brand_logo = site.brand.logo_en %}
         {% assign brand_home_label = 'Home - A Universal World' %}
         {% assign brand_alt = 'A Universal World — Because no one should be left behind' %}
+        {% assign brand_src = '/assets/images/logo-en.png' %}
       {% else %}
-        {% assign brand_logo = site.brand.logo_fr %}
         {% assign brand_home_label = 'Accueil - Un Monde Universel' %}
         {% assign brand_alt = 'Un Monde Universel — Parce que personne ne devrait être laissé derrière' %}
+        {% assign brand_src = '/assets/images/logo-fr.png' %}
       {% endif %}
 
       <a
@@ -18,10 +18,15 @@
       >
         <img
           class="site-brand__logo"
-          src="{{ brand_logo | relative_url }}"
+          src="{{ brand_src | relative_url }}"
           alt="{{ brand_alt }}"
+          data-logo-fr="{{ '/assets/images/logo-fr.png' | relative_url }}"
+          data-logo-en="{{ '/assets/images/logo-en.png' | relative_url }}"
           loading="eager"
+          fetchpriority="high"
           decoding="async"
+          width="640"
+          height="640"
         >
       </a>
 
