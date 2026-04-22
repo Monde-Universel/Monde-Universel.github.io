@@ -1,13 +1,18 @@
 <header class="site-header">
   <div class="container header-shell">
     <div class="header-top">
-      <a class="site-brand" href="{{ '/index.html' | relative_url }}">
-        <span class="site-brand__title" data-i18n="brandTitle">
-          UN MONDE <span class="site-brand__hl">UNIVERSEL</span>
-        </span>
-        <span class="site-brand__tagline" data-i18n="slogan">
-          Parce que personne ne devrait être laissé derrière
-        </span>
+      <a
+        class="site-brand site-brand--logo"
+        href="{{ '/index.html' | relative_url }}"
+        aria-label="Accueil - Un Monde Universel"
+      >
+        <img
+          class="site-brand__logo"
+          src="{{ '/assets/images/logo-umu-final.png' | relative_url }}"
+          alt="Un Monde Universel — Parce que personne ne devrait être laissé derrière"
+          loading="eager"
+          decoding="async"
+        >
       </a>
 
       <div class="header-actions">
