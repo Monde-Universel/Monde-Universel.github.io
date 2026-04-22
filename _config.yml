@@ -1,4 +1,20 @@
-title: Monde Universel
-lang: fr
-markdown: kramdown
-permalink: pretty
+title: Un Monde Universel
+
+brand:
+  logo_fr: /assets/images/logo-fr.png
+  logo_en: /assets/images/logo-en.png
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+      lang: fr
+
+  - scope:
+      path: "en"
+      type: "pages"
+    values:
+      layout: default
+      lang: en
