@@ -690,16 +690,13 @@ button:focus-visible {
   padding-bottom: 0.75rem;
   border-bottom: 2px solid rgba(26, 58, 107, 0.12);
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 #contenu .pilier-header h2 {
-  flex: 1 1 0;
-  min-width: 0;
   margin: 0;
-  word-break: break-word;
 }
 
 #contenu .pilier-num {
