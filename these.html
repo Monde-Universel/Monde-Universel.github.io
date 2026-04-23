@@ -5,7 +5,18 @@ lang: fr
 permalink: /these.html
 ---
 
-<div data-lang-block="fr">
+<section data-lang-block="fr">
+
+<style>
+#content-fr, #content-en { display: block; }
+#content-en { display: none; }
+html[lang="en"] #content-fr { display: none; }
+html[lang="en"] #content-en { display: block; }
+html[lang="fr"] #content-fr { display: block; }
+html[lang="fr"] #content-en { display: none; }
+</style>
+
+<div id="content-fr">
 
 <div class="container">
 <h1>De l'Urgence de Remplacer le Capitalisme par l'Universalité</h1>
@@ -298,15 +309,17 @@ permalink: /these.html
 <a data-i18n="back_home" href="index.html" style="background:#1a3a6b; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-family:Arial,sans-serif; font-weight:bold;">← Retour à l'accueil</a>
 </div>
 </div>
+</div>
+
+<div id="content-en">
+
 <div class="container">
 <h1>On the Urgency of Replacing Capitalism with Universality</h1>
 <h1 style="font-size:1.2rem; margin-top:8px;">Toward a New Paradigm of Human Governance</h1>
 <p class="discipline">
+</section>
 
-</div>
-
-<div data-lang-block="en" hidden>
-
+<section data-lang-block="en" hidden>
 Thesis in political and economic sociology</p>
 <div class="resume-box">
 <h2>ABSTRACT</h2>
@@ -586,6 +599,19 @@ Thesis in political and economic sociology</p>
 </div>
 </div>
 
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get('lang');
+  const lang = requested === 'en' ? 'en' : 'fr';
+  document.documentElement.setAttribute('lang', lang);
+  var fr = document.getElementById('content-fr');
+  var en = document.getElementById('content-en');
+  if (fr && en) {
+    fr.style.display = lang === 'fr' ? 'block' : 'none';
+    en.style.display = lang === 'en' ? 'block' : 'none';
+  }
+})();
+</script>
 
-
-</div>
+</section>
