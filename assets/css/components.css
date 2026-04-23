@@ -1006,4 +1006,77 @@ textarea {
   }
 }
 
+/* Override mise en page des cartes de vote */
+
+/* Une seule carte par rangée, centrée, avec largeur confortable */
+.vote-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 42px 20px 64px;
+}
+
+.vote-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
+  justify-items: center; /* centre la carte dans la grille */
+}
+
+/* La carte prend la largeur disponible jusqu'à un max */
+.vote-card {
+  width: 100%;
+  max-width: 720px; /* augmente/diminue cette valeur au besoin */
+}
+
+/* Tablette : même logique, éventuellement un peu moins large */
+@media (max-width: 900px) {
+  .vote-wrap {
+    padding: 38px 18px 58px;
+  }
+
+  .vote-card {
+    max-width: 640px;
+  }
+}
+
+/* Mobile : pleine largeur de l'écran moins les marges */
+@media (max-width: 640px) {
+  .vote-wrap {
+    padding: 34px 14px 54px;
+  }
+
+  .vote-card {
+    max-width: 100%;
+  }
+}
+
+/* Optimisation mobile pour iPhone 17 Pro Max */
+
+@media (max-width: 900px) {
+  .vote-wrap {
+    padding: 32px 12px 48px;
+  }
+
+  .vote-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .vote-card {
+    width: 100%;
+    max-width: 100%;  /* la carte colle à la largeur utile */
+    margin: 0 auto;
+  }
+
+  .vote-photo img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .vote-btn {
+    width: 100%;      /* bouton votez bien pleine largeur de la carte */
+  }
+}
+
+
 
