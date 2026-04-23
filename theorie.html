@@ -1,20 +1,12 @@
 ---
 layout: default
-title: "Une Nouvelle Approche — La Socio-trajectoire évolutive | Universel"
+title: "Nouvelle approche — Théorie | Universel"
 lang: fr
 permalink: /theorie.html
 ---
 
-<style>
-#content-fr, #content-en { display: block; }
-#content-en { display: none; }
-html[lang="en"] #content-fr { display: none; }
-html[lang="en"] #content-en { display: block; }
-html[lang="fr"] #content-fr { display: block; }
-html[lang="fr"] #content-en { display: none; }
-</style>
+<section data-lang-block="fr">
 
-<div id="content-fr">
 <div class="banner">
 <div class="tag">Théorie originale</div>
 <h1>La Socio-trajectoire évolutive</h1>
@@ -223,8 +215,13 @@ html[lang="fr"] #content-en { display: none; }
 <p>Ce n'est plus de la politique. C'est de l'ingénierie systémique civilisationnelle.</p>
 </div>
 </div>
+<!-- end content-fr -->
+<!-- ENGLISH CONTENT -->
 
-<div id="content-en">
+</section>
+
+<section data-lang-block="en" hidden>
+
 <div class="banner">
 <div class="tag">Original Theory</div>
 <h1>The Evolutionary Socio-Trajectory</h1>
@@ -433,18 +430,6 @@ html[lang="fr"] #content-en { display: none; }
 <p>This is no longer politics. It is civilizational systems engineering.</p>
 </div>
 </div>
+<!-- end content-en -->
 
-<script>
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  const requested = params.get('lang');
-  const lang = requested === 'en' ? 'en' : 'fr';
-  document.documentElement.setAttribute('lang', lang);
-  var fr = document.getElementById('content-fr');
-  var en = document.getElementById('content-en');
-  if (fr && en) {
-    fr.style.display = lang === 'fr' ? 'block' : 'none';
-    en.style.display = lang === 'en' ? 'block' : 'none';
-  }
-})();
-</script>
+</section>
