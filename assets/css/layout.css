@@ -447,9 +447,46 @@ main {
   margin-top: 0;
 }
 
-#contenu .container > .part-header {
-  margin-top: clamp(2.25rem, 5vw, 3rem);
-  margin-bottom: 1rem;
+/* Sections éditoriales */
+#contenu .intro-section,
+#contenu .chapter,
+#contenu .bib-section {
+  position: relative;
+  padding-top: clamp(1.75rem, 3vw, 2.25rem);
+  border-top: 1px solid rgba(26, 58, 107, 0.12);
+}
+
+[data-theme="dark"] #contenu .intro-section,
+[data-theme="dark"] #contenu .chapter,
+[data-theme="dark"] #contenu .bib-section {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+#contenu .intro-section:first-of-type,
+#contenu .bib-section:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* En-têtes de partie / pilier */
+#contenu .part-header {
+  max-width: none;
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+  margin-bottom: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--color-accent);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+#contenu .part-header + .chapter,
+#contenu .part-header + .intro-section,
+#contenu .part-header + .bib-section {
+  padding-top: 0.5rem;
 }
 
 /* Style éditorial global */
@@ -497,38 +534,7 @@ main {
   color: var(--color-text-muted);
 }
 
-#contenu .intro-section,
-#contenu .chapter,
-#contenu .bib-section {
-  position: relative;
-  padding-top: clamp(1.35rem, 2.5vw, 1.85rem);
-  border-top: 1px solid rgba(26, 58, 107, 0.12);
-}
-
-[data-theme="dark"] #contenu .intro-section,
-[data-theme="dark"] #contenu .chapter,
-[data-theme="dark"] #contenu .bib-section {
-  border-top-color: rgba(255, 255, 255, 0.12);
-}
-
-#contenu .intro-section:first-of-type,
-#contenu .bib-section:first-of-type {
-  border-top: 0;
-  padding-top: 0;
-}
-
-#contenu .part-header {
-  max-width: none;
-  padding-top: 1rem;
-  border-top: 2px solid var(--color-accent);
-  font-family: var(--font-ui);
-  font-size: 0.82rem;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
+/* Bibliographie */
 #contenu .chapter h3,
 #contenu .intro-section h3,
 #contenu .bib-section h3 {
@@ -571,6 +577,57 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
+}
+
+/* CONTRASTE CARTES / BLOCS EN MODE SOMBRE */
+[data-theme="dark"] #contenu .intro-block,
+[data-theme="dark"] #contenu .resume-box,
+[data-theme="dark"] #contenu .toc,
+[data-theme="dark"] #contenu [class*="box"],
+[data-theme="dark"] #contenu [class*="card"] {
+  background: #1f232c;
+  color: #edf2f7;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+[data-theme="dark"] #contenu .intro-block p,
+[data-theme="dark"] #contenu .resume-box p,
+[data-theme="dark"] #contenu .toc p,
+[data-theme="dark"] #contenu [class*="box"] p,
+[data-theme="dark"] #contenu [class*="card"] p,
+[data-theme="dark"] #contenu .intro-block li,
+[data-theme="dark"] #contenu .resume-box li,
+[data-theme="dark"] #contenu .toc li,
+[data-theme="dark"] #contenu [class*="box"] li,
+[data-theme="dark"] #contenu [class*="card"] li {
+  color: #edf2f7;
+}
+
+[data-theme="dark"] #contenu .intro-block h2,
+[data-theme="dark"] #contenu .resume-box h2,
+[data-theme="dark"] #contenu .toc h2,
+[data-theme="dark"] #contenu [class*="box"] h2,
+[data-theme="dark"] #contenu [class*="card"] h2,
+[data-theme="dark"] #contenu .intro-block h3,
+[data-theme="dark"] #contenu .resume-box h3,
+[data-theme="dark"] #contenu .toc h3,
+[data-theme="dark"] #contenu [class*="box"] h3,
+[data-theme="dark"] #contenu [class*="card"] h3,
+[data-theme="dark"] #contenu .intro-block strong,
+[data-theme="dark"] #contenu .resume-box strong,
+[data-theme="dark"] #contenu .toc strong,
+[data-theme="dark"] #contenu [class*="box"] strong,
+[data-theme="dark"] #contenu [class*="card"] strong {
+  color: #ffffff;
+}
+
+[data-theme="dark"] #contenu .intro-block hr,
+[data-theme="dark"] #contenu .resume-box hr,
+[data-theme="dark"] #contenu .toc hr,
+[data-theme="dark"] #contenu [class*="box"] hr,
+[data-theme="dark"] #contenu [class*="card"] hr {
+  border-top-color: rgba(255, 255, 255, 0.16);
 }
 
 /* Responsive */
@@ -644,6 +701,15 @@ button:focus-visible {
   #contenu .part-header {
     letter-spacing: 0.12em;
     font-size: 0.76rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  #contenu .chapter,
+  #contenu .intro-section,
+  #contenu .bib-section {
+    padding-top: 1.5rem;
   }
 
   .logo-frame {
