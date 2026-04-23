@@ -4,19 +4,25 @@
     const langToggle = document.querySelector("[data-lang-toggle]");
     const themeToggle = document.querySelector("[data-theme-toggle]");
     const navLinks = Array.from(document.querySelectorAll(".site-nav__link"));
+    const brandLogo = document.querySelector(".site-brand__logo");
+    const brandLink = document.querySelector(".site-brand--logo");
 
     const T = {
       fr: {
         brandTitle: 'UN MONDE <span class="site-brand__hl">UNIVERSEL</span>',
         slogan: 'Parce que personne ne devrait être laissé derrière',
         footer: 'Parce que personne ne devrait être laissé derrière',
-        langBtn: 'EN'
+        langBtn: 'EN',
+        brandAlt: 'Un Monde Universel — Parce que personne ne devrait être laissé derrière',
+        brandAria: 'Accueil - Un Monde Universel'
       },
       en: {
         brandTitle: 'A <span class="site-brand__hl">UNIVERSAL</span> WORLD',
         slogan: 'Because no one should be left behind',
         footer: 'Because no one should be left behind',
-        langBtn: 'FR'
+        langBtn: 'FR',
+        brandAlt: 'A Universal World — Because no one should be left behind',
+        brandAria: 'Home - A Universal World'
       }
     };
 
@@ -57,6 +63,24 @@
         .replace(/&$/, "");
     }
 
+    function applyLogo(lang) {
+      if (!brandLogo) return;
+
+      const logoFr = brandLogo.getAttribute("data-logo-fr");
+      const logoEn = brandLogo.getAttribute("data-logo-en");
+      const nextSrc = lang === "en" ? logoEn : logoFr;
+
+      if (nextSrc) {
+        brandLogo.src = nextSrc;
+      }
+
+      brandLogo.alt = T[lang].brandAlt;
+
+      if (brandLink) {
+        brandLink.setAttribute("aria-label", T[lang].brandAria);
+      }
+    }
+
     function applyLang(lang, theme) {
       root.lang = lang;
       root.setAttribute("data-lang", lang);
@@ -92,6 +116,8 @@
           link.setAttribute("href", buildUrl(lang, theme, cleanHref(rawHref)));
         }
       });
+
+      applyLogo(lang);
 
       document.dispatchEvent(
         new CustomEvent("umLangChange", { detail: { lang } })
