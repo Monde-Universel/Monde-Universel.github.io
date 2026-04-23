@@ -624,40 +624,6 @@ button:focus-visible {
   border-top-color: rgba(255, 255, 255, 0.16);
 }
 
-/* CORRECTIF ULTRA CIBLÉ : si le fond du warning reste blanc, on force le texte foncé */
-[data-theme="dark"] #contenu .warning,
-[data-theme="dark"] #contenu .warning-box,
-[data-theme="dark"] #contenu .warning-card,
-[data-theme="dark"] #contenu .scenario-box,
-[data-theme="dark"] #contenu .scenario-card,
-[data-theme="dark"] #contenu .danger-card,
-[data-theme="dark"] #contenu .alert-card {
-  background: #ffffff !important;
-  color: #1f2937 !important;
-  border: 1px solid rgba(31, 41, 55, 0.16) !important;
-  box-shadow: none !important;
-}
-
-[data-theme="dark"] #contenu .warning *,
-[data-theme="dark"] #contenu .warning-box *,
-[data-theme="dark"] #contenu .warning-card *,
-[data-theme="dark"] #contenu .scenario-box *,
-[data-theme="dark"] #contenu .scenario-card *,
-[data-theme="dark"] #contenu .danger-card *,
-[data-theme="dark"] #contenu .alert-card * {
-  color: #1f2937 !important;
-}
-
-[data-theme="dark"] #contenu .warning a,
-[data-theme="dark"] #contenu .warning-box a,
-[data-theme="dark"] #contenu .warning-card a,
-[data-theme="dark"] #contenu .scenario-box a,
-[data-theme="dark"] #contenu .scenario-card a,
-[data-theme="dark"] #contenu .danger-card a,
-[data-theme="dark"] #contenu .alert-card a {
-  color: #0f4c81 !important;
-}
-
 @media (max-width: 600px) {
   .site-header {
     padding: 0.9rem 1rem 0.95rem;
