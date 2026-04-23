@@ -81,6 +81,12 @@
       }
     }
 
+    function syncLanguageBlocks(lang) {
+      document.querySelectorAll("[data-lang-block]").forEach((block) => {
+        block.hidden = block.getAttribute("data-lang-block") !== lang;
+      });
+    }
+
     function applyLang(lang, theme) {
       root.lang = lang;
       root.setAttribute("data-lang", lang);
@@ -118,6 +124,7 @@
       });
 
       applyLogo(lang);
+      syncLanguageBlocks(lang);
 
       document.dispatchEvent(
         new CustomEvent("umLangChange", { detail: { lang } })
