@@ -240,3 +240,110 @@
     init();
   }
 })();
+
+/* ═══════════════════════════════════════════════════════
+   PAGE VOTEZ — logique de vote, feedback bilingue, back-to-top
+   À coller dans assets/js/site.js (à la fin du fichier existant)
+═══════════════════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  // Labels bilingues des 16 factions
+  const voteChoiceLabels = {
+    fr: {
+      capitalism: 'Capitalisme',
+      universalism: 'Universalisme',
+      communism: 'Communisme',
+      fascism: 'Fascisme',
+      authoritarian: 'Authoritarisme',
+      liberalism: 'Libéralisme',
+      anarchism: 'Anarchisme',
+      ecologism: 'Écologisme',
+      conservatism: 'Conservatisme',
+      nationalism: 'Nationalisme',
+      libertarianism: 'Libertarianisme',
+      progressism: 'Progressisme',
+      socialism: 'Socialisme',
+      transhumanism: 'Transhumanisme',
+      coherentism: 'Cohérentisme',
+      veritism: 'Véritisme'
+    },
+    en: {
+      capitalism: 'Capitalism',
+      universalism: 'Universalism',
+      communism: 'Communism',
+      fascism: 'Fascism',
+      authoritarian: 'Authoritarism',
+      liberalism: 'Liberalism',
+      anarchism: 'Anarchism',
+      ecologism: 'Ecologism',
+      conservatism: 'Conservatism',
+      nationalism: 'Nationalism',
+      libertarianism: 'Libertarianism',
+      progressism: 'Progressivism',
+      socialism: 'Socialism',
+      transhumanism: 'Transhumanism',
+      coherentism: 'Coherentism',
+      veritism: 'Truthnism'
+    }
+  };
+
+document.querySele
+
+  // Gestionnaire de clic sur les boutons de vote
+  document.querySelectorAll('[data-vote-key]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const lang = (typeof currentLang !== 'undefined' && translations[currentLang])
+        ? currentLang
+        : (document.documentElement.lang === 'en' ? 'en' : 'fr');
+      const key  = btn.getAttribute('data-vote-key');
+      const choice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][key])
+        || btn.getAttribute('data-vote');
+      const box  = document.getElementById('voteFeedback');
+      const text = document.getElementById('voteFeedbackText');
+
+      if (box)  box.setAttribute('data-selected-key', key);
+      if (text && typeof translations !== 'undefined'
+          && translations[lang] && translations[lang].feedbackSelected) {
+        text.textContent = translations[lang].feedbackSelected.replace('{choice}', choice);
+      }
+      if (box) {
+        box.classList.add('active');
+        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  });
+
+  // Mise à jour du feedback quand la langue change (événement umLangChange de nav.js)
+  document.addEventListener('umLangChange', function (e) {
+    const lang = e.detail.lang;
+    const box  = document.getElementById('voteFeedback');
+    const feedbackText = document.getElementById('voteFeedbackText');
+    if (feedbackText && typeof translations !== 'undefined') {
+      if (box && box.classList.contains('active')) {
+        const activeKey = box.getAttribute('data-selected-key');
+        if (activeKey && translations[lang] && translations[lang].feedbackSelected) {
+          const localizedChoice = (voteChoiceLabels[lang] && voteChoiceLabels[lang][activeKey]) || activeKey;
+          feedbackText.textContent = translations[lang].feedbackSelected.replace('{choice}', localizedChoice);
+        }
+      } else if (translations[lang] && translations[lang].feedbackDefault) {
+        feedbackText.textContent = translations[lang].feedbackDefault;
+      }
+    }
+  });
+
+  // Bouton retour en haut
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  function toggleBackToTop() {
+    if (!backToTopBtn) return;
+    backToTopBtn.classList.toggle('is-visible', window.scrollY > 420);
+  }
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+  }
+
+})();
+
