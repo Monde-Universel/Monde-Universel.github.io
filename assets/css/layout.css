@@ -483,6 +483,15 @@ main {
   color: var(--color-primary);
 }
 
+/* Correctif : si une carte précède le pilier, on augmente le marge-top */
+#contenu .resume-box + .part-header,
+#contenu .toc + .part-header,
+#contenu .intro-block + .part-header,
+#contenu [class*="box"] + .part-header,
+#contenu [class*="card"] + .part-header {
+  margin-top: clamp(3.25rem, 8vw, 4.75rem);
+}
+
 #contenu .part-header + .chapter,
 #contenu .part-header + .intro-section,
 #contenu .part-header + .bib-section {
@@ -628,6 +637,27 @@ button:focus-visible {
 [data-theme="dark"] #contenu [class*="box"] hr,
 [data-theme="dark"] #contenu [class*="card"] hr {
   border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Correctif ciblé pour blocs de type warning / scénario si présents */
+[data-theme="dark"] #contenu .warning,
+[data-theme="dark"] #contenu .warning-box,
+[data-theme="dark"] #contenu .scenario-box,
+[data-theme="dark"] #contenu .scenario-card,
+[data-theme="dark"] #contenu .danger-card,
+[data-theme="dark"] #contenu .alert-card {
+  background: #1f232c !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+[data-theme="dark"] #contenu .warning p,
+[data-theme="dark"] #contenu .warning-box p,
+[data-theme="dark"] #contenu .scenario-box p,
+[data-theme="dark"] #contenu .scenario-card p,
+[data-theme="dark"] #contenu .danger-card p,
+[data-theme="dark"] #contenu .alert-card p {
+  color: #f8fafc !important;
 }
 
 /* Responsive */
