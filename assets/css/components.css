@@ -1109,4 +1109,30 @@ textarea {
 }
 
 
+/* Forcer 1 carte par ligne sur mobile et petits écrans */
+@media (max-width: 1024px) {
+  .vote-grid {
+    display: block !important;        /* annule la grille */
+  }
+
+  .vote-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 22px 0 !important;    /* une carte sous l'autre */
+    box-sizing: border-box !important;
+  }
+
+  .vote-photo img {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .vote-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
 
