@@ -58,7 +58,6 @@ main {
   margin-inline: auto;
 }
 
-/* Accessibilité */
 .skip-link {
   position: absolute;
   left: var(--space-4);
@@ -78,7 +77,6 @@ main {
   top: var(--space-4);
 }
 
-/* Header */
 .site-header {
   position: relative;
   overflow: hidden;
@@ -182,7 +180,6 @@ main {
   transform: translateY(1px);
 }
 
-/* Navigation */
 .site-nav {
   background: var(--color-primary);
   display: flex;
@@ -225,7 +222,6 @@ main {
   color: var(--color-accent);
 }
 
-/* Bannière de page */
 .page-banner {
   background: var(--gradient-banner);
   text-align: center;
@@ -266,7 +262,6 @@ main {
   color: #d7ebfb;
 }
 
-/* Top media si utilisé */
 .top-media {
   background: var(--gradient-top-media);
   padding: 1.9rem 1.25rem;
@@ -312,7 +307,6 @@ main {
   display: block;
 }
 
-/* Contenu */
 #contenu {
   max-width: 53.75rem;
   margin: 0 auto;
@@ -428,7 +422,6 @@ main {
   color: var(--color-text-muted);
 }
 
-/* Rythme éditorial */
 #contenu .container > .resume-box,
 #contenu .container > .toc,
 #contenu .container > .intro-section,
@@ -447,7 +440,6 @@ main {
   margin-top: 0;
 }
 
-/* Sections éditoriales */
 #contenu .intro-section,
 #contenu .chapter,
 #contenu .bib-section {
@@ -468,7 +460,6 @@ main {
   padding-top: 0;
 }
 
-/* En-têtes de partie / pilier */
 #contenu .part-header {
   max-width: none;
   margin-top: clamp(3rem, 7vw, 4.5rem);
@@ -497,7 +488,6 @@ main {
   padding-top: 0.5rem;
 }
 
-/* Style éditorial global */
 #contenu .resume-box,
 #contenu .toc {
   padding: clamp(1.15rem, 2vw, 1.5rem);
@@ -542,7 +532,6 @@ main {
   color: var(--color-text-muted);
 }
 
-/* Bibliographie */
 #contenu .chapter h3,
 #contenu .intro-section h3,
 #contenu .bib-section h3 {
@@ -565,7 +554,6 @@ main {
   margin-bottom: 0;
 }
 
-/* Footer */
 .site-footer {
   background: var(--color-primary);
   color: var(--color-accent-soft);
@@ -580,14 +568,12 @@ main {
   font-weight: 700;
 }
 
-/* États focus */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
-/* CONTRASTE CARTES / BLOCS EN MODE SOMBRE */
 [data-theme="dark"] #contenu .intro-block,
 [data-theme="dark"] #contenu .resume-box,
 [data-theme="dark"] #contenu .toc,
@@ -638,7 +624,7 @@ button:focus-visible {
   border-top-color: rgba(255, 255, 255, 0.16);
 }
 
-/* Correctif spécifique forcé pour le warning */
+/* CORRECTIF ULTRA CIBLÉ : si le fond du warning reste blanc, on force le texte foncé */
 [data-theme="dark"] #contenu .warning,
 [data-theme="dark"] #contenu .warning-box,
 [data-theme="dark"] #contenu .warning-card,
@@ -646,47 +632,32 @@ button:focus-visible {
 [data-theme="dark"] #contenu .scenario-card,
 [data-theme="dark"] #contenu .danger-card,
 [data-theme="dark"] #contenu .alert-card {
-  background: #1f232c !important;
-  color: #f8fafc !important;
-  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  border: 1px solid rgba(31, 41, 55, 0.16) !important;
   box-shadow: none !important;
 }
 
-[data-theme="dark"] #contenu .warning p,
-[data-theme="dark"] #contenu .warning-box p,
-[data-theme="dark"] #contenu .warning-card p,
-[data-theme="dark"] #contenu .scenario-box p,
-[data-theme="dark"] #contenu .scenario-card p,
-[data-theme="dark"] #contenu .danger-card p,
-[data-theme="dark"] #contenu .alert-card p {
-  color: #f8fafc !important;
+[data-theme="dark"] #contenu .warning *,
+[data-theme="dark"] #contenu .warning-box *,
+[data-theme="dark"] #contenu .warning-card *,
+[data-theme="dark"] #contenu .scenario-box *,
+[data-theme="dark"] #contenu .scenario-card *,
+[data-theme="dark"] #contenu .danger-card *,
+[data-theme="dark"] #contenu .alert-card * {
+  color: #1f2937 !important;
 }
 
-[data-theme="dark"] #contenu .warning h2,
-[data-theme="dark"] #contenu .warning-box h2,
-[data-theme="dark"] #contenu .warning-card h2,
-[data-theme="dark"] #contenu .scenario-box h2,
-[data-theme="dark"] #contenu .scenario-card h2,
-[data-theme="dark"] #contenu .danger-card h2,
-[data-theme="dark"] #contenu .alert-card h2,
-[data-theme="dark"] #contenu .warning h3,
-[data-theme="dark"] #contenu .warning-box h3,
-[data-theme="dark"] #contenu .warning-card h3,
-[data-theme="dark"] #contenu .scenario-box h3,
-[data-theme="dark"] #contenu .scenario-card h3,
-[data-theme="dark"] #contenu .danger-card h3,
-[data-theme="dark"] #contenu .alert-card h3,
-[data-theme="dark"] #contenu .warning strong,
-[data-theme="dark"] #contenu .warning-box strong,
-[data-theme="dark"] #contenu .warning-card strong,
-[data-theme="dark"] #contenu .scenario-box strong,
-[data-theme="dark"] #contenu .scenario-card strong,
-[data-theme="dark"] #contenu .danger-card strong,
-[data-theme="dark"] #contenu .alert-card strong {
-  color: #ffffff !important;
+[data-theme="dark"] #contenu .warning a,
+[data-theme="dark"] #contenu .warning-box a,
+[data-theme="dark"] #contenu .warning-card a,
+[data-theme="dark"] #contenu .scenario-box a,
+[data-theme="dark"] #contenu .scenario-card a,
+[data-theme="dark"] #contenu .danger-card a,
+[data-theme="dark"] #contenu .alert-card a {
+  color: #0f4c81 !important;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .site-header {
     padding: 0.9rem 1rem 0.95rem;
