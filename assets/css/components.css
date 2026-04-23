@@ -960,3 +960,50 @@ textarea {
   .back-to-top__icon { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.14); font-size: 1rem; line-height: 1; }
   @media (max-width: 640px) { .back-to-top { right: 14px; bottom: 14px; padding: 11px 14px; font-size: 0.84rem; gap: 8px; } }
 
+/* Ajustements responsives pour la largeur des cartes de vote */
+
+.vote-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 42px 20px 64px;
+}
+
+/* Desktop / grand écran : 2 cartes larges par rangée */
+.vote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* Les cartes occupent toute la colonne disponible */
+.vote-card {
+  width: 100%;
+}
+
+/* Tablette : on peut forcer une seule colonne centrée si c'est trop serré */
+@media (max-width: 900px) {
+  .vote-grid {
+    grid-template-columns: minmax(260px, 1fr);
+    justify-content: center;
+  }
+}
+
+/* Mobile : une carte par rangée, bien large mais limitée en max-width */
+@media (max-width: 640px) {
+  .vote-wrap {
+    padding: 34px 14px 54px;
+  }
+
+  .vote-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .vote-card {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+
