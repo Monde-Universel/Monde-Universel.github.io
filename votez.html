@@ -935,91 +935,77 @@ og_locale: fr_CA
     margin: 0 !important;
   }
 }
-
-/* ═══════════════════════════════════════
-   DARK MODE — haute spécificité
-═══════════════════════════════════════ */
-@media (prefers-color-scheme: dark) {
-  .vote-grid .vote-card {
-    background: linear-gradient(145deg, #1e2a3a 0%, #162032 100%) !important;
-    border-color: rgba(255,255,255,0.10) !important;
-  }
-  .vote-grid .vote-card .vote-content h2,
-  .vote-grid .vote-card h2 {
-    color: #e8f0fb !important;
-  }
-  .vote-grid .vote-card .vote-content .vote-subtitle {
-    color: #a0b4cc !important;
-  }
-  .vote-grid .vote-card .vote-content .vote-desc {
-    color: #c8d8ea !important;
-  }
-  .vote-grid .vote-card .vote-content .vote-list,
-  .vote-grid .vote-card .vote-content .vote-list li {
-    color: #c8d8ea !important;
-  }
-  .vote-grid .vote-card .vote-content .vote-badge {
-    background: rgba(255,255,255,0.10) !important;
-    color: #d0e4f7 !important;
-  }
-  .vote-feedback {
-    background: #1a2a3c !important;
-    border-color: rgba(255,255,255,0.12) !important;
-  }
-  .vote-feedback h3,
-  .vote-feedback p,
-  .vote-feedback #voteFeedbackText,
-  .vote-feedback #voteFinalCall {
-    color: #e0ecf8 !important;
-  }
-}
 </style>
 <script>
 (function() {
-  var MSG_FR_SELECTED  = "Votre choix de faction est : {choice}.";
-  var MSG_FR_DB        = "Cette page est prête à être reliée à une base de données.";
-  var MSG_FR_FINAL     = "IL NE MANQUE PLUS QUE VOUS !";
-  var MSG_EN_SELECTED  = "Your faction choice is: {choice}.";
-  var MSG_EN_DB        = "This page is ready to be connected to a database.";
-  var MSG_EN_FINAL     = "ALL THAT IS MISSING IS YOU!";
+  var MSG = {
+    fr: {
+      selected: "Votre choix de faction est : {choice}.",
+      db:       "Cette page est prête à être reliée à une base de données.",
+      final:    "IL NE MANQUE PLUS QUE VOUS !"
+    },
+    en: {
+      selected: "Your faction choice is: {choice}.",
+      db:       "This page is ready to be connected to a database.",
+      final:    "ALL THAT IS MISSING IS YOU!"
+    }
+  };
+
+  var lastVote = null;
 
   function getLang() {
     if (typeof currentLang !== 'undefined' && currentLang) return currentLang;
     return (document.documentElement.lang || 'fr') === 'en' ? 'en' : 'fr';
   }
 
-  function updateFeedback(btn) {
-    var lang  = getLang();
-    var isFR  = lang !== 'en';
-    var name  = isFR ? btn.getAttribute('data-vote-fr') : btn.getAttribute('data-vote-en');
-    name = name || btn.getAttribute('data-vote') || '?';
+  function getActiveBlock() {
+    return document.querySelector('[data-lang-block]:not([hidden])') || document.body;
+  }
 
-    var selMsg  = isFR ? MSG_FR_SELECTED : MSG_EN_SELECTED;
-    var dbMsg   = isFR ? MSG_FR_DB       : MSG_EN_DB;
-    var finMsg  = isFR ? MSG_FR_FINAL    : MSG_EN_FINAL;
+  function showFeedback(lang, nameFR, nameEN) {
+    var isFR = lang !== 'en';
+    var name = isFR ? nameFR : nameEN;
+    var m = MSG[lang] || MSG.fr;
 
-    // Trouver le bon bloc lang actif
-    var block = document.querySelector('[data-lang-block]:not([hidden])');
-    if (!block) block = document.body;
-
+    var block     = getActiveBlock();
+    var feedBox   = block.querySelector('#voteFeedback');
     var feedText  = block.querySelector('#voteFeedbackText');
     var feedFinal = block.querySelector('#voteFinalCall');
-    var feedBox   = block.querySelector('#voteFeedback');
 
     if (feedText) {
       feedText.innerHTML =
-        '<strong>' + selMsg.replace('{choice}', name) + '</strong><br>' + dbMsg;
+        '<strong>' + m.selected.replace('{choice}', name) + '</strong><br>' + m.db;
     }
-    if (feedFinal) feedFinal.textContent = finMsg;
+    if (feedFinal) feedFinal.textContent = m.final;
     if (feedBox)   feedBox.classList.add('active');
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
+  function bindButtons() {
     document.querySelectorAll('[data-vote-key]').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        updateFeedback(btn);
+      if (btn._voteBound) return;
+      btn._voteBound = true;
+      btn.addEventListener('click', function() {
+        var nameFR = btn.getAttribute('data-vote-fr') || btn.getAttribute('data-vote') || '?';
+        var nameEN = btn.getAttribute('data-vote-en') || btn.getAttribute('data-vote') || '?';
+        lastVote = { nameFR: nameFR, nameEN: nameEN };
+        showFeedback(getLang(), nameFR, nameEN);
       });
     });
+  }
+
+  window.addEventListener('umLangChange', function(e) {
+    var lang = (e.detail && e.detail.lang) ? e.detail.lang : getLang();
+    if (lastVote) {
+      setTimeout(function() {
+        showFeedback(lang, lastVote.nameFR, lastVote.nameEN);
+      }, 50);
+    }
   });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindButtons);
+  } else {
+    bindButtons();
+  }
 })();
 </script>
