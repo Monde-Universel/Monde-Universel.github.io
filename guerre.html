@@ -1,463 +1,28 @@
 ---
 layout: default
 title: "Guerre · UN MONDE UNIVERSEL"
+title_en: "War · A UNIVERSAL WORLD"
 lang: fr
 permalink: /guerre.html
+description: "Les guerres détruisent bien plus que des vies humaines — elles contaminent durablement les sols, les eaux et l'atmosphère. Analyse écologique et systémique des conflits en Ukraine, Gaza et Iran."
+description_en: "Wars destroy far more than human lives — they contaminate soils, water, and the atmosphere for generations. Ecological and systemic analysis of the conflicts in Ukraine, Gaza and Iran."
 ---
 
-<style>
-/* Site title contrast fix: keep header title readable in light and dark themes */
-html[data-theme="light"] .site-title,
-html[data-theme="light"] .site-title a,
-html[data-theme="light"] .site-slogan,
-html[data-theme="light"] .site-slogan a {
-  color: #183b63 !important;
-  -webkit-text-fill-color: #183b63 !important;
-  text-shadow: none;
-}
-html[data-theme="dark"] .site-title,
-html[data-theme="dark"] .site-title a,
-html[data-theme="dark"] .site-slogan,
-html[data-theme="dark"] .site-slogan a {
-  color: #f5fbff !important;
-  -webkit-text-fill-color: #f5fbff !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,.35);
-}
-@media (prefers-color-scheme: light) {
-  html:not([data-theme]) .site-title,
-  html:not([data-theme]) .site-title a,
-  html:not([data-theme]) .site-slogan,
-  html:not([data-theme]) .site-slogan a {
-    color: #183b63 !important;
-    -webkit-text-fill-color: #183b63 !important;
-    text-shadow: none;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) .site-title,
-  html:not([data-theme]) .site-title a,
-  html:not([data-theme]) .site-slogan,
-  html:not([data-theme]) .site-slogan a {
-    color: #f5fbff !important;
-    -webkit-text-fill-color: #f5fbff !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,.35);
-  }
-}
-</style>
+<!-- ═══════════════════════════════════════
+     BLOC FRANÇAIS
+═══════════════════════════════════════ -->
+<div data-lang-block="fr">
 
+  <div class="banner">
 
-<style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
-
-        .site-header {
-            background: linear-gradient(160deg, #0d2257 0%, #1a3a6b 45%, #1b5e8a 100%);
-            text-align: center;
-            padding: 42px 20px 36px;
-            position: relative;
-            overflow: hidden;
-        }
-        .site-header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(135,206,235,0.12) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 40% at 20% 100%, rgba(135,206,235,0.07) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .site-title {
-            font-family: 'Cinzel', Georgia, serif;
-            font-weight: 900;
-            font-size: clamp(2rem, 6vw, 4.2rem);
-            color: #ffffff;
-            letter-spacing: 0.10em;
-            text-shadow: 0 2px 24px rgba(135,206,235,0.5), 0 0 60px rgba(135,206,235,0.2);
-            line-height: 1.1;
-            margin-bottom: 14px;
-            position: relative;
-            z-index: 1;
-        }
-        .site-title span { color: #87CEEB; }
-        .site-slogan {
-            font-family: Arial, sans-serif;
-            font-weight: 300;
-            font-size: clamp(0.95rem, 2.2vw, 1.35rem);
-            color: #cce4f7;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            position: relative;
-            z-index: 1;
-        }
-        .site-slogan::before,
-        .site-slogan::after {
-            content: '— ';
-            color: #87CEEB;
-            opacity: 0.7;
-        }
-        .site-slogan::after { content: ' —'; }
-
-
-        .hero { background: linear-gradient(180deg, #1a3a6b 0%, #2a5298 50%, #f0f7ff 100%);
-            text-align: center; padding: 30px 20px 20px; }
-        .hero img { max-width: 180px; width: 50%; border-radius: 10px; opacity: 1; box-shadow: 0 8px 36px rgba(0,0,0,0.18); }
-
-        nav { background: #1a3a6b; display: flex; justify-content: center; align-items: center;
-            gap: 22px; padding: 14px 20px; flex-wrap: wrap; border-bottom: 2px solid #87CEEB; }
-        nav a { color: #fff; text-decoration: none; font-family: Arial, sans-serif; font-size: 0.9rem;
-            font-weight: bold; letter-spacing: 0.04em; transition: color 0.2s; }
-        nav a:hover { color: #87CEEB; }
-        .lang-btn { background: #87CEEB; color: #1a3a6b; border: none; border-radius: 20px;
-            padding: 6px 16px; font-family: Arial, sans-serif; font-size: 0.9rem;
-            font-weight: bold; cursor: pointer; transition: all 0.2s; }
-        .lang-btn:hover { background: #fff; }
-
-        .banner { background: linear-gradient(135deg, #1a3a6b, #2a5298); text-align: center;
-            padding: 50px 24px 40px; border-bottom: 3px solid #87CEEB; }
-        .banner .tag { display: inline-block; background: #b22222; color: #ffffff;
-            font-family: Arial, sans-serif; font-size: 0.8rem; font-weight: bold;
-            letter-spacing: 0.15em; padding: 5px 16px; border-radius: 4px; margin-bottom: 18px; }
-        .banner h1 { font-size: clamp(1.4rem, 4vw, 2.2rem); color: #fff; line-height: 1.3;
-            max-width: 800px; margin: 0 auto 16px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-        .banner p { font-family: Arial, sans-serif; color: #d7ebfb; font-size: 0.95rem; font-style: italic; }
-
-        .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
-
-        .intro-block { background: #ffffff; border-left: 4px solid #87CEEB;
-            border-radius: 10px; padding: 24px 28px; margin-bottom: 40px; position: relative; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.05); }
-        .intro-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: #87CEEB; }
-        .intro-block p { font-size: 1.05rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 12px; }
-        .intro-block p:last-child { margin-bottom: 0; }
-
-        .section-header { display: flex; align-items: center; gap: 12px; margin: 44px 0 20px;
-            padding-bottom: 10px; border-bottom: 2px solid #d6e4f2; }
-        .section-header .icon { font-size: 1.6rem; }
-        .section-header h2 { font-size: 1.4rem; color: #1a3a6b; }
-
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px; margin: 24px 0; }
-        .stat-card { background: #ffffff; border: 1px solid #d6e4f2; border-top: 3px solid #87CEEB;
-            border-radius: 10px; padding: 20px 16px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
-        .stat-card .number { font-size: 1.8rem; font-weight: bold; color: #1a3a6b;
-            font-family: Arial, sans-serif; line-height: 1.1; }
-        .stat-card .label { font-size: 0.82rem; color: #666; font-family: Arial, sans-serif; margin-top: 6px; }
-
-        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 14px; margin: 24px 0; }
-        .img-card { border-radius: 10px; overflow: hidden; background: #ffffff; border: 1px solid #d6e4f2; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
-        .img-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .img-card .caption { padding: 10px 12px; font-family: Arial, sans-serif; font-size: 0.82rem;
-            color: #555; font-style: italic; line-height: 1.5; }
-
-        .content-block { margin-bottom: 32px; }
-        .content-block h3 { font-size: 1.15rem; color: #1a3a6b; margin-bottom: 12px; font-style: italic; }
-        .content-block p { font-size: 1rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 10px; }
-        .content-block ul { padding-left: 22px; margin: 10px 0; }
-        .content-block li { font-size: 0.98rem; line-height: 1.75; color: #2c2c2c; margin-bottom: 6px; }
-        .content-block li strong { color: #1a3a6b; }
-
-        .capitalism-box { background: #ffffff;
-            border: 1px solid #d6e4f2; border-left: 4px solid #87CEEB;
-            border-radius: 10px; padding: 28px; margin: 40px 0; position: relative; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
-        .capitalism-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: #87CEEB; }
-        .capitalism-box h2 { font-size: 1.3rem; color: #1a3a6b; margin-bottom: 16px; }
-        .capitalism-box p { font-size: 1rem; line-height: 1.85; color: #2c2c2c; text-align: justify; margin-bottom: 12px; }
-        .capitalism-box ul { padding-left: 22px; margin: 10px 0; }
-        .capitalism-box li { font-size: 0.98rem; line-height: 1.75; color: #2c2c2c; margin-bottom: 8px; }
-        .capitalism-box li strong { color: #1a3a6b; }
-
-        .conclusion-box { background: #ffffff; border: 1px solid #d6e4f2;
-            border-left: 4px solid #87CEEB; border-radius: 10px; padding: 28px; margin-top: 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
-        .conclusion-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: #87CEEB; }
-        .conclusion-box p { font-size: 1.1rem; line-height: 1.85; color: #2c2c2c; margin-bottom: 12px; }
-        .conclusion-box p strong { color: #1a3a6b; }
-
-        .divider { border: none; border-top: 1px solid #d6e4f2; margin: 36px 0; }
-
-        footer { background: #1a3a6b; color: #cce4f7; text-align: center; padding: 22px 20px;
-            font-family: Arial, sans-serif; font-size: 0.85rem; border-top: 2px solid #87CEEB; }
-        footer span { color: #87CEEB; font-weight: bold; }
-        footer a { color: #87CEEB; text-decoration: none; }
-    </style>
-<style>
-[hidden] { display: none !important; }
-#content-fr, #content-en { display: block; }
-#content-en { display: none; }
-html[lang="en"] #content-fr { display: none; }
-html[lang="en"] #content-en { display: block; }
-html[lang="fr"] #content-fr { display: block; }
-html[lang="fr"] #content-en { display: none; }
-
-:root, html[data-theme="light"] {
-  --g-bg: #f3f7fb;
-  --g-surface: #ffffff;
-  --g-surface-2: #edf4fb;
-  --g-text: #162433;
-  --g-text-soft: #41566d;
-  --g-title: #163b6a;
-  --g-border: rgba(22, 59, 106, 0.14);
-  --g-accent: #87ceeb;
-  --g-accent-strong: #1a3a6b;
-  --g-shadow: 0 12px 32px rgba(13, 34, 87, 0.08);
-}
-html[data-theme="dark"] {
-  --g-bg: #0d141c;
-  --g-surface: #121c25;
-  --g-surface-2: #182531;
-  --g-text: #eef5fb;
-  --g-text-soft: #d5e3ef;
-  --g-title: #f5fbff;
-  --g-border: rgba(159, 222, 250, 0.20);
-  --g-accent: #9fdefa;
-  --g-accent-strong: #d9efff;
-  --g-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
-}
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) {
-    --g-bg: #0d141c;
-    --g-surface: #121c25;
-    --g-surface-2: #182531;
-    --g-text: #eef5fb;
-    --g-text-soft: #d5e3ef;
-    --g-title: #f5fbff;
-    --g-border: rgba(159, 222, 250, 0.20);
-    --g-accent: #9fdefa;
-    --g-accent-strong: #d9efff;
-    --g-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
-  }
-}
-
-body {
-  background: var(--g-bg) !important;
-  color: var(--g-text) !important;
-}
-
-.banner {
-  padding: clamp(3.1rem, 6vw, 5rem) 1.15rem 2.4rem !important;
-}
-.banner h1,
-.banner p,
-.banner .tag {
-  color: #f7fbff !important;
-}
-.banner .tag {
-  background: rgba(11, 26, 54, 0.82) !important;
-  border: 1px solid rgba(255,255,255,0.20) !important;
-}
-
-.container {
-  width: min(1180px, calc(100vw - 2.5rem)) !important;
-  max-width: 1180px !important;
-  margin: 0 auto !important;
-  padding: 0 0 4.5rem !important;
-}
-
-.section-header,
-.intro-block,
-.conclusion,
-.conclusion-block,
-.capitalism-block,
-.summary-block,
-.quote-block,
-.callout,
-.note,
-.fact-box,
-.fact-block,
-.warning-box,
-.warning-block,
-.article-block,
-.text-block,
-.panel,
-.card,
-[class*="block"],
-[class*="card"] {
-  border-color: var(--g-border) !important;
-}
-
-.intro-block,
-.conclusion,
-.conclusion-block,
-.capitalism-block,
-.summary-block,
-.quote-block,
-.callout,
-.note,
-.fact-box,
-.fact-block,
-.warning-box,
-.warning-block,
-.article-block,
-.text-block,
-.panel,
-.card,
-[class*="block"],
-[class*="card"] {
-  background: var(--g-surface) !important;
-  color: var(--g-text) !important;
-  box-shadow: var(--g-shadow) !important;
-}
-
-h1, h2, h3, h4,
-.section-header h2,
-.section-header h3,
-.number,
-.stat-card .number,
-[class*="title"],
-[class*="heading"] {
-  color: var(--g-title) !important;
-}
-
-p, li, .label, .caption, .source, .stat-card .label,
-.intro-block p, .conclusion p, .conclusion-block p,
-[class*="block"] p, [class*="card"] p, [class*="card"] li {
-  color: var(--g-text) !important;
-}
-
-.content-block li strong,
-.capitalism-box li strong,
-.conclusion-box li strong,
-[class*="block"] li strong,
-[class*="card"] li strong {
-  color: var(--g-title) !important;
-}
-
-html[data-theme="dark"] .content-block li strong,
-html[data-theme="dark"] .capitalism-box li strong,
-html[data-theme="dark"] .conclusion-box li strong,
-html[data-theme="dark"] [class*="block"] li strong,
-html[data-theme="dark"] [class*="card"] li strong {
-  color: #f8fcff !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) .content-block li strong,
-  html:not([data-theme]) .capitalism-box li strong,
-  html:not([data-theme]) .conclusion-box li strong,
-  html:not([data-theme]) [class*="block"] li strong,
-  html:not([data-theme]) [class*="card"] li strong {
-    color: #f8fcff !important;
-  }
-}
-
-ul, ol { padding-left: 1.35rem !important; }
-.intro-block,
-.conclusion,
-.conclusion-block,
-.capitalism-block,
-.summary-block,
-.quote-block,
-.callout,
-.note,
-.fact-box,
-.fact-block,
-.warning-box,
-.warning-block,
-.article-block,
-.text-block,
-.panel,
-.card,
-[class*="block"],
-[class*="card"] {
-  padding-left: clamp(1rem, 2vw, 1.6rem) !important;
-  padding-right: clamp(1rem, 2vw, 1.6rem) !important;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.capitalism-box,
-.conclusion-box {
-  background: var(--g-surface) !important;
-  color: var(--g-text) !important;
-  border-color: var(--g-border) !important;
-  box-shadow: var(--g-shadow) !important;
-}
-.capitalism-box h2,
-.conclusion-box h2,
-.capitalism-box h3,
-.conclusion-box h3,
-.capitalism-box strong,
-.conclusion-box strong {
-  color: var(--g-title) !important;
-}
-.capitalism-box p,
-.capitalism-box li,
-.capitalism-box .label,
-.capitalism-box .caption,
-.conclusion-box p,
-.conclusion-box li,
-.conclusion-box .label,
-.conclusion-box .caption {
-  color: var(--g-text) !important;
-}
-html[data-theme="dark"] .capitalism-box,
-html[data-theme="dark"] .conclusion-box {
-  background: #14212c !important;
-  border-color: rgba(159, 222, 250, 0.24) !important;
-}
-html[data-theme="dark"] .capitalism-box p,
-html[data-theme="dark"] .capitalism-box li,
-html[data-theme="dark"] .capitalism-box .label,
-html[data-theme="dark"] .capitalism-box .caption,
-html[data-theme="dark"] .conclusion-box p,
-html[data-theme="dark"] .conclusion-box li,
-html[data-theme="dark"] .conclusion-box .label,
-html[data-theme="dark"] .conclusion-box .caption {
-  color: #eef5fb !important;
-}
-html[data-theme="dark"] .capitalism-box h2,
-html[data-theme="dark"] .capitalism-box h3,
-html[data-theme="dark"] .capitalism-box strong,
-html[data-theme="dark"] .conclusion-box h2,
-html[data-theme="dark"] .conclusion-box h3,
-html[data-theme="dark"] .conclusion-box strong {
-  color: #f8fcff !important;
-}
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) .capitalism-box,
-  html:not([data-theme]) .conclusion-box {
-    background: #14212c !important;
-    border-color: rgba(159, 222, 250, 0.24) !important;
-  }
-  html:not([data-theme]) .capitalism-box p,
-  html:not([data-theme]) .capitalism-box li,
-  html:not([data-theme]) .capitalism-box .label,
-  html:not([data-theme]) .capitalism-box .caption,
-  html:not([data-theme]) .conclusion-box p,
-  html:not([data-theme]) .conclusion-box li,
-  html:not([data-theme]) .conclusion-box .label,
-  html:not([data-theme]) .conclusion-box .caption {
-    color: #eef5fb !important;
-  }
-  html:not([data-theme]) .capitalism-box h2,
-  html:not([data-theme]) .capitalism-box h3,
-  html:not([data-theme]) .capitalism-box strong,
-  html:not([data-theme]) .conclusion-box h2,
-  html:not([data-theme]) .conclusion-box h3,
-  html:not([data-theme]) .conclusion-box strong {
-    color: #f8fcff !important;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .container {
-    width: calc(100vw - 1.6rem) !important;
-  }
-  .banner {
-    padding-left: 0.9rem !important;
-    padding-right: 0.9rem !important;
-  }
-}
-</style>
-
-<div id="content-fr"><div class="banner">
 <div class="tag" data-i18n="tag">BULLETIN SPÉCIAL</div>
 <h1 data-i18n="banner_title">Au-delà des Conséquences Économiques et Politiques :<br/>Une Catastrophe Écologique Sans Précédent</h1>
 <p data-i18n="banner_sub">Ukraine · Gaza · Iran — Le vrai prix des guerres capitalistes</p>
-</div><div class="container">
+
+  </div>
+
+  <div class="page-wrap">
+
 <div class="intro-block">
 <p data-i18n="intro1">Les guerres ne s'arrêtent pas quand les fusils se taisent. Elles continuent de tuer — silencieusement, chimiquement, écologiquement — pendant des décennies. Ce que les médias comptent en pertes humaines et en milliards de dommages économiques n'est que la surface visible d'un désastre planétaire dont la planète ne peut pas se relever aussi vite que les bourses mondiales.</p>
 <p data-i18n="intro2">Les conflits en Ukraine, à Gaza et en Iran ne sont pas des accidents géopolitiques isolés. Ils sont les produits prévisibles d'un système fondé sur le contrôle des ressources, la compétition entre États au service d'intérêts économiques privés, et l'externalisation du coût humain et écologique vers les populations les plus vulnérables.</p>
@@ -607,13 +172,27 @@ html[data-theme="dark"] .conclusion-box strong {
 <div style="text-align:center; margin-top:40px;">
 <a data-i18n="btn_home" href="index.html" style="background:#87CEEB; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-family:Arial,sans-serif; font-weight:bold;">← Retour à l'accueil</a>
 </div>
-</div></div>
 
-<div id="content-en"><div class="banner">
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     BLOC ANGLAIS
+═══════════════════════════════════════ -->
+<div data-lang-block="en" hidden>
+
+  <div class="banner">
+
 <div class="tag" data-i18n="tag">SPECIAL REPORT</div>
 <h1 data-i18n="banner_title">Beyond Economic and Political Consequences:<br/>An Unprecedented Ecological Catastrophe</h1>
 <p data-i18n="banner_sub">Ukraine · Gaza · Iran — The true cost of capitalist wars</p>
-</div><div class="container">
+
+  </div>
+
+  <div class="page-wrap">
+
 <div class="intro-block">
 <p data-i18n="intro1">Wars do not stop when the guns go silent. They continue to kill — silently, chemically, ecologically — for decades. What the media counts in human losses and billions in economic damage is only the visible surface of a planetary disaster from which the Earth cannot recover as quickly as global stock markets.</p>
 <p data-i18n="intro2">The conflicts in Ukraine, Gaza and Iran are not isolated geopolitical accidents. They are the predictable products of a system built on resource control, competition between states serving private economic interests, and the externalization of human and ecological costs onto the most vulnerable populations.</p>
@@ -763,24 +342,7 @@ html[data-theme="dark"] .conclusion-box strong {
 <div style="text-align:center; margin-top:40px;">
 <a data-i18n="btn_home" href="index.html" style="background:#87CEEB; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-family:Arial,sans-serif; font-weight:bold;">← Back to Home</a>
 </div>
-</div></div>
 
-<script>
-function applyGuerreLang(lang) {
-  const current = lang === 'en' ? 'en' : 'fr';
-  const fr = document.getElementById('content-fr');
-  const en = document.getElementById('content-en');
-  document.documentElement.lang = current;
-  if (fr) fr.hidden = current !== 'fr';
-  if (en) en.hidden = current !== 'en';
-}
+  </div>
 
-document.addEventListener('umLangChange', function (e) {
-  applyGuerreLang(e && e.detail ? e.detail.lang : 'fr');
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const lang = window.umGetLang ? window.umGetLang() : (document.documentElement.lang || 'fr');
-  applyGuerreLang(lang);
-});
-</script>
+</div>
