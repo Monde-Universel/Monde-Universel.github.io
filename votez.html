@@ -935,6 +935,44 @@ og_locale: fr_CA
     margin: 0 !important;
   }
 }
+
+/* ═══════════════════════════════════════
+   DARK MODE — haute spécificité
+═══════════════════════════════════════ */
+@media (prefers-color-scheme: dark) {
+  .vote-grid .vote-card {
+    background: linear-gradient(145deg, #1e2a3a 0%, #162032 100%) !important;
+    border-color: rgba(255,255,255,0.10) !important;
+  }
+  .vote-grid .vote-card .vote-content h2,
+  .vote-grid .vote-card h2 {
+    color: #e8f0fb !important;
+  }
+  .vote-grid .vote-card .vote-content .vote-subtitle {
+    color: #a0b4cc !important;
+  }
+  .vote-grid .vote-card .vote-content .vote-desc {
+    color: #c8d8ea !important;
+  }
+  .vote-grid .vote-card .vote-content .vote-list,
+  .vote-grid .vote-card .vote-content .vote-list li {
+    color: #c8d8ea !important;
+  }
+  .vote-grid .vote-card .vote-content .vote-badge {
+    background: rgba(255,255,255,0.10) !important;
+    color: #d0e4f7 !important;
+  }
+  .vote-feedback {
+    background: #1a2a3c !important;
+    border-color: rgba(255,255,255,0.12) !important;
+  }
+  .vote-feedback h3,
+  .vote-feedback p,
+  .vote-feedback #voteFeedbackText,
+  .vote-feedback #voteFinalCall {
+    color: #e0ecf8 !important;
+  }
+}
 </style>
 <script>
 (function() {
