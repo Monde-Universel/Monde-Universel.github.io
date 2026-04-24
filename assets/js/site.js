@@ -347,3 +347,28 @@ document.querySele
 
 })();
 
+/* ═══════════════════════════════════════
+   BOUTON RETOUR EN HAUT — global
+═══════════════════════════════════════ */
+(function () {
+  var btn = document.getElementById('backToTopBtn');
+  if (!btn) return;
+
+  function toggleBtn() {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBtn, { passive: true });
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  toggleBtn(); // état initial au chargement
+})();
+
+
