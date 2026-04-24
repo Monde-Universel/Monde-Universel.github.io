@@ -903,9 +903,7 @@ og_locale: fr_CA
 }
 
 /* Communisme et Fascisme : image paysage 1792×1024 */
-.vote-card.orange .vote-photo {
-  aspect-ratio: 16 / 9 !important;
-}
+
 .vote-card.purple .vote-photo {
   aspect-ratio: 1 / 1 !important;
 }
@@ -917,6 +915,15 @@ og_locale: fr_CA
 .vote-card.blanc .vote-photo {
   aspect-ratio: 1 / 1 !important;
 }
+
+.vote-card.orange .vote-photo {
+  aspect-ratio: 4 / 5 !important;
+}
+.vote-card.orange .vote-photo img {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
 
 /* Bouton pleine largeur */
 .vote-btn {
