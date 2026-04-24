@@ -130,7 +130,7 @@ og_locale: fr_CA
 </article>
 <article class="vote-card purple">
 <div class="vote-photo">
-<img alt="Illustration du clan Fascisme" height="1024" loading="lazy" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/78cc8bde-63ce-4d14-afc3-ac4aca66618b.png" style="object-position: right center;" width="1792"/>
+<img alt="Illustration du clan Fascisme" height="1024" loading="lazy" src="https://i.imgur.com/CV9VLUa.jpeg" width="1024"/>
 </div>
 <div class="vote-content">
 <span class="vote-badge" data-i18n="fascismBadge">Clan violet</span>
@@ -565,7 +565,7 @@ og_locale: fr_CA
 <!-- Fascism -->
 <article class="vote-card purple">
 <div class="vote-photo">
-<img alt="Fascism clan illustration" height="1024" loading="lazy" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/78cc8bde-63ce-4d14-afc3-ac4aca66618b.png" style="object-position: right center;" width="1792"/>
+<img alt="Fascism clan illustration" height="1024" loading="lazy" src="https://i.imgur.com/CV9VLUa.jpeg" width="1024"/>
 </div>
 <div class="vote-content">
 <span class="vote-badge" data-i18n="fascismBadge">Purple faction</span>
@@ -864,13 +864,13 @@ og_locale: fr_CA
 <span data-i18n="backToTop">Top</span>
 </button>
 </section>
-
-
 <style>
 /* ═══════════════════════════════════════
    VOTE GRID — responsive mobile-first
-   1 carte par ligne sur tous les écrans
+   Corrigé pour toutes les proportions d'images
 ═══════════════════════════════════════ */
+
+/* Mobile : 1 carte par ligne */
 .vote-grid {
   display: block !important;
 }
@@ -880,8 +880,12 @@ og_locale: fr_CA
   margin: 0 0 28px 0 !important;
   box-sizing: border-box !important;
 }
+
+/* Par défaut : toutes les cartes portrait 1024×1280 */
 .vote-photo {
-  aspect-ratio: 4 / 3 !important;
+  aspect-ratio: 4 / 5 !important;
+  overflow: hidden;
+  background: #dbeaf7;
 }
 .vote-photo img {
   width: 100% !important;
@@ -890,16 +894,37 @@ og_locale: fr_CA
   object-position: center top !important;
   display: block !important;
 }
-/* Exceptions : authoritarisme et libéralisme gardent contain */
+
+/* Exceptions authoritarian et liberalism : contenu centré */
 .vote-photo img.authoritarian-fit,
 .vote-photo img.liberalism-fit {
   object-fit: contain !important;
-  object-position: center !important;
+  object-position: center center !important;
 }
+
+/* Communisme et Fascisme : image paysage 1792×1024 */
+.vote-card.orange .vote-photo {
+  aspect-ratio: 16 / 9 !important;
+}
+.vote-card.purple .vote-photo {
+  aspect-ratio: 1 / 1 !important;
+}
+.vote-card.orange .vote-photo img {
+  object-position: center center !important;
+}
+
+/* Véritisme : carré 1024×1024 */
+.vote-card.blanc .vote-photo {
+  aspect-ratio: 1 / 1 !important;
+}
+
+/* Bouton pleine largeur */
 .vote-btn {
   width: 100% !important;
   box-sizing: border-box !important;
 }
+
+/* Desktop 900px+ : grille 2 colonnes */
 @media (min-width: 900px) {
   .vote-grid {
     display: grid !important;
