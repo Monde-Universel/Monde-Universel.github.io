@@ -985,3 +985,71 @@ og_locale: fr_CA
   });
 })();
 </script>
+
+
+<style>
+/* ═══════════════════════════════════════
+   DARK MODE — cartes vote + feedback
+   Corrige le texte pâle sur fond blanc
+═══════════════════════════════════════ */
+@media (prefers-color-scheme: dark) {
+
+  /* Fond des cartes */
+  .vote-card {
+    background: linear-gradient(145deg, #1e2a3a 0%, #162032 100%) !important;
+    border-color: rgba(255,255,255,0.10) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.40) !important;
+  }
+
+  /* Titres h2 dans les cartes */
+  .vote-card h2 {
+    color: #e8f0fb !important;
+  }
+
+  /* Sous-titre "Promesses idéologiques" */
+  .vote-subtitle {
+    color: #a0b4cc !important;
+  }
+
+  /* Description paragraphe */
+  .vote-desc {
+    color: #c8d8ea !important;
+  }
+
+  /* Puces de description */
+  .vote-list {
+    color: #c8d8ea !important;
+  }
+  .vote-list li {
+    color: #c8d8ea !important;
+  }
+  .vote-list li::marker {
+    color: #7fa8cc !important;
+  }
+
+  /* Badge de faction */
+  .vote-badge {
+    background: rgba(255,255,255,0.10) !important;
+    color: #d0e4f7 !important;
+    border-color: rgba(255,255,255,0.18) !important;
+  }
+
+  /* Encadré d'intention de vote */
+  .vote-feedback {
+    background: #1a2a3c !important;
+    border-color: rgba(255,255,255,0.12) !important;
+    color: #e0ecf8 !important;
+  }
+  .vote-feedback h3 {
+    color: #e8f0fb !important;
+  }
+  .vote-feedback p,
+  .vote-feedback #voteFeedbackText {
+    color: #c8d8ea !important;
+  }
+  .vote-feedback .vote-final-call,
+  .vote-feedback #voteFinalCall {
+    color: #ffffff !important;
+  }
+}
+</style>
