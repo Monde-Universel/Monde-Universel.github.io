@@ -1861,27 +1861,27 @@ nav a[aria-current="page"] { color: #87CEEB; }
       .edu-shell { padding: 34px 14px 54px; }
     }
 
-/* ── PATCH contraste : texte sur fonds bleu foncé (éducation) ──
-   Corrige l'écrasement par .page-wrap p/h3 sur .life-strand et .life-conclusion
-─────────────────────────────────────────────────────────────── */
-.life-strand h3,
-.life-strand .life-step strong {
-  color: #87CEEB;
+/* ── PATCH contraste éducation — spécificité renforcée (0,2,1) ── */
+.page-wrap .life-strand h3,
+.page-wrap .life-strand .life-step strong {
+  color: #87CEEB !important;
 }
 
-.life-strand p,
-.life-strand .life-step span,
-.life-strand .life-step p {
-  color: #e8f4fd;
+.page-wrap .life-strand p,
+.page-wrap .life-strand .life-step span,
+.page-wrap .life-strand .life-step p {
+  color: #e8f4fd !important;
 }
 
-.life-conclusion p {
-  color: #e8f4fd;
+.page-wrap .life-conclusion p {
+  color: #e8f4fd !important;
 }
 
-.life-conclusion p:last-child {
-  color: #87CEEB;
+.page-wrap .life-conclusion p:last-child {
+  color: #87CEEB !important;
   font-style: italic;
 }
+
+  
 
   
