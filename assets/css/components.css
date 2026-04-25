@@ -952,54 +952,53 @@ textarea {
   display: block;
 }
 
-/* Dark mode pour la page Votez */
-@media (prefers-color-scheme: dark) {
-  .vote-card {
-    background: var(--color-card);
-    border-color: var(--color-border);
-    box-shadow: var(--shadow-md);
-  }
-
-  .vote-content h2 {
-    color: var(--color-text);
-  }
-
-  .vote-subtitle {
-    color: var(--color-text-muted);
-  }
-
-  .vote-desc {
-    color: var(--color-text-soft);
-  }
-
-  .vote-list li {
-    background: var(--color-surface-2);
-    border-color: var(--color-border);
-    color: var(--color-text);
-  }
-
-  .vote-badge {
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--color-text);
-    border-color: rgba(255, 255, 255, 0.18);
-  }
-
-  .vote-feedback {
-    background: var(--color-surface);
-    border-color: var(--color-border);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .vote-feedback h3 {
-    color: var(--color-text);
-  }
-
-  .vote-feedback p,
-  .vote-feedback #voteFeedbackText,
-  .vote-feedback #voteFinalCall {
-    color: var(--color-text-soft);
-  }
+/* Dark mode pour la page Votez basé sur data-theme */
+[data-theme="dark"] .vote-card {
+  background: var(--color-card);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
 }
+
+[data-theme="dark"] .vote-content h2 {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .vote-subtitle {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .vote-desc {
+  color: var(--color-text-soft);
+}
+
+[data-theme="dark"] .vote-list li {
+  background: var(--color-surface-2);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .vote-badge {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+[data-theme="dark"] .vote-feedback {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .vote-feedback h3 {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .vote-feedback p,
+[data-theme="dark"] #voteFeedbackText,
+[data-theme="dark"] #voteFinalCall {
+  color: var(--color-text-soft);
+}
+
 
 /* Couleurs supplémentaires par faction */
 
