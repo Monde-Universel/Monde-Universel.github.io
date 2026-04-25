@@ -2487,6 +2487,74 @@ li {
   }
 }
 
+/* ═══════════════════════════════════════
+   PAGE VOTEZ — patch contraste mode sombre
+   À ajouter à la toute fin de components.css
+═══════════════════════════════════════ */
+
+[data-theme="dark"] .vote-card,
+[data-theme="dark"] .vote-content,
+[data-theme="dark"] .vote-feedback {
+  background: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+}
+
+[data-theme="dark"] .vote-card {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+[data-theme="dark"] .vote-card h2,
+[data-theme="dark"] .vote-feedback h3 {
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .vote-subtitle,
+[data-theme="dark"] .vote-desc,
+[data-theme="dark"] .vote-list,
+[data-theme="dark"] .vote-list li,
+[data-theme="dark"] #voteFeedbackText,
+[data-theme="dark"] .vote-final-call {
+  color: var(--color-text-muted) !important;
+}
+
+[data-theme="dark"] .vote-badge {
+  background: rgba(255,255,255,0.08) !important;
+  color: var(--color-primary) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+}
+
+[data-theme="dark"] .vote-photo {
+  background: var(--color-surface-2) !important;
+}
+
+[data-theme="dark"] .vote-btn {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .vote-card.blanc,
+[data-theme="dark"] .vote-card.argent,
+[data-theme="dark"] .vote-card.jaune,
+[data-theme="dark"] .vote-card.ambre {
+  background: var(--color-surface-2) !important;
+}
+
+[data-theme="dark"] .vote-card.blanc h2,
+[data-theme="dark"] .vote-card.argent h2,
+[data-theme="dark"] .vote-card.jaune h2,
+[data-theme="dark"] .vote-card.ambre h2,
+[data-theme="dark"] .vote-card.blanc .vote-desc,
+[data-theme="dark"] .vote-card.argent .vote-desc,
+[data-theme="dark"] .vote-card.jaune .vote-desc,
+[data-theme="dark"] .vote-card.ambre .vote-desc,
+[data-theme="dark"] .vote-card.blanc .vote-list li,
+[data-theme="dark"] .vote-card.argent .vote-list li,
+[data-theme="dark"] .vote-card.jaune .vote-list li,
+[data-theme="dark"] .vote-card.ambre .vote-list li {
+  color: var(--color-text) !important;
+}
+
+
 
 
 
