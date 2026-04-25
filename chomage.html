@@ -8,6 +8,95 @@ description: "Les inégalités structurelles du capitalisme s'accélèrent. Anal
 description_en: "The structural inequalities of capitalism are accelerating. Analysis of four vectors destroying the middle class: Trump tariffs, DOGE cuts, the Iran war, and AI automation."
 ---
 
+
+<style>
+/* ── Fix #1 : Banner contraste en mode clair ── */
+.banner {
+  background: linear-gradient(135deg, #1a3a6b 0%, #2a5298 60%, #1c3d7e 100%) !important;
+  color: #ffffff !important;
+}
+.banner .tag,
+.banner h1,
+.banner p {
+  color: #ffffff !important;
+}
+
+/* ── Fix #2 : Espacement banner → contenu réduit ── */
+.banner {
+  margin-bottom: 1.25rem !important;
+}
+
+/* ── Fix #3 : Tableau responsive (stacking mobile, pas de scroll X) ── */
+.table-wrapper {
+  overflow-x: visible;
+  width: 100%;
+}
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-wrapper th,
+.table-wrapper td {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  border: 1px solid rgba(26, 58, 107, 0.14);
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+.table-wrapper thead th {
+  background: rgba(26, 58, 107, 0.07);
+  font-weight: 700;
+  color: #1a3a6b;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+@media (max-width: 620px) {
+  .table-wrapper table,
+  .table-wrapper thead,
+  .table-wrapper tbody,
+  .table-wrapper th,
+  .table-wrapper td,
+  .table-wrapper tr {
+    display: block;
+    width: 100%;
+  }
+  .table-wrapper thead tr {
+    display: none;
+  }
+  .table-wrapper tbody tr {
+    margin-bottom: 1rem;
+    border: 1px solid rgba(26, 58, 107, 0.16);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85);
+  }
+  [data-theme="dark"] .table-wrapper tbody tr {
+    background: var(--color-surface);
+  }
+  .table-wrapper td {
+    border: none;
+    border-bottom: 1px solid rgba(26, 58, 107, 0.08);
+    padding: 0.55rem 1rem;
+    position: relative;
+  }
+  .table-wrapper td:last-child {
+    border-bottom: none;
+  }
+  .table-wrapper td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1a3a6b;
+    margin-bottom: 0.2rem;
+    opacity: 0.7;
+  }
+}
+</style>
+
 <!-- ═══════════════════════════════════════
      BLOC FRANÇAIS
 ═══════════════════════════════════════ -->
@@ -126,11 +215,11 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
 </tr>
 </thead>
 <tbody>
-<tr><td id="tc1">Moins de 30 ans, diplômés</td><td>~20%</td><td id="tc1b" style="color:#87CEEB">Élevée</td></tr>
-<tr><td id="tc2">30–50 ans, secteurs techniques</td><td>~25%</td><td id="tc2b" style="color:#ffcc44">Moyenne avec formation</td></tr>
-<tr><td id="tc3">30–50 ans, secteurs routiniers</td><td>~30%</td><td id="tc3b" style="color:#ff9944">Faible — coût/temps prohibitif</td></tr>
-<tr><td id="tc4">50 ans et +, peu diplômés</td><td>~15%</td><td id="tc4b" style="color:#ff6666">Très faible</td></tr>
-<tr><td id="tc5">Handicaps / contraintes sociales</td><td>~10%</td><td id="tc5b" style="color:#ff4444">Quasi nulle sans aide structurelle</td></tr>
+<tr><td data-label="Catégorie" id="tc1">Moins de 30 ans, diplômés</td><td data-label="% main-d'œuvre">~20%</td><td data-label="Reconversion" id="tc1b" style="color:#87CEEB">Élevée</td></tr>
+<tr><td data-label="Catégorie" id="tc2">30–50 ans, secteurs techniques</td><td data-label="% main-d'œuvre">~25%</td><td data-label="Reconversion" id="tc2b" style="color:#ffcc44">Moyenne avec formation</td></tr>
+<tr><td data-label="Catégorie" id="tc3">30–50 ans, secteurs routiniers</td><td data-label="% main-d'œuvre">~30%</td><td data-label="Reconversion" id="tc3b" style="color:#ff9944">Faible — coût/temps prohibitif</td></tr>
+<tr><td data-label="Catégorie" id="tc4">50 ans et +, peu diplômés</td><td data-label="% main-d'œuvre">~15%</td><td data-label="Reconversion" id="tc4b" style="color:#ff6666">Très faible</td></tr>
+<tr><td data-label="Catégorie" id="tc5">Handicaps / contraintes sociales</td><td data-label="% main-d'œuvre">~10%</td><td data-label="Reconversion" id="tc5b" style="color:#ff4444">Quasi nulle sans aide structurelle</td></tr>
 </tbody>
 </table>
 </div>
@@ -203,12 +292,10 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
 
   <div class="page-wrap">
 
- INTRO 
 <div class="intro-block">
 <p id="intro1">The structural inequalities of capitalism are not suddenly collapsing — they are accelerating. In 2025-2026, four vectors converge simultaneously to destroy the middle class at a speed unprecedented in modern economic history: Trump's tariffs, massive federal cuts, the war in Iran and its oil shock, and AI automation that replaces jobs at a rate that training systems cannot absorb.</p>
 <p id="intro2">This is not an unfavorable situation. It is the logical and predictable convergence of the internal contradictions of an economic system whose fundamental mechanism – private accumulation to the detriment of the collective – is reaching its structural limits.</p>
 </div>
- DIAGRAM — styled HTML version 
 <div class="diag-wrapper">
 <h3 class="diag-heading" id="diag-heading">📊 Diagram of Structural Inequalities</h3>
 <div class="diag-box diag-top" id="diag-top">
@@ -234,7 +321,6 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
       → UNIVERSALITY as a systemic response
     </div>
 </div>
- THE 4 ENGINES 
 <div class="section-header">
 <span class="icon">⚙️</span>
 <h2 id="drivers-title">The 4 Drivers of Structural Unemployment</h2>
@@ -261,7 +347,6 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
 <p id="d4-text">Most irreversible factor. Hits blue-collar AND white-collar workers simultaneously — eliminating the traditional reliance on reskilling for knowledge-based jobs. 30% of current tasks automatable by 2030 (McKinsey).</p>
 </div>
 </div>
- STATS 
 <div class="section-header">
 <span class="icon">📉</span>
 <h2 id="stats-title">Key Data</h2>
@@ -293,7 +378,6 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
 </div>
 </div>
 <hr class="divider"/>
- RECONVERSION 
 <div class="section-header">
 <span class="icon">👥</span>
 <h2 id="reconv-title">Who Cannot Retrain?</h2>
@@ -311,15 +395,14 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
 </tr>
 </thead>
 <tbody>
-<tr><td id="tc1">Under 30, graduates</td><td>~20%</td><td id="tc1b" style="color:#87CEEB">High</td></tr>
-<tr><td id="tc2">30–50 years, technical sectors</td><td>~25%</td><td id="tc2b" style="color:#ffcc44">Average with training</td></tr>
-<tr><td id="tc3">30–50 years, routine sectors</td><td>~30%</td><td id="tc3b" style="color:#ff9944">Low — cost/time prohibitive</td></tr>
-<tr><td id="tc4">50 years and over, few qualified</td><td>~15%</td><td id="tc4b" style="color:#ff6666">Very weak</td></tr>
-<tr><td id="tc5">Disabilities/social constraints</td><td>~10%</td><td id="tc5b" style="color:#ff4444">Almost zero without structural help</td></tr>
+<tr><td data-label="Category" id="tc1">Under 30, graduates</td><td data-label="% Workforce">~20%</td><td data-label="Reconversion" id="tc1b" style="color:#87CEEB">High</td></tr>
+<tr><td data-label="Category" id="tc2">30–50 years, technical sectors</td><td data-label="% Workforce">~25%</td><td data-label="Reconversion" id="tc2b" style="color:#ffcc44">Average with training</td></tr>
+<tr><td data-label="Category" id="tc3">30–50 years, routine sectors</td><td data-label="% Workforce">~30%</td><td data-label="Reconversion" id="tc3b" style="color:#ff9944">Low — cost/time prohibitive</td></tr>
+<tr><td data-label="Category" id="tc4">50 years and over, few qualified</td><td data-label="% Workforce">~15%</td><td data-label="Reconversion" id="tc4b" style="color:#ff6666">Very weak</td></tr>
+<tr><td data-label="Category" id="tc5">Disabilities/social constraints</td><td data-label="% Workforce">~10%</td><td data-label="Reconversion" id="tc5b" style="color:#ff4444">Almost zero without structural help</td></tr>
 </tbody>
 </table>
 </div>
- WORKING POOR 
 <div class="section-header">
 <span class="icon">💸</span>
 <h2 id="poor-title">The Emergence of the Working Poor</h2>
@@ -336,7 +419,6 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
 </ul>
 </div>
 <hr class="divider"/>
- UNIVERSALITY RESPONSE 
 <div class="universality-box">
 <h2 id="univ-title">🌍 UNIVERSALITY: The Only Structural Response</h2>
 <p id="univ1">Faced with this trajectory, the current capitalist system only offers palliative responses — employment insurance, limited requalification, conditional social assistance. These measures do not address the cause: they treat the symptoms of a system whose fundamental logic <em>product</em> exclusion.</p>
@@ -355,7 +437,6 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
 <p id="q1">Past industrial revolutions destroyed jobs to create new ones. AI is different: it eliminates jobs in sectors that <em>were</em> the refuges of requalification. The historical replacement mechanism is broken.</p>
 <p id="q2">The real question is therefore no longer <em>“how to create more jobs”</em> - It is <em>“how does a society distribute its wealth when machines do the work”</em>. Capitalism cannot answer this question because its structural answer is always the same: wealth goes to the owner of capital. UNIVERSALITY reverses this logic.</p>
 </div>
- CONCLUSION 
 <div class="conclusion-box">
 <p><strong id="ccl1">Structural unemployment is not an individual failure.</strong> <span id="ccl1b">This is the predictable consequence of a system that automates to maximize private profit without a mechanism for redistributing collective gains.</span></p>
 <p id="ccl2">Every worker displaced by an algorithm has not failed to adapt — they have been abandoned by a system that does not plan to return their contribution in any other form.</p>
