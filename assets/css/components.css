@@ -1860,4 +1860,28 @@ nav a[aria-current="page"] { color: #87CEEB; }
       .trajectory-intro p, .trajectory-step p, .trajectory-note p, .trajectory-advantage span { text-align: left; }
       .edu-shell { padding: 34px 14px 54px; }
     }
+
+/* ── PATCH contraste : texte sur fonds bleu foncé (éducation) ──
+   Corrige l'écrasement par .page-wrap p/h3 sur .life-strand et .life-conclusion
+─────────────────────────────────────────────────────────────── */
+.life-strand h3,
+.life-strand .life-step strong {
+  color: #87CEEB;
+}
+
+.life-strand p,
+.life-strand .life-step span,
+.life-strand .life-step p {
+  color: #e8f4fd;
+}
+
+.life-conclusion p {
+  color: #e8f4fd;
+}
+
+.life-conclusion p:last-child {
+  color: #87CEEB;
+  font-style: italic;
+}
+
   
