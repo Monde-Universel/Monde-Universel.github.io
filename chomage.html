@@ -95,6 +95,92 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
     opacity: 0.7;
   }
 }
+
+/* ── Schéma des inégalités → cartes empilées ── */
+.diag-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 1.2rem 0 1.8rem;
+}
+.diag-heading {
+  align-self: flex-start;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #556070);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.diag-card {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1.2rem;
+  text-align: center;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+  line-height: 1.35;
+}
+.diag-card--top {
+  background: linear-gradient(135deg, #1a3a6b 0%, #2a5298 100%);
+  color: #ffffff;
+}
+.diag-causes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.55rem;
+  width: 100%;
+  max-width: 600px;
+}
+.diag-cause-card {
+  border-radius: 0.65rem;
+  padding: 0.7rem 0.6rem;
+  text-align: center;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(26, 58, 107, 0.08);
+  border: 1px solid rgba(26, 58, 107, 0.18);
+  color: #1a3a6b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  line-height: 1.3;
+}
+[data-theme="dark"] .diag-cause-card {
+  background: rgba(127, 185, 223, 0.12);
+  border-color: rgba(127, 185, 223, 0.25);
+  color: var(--color-primary);
+}
+.diag-cause-card .diag-icon {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  line-height: 1;
+}
+.diag-card--warn {
+  background: linear-gradient(135deg, #8b1a1a 0%, #c0392b 100%);
+  color: #ffffff;
+}
+.diag-card--ok {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+  color: #ffffff;
+}
+.diag-arrow {
+  font-size: 1.3rem;
+  color: var(--color-text-muted, #556070);
+  line-height: 1;
+  margin: 0.25rem 0;
+  opacity: 0.6;
+}
+
 </style>
 
 <!-- ═══════════════════════════════════════
@@ -117,29 +203,21 @@ description_en: "The structural inequalities of capitalism are accelerating. Ana
 <p id="intro2">Ce n'est pas une conjoncture défavorable. C'est la convergence logique et prévisible des contradictions internes d'un système économique dont la mécanique fondamentale — l'accumulation privée au détriment du collectif — atteint ses limites structurelles.</p>
 </div>
 <div class="diag-wrapper">
-<h3 class="diag-heading" id="diag-heading">📊 Schéma des Inégalités Structurelles</h3>
-<div class="diag-box diag-top" id="diag-top">
-      INÉGALITÉS STRUCTURELLES DU CAPITALISME
-    </div>
+<h3 class="diag-heading" id="diag-heading">📊 Diagram of Structural Inequalities</h3>
+<div class="diag-card diag-card--top" id="diag-top">STRUCTURAL INEQUALITIES OF CAPITALISM</div>
 <div class="diag-arrow">↓</div>
-<div class="diag-causes">
-<div class="diag-cause" id="diag-c1">🏭<br/>Tarifs Trump</div>
-<div class="diag-cause" id="diag-c2">✂️<br/>Coupes fédérales</div>
-<div class="diag-cause" id="diag-c3">🛢️<br/>Guerre en Iran</div>
-<div class="diag-cause" id="diag-c4">🤖<br/>Automatisation IA</div>
+<div class="diag-causes-grid">
+  <div class="diag-cause-card" id="diag-c1"><span class="diag-icon">🏭</span>Trump Tariffs</div>
+  <div class="diag-cause-card" id="diag-c2"><span class="diag-icon">✂️</span>Federal Cuts</div>
+  <div class="diag-cause-card" id="diag-c3"><span class="diag-icon">🛢️</span>War in Iran</div>
+  <div class="diag-cause-card" id="diag-c4"><span class="diag-icon">🤖</span>AI Automation</div>
 </div>
 <div class="diag-arrow">↓</div>
-<div class="diag-box diag-warn" id="diag-w1">
-      DESTRUCTION ACCÉLÉRÉE DE LA CLASSE MOYENNE
-    </div>
+<div class="diag-card diag-card--warn" id="diag-w1">ACCELERATED DESTRUCTION OF THE MIDDLE CLASS</div>
 <div class="diag-arrow">↓</div>
-<div class="diag-box diag-warn" id="diag-w2">
-      CHÔMAGE + STAGFLATION + INSTABILITÉ SOCIALE
-    </div>
+<div class="diag-card diag-card--warn" id="diag-w2">UNEMPLOYMENT + STAGFLATION + SOCIAL INSTABILITY</div>
 <div class="diag-arrow">↓</div>
-<div class="diag-box diag-ok" id="diag-ok">
-      → L'UNIVERSALITÉ comme réponse systémique
-    </div>
+<div class="diag-card diag-card--ok" id="diag-ok">→ UNIVERSALITY as a systemic response</div>
 </div>
 <div class="section-header">
 <span class="icon">⚙️</span>
