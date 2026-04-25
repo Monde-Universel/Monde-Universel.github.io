@@ -10,7 +10,7 @@ keywords: "intelligence artificielle, éducation, IA, pédagogie, éthique, plag
 ---
 
 <!--
-  STYLES À MIGRER DANS Jekyll CSS
+=== STYLES À MIGRER DANS _sass/ ou assets/css/ ===
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Georgia, serif; background: #f0f7ff; color: #1a1a2e; }
@@ -507,6 +507,7 @@ keywords: "intelligence artificielle, éducation, IA, pédagogie, éthique, plag
   
 -->
 
+
 <!-- ═══════════════════════════════════════
      BLOC FRANÇAIS
 ═══════════════════════════════════════ -->
@@ -519,11 +520,6 @@ keywords: "intelligence artificielle, éducation, IA, pédagogie, éthique, plag
   </div>
 
   <div class="page-wrap">
-<section class="edu-banner">
-<div class="tag">Intelligence Artificielle</div>
-<h1>L'IA et l'Éducation !</h1>
-<p class="subtitle">Deux dimensions inséparables : les opportunités pédagogiques révolutionnaires et les questions éthiques profondes qu'elles soulèvent.</p>
-</section>
 <div class="edu-shell">
 <!-- 1. INTRODUCTION -->
 <div class="life-opening">
@@ -551,6 +547,60 @@ keywords: "intelligence artificielle, éducation, IA, pédagogie, éthique, plag
 </div>
 <hr/>
 </div>
+<section aria-labelledby="tensions-title" class="trajectory-section">
+<article class="trajectory-premium">
+<div class="trajectory-premium-head">
+<div class="trajectory-kicker">Analyse scientifique</div>
+<h2 class="trajectory-title" id="tensions-title">Les grandes tensions éthiques</h2>
+<div class="trajectory-intro">
+<p>Une analyse de 58 documents scientifiques a identifié 70 enjeux éthiques liés à l'IA en éducation, regroupés en six tensions majeures. Ces tensions ne sont pas des obstacles à l'adoption de l'IA — elles sont les questions que toute société responsable doit poser avant de déployer ces outils à grande échelle dans ses salles de classe.</p>
+</div>
+</div>
+<div class="trajectory-premium-grid">
+<div class="trajectory-main">
+<div class="trajectory-block">
+<div class="trajectory-block-title">Les six tensions fondamentales</div>
+<div class="trajectory-step">
+<h3>1. Standardisation vs complexité humaine</h3>
+<p>Les algorithmes simplifient ce qui est fondamentalement nuancé. L'apprentissage humain est contextuel, émotionnel et social — difficile à réduire à des données et des métriques de performance.</p>
+</div>
+<div class="trajectory-step">
+<h3>2. Automatisation vs agentivité</h3>
+<p>Risque de dépossession des enseignants et des élèves de leur propre jugement. Quand l'IA décide quoi apprendre, à quel rythme et comment évaluer, qui reste maître du processus éducatif ?</p>
+</div>
+<div class="trajectory-step">
+<h3>3. Justice scolaire vs rationalité technique</h3>
+<p>Les biais des données d'entraînement peuvent reproduire — voire amplifier — les inégalités existantes. Un algorithme entraîné sur des données biaisées produira des recommandations biaisées.</p>
+</div>
+<div class="trajectory-step">
+<h3>4. Opacité vs besoin d'intelligibilité</h3>
+<p>Les élèves et enseignants ne comprennent pas comment les décisions algorithmiques sont prises. Comment contester une évaluation ou une recommandation dont on ignore le raisonnement ?</p>
+</div>
+<div class="trajectory-step">
+<h3>5. Gouvernance scolaire vs conception technique</h3>
+<p>Qui contrôle vraiment les outils utilisés en classe ? Les établissements, les enseignants, les ministères — ou les entreprises technologiques qui conçoivent et déploient ces systèmes ?</p>
+</div>
+<div class="trajectory-step">
+<h3>6. Dignité vs exploitation des données</h3>
+<p>La vie privée des élèves est une ressource convoitée. Chaque interaction avec une plateforme éducative génère des données comportementales qui peuvent alimenter des systèmes commerciaux.</p>
+</div>
+</div>
+</div>
+<aside class="trajectory-side">
+<div class="trajectory-block">
+<div class="trajectory-block-title">Ce que révèle la recherche</div>
+<div class="trajectory-note">
+<p>Une analyse de 58 documents scientifiques a permis d'identifier 70 enjeux éthiques distincts. Ces tensions sont structurelles — elles ne disparaîtront pas avec de meilleurs algorithmes. Elles exigent des choix politiques, pédagogiques et sociaux.</p>
+</div>
+<div class="trajectory-advantage"><strong>Biais algorithmiques documentés</strong><span>Des études montrent que certains systèmes d'IA reproduisent des inégalités raciales, de genre et socioéconomiques présentes dans les données d'entraînement.</span></div>
+<div class="trajectory-advantage"><strong>Opacité des systèmes commerciaux</strong><span>La majorité des outils IA déployés en éducation sont propriétaires. Ni les enseignants, ni les élèves, ni les établissements ne peuvent inspecter leur logique interne.</span></div>
+<div class="trajectory-advantage"><strong>L'UNESCO tire la sonnette d'alarme</strong><span>Sans encadrement éthique robuste, l'IA risque de creuser les fractures éducatives déjà existantes, notamment dans les pays à ressources limitées.</span></div>
+<div class="trajectory-advantage"><strong>La pensée critique en danger</strong><span>Si l'IA devient un raccourci systématique, la pensée critique risque de s'atrophier. L'objectif de l'éducation n'est pas la bonne réponse — c'est la capacité à raisonner.</span></div>
+</div>
+</aside>
+</div>
+</article>
+</section>
 <div class="edu-shell">
 <!-- 3. INTÉGRITÉ ACADÉMIQUE & PLAGIAT -->
 <div class="life-strand">
@@ -615,63 +665,9 @@ keywords: "intelligence artificielle, éducation, IA, pédagogie, éthique, plag
 <div class="life-conclusion">
 <p>L'enjeu n'est pas technologique, mais humain et moral. L'UNESCO rappelle que dans tous ses rôles, l'IA peut améliorer l'accès au savoir, mais que sans encadrement éthique, elle risque de creuser les fractures éducatives déjà existantes.</p>
 <p>La CSQ (Centrale des syndicats du Québec) réclame d'ailleurs un encadrement légal et réglementaire pour éviter les dérives dans les établissements québécois. Le droit à une éducation de qualité, équitable et digne ne peut être délégué à un algorithme.</p>
-<p>« L\'humain au centre. La pédagogie comme boussole. L\'IA comme levier. »</p>
+<p>« L'humain au centre. La pédagogie comme boussole. L'IA comme levier. »</p>
 </div>
 </div>
-<section aria-labelledby="tensions-title" class="trajectory-section">
-<article class="trajectory-premium">
-<div class="trajectory-premium-head">
-<div class="trajectory-kicker">Analyse scientifique</div>
-<h2 class="trajectory-title" id="tensions-title">Les grandes tensions éthiques</h2>
-<div class="trajectory-intro">
-<p>Une analyse de 58 documents scientifiques a identifié 70 enjeux éthiques liés à l'IA en éducation, regroupés en six tensions majeures. Ces tensions ne sont pas des obstacles à l'adoption de l'IA — elles sont les questions que toute société responsable doit poser avant de déployer ces outils à grande échelle dans ses salles de classe.</p>
-</div>
-</div>
-<div class="trajectory-premium-grid">
-<div class="trajectory-main">
-<div class="trajectory-block">
-<div class="trajectory-block-title">Les six tensions fondamentales</div>
-<div class="trajectory-step">
-<h3>1. Standardisation vs complexité humaine</h3>
-<p>Les algorithmes simplifient ce qui est fondamentalement nuancé. L'apprentissage humain est contextuel, émotionnel et social — difficile à réduire à des données et des métriques de performance.</p>
-</div>
-<div class="trajectory-step">
-<h3>2. Automatisation vs agentivité</h3>
-<p>Risque de dépossession des enseignants et des élèves de leur propre jugement. Quand l'IA décide quoi apprendre, à quel rythme et comment évaluer, qui reste maître du processus éducatif ?</p>
-</div>
-<div class="trajectory-step">
-<h3>3. Justice scolaire vs rationalité technique</h3>
-<p>Les biais des données d'entraînement peuvent reproduire — voire amplifier — les inégalités existantes. Un algorithme entraîné sur des données biaisées produira des recommandations biaisées.</p>
-</div>
-<div class="trajectory-step">
-<h3>4. Opacité vs besoin d\'intelligibilité</h3>
-<p>Les élèves et enseignants ne comprennent pas comment les décisions algorithmiques sont prises. Comment contester une évaluation ou une recommandation dont on ignore le raisonnement ?</p>
-</div>
-<div class="trajectory-step">
-<h3>5. Gouvernance scolaire vs conception technique</h3>
-<p>Qui contrôle vraiment les outils utilisés en classe ? Les établissements, les enseignants, les ministères — ou les entreprises technologiques qui conçoivent et déploient ces systèmes ?</p>
-</div>
-<div class="trajectory-step">
-<h3>6. Dignité vs exploitation des données</h3>
-<p>La vie privée des élèves est une ressource convoitée. Chaque interaction avec une plateforme éducative génère des données comportementales qui peuvent alimenter des systèmes commerciaux.</p>
-</div>
-</div>
-</div>
-<aside class="trajectory-side">
-<div class="trajectory-block">
-<div class="trajectory-block-title">Ce que révèle la recherche</div>
-<div class="trajectory-note">
-<p>Une analyse de 58 documents scientifiques a permis d'identifier 70 enjeux éthiques distincts. Ces tensions sont structurelles — elles ne disparaîtront pas avec de meilleurs algorithmes. Elles exigent des choix politiques, pédagogiques et sociaux.</p>
-</div>
-<div class="trajectory-advantage"><strong>Biais algorithmiques documentés</strong><span>Des études montrent que certains systèmes d'IA reproduisent des inégalités raciales, de genre et socioéconomiques présentes dans les données d'entraînement.</span></div>
-<div class="trajectory-advantage"><strong>Opacité des systèmes commerciaux</strong><span>La majorité des outils IA déployés en éducation sont propriétaires. Ni les enseignants, ni les élèves, ni les établissements ne peuvent inspecter leur logique interne.</span></div>
-<div class="trajectory-advantage"><strong>L'UNESCO tire la sonnette d'alarme</strong><span>Sans encadrement éthique robuste, l'IA risque de creuser les fractures éducatives déjà existantes, notamment dans les pays à ressources limitées.</span></div>
-<div class="trajectory-advantage"><strong>La pensée critique en danger</strong><span>Si l'IA devient un raccourci systématique, la pensée critique risque de s'atrophier. L'objectif de l'éducation n'est pas la bonne réponse — c'est la capacité à raisonner.</span></div>
-</div>
-</aside>
-</div>
-</article>
-</section>
   </div>
 
 </div>
@@ -689,11 +685,6 @@ keywords: "intelligence artificielle, éducation, IA, pédagogie, éthique, plag
   </div>
 
   <div class="page-wrap">
-<section class="edu-banner">
-<div class="tag">Artificial Intelligence</div>
-<h1>AI and Education!</h1>
-<p class="subtitle">Two inseparable dimensions: revolutionary pedagogical opportunities and the profound ethical questions they raise.</p>
-</section>
 <div class="edu-shell">
 <!-- 1. INTRODUCTION -->
 <div class="life-opening">
@@ -721,6 +712,60 @@ keywords: "intelligence artificielle, éducation, IA, pédagogie, éthique, plag
 </div>
 <hr/>
 </div>
+<section aria-labelledby="tensions-title" class="trajectory-section">
+<article class="trajectory-premium">
+<div class="trajectory-premium-head">
+<div class="trajectory-kicker">Scientific Analysis</div>
+<h2 class="trajectory-title" id="tensions-title">The Major Ethical Tensions</h2>
+<div class="trajectory-intro">
+<p>An analysis of 58 scientific documents identified 70 ethical issues related to AI in education, grouped into six major tensions. These tensions are not obstacles to AI adoption — they are the questions that every responsible society must ask before deploying these tools at scale in its classrooms.</p>
+</div>
+</div>
+<div class="trajectory-premium-grid">
+<div class="trajectory-main">
+<div class="trajectory-block">
+<div class="trajectory-block-title">The Six Fundamental Tensions</div>
+<div class="trajectory-step">
+<h3>1. Standardization vs. Human Complexity</h3>
+<p>Algorithms simplify what is fundamentally nuanced. Human learning is contextual, emotional, and social — difficult to reduce to data and performance metrics.</p>
+</div>
+<div class="trajectory-step">
+<h3>2. Automation vs. Agency</h3>
+<p>Risk of dispossessing teachers and students of their own judgment. When AI decides what to learn, at what pace, and how to assess, who remains master of the educational process?</p>
+</div>
+<div class="trajectory-step">
+<h3>3. Educational Justice vs. Technical Rationality</h3>
+<p>Biases in training data can reproduce — and even amplify — existing inequalities. An algorithm trained on biased data will produce biased recommendations.</p>
+</div>
+<div class="trajectory-step">
+<h3>4. Opacity vs. Need for Intelligibility</h3>
+<p>Students and teachers do not understand how algorithmic decisions are made. How can one contest an assessment or recommendation whose reasoning is unknown?</p>
+</div>
+<div class="trajectory-step">
+<h3>5. School Governance vs. Technical Design</h3>
+<p>Who truly controls the tools used in classrooms? Institutions, teachers, ministries — or the technology companies that design and deploy these systems?</p>
+</div>
+<div class="trajectory-step">
+<h3>6. Dignity vs. Data Exploitation</h3>
+<p>Students' privacy is a coveted resource. Every interaction with an educational platform generates behavioral data that can feed commercial systems.</p>
+</div>
+</div>
+</div>
+<aside class="trajectory-side">
+<div class="trajectory-block">
+<div class="trajectory-block-title">What Research Reveals</div>
+<div class="trajectory-note">
+<p>An analysis of 58 scientific documents identified 70 distinct ethical issues. These tensions are structural — they will not disappear with better algorithms. They require political, pedagogical, and social choices.</p>
+</div>
+<div class="trajectory-advantage"><strong>Documented Algorithmic Biases</strong><span>Studies show that some AI systems reproduce racial, gender, and socioeconomic inequalities present in training data.</span></div>
+<div class="trajectory-advantage"><strong>Opacity of Commercial Systems</strong><span>Most AI tools deployed in education are proprietary. Neither teachers, students, nor institutions can inspect their internal logic.</span></div>
+<div class="trajectory-advantage"><strong>UNESCO Sounds the Alarm</strong><span>Without robust ethical frameworks, AI risks deepening existing educational divides, particularly in resource-limited countries.</span></div>
+<div class="trajectory-advantage"><strong>Critical Thinking at Risk</strong><span>If AI becomes a systematic shortcut, critical thinking risks atrophying. The goal of education is not the right answer — it is the capacity to reason.</span></div>
+</div>
+</aside>
+</div>
+</article>
+</section>
 <div class="edu-shell">
 <!-- 3. INTÉGRITÉ ACADÉMIQUE & PLAGIAT -->
 <div class="life-strand">
@@ -788,60 +833,6 @@ keywords: "intelligence artificielle, éducation, IA, pédagogie, éthique, plag
 <p>"The human at the center. Pedagogy as the compass. AI as the lever."</p>
 </div>
 </div>
-<section aria-labelledby="tensions-title" class="trajectory-section">
-<article class="trajectory-premium">
-<div class="trajectory-premium-head">
-<div class="trajectory-kicker">Scientific Analysis</div>
-<h2 class="trajectory-title" id="tensions-title">The Major Ethical Tensions</h2>
-<div class="trajectory-intro">
-<p>An analysis of 58 scientific documents identified 70 ethical issues related to AI in education, grouped into six major tensions. These tensions are not obstacles to AI adoption — they are the questions that every responsible society must ask before deploying these tools at scale in its classrooms.</p>
-</div>
-</div>
-<div class="trajectory-premium-grid">
-<div class="trajectory-main">
-<div class="trajectory-block">
-<div class="trajectory-block-title">The Six Fundamental Tensions</div>
-<div class="trajectory-step">
-<h3>1. Standardization vs. Human Complexity</h3>
-<p>Algorithms simplify what is fundamentally nuanced. Human learning is contextual, emotional, and social — difficult to reduce to data and performance metrics.</p>
-</div>
-<div class="trajectory-step">
-<h3>2. Automation vs. Agency</h3>
-<p>Risk of dispossessing teachers and students of their own judgment. When AI decides what to learn, at what pace, and how to assess, who remains master of the educational process?</p>
-</div>
-<div class="trajectory-step">
-<h3>3. Educational Justice vs. Technical Rationality</h3>
-<p>Biases in training data can reproduce — and even amplify — existing inequalities. An algorithm trained on biased data will produce biased recommendations.</p>
-</div>
-<div class="trajectory-step">
-<h3>4. Opacity vs. Need for Intelligibility</h3>
-<p>Students and teachers do not understand how algorithmic decisions are made. How can one contest an assessment or recommendation whose reasoning is unknown?</p>
-</div>
-<div class="trajectory-step">
-<h3>5. School Governance vs. Technical Design</h3>
-<p>Who truly controls the tools used in classrooms? Institutions, teachers, ministries — or the technology companies that design and deploy these systems?</p>
-</div>
-<div class="trajectory-step">
-<h3>6. Dignity vs. Data Exploitation</h3>
-<p>Students' privacy is a coveted resource. Every interaction with an educational platform generates behavioral data that can feed commercial systems.</p>
-</div>
-</div>
-</div>
-<aside class="trajectory-side">
-<div class="trajectory-block">
-<div class="trajectory-block-title">What Research Reveals</div>
-<div class="trajectory-note">
-<p>An analysis of 58 scientific documents identified 70 distinct ethical issues. These tensions are structural — they will not disappear with better algorithms. They require political, pedagogical, and social choices.</p>
-</div>
-<div class="trajectory-advantage"><strong>Documented Algorithmic Biases</strong><span>Studies show that some AI systems reproduce racial, gender, and socioeconomic inequalities present in training data.</span></div>
-<div class="trajectory-advantage"><strong>Opacity of Commercial Systems</strong><span>Most AI tools deployed in education are proprietary. Neither teachers, students, nor institutions can inspect their internal logic.</span></div>
-<div class="trajectory-advantage"><strong>UNESCO Sounds the Alarm</strong><span>Without robust ethical frameworks, AI risks deepening existing educational divides, particularly in resource-limited countries.</span></div>
-<div class="trajectory-advantage"><strong>Critical Thinking at Risk</strong><span>If AI becomes a systematic shortcut, critical thinking risks atrophying. The goal of education is not the right answer — it is the capacity to reason.</span></div>
-</div>
-</aside>
-</div>
-</article>
-</section>
   </div>
 
 </div>
