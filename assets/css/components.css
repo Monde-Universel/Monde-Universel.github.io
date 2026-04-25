@@ -2115,6 +2115,379 @@ li {
   filter: brightness(1.08);
 }
 
+/* ═══════════════════════════════════════
+   PAGE VIE — composants spécifiques
+   À ajouter à la toute fin de components.css
+═══════════════════════════════════════ */
+
+.manifesto-inline {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(233,244,255,0.96) 100%);
+  border: 1px solid rgba(26,58,107,0.12);
+  border-left: 6px solid #87CEEB;
+  border-radius: 18px;
+  padding: 30px 28px;
+  box-shadow: 0 14px 34px rgba(13,34,87,0.10);
+  overflow: hidden;
+}
+
+.manifesto-inline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(135,206,235,0.20), transparent 34%);
+  pointer-events: none;
+}
+
+.manifesto-inline h3,
+.manifesto-inline p {
+  position: relative;
+  z-index: 1;
+}
+
+.manifesto-inline h3 {
+  color: #0d2257;
+  margin-bottom: 16px;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.manifesto-inline p {
+  font-size: 1.08rem;
+  line-height: 1.95;
+}
+
+.manifesto-bridge {
+  position: relative;
+  padding: clamp(3.5rem, 6vw, 6rem) 1.25rem;
+  background:
+    radial-gradient(circle at top left, rgba(1, 105, 111, 0.12), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(1, 105, 111, 0.08), transparent 28%);
+}
+
+.manifesto-bridge__inner {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  border: 1px solid rgba(1, 105, 111, 0.14);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.manifesto-bridge__glow {
+  position: absolute;
+  inset: auto -10% -30% auto;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(1, 105, 111, 0.16) 0%, rgba(1, 105, 111, 0) 72%);
+  pointer-events: none;
+}
+
+.manifesto-bridge__header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.75rem;
+}
+
+.manifesto-bridge__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(1, 105, 111, 0.1);
+  color: #01696f;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.manifesto-bridge__title {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.manifesto-bridge__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.manifesto-card {
+  height: 100%;
+  padding: clamp(1.25rem, 2vw, 1.8rem);
+  border-radius: 24px;
+  border: 1px solid rgba(1, 105, 111, 0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(247,250,250,0.98) 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.manifesto-card__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.05;
+}
+
+.manifesto-card__body {
+  display: grid;
+  gap: 1rem;
+}
+
+.manifesto-card__body p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: rgba(18, 24, 27, 0.92);
+}
+
+.life-banner {
+  background: linear-gradient(180deg, #1a3a6b 0%, #2a5298 52%, #87CEEB 100%);
+  text-align: center;
+  padding: 54px 24px 42px;
+  border-bottom: 4px solid #87CEEB;
+}
+
+.life-banner .tag {
+  display: inline-block;
+  background: #87CEEB;
+  color: #1a3a6b;
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 0.18em;
+  padding: 5px 18px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.life-banner h1 {
+  font-size: clamp(1.9rem, 4.4vw, 3.4rem);
+  color: #fff;
+  line-height: 1.18;
+  max-width: 900px;
+  margin: 0 auto 14px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+.life-banner .subtitle {
+  font-family: Arial, sans-serif;
+  color: #dbefff;
+  font-size: 1.03rem;
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.life-shell {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 42px 24px 72px;
+}
+
+.life-opening {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(233,244,255,0.96) 100%);
+  border: 1px solid rgba(26,58,107,0.12);
+  border-left: 6px solid #87CEEB;
+  border-radius: 18px;
+  padding: 34px 30px;
+  box-shadow: 0 14px 34px rgba(13,34,87,0.10);
+  overflow: hidden;
+  margin-bottom: 34px;
+}
+
+.life-opening::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(135,206,235,0.20), transparent 34%);
+  pointer-events: none;
+}
+
+.life-opening p,
+.life-opening h2 {
+  position: relative;
+  z-index: 1;
+}
+
+.life-opening h2 {
+  color: #0d2257;
+}
+
+.life-opening p {
+  font-size: 1.08rem;
+  line-height: 1.95;
+  color: #2c2c2c;
+  text-align: justify;
+  margin-bottom: 16px;
+}
+
+.life-opening p:last-child {
+  margin-bottom: 0;
+}
+
+.life-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.life-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 28px 26px;
+  border-top: 4px solid #87CEEB;
+}
+
+.life-card h3 {
+  font-size: 1.15rem;
+  color: #1a3a6b;
+  margin-bottom: 12px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.life-card p {
+  font-size: 1rem;
+  line-height: 1.86;
+  color: #2c2c2c;
+  text-align: justify;
+}
+
+.life-strand {
+  background: linear-gradient(135deg, #1a3a6b, #2a5298);
+  color: #e8f4fd;
+  border-radius: 16px;
+  padding: 32px 32px;
+  margin: 10px 0 30px;
+  box-shadow: 0 12px 28px rgba(13,34,87,0.18);
+}
+
+.life-strand h3 {
+  color: #87CEEB;
+  font-size: 1.16rem;
+  margin-bottom: 18px;
+  font-family: Arial, sans-serif;
+}
+
+.life-strand p {
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 14px;
+  text-align: justify;
+}
+
+.life-strand p:last-child {
+  margin-bottom: 0;
+}
+
+.life-steps {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.life-step {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 18px 18px;
+}
+
+.life-step strong {
+  display: block;
+  color: #87CEEB;
+  font-family: Arial, sans-serif;
+  margin-bottom: 6px;
+}
+
+.life-conclusion {
+  background: #1a3a6b;
+  color: #e8f4fd;
+  border-radius: 16px;
+  padding: 34px 34px;
+  text-align: center;
+}
+
+.life-conclusion p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin: 0 0 12px;
+}
+
+.life-conclusion p:last-child {
+  margin-bottom: 0;
+  color: #87CEEB;
+  font-weight: bold;
+}
+
+@media (max-width: 760px) {
+  .life-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .life-opening,
+  .life-card,
+  .life-strand,
+  .life-conclusion {
+    padding: 22px 18px;
+  }
+
+  .life-opening p,
+  .life-card p,
+  .life-strand p,
+  .life-conclusion p {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .manifesto-bridge {
+    background:
+      radial-gradient(circle at top left, rgba(79, 152, 163, 0.16), transparent 32%),
+      radial-gradient(circle at bottom right, rgba(79, 152, 163, 0.12), transparent 28%);
+  }
+
+  .manifesto-bridge__inner {
+    background: rgba(17, 23, 26, 0.78);
+    border-color: rgba(79, 152, 163, 0.22);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.26);
+  }
+
+  .manifesto-bridge__eyebrow {
+    background: rgba(79, 152, 163, 0.14);
+    color: #8fd3dc;
+  }
+
+  .manifesto-card {
+    background: linear-gradient(180deg, rgba(20, 27, 30, 0.92) 0%, rgba(16, 22, 24, 0.98) 100%);
+    border-color: rgba(79, 152, 163, 0.18);
+  }
+
+  .manifesto-card__body p,
+  .manifesto-bridge__title,
+  .manifesto-card__title {
+    color: rgba(240, 245, 247, 0.94);
+  }
+}
+
+
 
 
   
