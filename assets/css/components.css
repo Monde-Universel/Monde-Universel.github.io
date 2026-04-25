@@ -2050,6 +2050,72 @@ li {
   }
 }
 
+/* ═══════════════════════════════════════
+   PAGE EVOLUTION — patch contraste mode sombre
+   À ajouter juste après le bloc PAGE EVOLUTION
+═══════════════════════════════════════ */
+
+[data-theme="dark"] .rub-section,
+[data-theme="dark"] .rub-card,
+[data-theme="dark"] .issue-item,
+[data-theme="dark"] .pillar-item,
+[data-theme="dark"] .quote-box,
+[data-theme="dark"] .contact-section {
+  background: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .rub-card,
+[data-theme="dark"] .issue-item,
+[data-theme="dark"] .pillar-item {
+  background: var(--color-surface-2) !important;
+}
+
+[data-theme="dark"] .quote-box {
+  background: var(--color-surface-2) !important;
+  color: var(--color-text) !important;
+  border-left-color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .contact-section {
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-2) 100%) !important;
+}
+
+[data-theme="dark"] .section-label {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .vision-block h3,
+[data-theme="dark"] .rub-card h3,
+[data-theme="dark"] .issue-item h3,
+[data-theme="dark"] .pillar-item h3,
+[data-theme="dark"] .contact-title {
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .vision-block p,
+[data-theme="dark"] .quote-box,
+[data-theme="dark"] .issue-item,
+[data-theme="dark"] .pillar-item,
+[data-theme="dark"] .cta-text,
+[data-theme="dark"] .rub-section li {
+  color: var(--color-text-muted) !important;
+}
+
+[data-theme="dark"] .contact-btn {
+  background: linear-gradient(135deg, var(--color-primary-deep) 0%, var(--color-primary-mid) 100%) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .contact-btn:hover,
+[data-theme="dark"] .contact-btn:focus-visible {
+  filter: brightness(1.08);
+}
+
+
 
   
 
