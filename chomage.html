@@ -1,392 +1,32 @@
 ---
 layout: default
 title: "Chômage · UN MONDE UNIVERSEL"
+title_en: "Unemployment · A UNIVERSAL WORLD"
 lang: fr
 permalink: /chomage.html
+description: "Les inégalités structurelles du capitalisme s'accélèrent. Analyse des quatre vecteurs qui détruisent la classe moyenne : tarifs Trump, coupes DOGE, guerre en Iran et automatisation par l'IA."
+description_en: "The structural inequalities of capitalism are accelerating. Analysis of four vectors destroying the middle class: Trump tariffs, DOGE cuts, the Iran war, and AI automation."
 ---
 
-<style>
-[hidden] { display: none !important; }
-#content-fr, #content-en { display: block; width: 100%; }
-#content-en { display: none; }
-html[lang="en"] #content-fr { display: none; }
-html[lang="en"] #content-en { display: block; }
-html[lang="fr"] #content-fr { display: block; }
-html[lang="fr"] #content-en { display: none; }
+<!-- ═══════════════════════════════════════
+     BLOC FRANÇAIS
+═══════════════════════════════════════ -->
+<div data-lang-block="fr">
 
-:root, html[data-theme="light"] {
-  --ch-bg: #f3f7fb;
-  --ch-surface: #ffffff;
-  --ch-surface-2: #edf4fb;
-  --ch-text: #162433;
-  --ch-soft: #41566d;
-  --ch-title: #163b6a;
-  --ch-border: rgba(22, 59, 106, 0.14);
-  --ch-accent: #87ceeb;
-  --ch-accent-strong: #1a3a6b;
-  --ch-shadow: 0 12px 32px rgba(13, 34, 87, 0.08);
-}
-html[data-theme="dark"] {
-  --ch-bg: #0d141c;
-  --ch-surface: #14212c;
-  --ch-surface-2: #182531;
-  --ch-text: #eef5fb;
-  --ch-soft: #d5e3ef;
-  --ch-title: #f8fcff;
-  --ch-border: rgba(159, 222, 250, 0.24);
-  --ch-accent: #9fdefa;
-  --ch-accent-strong: #e6f4ff;
-  --ch-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
-}
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) {
-    --ch-bg: #0d141c;
-    --ch-surface: #14212c;
-    --ch-surface-2: #182531;
-    --ch-text: #eef5fb;
-    --ch-soft: #d5e3ef;
-    --ch-title: #f8fcff;
-    --ch-border: rgba(159, 222, 250, 0.24);
-    --ch-accent: #9fdefa;
-    --ch-accent-strong: #e6f4ff;
-    --ch-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
-  }
-}
+  <div class="banner">
 
-.chomage-page {
-  background: var(--ch-bg);
-  color: var(--ch-text);
-  padding-bottom: 4.5rem;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: clip;
-}
-.chomage-page *,
-.chomage-page *::before,
-.chomage-page *::after { box-sizing: border-box; }
-.chomage-page > .banner,
-.chomage-page > .container {
-  width: 100%;
-  max-width: 100%;
-}
-
-.chomage-page .banner {
-  background: linear-gradient(135deg, #1a3a6b 0%, #2a5298 60%, #1a3a6b 100%);
-  text-align: center;
-  padding: clamp(3rem, 6vw, 5rem) 1.15rem 2.5rem;
-  border-bottom: 3px solid var(--ch-accent);
-}
-.chomage-page .banner .tag,
-.chomage-page #tag-text {
-  display: inline-block;
-  background: rgba(12, 27, 55, 0.86);
-  color: #f7fbff !important;
-  border: 1px solid rgba(255,255,255,0.22);
-  font-family: Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  padding: 5px 18px;
-  border-radius: 4px;
-  margin-bottom: 18px;
-  text-transform: uppercase;
-}
-.chomage-page .banner h1,
-.chomage-page #banner-title {
-  font-size: clamp(1.65rem, 4.6vw, 3rem);
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  line-height: 1.22;
-  max-width: 920px;
-  margin: 0 auto 14px;
-  text-shadow: 0 2px 10px rgba(0,0,0,.42);
-}
-.chomage-page .banner p,
-.chomage-page #banner-sub {
-  font-family: Arial, sans-serif;
-  color: #edf6ff !important;
-  font-size: 1rem;
-  max-width: 860px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-.chomage-page .container {
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 2.5rem 1rem 0;
-}
-.chomage-page .intro-block,
-.chomage-page .driver-card,
-.chomage-page .stat-card,
-.chomage-page .content-block,
-.chomage-page .table-wrapper,
-.chomage-page .universality-box,
-.chomage-page .univ-encadre-cri,
-.chomage-page .conclusion-box,
-.chomage-page .final-box,
-.chomage-page .cry-box,
-.chomage-page .heart-box {
-  background: var(--ch-surface);
-  color: var(--ch-text);
-  border: 1px solid var(--ch-border);
-  box-shadow: var(--ch-shadow);
-  width: 100%;
-  max-width: 100%;
-}
-.chomage-page .intro-block,
-.chomage-page .content-block,
-.chomage-page .table-wrapper,
-.chomage-page .universality-box,
-.chomage-page .univ-encadre-cri,
-.chomage-page .conclusion-box,
-.chomage-page .final-box,
-.chomage-page .cry-box,
-.chomage-page .heart-box {
-  border-radius: 12px;
-  padding: clamp(1rem, 2vw, 1.8rem);
-  margin-left: auto;
-  margin-right: auto;
-}
-.chomage-page .intro-block {
-  border-left: 4px solid var(--ch-accent);
-  margin-bottom: 2.5rem;
-}
-.chomage-page p,
-.chomage-page li,
-.chomage-page td,
-.chomage-page th,
-.chomage-page .label,
-.chomage-page .caption,
-.chomage-page .source {
-  color: var(--ch-text) !important;
-}
-.chomage-page h1,
-.chomage-page h2,
-.chomage-page h3,
-.chomage-page h4,
-.chomage-page strong,
-.chomage-page li strong,
-.chomage-page .number,
-.chomage-page [class*="title"],
-.chomage-page [class*="heading"] {
-  color: var(--ch-title) !important;
-}
-.chomage-page p { font-size: 1.03rem; line-height: 1.85; margin: 0 0 12px; }
-.chomage-page p:last-child { margin-bottom: 0; }
-.chomage-page ul, .chomage-page ol { padding-left: 1.35rem; margin: 10px 0; }
-.chomage-page li { line-height: 1.75; margin-bottom: 8px; }
-
-.chomage-page .section-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 44px 0 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid color-mix(in srgb, var(--ch-accent) 30%, transparent);
-}
-.chomage-page .section-header .icon { font-size: 1.6rem; }
-.chomage-page .section-header h2 { font-size: 1.45rem; }
-
-.chomage-page .drivers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  margin: 24px 0;
-}
-.chomage-page .driver-card {
-  border-top: 3px solid var(--ch-accent);
-  border-radius: 12px;
-  padding: 20px 18px;
-}
-.chomage-page .driver-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
-.chomage-page .driver-card h3 { font-size: 1rem; font-family: Arial, sans-serif; margin-bottom: 8px; }
-.chomage-page .driver-card p { font-size: 0.92rem; line-height: 1.75; }
-
-.chomage-page .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin: 24px 0;
-}
-.chomage-page .stat-card {
-  border-top: 3px solid var(--ch-accent);
-  border-radius: 12px;
-  padding: 20px 16px;
-  text-align: center;
-}
-.chomage-page .stat-card .number {
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: var(--ch-accent-strong) !important;
-  font-family: Arial, sans-serif;
-  line-height: 1.1;
-}
-.chomage-page .stat-card .label {
-  font-size: 0.84rem;
-  font-family: Arial, sans-serif;
-  margin-top: 6px;
-}
-
-.chomage-page .diag-wrapper {
-  background: linear-gradient(180deg, var(--ch-surface) 0%, var(--ch-surface-2) 100%);
-  border: 1px solid var(--ch-border);
-  border-radius: 16px;
-  padding: clamp(1rem, 2vw, 1.8rem);
-  margin: 0 0 2.5rem;
-  box-shadow: var(--ch-shadow);
-}
-.chomage-page .diag-heading {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-.chomage-page .diag-box {
-  padding: 14px 16px;
-  border-radius: 12px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  border: 1px solid var(--ch-border);
-  color: var(--ch-title) !important;
-  background: var(--ch-surface);
-}
-.chomage-page .diag-top { background: linear-gradient(180deg, #e8f4ff 0%, #d8ebfa 100%); }
-.chomage-page .diag-warn { background: linear-gradient(180deg, #fff0d8 0%, #ffe3ba 100%); }
-.chomage-page .diag-ok { background: linear-gradient(180deg, #e4f7ec 0%, #cfeedd 100%); }
-html[data-theme="dark"] .chomage-page .diag-top,
-@media (prefers-color-scheme: dark) { }
-html[data-theme="dark"] .chomage-page .diag-top { background: #1d3550; }
-html[data-theme="dark"] .chomage-page .diag-warn { background: #4b3320; color: #fff5e8 !important; }
-html[data-theme="dark"] .chomage-page .diag-ok { background: #1f4330; color: #f1fff6 !important; }
-.chomage-page .diag-arrow {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 8px 0;
-  color: var(--ch-title);
-}
-.chomage-page .diag-causes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
-}
-.chomage-page .diag-cause {
-  background: var(--ch-surface);
-  border: 1px solid var(--ch-border);
-  border-radius: 12px;
-  padding: 14px 10px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-weight: 700;
-  color: var(--ch-title);
-}
-
-.chomage-page .table-wrapper { overflow-x: auto; margin-bottom: 2rem; }
-.chomage-page table { width: 100%; border-collapse: collapse; min-width: 640px; max-width: 100%; }
-.chomage-page th, .chomage-page td {
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--ch-border);
-  text-align: left;
-  background: transparent;
-}
-.chomage-page thead th {
-  font-family: Arial, sans-serif;
-  color: var(--ch-title) !important;
-  background: color-mix(in srgb, var(--ch-accent) 12%, var(--ch-surface));
-}
-
-.chomage-page .universality-box {
-  border-left: 4px solid var(--ch-accent);
-  margin: 40px auto 28px;
-}
-.chomage-page .universality-box h2 { margin-bottom: 14px; font-size: 1.35rem; }
-.chomage-page .content-block h3 { font-size: 1.15rem; margin-bottom: 12px; font-style: italic; }
-.chomage-page .divider {
-  border: none;
-  border-top: 1px solid var(--ch-border);
-  margin: 36px 0;
-}
-
-.chomage-page .univ-encadre-cri,
-.chomage-page .conclusion-box,
-.chomage-page .final-box,
-.chomage-page .cry-box,
-.chomage-page .heart-box {
-  margin: 40px auto 28px;
-  border-left: 4px solid var(--ch-accent);
-}
-
-html[data-theme="dark"] .chomage-page .driver-card,
-html[data-theme="dark"] .chomage-page .stat-card,
-html[data-theme="dark"] .chomage-page .intro-block,
-html[data-theme="dark"] .chomage-page .content-block,
-html[data-theme="dark"] .chomage-page .table-wrapper,
-html[data-theme="dark"] .chomage-page .universality-box,
-html[data-theme="dark"] .chomage-page .univ-encadre-cri,
-html[data-theme="dark"] .chomage-page .conclusion-box,
-html[data-theme="dark"] .chomage-page .final-box,
-html[data-theme="dark"] .chomage-page .cry-box,
-html[data-theme="dark"] .chomage-page .heart-box,
-html[data-theme="dark"] .chomage-page .diag-box,
-html[data-theme="dark"] .chomage-page .diag-cause {
-  background: var(--ch-surface) !important;
-  border-color: var(--ch-border) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) .chomage-page .driver-card,
-  html:not([data-theme]) .chomage-page .stat-card,
-  html:not([data-theme]) .chomage-page .intro-block,
-  html:not([data-theme]) .chomage-page .content-block,
-  html:not([data-theme]) .chomage-page .table-wrapper,
-  html:not([data-theme]) .chomage-page .universality-box,
-  html:not([data-theme]) .chomage-page .univ-encadre-cri,
-  html:not([data-theme]) .chomage-page .conclusion-box,
-  html:not([data-theme]) .chomage-page .final-box,
-  html:not([data-theme]) .chomage-page .cry-box,
-  html:not([data-theme]) .chomage-page .heart-box,
-  html:not([data-theme]) .chomage-page .diag-box,
-  html:not([data-theme]) .chomage-page .diag-cause {
-    background: var(--ch-surface) !important;
-    border-color: var(--ch-border) !important;
-  }
-}
-
-@media (max-width: 820px) {
-  .chomage-page .container { padding-left: 0.8rem; padding-right: 0.8rem; }
-}
-@media (max-width: 560px) {
-  .chomage-page .banner { padding-left: 0.9rem; padding-right: 0.9rem; }
-  .chomage-page .container { padding-left: 0.7rem; padding-right: 0.7rem; }
-  .chomage-page .diag-causes,
-  .chomage-page .drivers-grid,
-  .chomage-page .stats-grid { grid-template-columns: 1fr; }
-}
-
-.chomage-page img,
-.chomage-page table,
-.chomage-page .diag-wrapper,
-.chomage-page .table-wrapper,
-.chomage-page .drivers-grid,
-.chomage-page .stats-grid,
-.chomage-page .diag-causes {
-  max-width: 100%;
-}
-
-</style>
-<div class="chomage-page" hidden="" id="content-fr"><div class="banner">
 <div class="tag" id="tag-text">ANALYSE ÉCONOMIQUE</div>
 <h1 id="banner-title">La Destruction Accélérée de la Classe Moyenne<br/>Chômage, Stagflation &amp; Montée de la Classe Pauvre</h1>
 <p id="banner-sub">Tarifs · IA · Guerre en Iran · Coupes fédérales — Quatre moteurs d'un même effondrement</p>
-</div><div class="container">
+
+  </div>
+
+  <div class="page-wrap">
 
 <div class="intro-block">
 <p id="intro1">Les inégalités structurelles du capitalisme ne s'effondrent pas soudainement — elles s'accélèrent. En 2025-2026, quatre vecteurs convergent simultanément pour détruire la classe moyenne à une vitesse sans précédent dans l'histoire économique moderne : les tarifs douaniers de Trump, les coupes fédérales massives, la guerre en Iran et son choc pétrolier, et l'automatisation par l'IA qui remplace des emplois à un rythme que les systèmes de formation ne peuvent pas absorber.</p>
 <p id="intro2">Ce n'est pas une conjoncture défavorable. C'est la convergence logique et prévisible des contradictions internes d'un système économique dont la mécanique fondamentale — l'accumulation privée au détriment du collectif — atteint ses limites structurelles.</p>
 </div>
-
 <div class="diag-wrapper">
 <h3 class="diag-heading" id="diag-heading">📊 Schéma des Inégalités Structurelles</h3>
 <div class="diag-box diag-top" id="diag-top">
@@ -412,7 +52,6 @@ html[data-theme="dark"] .chomage-page .diag-cause {
       → L'UNIVERSALITÉ comme réponse systémique
     </div>
 </div>
-
 <div class="section-header">
 <span class="icon">⚙️</span>
 <h2 id="drivers-title">Les 4 Moteurs du Chômage Structurel</h2>
@@ -439,7 +78,6 @@ html[data-theme="dark"] .chomage-page .diag-cause {
 <p id="d4-text">Facteur le plus irréversible. Frappe simultanément cols bleus ET cols blancs — éliminant le recours traditionnel à la requalification vers des emplois de connaissance. 30% des tâches actuelles automatisables d'ici 2030 (McKinsey).</p>
 </div>
 </div>
-
 <div class="section-header">
 <span class="icon">📉</span>
 <h2 id="stats-title">Données Clés</h2>
@@ -471,7 +109,6 @@ html[data-theme="dark"] .chomage-page .diag-cause {
 </div>
 </div>
 <hr class="divider"/>
-
 <div class="section-header">
 <span class="icon">👥</span>
 <h2 id="reconv-title">Qui Ne Peut Pas Se Reconvertir ?</h2>
@@ -497,7 +134,6 @@ html[data-theme="dark"] .chomage-page .diag-cause {
 </tbody>
 </table>
 </div>
-
 <div class="section-header">
 <span class="icon">💸</span>
 <h2 id="poor-title">L'Émergence des Working Poor</h2>
@@ -514,7 +150,6 @@ html[data-theme="dark"] .chomage-page .diag-cause {
 </ul>
 </div>
 <hr class="divider"/>
-
 <div class="universality-box">
 <h2 id="univ-title">🌍 L'Universalité : La Seule Réponse Structurelle</h2>
 <p id="univ1">Face à cette trajectoire, le système capitaliste actuel n'offre que des réponses palliatives — assurance-emploi, requalification limitée, aide sociale conditionnelle. Ces mesures ne s'attaquent pas à la cause : elles traitent les symptômes d'un système dont la logique fondamentale <em>produit</em> l'exclusion.</p>
@@ -533,7 +168,6 @@ html[data-theme="dark"] .chomage-page .diag-cause {
 <p id="q1">Les révolutions industrielles passées ont détruit des emplois pour en créer de nouveaux. L'IA est différente : elle supprime des emplois dans des secteurs qui <em>étaient</em> les refuges de la requalification. Le mécanisme de remplacement historique est brisé.</p>
 <p id="q2">La vraie question n'est donc plus <em>"comment créer plus d'emplois"</em> — c'est <em>"comment une société distribue-t-elle sa richesse quand les machines font le travail"</em>. Le capitalisme ne peut pas répondre à cette question parce que sa réponse structurelle est toujours la même : la richesse va au détenteur du capital. L'Universalité renverse cette logique.</p>
 </div>
-
 <div class="conclusion-box">
 <p><strong id="ccl1">Le chômage structurel n'est pas un échec individuel.</strong> <span id="ccl1b">C'est la conséquence prévisible d'un système qui automatise pour maximiser le profit privé sans mécanisme de redistribution des gains collectifs.</span></p>
 <p id="ccl2">Chaque travailleur déplacé par un algorithme n'a pas échoué à s'adapter — il a été abandonné par un système qui ne prévoit pas de lui rendre sa contribution sous une autre forme.</p>
@@ -548,12 +182,27 @@ html[data-theme="dark"] .chomage-page .diag-cause {
 <div style="text-align:center; margin-top:40px">
 <a href="index.html" id="btn-home" style="background:#d6e4f2;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold">Retour à l'accueil</a>
 </div>
-</div></div>
-<div class="chomage-page" id="content-en"><div class="banner">
+
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     BLOC ANGLAIS
+═══════════════════════════════════════ -->
+<div data-lang-block="en" hidden>
+
+  <div class="banner">
+
 <div class="tag" id="tag-text">ECONOMIC ANALYSIS</div>
 <h1 id="banner-title">The Accelerated Destruction of the Middle Class<br/>Unemployment, Stagflation &amp; Rise of the Poor Class</h1>
 <p id="banner-sub">Prices · AI · War in Iran · Federal Cuts — Four Drivers of the Same Collapse</p>
-</div><div class="container">
+
+  </div>
+
+  <div class="page-wrap">
+
  INTRO 
 <div class="intro-block">
 <p id="intro1">The structural inequalities of capitalism are not suddenly collapsing — they are accelerating. In 2025-2026, four vectors converge simultaneously to destroy the middle class at a speed unprecedented in modern economic history: Trump's tariffs, massive federal cuts, the war in Iran and its oil shock, and AI automation that replaces jobs at a rate that training systems cannot absorb.</p>
@@ -721,23 +370,7 @@ html[data-theme="dark"] .chomage-page .diag-cause {
 <div style="text-align:center; margin-top:40px">
 <a href="index.html" id="btn-home" style="background:#d6e4f2;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold">Back to home</a>
 </div>
-</div></div>
-<script>
-function applyChomageLang(lang) {
-  const current = lang === 'en' ? 'en' : 'fr';
-  const fr = document.getElementById('content-fr');
-  const en = document.getElementById('content-en');
-  document.documentElement.lang = current;
-  if (fr) fr.hidden = current !== 'fr';
-  if (en) en.hidden = current !== 'en';
-}
 
-document.addEventListener('umLangChange', function (e) {
-  applyChomageLang(e && e.detail ? e.detail.lang : 'fr');
-});
+  </div>
 
-document.addEventListener('DOMContentLoaded', function () {
-  const lang = window.umGetLang ? window.umGetLang() : (document.documentElement.lang || 'fr');
-  applyChomageLang(lang);
-});
-</script>
+</div>
