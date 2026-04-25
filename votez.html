@@ -935,47 +935,76 @@ og_locale: fr_CA
     margin: 0 !important;
   }
 }
-<style>
-  /* VOTE GRID responsive mobile-first ... */
-  .vote-grid { ... }
-  .vote-card { ... }
-  .vote-photo { ... }
-  .vote-btn { ... }
 
-  @media (min-width: 900px) {
-    .vote-grid { ... }
-    .vote-card { ... }
-  }
 
-  html[data-theme="dark"] .vote-card,
-  body.dark-mode .vote-card {
+  /* Patch local robuste dark mode pour les cartes de vote */
+  [data-theme="dark"] .vote-card,
+  [data-theme="dark"] article.vote-card,
+  [data-theme="dark"] .vote-grid .vote-card,
+  body[data-theme="dark"] .vote-card,
+  body.dark-mode .vote-card,
+  .dark-mode .vote-card {
     background: #161b22 !important;
+    background-color: #161b22 !important;
+    background-image: none !important;
     color: #eaf2ff !important;
-    border-color: rgba(255,255,255,.12) !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
+    box-shadow: 0 14px 36px rgba(0,0,0,.35) !important;
   }
 
-  html[data-theme="dark"] .vote-content,
-  body.dark-mode .vote-content,
-  html[data-theme="dark"] .vote-card h2,
-  html[data-theme="dark"] .vote-card p,
-  html[data-theme="dark"] .vote-card li,
-  html[data-theme="dark"] .vote-subtitle,
-  html[data-theme="dark"] .vote-badge,
+  [data-theme="dark"] .vote-card *,
+  body[data-theme="dark"] .vote-card *,
+  body.dark-mode .vote-card *,
+  .dark-mode .vote-card * {
+    color: inherit;
+  }
+
+  [data-theme="dark"] .vote-card h2,
+  [data-theme="dark"] .vote-card p,
+  [data-theme="dark"] .vote-card li,
+  [data-theme="dark"] .vote-card .vote-subtitle,
+  [data-theme="dark"] .vote-card .vote-desc,
+  [data-theme="dark"] .vote-card .vote-content,
+  [data-theme="dark"] .vote-card .vote-list,
+  [data-theme="dark"] .vote-card .vote-list li,
+  [data-theme="dark"] .vote-card .vote-badge,
+  body[data-theme="dark"] .vote-card h2,
+  body[data-theme="dark"] .vote-card p,
+  body[data-theme="dark"] .vote-card li,
+  body[data-theme="dark"] .vote-card .vote-subtitle,
+  body[data-theme="dark"] .vote-card .vote-desc,
+  body[data-theme="dark"] .vote-card .vote-content,
+  body[data-theme="dark"] .vote-card .vote-list,
+  body[data-theme="dark"] .vote-card .vote-list li,
+  body[data-theme="dark"] .vote-card .vote-badge,
   body.dark-mode .vote-card h2,
   body.dark-mode .vote-card p,
   body.dark-mode .vote-card li,
-  body.dark-mode .vote-subtitle,
-  body.dark-mode .vote-badge {
+  body.dark-mode .vote-card .vote-subtitle,
+  body.dark-mode .vote-card .vote-desc,
+  body.dark-mode .vote-card .vote-content,
+  body.dark-mode .vote-card .vote-list,
+  body.dark-mode .vote-card .vote-list li,
+  body.dark-mode .vote-card .vote-badge,
+  .dark-mode .vote-card h2,
+  .dark-mode .vote-card p,
+  .dark-mode .vote-card li,
+  .dark-mode .vote-card .vote-subtitle,
+  .dark-mode .vote-card .vote-desc,
+  .dark-mode .vote-card .vote-content,
+  .dark-mode .vote-card .vote-list,
+  .dark-mode .vote-card .vote-list li,
+  .dark-mode .vote-card .vote-badge {
     color: #eaf2ff !important;
   }
 
-  html[data-theme="dark"] .vote-photo,
-  body.dark-mode .vote-photo {
+  [data-theme="dark"] .vote-card .vote-photo,
+  body[data-theme="dark"] .vote-card .vote-photo,
+  body.dark-mode .vote-card .vote-photo,
+  .dark-mode .vote-card .vote-photo {
     background: #0f141a !important;
   }
-</style>
 
-      
 </style>
 <script>
 (function() {
