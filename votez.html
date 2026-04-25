@@ -935,6 +935,47 @@ og_locale: fr_CA
     margin: 0 !important;
   }
 }
+<style>
+  /* VOTE GRID responsive mobile-first ... */
+  .vote-grid { ... }
+  .vote-card { ... }
+  .vote-photo { ... }
+  .vote-btn { ... }
+
+  @media (min-width: 900px) {
+    .vote-grid { ... }
+    .vote-card { ... }
+  }
+
+  html[data-theme="dark"] .vote-card,
+  body.dark-mode .vote-card {
+    background: #161b22 !important;
+    color: #eaf2ff !important;
+    border-color: rgba(255,255,255,.12) !important;
+  }
+
+  html[data-theme="dark"] .vote-content,
+  body.dark-mode .vote-content,
+  html[data-theme="dark"] .vote-card h2,
+  html[data-theme="dark"] .vote-card p,
+  html[data-theme="dark"] .vote-card li,
+  html[data-theme="dark"] .vote-subtitle,
+  html[data-theme="dark"] .vote-badge,
+  body.dark-mode .vote-card h2,
+  body.dark-mode .vote-card p,
+  body.dark-mode .vote-card li,
+  body.dark-mode .vote-subtitle,
+  body.dark-mode .vote-badge {
+    color: #eaf2ff !important;
+  }
+
+  html[data-theme="dark"] .vote-photo,
+  body.dark-mode .vote-photo {
+    background: #0f141a !important;
+  }
+</style>
+
+      
 </style>
 <script>
 (function() {
