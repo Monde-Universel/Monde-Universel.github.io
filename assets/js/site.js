@@ -1,16 +1,15 @@
 // =============================
-// Sélecteurs globaux
+// Sélecteurs globaux + état
 // =============================
 const htmlEl = document.documentElement;
 const langBtn = document.getElementById("langBtn");
 const brandLogo = document.querySelector(".site-brand__logo");
 const brandLink = document.querySelector(".site-brand__link");
 
-// Langue courante (FR par défaut si autre chose)
 let currentLang = htmlEl.lang === "en" ? "en" : "fr";
 
 // =============================
-// Textes spécifiques à la marque (logo)
+// Textes spécifiques marque
 // =============================
 const BrandTexts = {
   fr: {
@@ -26,7 +25,7 @@ const BrandTexts = {
 };
 
 // =============================
-// Application du logo selon la langue
+// Logo selon la langue
 // =============================
 function applyLogo(lang) {
   if (!brandLogo) return;
@@ -38,25 +37,29 @@ function applyLogo(lang) {
   if (nextSrc) {
     brandLogo.src = nextSrc;
   }
-
   if (BrandTexts[lang]) {
     brandLogo.alt = BrandTexts[lang].brandAlt;
   }
-
   if (brandLink && BrandTexts[lang]) {
     brandLink.setAttribute("aria-label", BrandTexts[lang].brandAria);
   }
 }
 
 // =============================
-// Application des traductions data-i18n
+// Traductions data-i18n (tolérant)
 // =============================
-// On suppose qu’un objet global `translations` existe
-// (défini dans chaque page : vie, votez, évolution, etc.).
 function applyTranslations(lang) {
-  if (typeof translations === "undefined") return;
-  const dict = translations[lang];
-  if (!dict) return;
+  // Si translations n’existe pas sur cette page, on ne casse rien.
+  if (typeof window.translations === "undefined") {
+    if (langBtn) langBtn.textContent = lang === "fr" ? "EN" : "FR";
+    return;
+  }
+
+  const dict = window.translations[lang];
+  if (!dict) {
+    if (langBtn) langBtn.textContent = lang === "fr" ? "EN" : "FR";
+    return;
+  }
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
@@ -69,28 +72,21 @@ function applyTranslations(lang) {
     }
   });
 
-  // Mise à jour éventuelle du titre de la page
+  // Titre de page basique (on évite les trucs trop spécifiques)
   if (lang === "fr") {
-    document.title = document.title
-      .replace("A UNIVERSAL WORLD", "UN MONDE UNIVERSEL")
-      .replace("Evolution", "Évolution");
+    document.title = document.title.replace(
+      "A UNIVERSAL WORLD",
+      "UN MONDE UNIVERSEL"
+    );
   } else if (lang === "en") {
-    document.title = document.title
-      .replace("UN MONDE UNIVERSEL", "A UNIVERSAL WORLD")
-      .replace("Évolution", "Evolution");
+    document.title = document.title.replace(
+      "UN MONDE UNIVERSEL",
+      "A UNIVERSAL WORLD"
+    );
   }
 
-  // Bouton de langue (FR affiche EN, EN affiche FR) si présent
   if (langBtn) {
     langBtn.textContent = lang === "fr" ? "EN" : "FR";
-  }
-
-  // Bouton back-to-top global si la clé existe
-  const backToTopBtn = document.getElementById("backToTopBtn");
-  if (backToTopBtn && dict.backToTop) {
-    backToTopBtn.setAttribute("aria-label", dict.backToTop);
-    const textSpan = backToTopBtn.querySelector("[data-i18n='backToTop']");
-    if (textSpan) textSpan.textContent = dict.backToTop;
   }
 }
 
@@ -101,40 +97,44 @@ function applyLang(lang) {
   currentLang = lang;
   htmlEl.lang = lang;
 
-  applyTranslations(lang);
-  applyLogo(lang);
+  // On encapsule pour ne jamais casser à cause d’une page
+  try {
+    applyTranslations(lang);
+  } catch (e) {
+    // On ne log rien, on se contente de ne pas bloquer
+  }
 
-  // Notifier les autres scripts (votez, évolution, etc.)
-  const event = new CustomEvent("umLangChange", {
-    detail: { lang },
-  });
-  document.dispatchEvent(event);
+  try {
+    applyLogo(lang);
+  } catch (e) {}
+
+  // Notifier les pages qui écoutent
+  try {
+    const event = new CustomEvent("umLangChange", { detail: { lang } });
+    document.dispatchEvent(event);
+  } catch (e) {}
 }
 
 // =============================
-// Fonction globale pour l’ancien HTML
+// Fonction globale pour onclick="toggleLang()"
 // =============================
-// IMPORTANT : ton HTML appelle encore `onclick="toggleLang()"`,
-// donc on expose cette fonction sur window.
 window.toggleLang = function () {
   const next = currentLang === "fr" ? "en" : "fr";
   applyLang(next);
 };
 
 // =============================
-// Gestion du bouton de langue (au cas où pas d'onclick inline)
+// Sécurité : clic direct sur le bouton aussi
 // =============================
-// Ce bloc ne gêne pas l’existant : si onclick est présent,
-// les deux pointent vers toggleLang → même comportement.
 if (langBtn) {
-  langBtn.addEventListener("click", () => {
+  langBtn.addEventListener("click", function () {
     window.toggleLang();
   });
 }
 
 // =============================
-// Initialisation au chargement
+// Initialisation
 // =============================
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   applyLang(currentLang);
 });
