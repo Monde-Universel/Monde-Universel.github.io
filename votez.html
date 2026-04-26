@@ -1006,12 +1006,8 @@ og_locale: fr_CA
   }
 
 </style>
-
-
 <script>
   (function() {
-    var feedbackBox = document.getElementById('voteFeedback');
-    var feedbackText = document.getElementById('voteFeedbackText');
     var lastVote = null;
 
     function getLang() {
@@ -1027,11 +1023,15 @@ og_locale: fr_CA
     }
 
     function showFeedback(lang, nameFR, nameEN) {
-      if (!feedbackBox || !feedbackText) return;
-      feedbackText.textContent = getFeedbackMessage(lang, nameFR, nameEN);
-      feedbackBox.classList.add('is-active');
+      var langBlock = document.querySelector('[data-lang-block="' + lang + '"]');
+      if (!langBlock) return;
+      var box = langBlock.querySelector('.vote-feedback');
+      var txt = langBlock.querySelector('#voteFeedbackText');
+      if (!box || !txt) return;
+      txt.textContent = getFeedbackMessage(lang, nameFR, nameEN);
+      box.classList.add('is-active');
       try {
-        feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (e) {}
     }
 
