@@ -1006,76 +1006,62 @@ og_locale: fr_CA
   }
 
 </style>
+
+
 <script>
-(function() {
-  var MSG = {
-    fr: {
-      selected: "Votre choix de faction est : {choice}.",
-      db:       "Cette page est prête à être reliée à une base de données.",
-      final:    "IL NE MANQUE PLUS QUE VOUS !"
-    },
-    en: {
-      selected: "Your faction choice is: {choice}.",
-      db:       "This page is ready to be connected to a database.",
-      final:    "ALL THAT IS MISSING IS YOU!"
+  (function() {
+    var feedbackBox = document.getElementById('voteFeedback');
+    var feedbackText = document.getElementById('voteFeedbackText');
+    var lastVote = null;
+
+    function getLang() {
+      return document.documentElement.lang === 'en' ? 'en' : 'fr';
     }
-  };
 
-  var lastVote = null;
-
-  function getLang() {
-    if (typeof currentLang !== 'undefined' && currentLang) return currentLang;
-    return (document.documentElement.lang || 'fr') === 'en' ? 'en' : 'fr';
-  }
-
-  function getActiveBlock() {
-    return document.querySelector('[data-lang-block]:not([hidden])') || document.body;
-  }
-
-  function showFeedback(lang, nameFR, nameEN) {
-    var isFR = lang !== 'en';
-    var name = isFR ? nameFR : nameEN;
-    var m = MSG[lang] || MSG.fr;
-
-    var block     = getActiveBlock();
-    var feedBox   = block.querySelector('#voteFeedback');
-    var feedText  = block.querySelector('#voteFeedbackText');
-    var feedFinal = block.querySelector('#voteFinalCall');
-
-    if (feedText) {
-      feedText.innerHTML =
-        '<strong>' + m.selected.replace('{choice}', name) + '</strong><br>' + m.db;
+    function getFeedbackMessage(lang, nameFR, nameEN) {
+      if (lang === 'en') {
+        return 'Your current choice: ' + (nameEN || '?');
+      } else {
+        return 'Votre choix actuel : ' + (nameFR || '?');
+      }
     }
-    if (feedFinal) feedFinal.textContent = m.final;
-    if (feedBox)   feedBox.classList.add('active');
-  }
 
-  function bindButtons() {
-    document.querySelectorAll('[data-vote-key]').forEach(function(btn) {
-      if (btn._voteBound) return;
-      btn._voteBound = true;
-      btn.addEventListener('click', function() {
-        var nameFR = btn.getAttribute('data-vote-fr') || btn.getAttribute('data-vote') || '?';
-        var nameEN = btn.getAttribute('data-vote-en') || btn.getAttribute('data-vote') || '?';
-        lastVote = { nameFR: nameFR, nameEN: nameEN };
-        showFeedback(getLang(), nameFR, nameEN);
+    function showFeedback(lang, nameFR, nameEN) {
+      if (!feedbackBox || !feedbackText) return;
+      feedbackText.textContent = getFeedbackMessage(lang, nameFR, nameEN);
+      feedbackBox.classList.add('is-active');
+      try {
+        feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (e) {}
+    }
+
+    function bindButtons() {
+      var buttons = document.querySelectorAll('[data-vote-key]');
+      buttons.forEach(function(btn) {
+        if (btn._voteBound) return;
+        btn._voteBound = true;
+        btn.addEventListener('click', function() {
+          var nameFR = btn.getAttribute('data-vote-fr') || btn.getAttribute('data-vote') || '?';
+          var nameEN = btn.getAttribute('data-vote-en') || btn.getAttribute('data-vote') || '?';
+          lastVote = { nameFR: nameFR, nameEN: nameEN };
+          showFeedback(getLang(), nameFR, nameEN);
+        });
       });
-    });
-  }
-
-  document.addEventListener('umLangChange', function(e) {
-    var lang = (e.detail && e.detail.lang) ? e.detail.lang : getLang();
-    if (lastVote) {
-      setTimeout(function() {
-        showFeedback(lang, lastVote.nameFR, lastVote.nameEN);
-      }, 50);
     }
-  });
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', bindButtons);
-  } else {
-    bindButtons();
-  }
-})();
+    document.addEventListener('umLangChange', function(e) {
+      var lang = (e.detail && e.detail.lang) ? e.detail.lang : getLang();
+      if (lastVote) {
+        setTimeout(function() {
+          showFeedback(lang, lastVote.nameFR, lastVote.nameEN);
+        }, 50);
+      }
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bindButtons);
+    } else {
+      bindButtons();
+    }
+  })();
 </script>
