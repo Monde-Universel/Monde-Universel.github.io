@@ -1063,7 +1063,7 @@ og_locale: fr_CA
     });
   }
 
-  window.addEventListener('umLangChange', function(e) {
+  document.addEventListener('umLangChange', function(e) {
     var lang = (e.detail && e.detail.lang) ? e.detail.lang : getLang();
     if (lastVote) {
       setTimeout(function() {
