@@ -16,18 +16,32 @@
         href="{{ '/index.html' | relative_url }}"
         aria-label="{{ brand_home_label }}"
       >
-        <img
-          class="site-brand__logo"
-          src="{{ brand_src | relative_url }}"
-          alt="{{ brand_alt }}"
-          data-logo-fr="{{ '/assets/images/logo-fr.png' | relative_url }}"
-          data-logo-en="{{ '/assets/images/logo-en.png' | relative_url }}"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-          width="640"
-          height="640"
-        >
+        <picture class="site-brand__logo">
+          {% if page.lang == 'en' %}
+            <source
+              srcset="{{ '/assets/img/logo-en.webp' | relative_url }}"
+              type="image/webp"
+            >
+          {% else %}
+            <source
+              srcset="{{ '/assets/img/logo-fr.webp' | relative_url }}"
+              type="image/webp"
+            >
+          {% endif %}
+
+          <img
+            class="site-brand__logo-img"
+            src="{{ brand_src | relative_url }}"
+            alt="{{ brand_alt }}"
+            data-logo-fr="{{ '/assets/images/logo-fr.png' | relative_url }}"
+            data-logo-en="{{ '/assets/images/logo-en.png' | relative_url }}"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="320"
+            height="320"
+          >
+        </picture>
       </a>
 
       <div class="header-actions">
