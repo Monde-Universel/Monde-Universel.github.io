@@ -83,11 +83,18 @@
       if (nextSrc) img.src = nextSrc;
 
       // Mise à jour du WebP prioritaire (source.srcset)
+      // Le navigateur ne re-évalue pas <picture> sur simple changement d'attribut :
+      // il faut retirer et réinsérer le <source> pour forcer le recalcul.
       if (source) {
-        const webpFr = source.getAttribute("data-logo-fr");
-        const webpEn = source.getAttribute("data-logo-en");
+        const webpFr  = source.getAttribute("data-logo-fr");
+        const webpEn  = source.getAttribute("data-logo-en");
         const nextWebp = lang === "en" ? webpEn : webpFr;
-        if (nextWebp) source.srcset = nextWebp;
+        if (nextWebp && source.srcset !== nextWebp) {
+          const picture = source.parentNode;
+          if (picture) picture.removeChild(source);
+          source.srcset = nextWebp;
+          if (picture) picture.insertBefore(source, picture.firstChild);
+        }
       }
 
       img.alt = T[lang].brandAlt;
