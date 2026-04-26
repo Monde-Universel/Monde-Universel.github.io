@@ -66,15 +66,31 @@
     function applyLogo(lang) {
       if (!brandLogo) return;
 
-      const logoFr = brandLogo.getAttribute("data-logo-fr");
-      const logoEn = brandLogo.getAttribute("data-logo-en");
-      const nextSrc = lang === "en" ? logoEn : logoFr;
+      // Support <picture> : récupère le <img> et le <source> enfants
+      const img    = brandLogo.tagName === "PICTURE"
+                       ? brandLogo.querySelector("img")
+                       : brandLogo;
+      const source = brandLogo.tagName === "PICTURE"
+                       ? brandLogo.querySelector("source")
+                       : null;
 
-      if (nextSrc) {
-        brandLogo.src = nextSrc;
+      if (!img) return;
+
+      // Mise à jour du fallback PNG/JPEG (img.src)
+      const logoFr = img.getAttribute("data-logo-fr");
+      const logoEn = img.getAttribute("data-logo-en");
+      const nextSrc = lang === "en" ? logoEn : logoFr;
+      if (nextSrc) img.src = nextSrc;
+
+      // Mise à jour du WebP prioritaire (source.srcset)
+      if (source) {
+        const webpFr = source.getAttribute("data-logo-fr");
+        const webpEn = source.getAttribute("data-logo-en");
+        const nextWebp = lang === "en" ? webpEn : webpFr;
+        if (nextWebp) source.srcset = nextWebp;
       }
 
-      brandLogo.alt = T[lang].brandAlt;
+      img.alt = T[lang].brandAlt;
 
       if (brandLink) {
         brandLink.setAttribute("aria-label", T[lang].brandAria);
@@ -289,8 +305,6 @@
     }
   };
 
-document.querySele
-
   // Gestionnaire de clic sur les boutons de vote
   document.querySelectorAll('[data-vote-key]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -368,7 +382,5 @@ document.querySele
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  toggleBtn(); // état initial au chargement
+  toggleBtn();
 })();
-
-
