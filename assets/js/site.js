@@ -37,7 +37,20 @@
       }
     }
 
-    // 3) Bascule le logo en fonction des data-* du header
+    // 3) Traduire la navigation via data-label-fr / data-label-en
+    var navLinks = document.querySelectorAll(".site-nav__link");
+    for (var k = 0; k < navLinks.length; k++) {
+      var link = navLinks[k];
+      var frLabel = link.getAttribute("data-label-fr");
+      var enLabel = link.getAttribute("data-label-en");
+      if (lang === "fr" && frLabel) {
+        link.textContent = frLabel;
+      } else if (lang === "en" && enLabel) {
+        link.textContent = enLabel;
+      }
+    }
+
+    // 4) Bascule le logo en fonction des data-* du header
     var logo = document.querySelector(".site-brand__logo");
     var brandLink = document.querySelector(".site-brand--logo");
     if (logo) {
@@ -67,7 +80,7 @@
       }
     }
 
-    // 4) Notifier les scripts de page (votez, etc.) qu'on a changé de langue
+    // 5) Notifier les scripts de page (votez, etc.) qu'on a changé de langue
     try {
       document.dispatchEvent(
         new CustomEvent("umLangChange", { detail: { lang: lang } })
