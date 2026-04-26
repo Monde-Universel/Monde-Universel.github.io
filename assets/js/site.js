@@ -51,8 +51,8 @@ function applyLogo(lang) {
 // =============================
 // Application des traductions data-i18n
 // =============================
-// ATTENTION : on suppose qu’un objet global `translations` existe,
-// défini dans chaque page (comme dans vie.html / votez.html).
+// On suppose qu’un objet global `translations` existe
+// (défini dans chaque page : vie, votez, évolution, etc.).
 function applyTranslations(lang) {
   if (typeof translations === "undefined") return;
   const dict = translations[lang];
@@ -63,7 +63,6 @@ function applyTranslations(lang) {
     if (!key || !(key in dict)) return;
 
     if (key === "siteTitle") {
-      // Certains titres utilisent du HTML (ex: UN MONDE <span>UNIVERSEL</span>)
       el.innerHTML = dict[key];
     } else {
       el.textContent = dict[key];
@@ -72,23 +71,21 @@ function applyTranslations(lang) {
 
   // Mise à jour éventuelle du titre de la page
   if (lang === "fr") {
-    document.title = document.title.replace(
-      "A UNIVERSAL WORLD",
-      "UN MONDE UNIVERSEL"
-    );
+    document.title = document.title
+      .replace("A UNIVERSAL WORLD", "UN MONDE UNIVERSEL")
+      .replace("Evolution", "Évolution");
   } else if (lang === "en") {
-    document.title = document.title.replace(
-      "UN MONDE UNIVERSEL",
-      "A UNIVERSAL WORLD"
-    );
+    document.title = document.title
+      .replace("UN MONDE UNIVERSEL", "A UNIVERSAL WORLD")
+      .replace("Évolution", "Evolution");
   }
 
-  // Bouton de langue (FR affiche EN, EN affiche FR)
+  // Bouton de langue (FR affiche EN, EN affiche FR) si présent
   if (langBtn) {
     langBtn.textContent = lang === "fr" ? "EN" : "FR";
   }
 
-  // Exemple : back-to-top si présent et traduit dans `translations`
+  // Bouton back-to-top global si la clé existe
   const backToTopBtn = document.getElementById("backToTopBtn");
   if (backToTopBtn && dict.backToTop) {
     backToTopBtn.setAttribute("aria-label", dict.backToTop);
@@ -115,12 +112,23 @@ function applyLang(lang) {
 }
 
 // =============================
-// Gestion du bouton de langue
+// Fonction globale pour l’ancien HTML
 // =============================
+// IMPORTANT : ton HTML appelle encore `onclick="toggleLang()"`,
+// donc on expose cette fonction sur window.
+window.toggleLang = function () {
+  const next = currentLang === "fr" ? "en" : "fr";
+  applyLang(next);
+};
+
+// =============================
+// Gestion du bouton de langue (au cas où pas d'onclick inline)
+// =============================
+// Ce bloc ne gêne pas l’existant : si onclick est présent,
+// les deux pointent vers toggleLang → même comportement.
 if (langBtn) {
   langBtn.addEventListener("click", () => {
-    const next = currentLang === "fr" ? "en" : "fr";
-    applyLang(next);
+    window.toggleLang();
   });
 }
 
