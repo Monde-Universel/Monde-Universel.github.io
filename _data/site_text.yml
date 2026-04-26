@@ -1,0 +1,17 @@
+fr:
+  siteTitle:  "UN MONDE <span>UNIVERSEL</span>"
+  siteSlogan: "Parce que personne ne devrait être laissé derrière"
+  langToggle: "Passer en anglais"
+  themeToggle: "Basculer le thème"
+  footer:     "Parce que personne ne devrait être laissé derrière"
+  skipLink:   "Aller au contenu"
+  backToTop:  "Retour en haut"
+
+en:
+  siteTitle:  "A UNIVERSAL <span>WORLD</span>"
+  siteSlogan: "Because no one should be left behind"
+  langToggle: "Switch to French"
+  themeToggle: "Toggle theme"
+  footer:     "Because no one should be left behind"
+  skipLink:   "Skip to content"
+  backToTop:  "Back to top"
