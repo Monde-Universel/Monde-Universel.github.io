@@ -3,12 +3,12 @@
     <div class="header-top">
       {% if page.lang == 'en' %}
         {% assign brand_home_label = 'Home - A Universal World' %}
-        {% assign brand_alt = 'A Universal World — Because no one should be left behind' %}
-        {% assign brand_src = '/assets/images/logo-en.png' %}
+        {% assign brand_alt       = 'A Universal World — Because no one should be left behind' %}
+        {% assign brand_src       = '/assets/img/logo-en.webp' %}
       {% else %}
         {% assign brand_home_label = 'Accueil - Un Monde Universel' %}
-        {% assign brand_alt = 'Un Monde Universel — Parce que personne ne devrait être laissé derrière' %}
-        {% assign brand_src = '/assets/images/logo-fr.png' %}
+        {% assign brand_alt       = 'Un Monde Universel — Parce que personne ne devrait être laissé derrière' %}
+        {% assign brand_src       = '/assets/img/logo-fr.webp' %}
       {% endif %}
 
       <a
@@ -16,32 +16,20 @@
         href="{{ '/index.html' | relative_url }}"
         aria-label="{{ brand_home_label }}"
       >
-        <picture class="site-brand__logo">
-          {% if page.lang == 'en' %}
-            <source
-              srcset="{{ '/assets/img/logo-en.webp' | relative_url }}"
-              type="image/webp"
-            >
-          {% else %}
-            <source
-              srcset="{{ '/assets/img/logo-fr.webp' | relative_url }}"
-              type="image/webp"
-            >
-          {% endif %}
-
-          <img
-            class="site-brand__logo-img"
-            src="{{ brand_src | relative_url }}"
-            alt="{{ brand_alt }}"
-            data-logo-fr="{{ '/assets/images/logo-fr.png' | relative_url }}"
-            data-logo-en="{{ '/assets/images/logo-en.png' | relative_url }}"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-            width="320"
-            height="320"
-          >
-        </picture>
+        <img
+          class="site-brand__logo"
+          src="{{ brand_src | relative_url }}"
+          alt="{{ brand_alt }}"
+          data-logo-fr="{{ '/assets/img/logo-fr.webp' | relative_url }}"
+          data-logo-en="{{ '/assets/img/logo-en.webp' | relative_url }}"
+          data-alt-fr="Un Monde Universel — Parce que personne ne devrait être laissé derrière"
+          data-alt-en="A Universal World — Because no one should be left behind"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="320"
+          height="320"
+        >
       </a>
 
       <div class="header-actions">
