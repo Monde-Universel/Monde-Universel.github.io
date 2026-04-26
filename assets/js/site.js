@@ -27,7 +27,6 @@
           var value = dict[key];
           if (typeof value === "undefined") continue;
 
-          // Certains éléments (ex : siteTitle) peuvent contenir du HTML
           if (key === "siteTitle") {
             el.innerHTML = value;
           } else {
@@ -63,24 +62,24 @@
         if (srcFr) { logo.src = srcFr; }
         if (altFr) { logo.alt = altFr; }
         if (brandLink) {
-          brandLink.setAttribute(
-            "aria-label",
-            "Accueil - Un Monde Universel"
-          );
+          brandLink.setAttribute("aria-label", "Accueil - Un Monde Universel");
         }
       } else {
         if (srcEn) { logo.src = srcEn; }
         if (altEn) { logo.alt = altEn; }
         if (brandLink) {
-          brandLink.setAttribute(
-            "aria-label",
-            "Home - A Universal World"
-          );
+          brandLink.setAttribute("aria-label", "Home - A Universal World");
         }
       }
     }
 
-    // 5) Notifier les scripts de page (votez, etc.) qu'on a changé de langue
+    // 5) Afficher/masquer les blocs éditoriaux avec data-lang-block
+    var blocks = document.querySelectorAll("[data-lang-block]");
+    for (var b = 0; b < blocks.length; b++) {
+      blocks[b].hidden = (blocks[b].getAttribute("data-lang-block") !== lang);
+    }
+
+    // 6) Notifier les scripts de page (votez, etc.) qu'on a changé de langue
     try {
       document.dispatchEvent(
         new CustomEvent("umLangChange", { detail: { lang: lang } })
@@ -96,7 +95,6 @@
 
   // Initialisation globale
   document.addEventListener("DOMContentLoaded", function() {
-    // Clic sur tous les boutons de langue
     var langButtons = document.querySelectorAll("[data-lang-toggle]");
     for (var i = 0; i < langButtons.length; i++) {
       langButtons[i].addEventListener("click", function() {
