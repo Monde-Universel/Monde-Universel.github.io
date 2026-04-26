@@ -70,6 +70,10 @@
       const logoFr = brandLogo.getAttribute("data-logo-fr");
       const logoEn = brandLogo.getAttribute("data-logo-en");
       const nextSrc = lang === "en" ? logoEn : logoFr;
+
+      console.log("applyLogo", lang, { logoFr, logoEn, nextSrc });
+brandLogo.style.border = lang === "en" ? "3px solid red" : "3px solid green";
+
       if (nextSrc) brandLogo.src = nextSrc;
 
       brandLogo.alt = T[lang].brandAlt;
