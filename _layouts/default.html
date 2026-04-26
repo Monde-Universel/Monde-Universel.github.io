@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: "Universel" }}</title>
+    <title>
+      {% if page.title %}{{ page.title }} | {% endif %}
+      {{ site.title | default: "Universel" }}
+    </title>
 
     <meta name="description" content="{{ page.description | default: site.description }}">
     <meta name="keywords" content="{{ page.keywords }}">
@@ -27,18 +30,83 @@
     <link rel="stylesheet" href="{{ '/assets/css/tokens.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/components.css' | relative_url }}">
+
     <script defer src="{{ '/assets/js/site.js' | relative_url }}"></script>
   </head>
   <body>
-    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <a class="skip-link" href="#contenu" data-i18n="skipLink">
+      Aller au contenu
+    </a>
+
     {% include header.html %}
+
     <main id="contenu" class="container flow">
       {{ content }}
     </main>
+
     {% include footer.html %}
 
-    <button id="backToTopBtn" class="back-to-top" type="button" aria-label="Retour en haut de page">
+    <button
+      id="backToTopBtn"
+      class="back-to-top"
+      type="button"
+      aria-label="Retour en haut de page"
+      data-i18n="backToTop"
+    >
       <span class="back-to-top__icon" aria-hidden="true">↑</span>
     </button>
+
+    {%- comment -%}
+      Expose les traductions globales (header, nav, footer, accessibilité)
+      pour toutes les pages via window.translations.
+    {%- endcomment -%}
+    <script>
+      window.translations = {
+        fr: {
+          siteTitle:  {{ site.data.site_text.fr.siteTitle | jsonify | safe }},
+          siteSlogan: {{ site.data.site_text.fr.siteSlogan | jsonify | safe }},
+          footer:     {{ site.data.site_text.fr.footer     | jsonify | safe }},
+          langToggle: {{ site.data.site_text.fr.langToggle | jsonify | safe }},
+          themeToggle:{{ site.data.site_text.fr.themeToggle| jsonify | safe }},
+          skipLink:   {{ site.data.site_text.fr.skipLink   | jsonify | safe }},
+          backToTop:  {{ site.data.site_text.fr.backToTop  | jsonify | safe }},
+
+          {%- comment -%}
+            Génère les clés de nav à partir de _data/navigation.yml.
+            /index.html        -> nav_index
+            /index.html#vision -> nav_index_vision
+            /votez.html        -> nav_votez
+          {%- endcomment -%}
+          {%- for item in site.data.navigation -%}
+            {%- assign key = item.url
+              | replace:'/','_'
+              | replace:'.html',''
+              | replace:'#','_'
+              | replace:'__','_'
+              | strip -%}
+          nav{{ key }}: {{ item.fr | jsonify }}{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        },
+        en: {
+          siteTitle:  {{ site.data.site_text.en.siteTitle | jsonify | safe }},
+          siteSlogan: {{ site.data.site_text.en.siteSlogan | jsonify | safe }},
+          footer:     {{ site.data.site_text.en.footer     | jsonify | safe }},
+          langToggle: {{ site.data.site_text.en.langToggle | jsonify | safe }},
+          themeToggle:{{ site.data.site_text.en.themeToggle| jsonify | safe }},
+          skipLink:   {{ site.data.site_text.en.skipLink   | jsonify | safe }},
+          backToTop:  {{ site.data.site_text.en.backToTop  | jsonify | safe }},
+
+          {%- for item in site.data.navigation -%}
+            {%- assign key = item.url
+              | replace:'/','_'
+              | replace:'.html',''
+              | replace:'#','_'
+              | replace:'__','_'
+              | strip -%}
+          nav{{ key }}: {{ item.en | jsonify }}{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        }
+      };
+    </script>
   </body>
 </html>
