@@ -66,38 +66,13 @@
     function applyLogo(lang) {
       if (!brandLogo) return;
 
-      // Support <picture> : récupère le <img> et le <source> enfants
-      const img    = brandLogo.tagName === "PICTURE"
-                       ? brandLogo.querySelector("img")
-                       : brandLogo;
-      const source = brandLogo.tagName === "PICTURE"
-                       ? brandLogo.querySelector("source")
-                       : null;
-
-      if (!img) return;
-
-      // Mise à jour du fallback PNG/JPEG (img.src)
-      const logoFr = img.getAttribute("data-logo-fr");
-      const logoEn = img.getAttribute("data-logo-en");
+      // <img> simple avec WebP direct — swap fiable via img.src
+      const logoFr = brandLogo.getAttribute("data-logo-fr");
+      const logoEn = brandLogo.getAttribute("data-logo-en");
       const nextSrc = lang === "en" ? logoEn : logoFr;
-      if (nextSrc) img.src = nextSrc;
+      if (nextSrc) brandLogo.src = nextSrc;
 
-      // Mise à jour du WebP prioritaire (source.srcset)
-      // Le navigateur ne re-évalue pas <picture> sur simple changement d'attribut :
-      // il faut retirer et réinsérer le <source> pour forcer le recalcul.
-      if (source) {
-        const webpFr  = source.getAttribute("data-logo-fr");
-        const webpEn  = source.getAttribute("data-logo-en");
-        const nextWebp = lang === "en" ? webpEn : webpFr;
-        if (nextWebp && source.srcset !== nextWebp) {
-          const picture = source.parentNode;
-          if (picture) picture.removeChild(source);
-          source.srcset = nextWebp;
-          if (picture) picture.insertBefore(source, picture.firstChild);
-        }
-      }
-
-      img.alt = T[lang].brandAlt;
+      brandLogo.alt = T[lang].brandAlt;
 
       if (brandLink) {
         brandLink.setAttribute("aria-label", T[lang].brandAria);
