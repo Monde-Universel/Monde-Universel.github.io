@@ -5,7 +5,7 @@ fr:
   themeToggle: "Basculer le thème"
   footer:     "Parce que personne ne devrait être laissé derrière"
   skipLink:   "Aller au contenu"
-  backToTop:  "HAUT"
+  backToTop:  "Haut"
 
 en:
   siteTitle:  "A UNIVERSAL <span>WORLD</span>"
@@ -14,4 +14,4 @@ en:
   themeToggle: "Toggle theme"
   footer:     "Because no one should be left behind"
   skipLink:   "Skip to content"
-  backToTop:  "TOP"
+  backToTop:  "Top"
