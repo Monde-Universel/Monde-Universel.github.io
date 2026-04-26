@@ -1049,13 +1049,15 @@ og_locale: fr_CA
       });
     }
 
+    // Rebind après chaque changement de langue
     document.addEventListener('umLangChange', function(e) {
       var lang = (e.detail && e.detail.lang) ? e.detail.lang : getLang();
-      if (lastVote) {
-        setTimeout(function() {
+      setTimeout(function() {
+        bindButtons();
+        if (lastVote) {
           showFeedback(lang, lastVote.nameFR, lastVote.nameEN);
-        }, 50);
-      }
+        }
+      }, 100);
     });
 
     if (document.readyState === 'loading') {
