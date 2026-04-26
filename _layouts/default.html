@@ -108,5 +108,23 @@
         }
       };
     </script>
+
+    <script>
+      (function() {
+        var btn = document.getElementById("backToTopBtn");
+        if (!btn) return;
+
+        function toggleBackToTopButton() {
+          btn.classList.toggle("is-visible", window.scrollY > 420);
+        }
+
+        btn.addEventListener("click", function() {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        toggleBackToTopButton();
+        window.addEventListener("scroll", toggleBackToTopButton, { passive: true });
+      })();
+    </script>
   </body>
 </html>
