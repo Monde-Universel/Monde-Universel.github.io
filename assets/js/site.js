@@ -1,11 +1,13 @@
 // assets/js/site.js — gestion globale langue + nav + logo
 
 (function() {
-  // Langue de départ = <html lang>, sinon fr
-  var currentLang = (document.documentElement.lang === "en") ? "en" : "fr";
+  // Langue de départ : localStorage > html[lang] > fr
+  var currentLang = localStorage.getItem("um-lang")
+    || ((document.documentElement.lang === "en") ? "en" : "fr");
 
   function applyLang(lang) {
     currentLang = lang;
+    localStorage.setItem("um-lang", lang);
     document.documentElement.lang = lang;
 
     // 1) Met à jour tous les boutons de langue
@@ -23,10 +25,8 @@
           var el = els[j];
           var key = el.getAttribute("data-i18n");
           if (!key) continue;
-
           var value = dict[key];
           if (typeof value === "undefined") continue;
-
           if (key === "siteTitle") {
             el.innerHTML = value;
           } else {
@@ -57,7 +57,6 @@
       var srcEn = logo.getAttribute("data-logo-en");
       var altFr = logo.getAttribute("data-alt-fr");
       var altEn = logo.getAttribute("data-alt-en");
-
       if (lang === "fr") {
         if (srcFr) { logo.src = srcFr; }
         if (altFr) { logo.alt = altFr; }
@@ -102,7 +101,7 @@
       });
     }
 
-    // Applique la langue initiale
+    // Applique la langue mémorisée ou par défaut
     applyLang(currentLang);
   });
 })();
