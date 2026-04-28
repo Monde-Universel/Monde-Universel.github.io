@@ -2554,85 +2554,33 @@ li {
 }
 
 /* ═══════════════════════════════════════
-   PAGE VOTEZ — dark mode section trajectory
-   Fonds et textes hardcodés absents des règles existantes
+   PAGE VOTEZ — breakout pleine largeur
+   Fait sortir trajectory-section et vote-wrap
+   du container 46rem (736px) de #contenu
 ═══════════════════════════════════════ */
 
-/* ── Conteneurs principaux ── */
-[data-theme="dark"] .trajectory-premium {
-  background: #12181f !important;
-  background-image: none !important;
-  border-color: rgba(255,255,255,0.08) !important;
-  box-shadow: 0 14px 34px rgba(0,0,0,0.45) !important;
+/* ── Breakout desktop : pleine largeur viewport ── */
+.trajectory-section,
+.vote-wrap {
+  margin-inline: calc(50% - 50vw) !important;
+  width: 100vw !important;
+  box-sizing: border-box !important;
 }
 
-[data-theme="dark"] .trajectory-premium::before {
-  background: none !important;
+/* ── Padding interne : respirer sur les bords ── */
+.trajectory-section {
+  padding-inline: clamp(1rem, 4vw, 3rem) !important;
 }
 
-[data-theme="dark"] .trajectory-premium-head {
-  border-bottom-color: rgba(255,255,255,0.08) !important;
+.vote-wrap {
+  padding-inline: clamp(1rem, 4vw, 3rem) !important;
 }
 
-[data-theme="dark"] .trajectory-side {
-  background: rgba(255,255,255,0.03) !important;
-  border-left-color: rgba(255,255,255,0.08) !important;
-  border-top-color: rgba(255,255,255,0.08) !important;
-}
-
-/* ── Sous-blocs ── */
-[data-theme="dark"] .trajectory-note {
-  background: rgba(255,255,255,0.05) !important;
-  border-color: rgba(255,255,255,0.10) !important;
-  box-shadow: none !important;
-}
-
-[data-theme="dark"] .trajectory-advantage {
-  background: rgba(255,255,255,0.05) !important;
-  border-color: rgba(255,255,255,0.10) !important;
-  box-shadow: none !important;
-}
-
-[data-theme="dark"] .trajectory-advantage::before {
-  background: #87ceeb !important;
-  box-shadow: 0 0 0 5px rgba(135,206,235,0.18) !important;
-}
-
-[data-theme="dark"] .trajectory-step {
-  border-bottom-color: rgba(255,255,255,0.08) !important;
-}
-
-[data-theme="dark"] .trajectory-block-title::before {
-  background: linear-gradient(90deg,#4f98a3,#87ceeb) !important;
-}
-
-/* ── Textes hardcodés ── */
-[data-theme="dark"] .trajectory-kicker {
-  background: rgba(135,206,235,0.12) !important;
-  color: #87ceeb !important;
-  border-color: rgba(135,206,235,0.25) !important;
-}
-
-[data-theme="dark"] .trajectory-title {
-  color: #c8dff0 !important;
-}
-
-[data-theme="dark"] .trajectory-block-title {
-  color: #87ceeb !important;
-}
-
-[data-theme="dark"] .trajectory-intro p,
-[data-theme="dark"] .trajectory-step p,
-[data-theme="dark"] .trajectory-note p,
-[data-theme="dark"] .trajectory-advantage span {
-  color: #b0c4d8 !important;
-}
-
-[data-theme="dark"] .trajectory-step h3 {
-  color: #a8d4f0 !important;
-}
-
-[data-theme="dark"] .trajectory-advantage strong {
-  color: #c8dff0 !important;
+/* ── Mobile ≤ 600px : padding réduit ── */
+@media (max-width: 600px) {
+  .trajectory-section,
+  .vote-wrap {
+    padding-inline: 0.75rem !important;
+  }
 }
 
