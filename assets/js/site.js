@@ -1,10 +1,21 @@
-// assets/js/site.js — gestion globale langue + nav + logo
+// assets/js/site.js — gestion globale langue + nav + logo + thème
 
+// ─── THÈME : appliqué immédiatement (avant DOMContentLoaded) ─────────────────
+// Lecture anticipée pour éviter le flash de thème au chargement.
+(function() {
+  var stored = localStorage.getItem("um-theme");
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var theme = stored || (prefersDark ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+
+// ─── LANGUE + NAV + LOGO + THÈME (DOMContentLoaded) ─────────────────────────
 (function() {
   // Langue de départ : localStorage > html[lang] > fr
   var currentLang = localStorage.getItem("um-lang")
     || ((document.documentElement.lang === "en") ? "en" : "fr");
 
+  // ── Langue ────────────────────────────────────────────────────────────────
   function applyLang(lang) {
     currentLang = lang;
     localStorage.setItem("um-lang", lang);
@@ -92,8 +103,35 @@
     applyLang(next);
   };
 
-  // Initialisation globale
+  // ── Thème ─────────────────────────────────────────────────────────────────
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("um-theme", theme);
+
+    // Met à jour l'aria-label du bouton toggle
+    var themeBtns = document.querySelectorAll("[data-theme-toggle]");
+    for (var t = 0; t < themeBtns.length; t++) {
+      if (theme === "dark") {
+        themeBtns[t].setAttribute("aria-label", currentLang === "fr"
+          ? "Basculer en mode jour"
+          : "Switch to light mode");
+      } else {
+        themeBtns[t].setAttribute("aria-label", currentLang === "fr"
+          ? "Basculer en mode nuit"
+          : "Switch to dark mode");
+      }
+    }
+  }
+
+  window.toggleTheme = function() {
+    var current = document.documentElement.getAttribute("data-theme");
+    applyTheme(current === "dark" ? "light" : "dark");
+  };
+
+  // ── Initialisation globale au DOMContentLoaded ────────────────────────────
   document.addEventListener("DOMContentLoaded", function() {
+
+    // Boutons de langue
     var langButtons = document.querySelectorAll("[data-lang-toggle]");
     for (var i = 0; i < langButtons.length; i++) {
       langButtons[i].addEventListener("click", function() {
@@ -101,7 +139,20 @@
       });
     }
 
+    // Boutons de thème
+    var themeBtns = document.querySelectorAll("[data-theme-toggle]");
+    for (var t = 0; t < themeBtns.length; t++) {
+      themeBtns[t].addEventListener("click", function() {
+        window.toggleTheme();
+      });
+    }
+
     // Applique la langue mémorisée ou par défaut
     applyLang(currentLang);
+
+    // Synchronise l'aria-label du thème avec la langue courante
+    var storedTheme = localStorage.getItem("um-theme")
+      || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    applyTheme(storedTheme);
   });
 })();
