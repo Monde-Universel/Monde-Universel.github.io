@@ -2535,7 +2535,9 @@ li {
 [data-theme="dark"] .vote-card.argent,
 [data-theme="dark"] .vote-card.jaune,
 [data-theme="dark"] .vote-card.ambre {
-  background: var(--color-surface-2) !important;
+  background: #161b22 !important;
+  background-color: #161b22 !important;
+  background-image: none !important;
 }
 
 [data-theme="dark"] .vote-card.blanc h2,
@@ -2550,7 +2552,7 @@ li {
 [data-theme="dark"] .vote-card.argent .vote-list li,
 [data-theme="dark"] .vote-card.jaune .vote-list li,
 [data-theme="dark"] .vote-card.ambre .vote-list li {
-  color: var(--color-text) !important;
+  color: #eaf2ff !important;
 }
 
 
