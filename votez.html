@@ -145,7 +145,7 @@ og_locale: fr_CA
 <button class="vote-btn" data-i18n="voteButton" data-vote="Fascisme" data-vote-en="Fascism" data-vote-fr="Fascisme" data-vote-key="fascism" type="button">Votez</button>
 </div>
 </article>
-</div>
+
 <article class="vote-card turquoise">
 <div class="vote-photo">
 <img alt="Illustration du clan Authoritarisme" class="authoritarian-fit" height="1280" loading="lazy" src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/0bb58bd9-cec1-4fed-aa8a-ac7c2158bfde.png" width="1024"/>
@@ -350,6 +350,7 @@ og_locale: fr_CA
 <button class="vote-btn" data-i18n="voteButton" data-vote="Véritisme" data-vote-en="Truthnism" data-vote-fr="Véritisme" data-vote-key="veritism" type="button">Votez</button>
 </div>
 </article>
+</div>
 <div aria-live="polite" class="vote-feedback" id="voteFeedback">
 <h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
 <p id="voteFeedbackText">Votre choix apparaîtra ici après le clic sur un bouton.</p>
@@ -1005,6 +1006,63 @@ og_locale: fr_CA
     background: #0f141a !important;
   }
 
+
+/* ═══════════════════════════════════════
+   VOTE FEEDBACK — affichage du résultat
+═══════════════════════════════════════ */
+.vote-feedback {
+  display: none;
+  margin: 2.5rem auto 0;
+  max-width: 640px;
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--color-primary, #01696f);
+  background: var(--color-primary-highlight, #cedcd8);
+  text-align: center;
+  animation: feedbackIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.vote-feedback.is-active {
+  display: block;
+}
+.vote-feedback h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary-active, #0f3638);
+  margin-bottom: 0.5rem;
+}
+.vote-feedback p {
+  font-size: 1rem;
+  color: var(--color-text, #28251d);
+  margin: 0;
+}
+.vote-feedback .vote-final-call {
+  margin-top: 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: var(--color-primary, #01696f);
+}
+@keyframes feedbackIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Dark mode override */
+[data-theme="dark"] .vote-feedback,
+body[data-theme="dark"] .vote-feedback,
+body.dark-mode .vote-feedback {
+  background: var(--color-primary-highlight, #313b3b);
+  border-color: var(--color-primary, #4f98a3);
+}
+[data-theme="dark"] .vote-feedback h3,
+body[data-theme="dark"] .vote-feedback h3,
+body.dark-mode .vote-feedback h3 {
+  color: var(--color-primary, #4f98a3);
+}
+[data-theme="dark"] .vote-feedback p,
+body[data-theme="dark"] .vote-feedback p,
+body.dark-mode .vote-feedback p {
+  color: #eaf2ff;
+}
 </style>
 <script>
   (function() {
