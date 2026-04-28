@@ -1066,13 +1066,17 @@ body.dark-mode .vote-feedback p {
   color: #eaf2ff;
 }
 
-/* Note base de données dans le feedback */
+/* ─── Ajout : Note base de données + forcer affichage de l'appel final ─── */
 .vote-feedback .vote-db-note {
+  display: block;
   font-size: 0.875rem;
   color: var(--color-text-muted, #7a7974);
   font-style: italic;
   margin-top: 0.5rem;
   margin-bottom: 0;
+}
+.vote-feedback .vote-final-call {
+  display: block !important;   /* override si site.css le cache */
 }
 [data-theme="dark"] .vote-feedback .vote-db-note,
 body[data-theme="dark"] .vote-feedback .vote-db-note,
