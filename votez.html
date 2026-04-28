@@ -354,6 +354,7 @@ og_locale: fr_CA
 <div aria-live="polite" class="vote-feedback" id="voteFeedback">
 <h3 data-i18n="feedbackTitle">Intention de vote enregistrée</h3>
 <p id="voteFeedbackText">Votre choix apparaîtra ici après le clic sur un bouton.</p>
+<p class="vote-db-note" data-i18n="voteDbNote">Cette page est prête à être reliée à une vraie base de données.</p>
 <p class="vote-final-call" data-i18n="voteFinalCall" id="voteFinalCall">IL NE MANQUE PLUS QUE VOUS!</p>
 </div>
 </main>
@@ -852,6 +853,7 @@ og_locale: fr_CA
 <p id="voteFeedbackText">
         Your selection will appear here after clicking a button.
       </p>
+<p class="vote-db-note" data-i18n="voteDbNote">This page is ready to be connected to a real database.</p>
 <p class="vote-final-call" data-i18n="voteFinalCall" id="voteFinalCall">
         ALL THAT IS MISSING IS YOU!
       </p>
@@ -1063,6 +1065,21 @@ body[data-theme="dark"] .vote-feedback p,
 body.dark-mode .vote-feedback p {
   color: #eaf2ff;
 }
+
+/* Note base de données dans le feedback */
+.vote-feedback .vote-db-note {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #7a7974);
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+[data-theme="dark"] .vote-feedback .vote-db-note,
+body[data-theme="dark"] .vote-feedback .vote-db-note,
+body.dark-mode .vote-feedback .vote-db-note {
+  color: #a0b4c8;
+}
+
 </style>
 <script>
   (function() {
