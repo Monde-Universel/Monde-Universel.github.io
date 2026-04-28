@@ -1,5 +1,5 @@
 <header class="site-header">
-  <div class="container header-shell">
+  <div class="container--full header-shell">
     <div class="header-top">
       {% if page.lang == 'en' %}
         {% assign brand_home_label = 'Home - A Universal World' %}
@@ -54,7 +54,8 @@
         </button>
       </div>
     </div>
-
-    {% include nav.html %}
   </div>
+
+  {{- /* ─── Nav déplacée HORS du .container pour s'étirer en pleine largeur ─── */}}
+  {% include nav.html %}
 </header>
