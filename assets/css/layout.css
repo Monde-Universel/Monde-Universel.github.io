@@ -53,6 +53,12 @@ main {
   margin-inline: auto;
 }
 
+.container--full {
+  width: 100%;
+  padding-inline: 1.25rem;
+  margin-inline: auto;
+}
+
 .container--narrow {
   width: min(100% - 2rem, var(--content-narrow));
   margin-inline: auto;
@@ -81,7 +87,7 @@ main {
   position: relative;
   overflow: hidden;
   background: var(--gradient-header);
-  padding: 1rem 1.25rem 1.1rem;
+  padding: 1rem 0 0; /* ✏️ CORRECTION : padding latéral déplacé vers .header-shell */
 }
 
 .site-header::before {
@@ -97,6 +103,8 @@ main {
 .header-shell {
   position: relative;
   z-index: 1;
+  padding-inline: 1.25rem; /* ✏️ CORRECTION : était sur .site-header */
+  padding-bottom: 1.1rem;  /* ✏️ CORRECTION : était sur .site-header */
 }
 
 .header-top {
@@ -181,6 +189,7 @@ main {
 }
 
 .site-nav {
+  width: 100%; /* ✏️ CORRECTION : pleine largeur garantie */
   background: var(--color-primary);
   display: flex;
   justify-content: center;
@@ -805,7 +814,12 @@ button:focus-visible {
 
 @media (max-width: 600px) {
   .site-header {
-    padding: 0.9rem 1rem 0.95rem;
+    padding: 0.9rem 0 0; /* ✏️ CORRECTION : padding latéral déplacé vers .header-shell */
+  }
+
+  .header-shell {
+    padding-inline: 1rem;    /* ✏️ CORRECTION : était sur .site-header */
+    padding-bottom: 0.95rem; /* ✏️ CORRECTION : était sur .site-header */
   }
 
   .header-top {
