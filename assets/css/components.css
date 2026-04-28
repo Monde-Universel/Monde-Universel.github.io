@@ -2535,7 +2535,9 @@ li {
 [data-theme="dark"] .vote-card.argent,
 [data-theme="dark"] .vote-card.jaune,
 [data-theme="dark"] .vote-card.ambre {
-  background: var(--color-surface-2) !important;
+  background: #161b22 !important;
+  background-color: #161b22 !important;
+  background-image: none !important;
 }
 
 [data-theme="dark"] .vote-card.blanc h2,
@@ -2550,8 +2552,89 @@ li {
 [data-theme="dark"] .vote-card.argent .vote-list li,
 [data-theme="dark"] .vote-card.jaune .vote-list li,
 [data-theme="dark"] .vote-card.ambre .vote-list li {
-  color: var(--color-text) !important;
+  color: #eaf2ff !important;
 }
+
+/* ═══════════════════════════════════════
+   PAGE VOTEZ — dark mode section trajectory
+   Fonds et textes hardcodés absents des règles existantes
+═══════════════════════════════════════ */
+
+[data-theme="dark"] .trajectory-premium {
+  background: #12181f !important;
+  background-image: none !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45) !important;
+}
+
+[data-theme="dark"] .trajectory-premium::before {
+  background: none !important;
+}
+
+[data-theme="dark"] .trajectory-premium-head {
+  border-bottom-color: rgba(255,255,255,0.08) !important;
+}
+
+[data-theme="dark"] .trajectory-side {
+  background: rgba(255,255,255,0.03) !important;
+  border-left-color: rgba(255,255,255,0.08) !important;
+  border-top-color: rgba(255,255,255,0.08) !important;
+}
+
+[data-theme="dark"] .trajectory-note {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .trajectory-advantage {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .trajectory-advantage::before {
+  background: #87ceeb !important;
+  box-shadow: 0 0 0 5px rgba(135,206,235,0.18) !important;
+}
+
+[data-theme="dark"] .trajectory-step {
+  border-bottom-color: rgba(255,255,255,0.08) !important;
+}
+
+[data-theme="dark"] .trajectory-block-title::before {
+  background: linear-gradient(90deg,#4f98a3,#87ceeb) !important;
+}
+
+[data-theme="dark"] .trajectory-kicker {
+  background: rgba(135,206,235,0.12) !important;
+  color: #87ceeb !important;
+  border-color: rgba(135,206,235,0.25) !important;
+}
+
+[data-theme="dark"] .trajectory-title {
+  color: #c8dff0 !important;
+}
+
+[data-theme="dark"] .trajectory-block-title {
+  color: #87ceeb !important;
+}
+
+[data-theme="dark"] .trajectory-intro p,
+[data-theme="dark"] .trajectory-step p,
+[data-theme="dark"] .trajectory-note p,
+[data-theme="dark"] .trajectory-advantage span {
+  color: #b0c4d8 !important;
+}
+
+[data-theme="dark"] .trajectory-step h3 {
+  color: #a8d4f0 !important;
+}
+
+[data-theme="dark"] .trajectory-advantage strong {
+  color: #c8dff0 !important;
+}
+
 
 /* ═══════════════════════════════════════
    PAGE VOTEZ — breakout pleine largeur
@@ -2559,7 +2642,6 @@ li {
    du container 46rem (736px) de #contenu
 ═══════════════════════════════════════ */
 
-/* ── Breakout desktop : pleine largeur viewport ── */
 .trajectory-section,
 .vote-wrap {
   margin-inline: calc(50% - 50vw) !important;
@@ -2568,7 +2650,6 @@ li {
   box-sizing: border-box !important;
 }
 
-/* ── Padding interne : respirer sur les bords ── */
 .trajectory-section {
   padding-inline: clamp(1rem, 4vw, 3rem) !important;
 }
@@ -2577,7 +2658,6 @@ li {
   padding-inline: clamp(1rem, 4vw, 3rem) !important;
 }
 
-/* ── Mobile ≤ 600px : padding réduit ── */
 @media (max-width: 600px) {
   .trajectory-section,
   .vote-wrap {
