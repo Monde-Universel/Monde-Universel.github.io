@@ -1121,9 +1121,116 @@ body.dark-mode .vote-feedback .vote-db-note {
 }
 
 
-/* Pérenisme : couleur grise */
+
+
+/* ═══════════════════════════════════════
+   PÉRENISME — Faction grise (CSS complet)
+═══════════════════════════════════════ */
 .vote-card.grey {
   --card-accent: #6b7280;
+  border-top: 4px solid #6b7280 !important;
+}
+.vote-card.grey .vote-badge {
+  color: #6b7280 !important;
+  border: 2px solid #6b7280 !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  font-weight: 700 !important;
+  padding: 0.25em 0.85em !important;
+  display: inline-block !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+.vote-card.grey .vote-list li::before {
+  background: #6b7280 !important;
+  background-color: #6b7280 !important;
+  color: #6b7280 !important;
+}
+.vote-card.grey .vote-list li::marker {
+  color: #6b7280 !important;
+}
+.vote-card.grey .vote-btn {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+  border-color: #6b7280 !important;
+}
+.vote-card.grey .vote-btn:hover {
+  background-color: #4b5563 !important;
+  border-color: #4b5563 !important;
+}
+[data-theme="dark"] .vote-card.grey,
+body[data-theme="dark"] .vote-card.grey,
+body.dark-mode .vote-card.grey {
+  border-top-color: #9ca3af !important;
+}
+[data-theme="dark"] .vote-card.grey .vote-badge,
+body[data-theme="dark"] .vote-card.grey .vote-badge,
+body.dark-mode .vote-card.grey .vote-badge {
+  color: #9ca3af !important;
+  border-color: #9ca3af !important;
+}
+[data-theme="dark"] .vote-card.grey .vote-list li::before,
+body[data-theme="dark"] .vote-card.grey .vote-list li::before,
+body.dark-mode .vote-card.grey .vote-list li::before {
+  background: #9ca3af !important;
+  background-color: #9ca3af !important;
+  color: #9ca3af !important;
+}
+[data-theme="dark"] .vote-card.grey .vote-list li::marker,
+body[data-theme="dark"] .vote-card.grey .vote-list li::marker {
+  color: #9ca3af !important;
+}
+[data-theme="dark"] .vote-card.grey .vote-btn,
+body[data-theme="dark"] .vote-card.grey .vote-btn,
+body.dark-mode .vote-card.grey .vote-btn {
+  background-color: #9ca3af !important;
+  color: #111827 !important;
+  border-color: #9ca3af !important;
+}
+.vote-card.grey .vote-badge {
+  color: #6b7280 !important;
+  border: 2px solid #6b7280 !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  font-weight: 700 !important;
+  padding: 0.25em 0.85em !important;
+  display: inline-block !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+.vote-card.grey .vote-list li::before {
+  background: #6b7280 !important;
+}
+.vote-card.grey .vote-btn {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+  border-color: #6b7280 !important;
+}
+.vote-card.grey .vote-btn:hover {
+  background-color: #4b5563 !important;
+  border-color: #4b5563 !important;
+}
+/* Dark mode */
+[data-theme="dark"] .vote-card.grey,
+body[data-theme="dark"] .vote-card.grey {
+  border-top-color: #9ca3af !important;
+}
+[data-theme="dark"] .vote-card.grey .vote-badge,
+body[data-theme="dark"] .vote-card.grey .vote-badge {
+  color: #9ca3af !important;
+  border-color: #9ca3af !important;
+}
+[data-theme="dark"] .vote-card.grey .vote-list li::before,
+body[data-theme="dark"] .vote-card.grey .vote-list li::before {
+  background: #9ca3af !important;
+}
+[data-theme="dark"] .vote-card.grey .vote-btn,
+body[data-theme="dark"] .vote-card.grey .vote-btn {
+  background-color: #9ca3af !important;
+  color: #111827 !important;
+  border-color: #9ca3af !important;
 }
 </style>
 <script>
