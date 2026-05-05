@@ -1217,6 +1217,22 @@ nav a[aria-current="page"] { color: #87CEEB; }
   box-shadow: 0 10px 24px rgba(120,138,160,0.24);
 }
 
+/* Pérenisme gris */
+.vote-card.grey { border-top: 8px solid #546270; }
+.vote-card.grey .vote-badge {
+  background: rgba(84,98,112,0.12);
+  color: #2e3d4a;
+  border: 1px solid rgba(84,98,112,0.28);
+}
+.vote-card.grey .vote-list li::before {
+  background: #546270;
+  box-shadow: 0 0 0 5px rgba(84,98,112,0.14);
+}
+.vote-card.grey .vote-btn {
+  background: linear-gradient(135deg, #3a4a56 0%, #6e8696 100%);
+  box-shadow: 0 10px 24px rgba(84,98,112,0.30);
+}
+
 /* Bouton retour en haut */
 .back-to-top {
   position: fixed;
@@ -2544,14 +2560,17 @@ li {
 [data-theme="dark"] .vote-card.argent h2,
 [data-theme="dark"] .vote-card.jaune h2,
 [data-theme="dark"] .vote-card.ambre h2,
+[data-theme="dark"] .vote-card.grey h2,
 [data-theme="dark"] .vote-card.blanc .vote-desc,
 [data-theme="dark"] .vote-card.argent .vote-desc,
 [data-theme="dark"] .vote-card.jaune .vote-desc,
 [data-theme="dark"] .vote-card.ambre .vote-desc,
+[data-theme="dark"] .vote-card.grey .vote-desc,
 [data-theme="dark"] .vote-card.blanc .vote-list li,
 [data-theme="dark"] .vote-card.argent .vote-list li,
 [data-theme="dark"] .vote-card.jaune .vote-list li,
-[data-theme="dark"] .vote-card.ambre .vote-list li {
+[data-theme="dark"] .vote-card.ambre .vote-list li,
+[data-theme="dark"] .vote-card.grey .vote-list li {
   color: #eaf2ff !important;
 }
 
