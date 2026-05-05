@@ -1183,19 +1183,21 @@ nav a[aria-current="page"] { color: #87CEEB; }
 }
 
 /* ── Transhumanisme (argent) ── */
-.vote-card.argent { border-top: 8px solid #536878; }
+.vote-card.argent { border-top: 8px solid #a8bfcc; }
 .vote-card.argent .vote-badge {
-  background: rgba(83,104,120,0.12);
-  color: #344f60;
-  border: 1px solid rgba(83,104,120,0.28);
+  background: linear-gradient(135deg, rgba(200,215,225,0.25) 0%, rgba(168,191,204,0.15) 100%);
+  color: #3a5060;
+  border: 1px solid rgba(168,191,204,0.55);
 }
 .vote-card.argent .vote-list li::before {
-  background: #536878;
-  box-shadow: 0 0 0 5px rgba(83,104,120,0.14);
+  background: linear-gradient(135deg, #c8d8e2 0%, #8aaabb 100%);
+  box-shadow: 0 0 0 5px rgba(168,191,204,0.20);
 }
 .vote-card.argent .vote-btn {
-  background: linear-gradient(135deg, #3d5060 0%, #7090a8 100%);
-  box-shadow: 0 10px 24px rgba(83,104,120,0.30);
+  background: linear-gradient(160deg, #dce8ef 0%, #a0bbc8 35%, #7096a8 65%, #b8cdd8 100%);
+  color: #1a3040;
+  box-shadow: 0 10px 24px rgba(120,160,180,0.35), inset 0 1px 0 rgba(255,255,255,0.55);
+  text-shadow: 0 1px 2px rgba(255,255,255,0.4);
 }
 
 /* ── Véritisme (blanc) ── */
